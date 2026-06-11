@@ -4,7 +4,19 @@ import { ArrowRight, Clock, Calendar, ChevronLeft, ChevronRight, Pin } from "luc
 import Link from "next/link";
 import { useState } from "react";
 
-export const blogPosts = [
+export type PostItem = {
+  id: string;
+  title: string;
+  slug: string;
+  date: string;
+  readTime: string;
+  category: string;
+  excerpt: string;
+  isPinned?: boolean;
+  thumbnail?: string;
+};
+
+export const blogPosts: PostItem[] = [
   {
     id: "blog-001",
     title: "Shift-Left Testing: Integrating QA Early in the SDLC",

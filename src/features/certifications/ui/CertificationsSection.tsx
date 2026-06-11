@@ -88,8 +88,30 @@ export function CertificationsSection() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          <AnimatePresence mode="popLayout">
+        <div className="relative w-full mb-8">
+          {totalPages > 1 && (
+             <>
+               <button 
+                 onClick={() => handlePageChange(currentPage - 1)} 
+                 disabled={currentPage === 1}
+                 className="hidden lg:flex absolute top-1/2 -left-16 -translate-y-1/2 p-3 rounded-full glass border border-white/10 hover:bg-white/10 hover:scale-110 disabled:opacity-30 disabled:hover:scale-100 disabled:cursor-not-allowed transition-all shadow-xl z-10"
+                 aria-label="Previous Page"
+               >
+                 <ChevronLeft size={28} />
+               </button>
+               <button 
+                 onClick={() => handlePageChange(currentPage + 1)} 
+                 disabled={currentPage === totalPages}
+                 className="hidden lg:flex absolute top-1/2 -right-16 -translate-y-1/2 p-3 rounded-full glass border border-white/10 hover:bg-white/10 hover:scale-110 disabled:opacity-30 disabled:hover:scale-100 disabled:cursor-not-allowed transition-all shadow-xl z-10"
+                 aria-label="Next Page"
+               >
+                 <ChevronRight size={28} />
+               </button>
+             </>
+           )}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <AnimatePresence mode="popLayout">
             {currentCerts.map((cert) => (
               <motion.div
                 layout
@@ -128,96 +150,34 @@ export function CertificationsSection() {
                   {cert.skills.length > 3 && (
                     <span className="text-xs px-2 py-1 rounded text-text-muted">
                       +{cert.skills.length - 3}
-        <div className="relative w-full">
-          {totalPages > 1 && (
-             <>
-               <button 
-                 onClick={() => handlePageChange(currentPage - 1)} 
-                 disabled={currentPage === 1}
-                 className="hidden lg:flex absolute top-1/2 -left-16 -translate-y-1/2 p-3 rounded-full glass border border-white/10 hover:bg-white/10 hover:scale-110 disabled:opacity-30 disabled:hover:scale-100 disabled:cursor-not-allowed transition-all shadow-xl z-10"
-                 aria-label="Previous Page"
-               >
-                 <ChevronLeft size={28} />
-               </button>
-               <button 
-                 onClick={() => handlePageChange(currentPage + 1)} 
-                 disabled={currentPage === totalPages}
-                 className="hidden lg:flex absolute top-1/2 -right-16 -translate-y-1/2 p-3 rounded-full glass border border-white/10 hover:bg-white/10 hover:scale-110 disabled:opacity-30 disabled:hover:scale-100 disabled:cursor-not-allowed transition-all shadow-xl z-10"
-                 aria-label="Next Page"
-               >
-                 <ChevronRight size={28} />
-               </button>
-             </>
-           )}
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <AnimatePresence mode="popLayout">
-              {currentCerts.map((cert) => (
-                <motion.div
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3 }}
-                  key={cert.id}
-                  className={`glass p-6 rounded-2xl border transition-all hover:-translate-y-1 hover:shadow-lg ${
-                    cert.featured ? 'border-accent-blue/30 bg-accent-blue/5' : 'border-white/5 hover:border-white/20'
-                  }`}
-                >
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="p-2 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center w-14 h-14 overflow-hidden">
-                      <BadgeImage cert={cert} />
-                    </div>
-                    <div className="text-xs font-mono font-medium text-text-muted bg-bg-primary px-2 py-1 rounded">
-                      {cert.year}
-                    </div>
-                  </div>
+                    </span>
+                  )}
+                </div>
+                
+                <div className="flex items-center gap-4 mt-auto">
+                  <a 
+                    href={cert.certUrl} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="inline-flex items-center text-sm font-medium text-text-secondary hover:text-accent-cyan transition-colors group"
+                  >
+                    Verify Online
+                    <ExternalLink size={14} className="ml-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </a>
                   
-                  <h3 className="text-lg font-bold text-white mb-2 line-clamp-2" title={cert.name}>
-                    {cert.name}
-                  </h3>
-                  
-                  <div className="text-sm font-medium text-accent-blue mb-4">
-                    {cert.issuer} <span className="text-text-muted">via {cert.platform}</span>
-                  </div>
-                  
-                  <div className="flex flex-wrap gap-1.5 mb-6">
-                    {cert.skills.slice(0, 3).map(skill => (
-                      <span key={skill} className="text-xs px-2 py-1 rounded bg-white/5 text-text-secondary border border-white/5">
-                        {skill}
-                      </span>
-                    ))}
-                    {cert.skills.length > 3 && (
-                      <span className="text-xs px-2 py-1 rounded text-text-muted">
-                        +{cert.skills.length - 3}
-                      </span>
-                    )}
-                  </div>
-                  
-                  <div className="flex items-center gap-4 mt-auto">
-                    <a 
-                      href={cert.certUrl} 
-                      target="_blank" 
-                      rel="noreferrer"
-                      className="inline-flex items-center text-sm font-medium text-text-secondary hover:text-accent-cyan transition-colors group"
+                  {cert.imageUrl && (
+                    <button 
+                      onClick={() => setSelectedImage(cert.imageUrl!)}
+                      className="inline-flex items-center text-sm font-medium text-text-secondary hover:text-accent-purple transition-colors group"
                     >
-                      Verify Online
-                      <ExternalLink size={14} className="ml-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                    </a>
-                    
-                    {cert.imageUrl && (
-                      <button 
-                        onClick={() => setSelectedImage(cert.imageUrl!)}
-                        className="inline-flex items-center text-sm font-medium text-text-secondary hover:text-accent-purple transition-colors group"
-                      >
-                        View Certificate
-                        <Eye size={14} className="ml-1 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-transform" />
-                      </button>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
+                      View Certificate
+                      <Eye size={14} className="ml-1 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-transform" />
+                    </button>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
           </div>
         </div>
 
