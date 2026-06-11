@@ -1,0 +1,28 @@
+{
+  "Navbar": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "certifications": "Certifications",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "greeting": "Hi, I'm",
+    "role": "QA Engineer & AI Testing Specialist",
+    "bio": "A QA Engineer specializing in Automation & AI Testing.",
+    "cta_projects": "View Projects",
+    "cta_contact": "Download CV",
+    "available": "Available for new opportunities",
+    "scroll_down": "Scroll Down"
+  },
+  "About": {
+    "title": "About Me",
+    "bio_1": "I am a <strong>Quality Assurance Engineer</strong> with over 4 years of experience specializing in web, mobile, and API testing. My expertise lies in building robust automation testing frameworks using Cypress and Playwright, as well as exploring the cutting-edge of AI-driven quality management.",
+    "bio_2": "With a strong foundation from <strong>24+ certifications</strong> across leading platforms such as Microsoft, Google Cloud, Cisco, and Dicoding Academy, I continuously strive to implement best practices in software testing and development lifecycles.",
+    "stats_experience": "Years Exp.",
+    "stats_certifications": "Certifications",
+    "stats_companies": "Companies"
+  }
+}

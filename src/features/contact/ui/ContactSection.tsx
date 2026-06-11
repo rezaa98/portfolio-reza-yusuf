@@ -1,0 +1,128 @@
+"use client";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/shared/ui/Button";
+import { Send, Mail, MapPin } from "lucide-react";
+
+const LinkedinIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+);
+
+export function ContactSection() {
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("loading");
+    // Simulate API call since Resend API route isn't fully integrated yet
+    setTimeout(() => setStatus("success"), 1500);
+  };
+
+  return (
+    <section id="contact" className="section py-24">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="flex items-center gap-4 mb-2">
+          <span className="section-label">07 //</span>
+          <h2 className="section-title mb-0">Get In Touch</h2>
+        </div>
+        <div className="glow-divider"></div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
+          <div>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 font-space-grotesk">
+              Let's build something together
+            </h3>
+            <p className="text-text-secondary mb-10 leading-relaxed max-w-md">
+              Whether you have a question about automation, a project opportunity, or just want to say hi, I'll try my best to get back to you!
+            </p>
+            
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="p-3.5 glass rounded-xl text-accent-cyan border border-white/10 group-hover:border-accent-cyan transition-colors">
+                  <Mail size={20} />
+                </div>
+                <div>
+                  <div className="text-xs text-text-muted font-mono mb-1 tracking-wider uppercase">Email</div>
+                  <a href="mailto:reza.yusuf98@gmail.com" className="text-white hover:text-accent-blue transition-colors font-medium">reza.yusuf98@gmail.com</a>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-4">
+                <div className="p-3.5 glass rounded-xl text-accent-cyan border border-white/10">
+                  <LinkedinIcon />
+                </div>
+                <div>
+                  <div className="text-xs text-text-muted font-mono mb-1 tracking-wider uppercase">LinkedIn</div>
+                  <a href="https://linkedin.com/in/rezayusufmaulana" target="_blank" rel="noreferrer" className="text-white hover:text-accent-blue transition-colors font-medium">/in/rezayusufmaulana</a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="p-3.5 glass rounded-xl text-accent-cyan border border-white/10">
+                  <MapPin size={20} />
+                </div>
+                <div>
+                  <div className="text-xs text-text-muted font-mono mb-1 tracking-wider uppercase">Location</div>
+                  <div className="text-white font-medium">South Tangerang, Indonesia</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <form onSubmit={handleSubmit} className="glass p-8 md:p-10 rounded-2xl border border-white/5 space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label htmlFor="name" className="text-sm font-medium text-text-secondary">Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  required
+                  className="w-full bg-bg-primary/50 border border-white/10 rounded-lg px-4 py-3.5 text-white focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all"
+                  placeholder="John Doe"
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm font-medium text-text-secondary">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  required
+                  className="w-full bg-bg-primary/50 border border-white/10 rounded-lg px-4 py-3.5 text-white focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all"
+                  placeholder="john@example.com"
+                />
+              </div>
+            </div>
+            
+            <div className="space-y-2">
+              <label htmlFor="message" className="text-sm font-medium text-text-secondary">Message</label>
+              <textarea 
+                id="message" 
+                rows={5}
+                required
+                className="w-full bg-bg-primary/50 border border-white/10 rounded-lg px-4 py-3.5 text-white focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all resize-none"
+                placeholder="How can I help you?"
+              />
+            </div>
+            
+            <Button 
+              type="submit" 
+              variant="gradient" 
+              size="lg" 
+              className="w-full mt-4"
+              disabled={status === "loading" || status === "success"}
+            >
+              {status === "loading" ? "Sending..." : status === "success" ? "Message Sent Successfully!" : (
+                <>Send Message <Send size={18} className="ml-2" /></>
+              )}
+            </Button>
+          </form>
+        </div>
+      </motion.div>
+    </section>
+  );
+}

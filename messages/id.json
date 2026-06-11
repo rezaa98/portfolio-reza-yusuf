@@ -1,0 +1,28 @@
+{
+  "Navbar": {
+    "about": "Tentang",
+    "experience": "Pengalaman",
+    "projects": "Proyek",
+    "skills": "Keahlian",
+    "certifications": "Sertifikasi",
+    "blog": "Blog",
+    "contact": "Kontak"
+  },
+  "Hero": {
+    "greeting": "Hai, saya",
+    "role": "QA Engineer & Spesialis Testing AI",
+    "bio": "Seorang QA Engineer dengan spesialisasi Otomatisasi & Pengujian AI.",
+    "cta_projects": "Lihat Proyek",
+    "cta_contact": "Unduh CV",
+    "available": "Terbuka untuk peluang baru",
+    "scroll_down": "Gulir ke Bawah"
+  },
+  "About": {
+    "title": "Tentang Saya",
+    "bio_1": "Saya adalah seorang <strong>Quality Assurance Engineer</strong> dengan pengalaman lebih dari 4 tahun yang berspesialisasi dalam pengujian web, mobile, dan API. Keahlian saya terletak pada membangun framework pengujian otomatisasi menggunakan Cypress dan Playwright, serta mengeksplorasi manajemen kualitas berbasis AI.",
+    "bio_2": "Dengan fondasi yang kuat dari <strong>24+ sertifikasi</strong> dari berbagai platform terkemuka seperti Microsoft, Google Cloud, Cisco, dan Dicoding Academy, saya terus berusaha mengimplementasikan praktik terbaik dalam siklus pengembangan perangkat lunak.",
+    "stats_experience": "Tahun Peng.",
+    "stats_certifications": "Sertifikasi",
+    "stats_companies": "Perusahaan"
+  }
+}
