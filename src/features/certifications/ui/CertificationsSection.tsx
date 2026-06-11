@@ -130,7 +130,7 @@ export function CertificationsSection() {
                     rel="noreferrer"
                     className="inline-flex items-center text-sm font-medium text-text-secondary hover:text-accent-cyan transition-colors group"
                   >
-                    View Credential
+                    Verify Online
                     <ExternalLink size={14} className="ml-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </a>
                   
@@ -139,7 +139,7 @@ export function CertificationsSection() {
                       onClick={() => setSelectedImage(cert.imageUrl!)}
                       className="inline-flex items-center text-sm font-medium text-text-secondary hover:text-accent-purple transition-colors group"
                     >
-                      View Image
+                      View Certificate
                       <Eye size={14} className="ml-1 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-transform" />
                     </button>
                   )}
