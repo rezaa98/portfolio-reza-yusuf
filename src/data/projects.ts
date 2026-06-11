@@ -10,7 +10,7 @@ export const projects = [
     thumbnailUrl: "/images/projects/jelajah-pintar.png",
     demoUrl: null,
     githubUrl: "https://github.com/rezaa98/JelajahPintar",
-    year: 2024,
+    year: 2026,
     isFeatured: true,
   },
   {
@@ -24,7 +24,7 @@ export const projects = [
     thumbnailUrl: "/images/projects/lumina-aesthetic.png",
     demoUrl: null,
     githubUrl: "https://github.com/rezaa98/LuminaAesthetic",
-    year: 2024,
+    year: 2026,
     isFeatured: true,
   },
   {
@@ -42,7 +42,7 @@ export const projects = [
       { name: "ML System", url: "https://github.com/rezaa98/Eksperimen_SML_Reza-Yusuf-Maulana" },
       { name: "CI/CD Workflow", url: "https://github.com/rezaa98/Workflow-CI_Reza-Yusuf-Maulana" }
     ],
-    year: 2024,
+    year: 2026,
     isFeatured: true,
   },
 ] as const;
