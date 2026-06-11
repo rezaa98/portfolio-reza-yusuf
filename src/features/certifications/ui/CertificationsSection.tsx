@@ -45,6 +45,10 @@ export function CertificationsSection() {
 
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
+  };
+
+  const handleMobilePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
     const element = document.getElementById("certifications");
     if (element) {
       const y = element.getBoundingClientRect().top + window.scrollY - 80;
@@ -185,7 +189,7 @@ export function CertificationsSection() {
         {totalPages > 1 && (
           <div className="flex justify-center items-center gap-4 mt-12 lg:hidden">
             <button 
-              onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
+              onClick={() => handleMobilePageChange(Math.max(1, currentPage - 1))}
               disabled={currentPage === 1}
               className="p-3 rounded-full glass text-text-secondary disabled:opacity-30 disabled:cursor-not-allowed hover:text-white hover:bg-white/10 transition-colors"
               aria-label="Previous page"
@@ -198,7 +202,7 @@ export function CertificationsSection() {
             </div>
             
             <button 
-              onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
+              onClick={() => handleMobilePageChange(Math.min(totalPages, currentPage + 1))}
               disabled={currentPage === totalPages}
               className="p-3 rounded-full glass text-text-secondary disabled:opacity-30 disabled:cursor-not-allowed hover:text-white hover:bg-white/10 transition-colors"
               aria-label="Next page"

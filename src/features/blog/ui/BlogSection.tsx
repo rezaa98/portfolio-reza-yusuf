@@ -89,17 +89,21 @@ export function BlogSection({ sanityPosts }: { sanityPosts?: SanityPost[] | null
   };
 
   const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(prev => prev + 1);
-      scrollToTop();
-    }
+    if (currentPage < totalPages) setCurrentPage(prev => prev + 1);
   };
 
   const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(prev => prev - 1);
-      scrollToTop();
-    }
+    if (currentPage > 1) setCurrentPage(prev => prev - 1);
+  };
+
+  const handleMobileNext = () => {
+    handleNextPage();
+    scrollToTop();
+  };
+
+  const handleMobilePrev = () => {
+    handlePrevPage();
+    scrollToTop();
   };
 
   return (
@@ -195,7 +199,7 @@ export function BlogSection({ sanityPosts }: { sanityPosts?: SanityPost[] | null
         {totalPages > 1 && (
           <div className="flex justify-center items-center gap-4 mt-12 lg:hidden">
             <button 
-              onClick={handlePrevPage} 
+              onClick={handleMobilePrev} 
               disabled={currentPage === 1}
               className="p-2 rounded-full glass border border-white/10 hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
               aria-label="Previous Page"
@@ -206,7 +210,7 @@ export function BlogSection({ sanityPosts }: { sanityPosts?: SanityPost[] | null
               Page <span className="text-white font-bold">{currentPage}</span> of {totalPages}
             </div>
             <button 
-              onClick={handleNextPage} 
+              onClick={handleMobileNext} 
               disabled={currentPage === totalPages}
               className="p-2 rounded-full glass border border-white/10 hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
               aria-label="Next Page"
