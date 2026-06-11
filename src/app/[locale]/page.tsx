@@ -8,8 +8,29 @@ import { SkillsSection } from "@/features/skills/ui/SkillsSection";
 import { CertificationsSection } from "@/features/certifications/ui/CertificationsSection";
 import { BlogSection } from "@/features/blog/ui/BlogSection";
 import { ContactSection } from "@/features/contact/ui/ContactSection";
+import { client } from "@/sanity/client";
 
-export default function Home() {
+async function fetchSanityPosts() {
+  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return null;
+  try {
+    const query = `*[_type == "post"] | order(publishedAt desc) {
+      _id,
+      title,
+      "slug": slug.current,
+      publishedAt,
+      excerpt,
+      "categories": categories[]->title
+    }`;
+    return await client.fetch(query);
+  } catch (error) {
+    console.error("Failed to fetch sanity posts:", error);
+    return null;
+  }
+}
+
+export default async function Home() {
+  const sanityPosts = await fetchSanityPosts();
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -21,7 +42,7 @@ export default function Home() {
         <ProjectsSection />
         <SkillsSection />
         <CertificationsSection />
-        <BlogSection />
+        <BlogSection sanityPosts={sanityPosts} />
         <ContactSection />
       </main>
 

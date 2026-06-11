@@ -1,11 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, Calendar } from "lucide-react";
+import Link from "next/link";
 
 export const blogPosts = [
   {
     id: "blog-001",
     title: "Shift-Left Testing: Integrating QA Early in the SDLC",
+    slug: "shift-left-testing",
     date: "May 15, 2026",
     readTime: "5 min read",
     category: "Process",
@@ -14,6 +16,7 @@ export const blogPosts = [
   {
     id: "blog-002",
     title: "AI in Test Automation: Evaluating Voice-to-Text Accuracy",
+    slug: "ai-in-test-automation",
     date: "April 22, 2026",
     readTime: "8 min read",
     category: "AI Testing",
@@ -22,6 +25,7 @@ export const blogPosts = [
   {
     id: "blog-003",
     title: "Migrating from Katalon to Playwright: A Practical Guide",
+    slug: "migrating-katalon-to-playwright",
     date: "March 10, 2026",
     readTime: "6 min read",
     category: "Automation",
@@ -29,7 +33,28 @@ export const blogPosts = [
   }
 ];
 
-export function BlogSection() {
+export interface SanityPost {
+  _id: string;
+  title: string;
+  slug: string;
+  publishedAt: string;
+  excerpt: string;
+  categories: string[];
+}
+
+export function BlogSection({ sanityPosts }: { sanityPosts?: SanityPost[] | null }) {
+  const postsToRender = sanityPosts && sanityPosts.length > 0 
+    ? sanityPosts.map(post => ({
+        id: post._id,
+        title: post.title,
+        date: new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        readTime: "5 min read",
+        category: post.categories?.[0] || "Blog",
+        excerpt: post.excerpt || "",
+        slug: post.slug
+      }))
+    : blogPosts;
+
   return (
     <section id="blog" className="section py-24 relative">
       <motion.div
@@ -45,7 +70,7 @@ export function BlogSection() {
         <div className="glow-divider"></div>
         
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogPosts.map((post, index) => (
+          {postsToRender.map((post, index) => (
             <motion.div
               key={post.id}
               initial={{ opacity: 0, y: 20 }}
@@ -67,13 +92,14 @@ export function BlogSection() {
                 {post.excerpt}
               </p>
               
-              <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+              <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5 relative z-20">
                 <span className="text-xs font-medium text-accent-purple bg-accent-purple/10 px-2.5 py-1 rounded-md">
                   {post.category}
                 </span>
-                <button className="text-white group-hover:text-accent-cyan transition-colors">
+                <Link href={`/blog/${post.slug}`} className="text-white group-hover:text-accent-cyan transition-colors flex items-center gap-2">
+                  <span className="text-sm font-medium">Read</span>
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}
