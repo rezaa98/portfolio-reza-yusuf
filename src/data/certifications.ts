@@ -10,6 +10,7 @@ export interface Certification {
   imageUrl?: string;
   certUrl: string;
   featured: boolean;
+  summary?: string;
   skills: string[] | readonly string[];
 }
 
@@ -25,6 +26,7 @@ export const certifications: Certification[] = [
     badgeUrl: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg",
     certUrl: "https://learn.microsoft.com/api/credentials/share/id-id/RezaYusufMaulana-8135/FFC385597D50E2E5?sharingId",
     featured: true,
+    summary: "Mempelajari perencanaan, pengembangan, dan penerapan solusi AI menggunakan Azure AI Services. Mencakup pemrosesan bahasa alami (NLP), computer vision, Generative AI, penerapan pola RAG (Retrieval-Augmented Generation), dan Prompt Engineering tingkat lanjut di ekosistem Microsoft Azure.",
     skills: ["Azure AI Foundry", "Generative AI", "RAG", "Azure OpenAI", "Prompt Engineering"],
     imageUrl: "/images/certifications/azure-ai-engineer-associate.pdf",
   },
@@ -53,6 +55,7 @@ export const certifications: Certification[] = [
     badgeUrl: "https://images.credly.com/images/441578ec-c0f3-46cc-95fc-86b27e90cf4f/image.png",
     certUrl: "https://www.credly.com/users/reza-yusuf-maulana/badges",
     featured: true,
+    summary: "Mempelajari fondasi analitik keamanan siber (Cybersecurity Analytics), metode deteksi intrusi, pengawasan keamanan jaringan, dan respons insiden. Meliputi pemahaman komprehensif tentang kontrol akses, firewall, mitigasi ancaman, hingga keamanan cloud dan kriptografi.",
     skills: ["Access Controls", "Firewalls", "Cloud Security", "Cryptography", "Incident Response"],
   },
   {
@@ -250,6 +253,7 @@ export const certifications: Certification[] = [
     badgeUrl: "https://assets.cdn.dicoding.com/original/commons/new-ui-logo.png",
     certUrl: "https://www.dicoding.com/certificates/6RPN7JDY9X2M",
     featured: true,
+    summary: "Mempelajari praktik MLOps (Machine Learning Operations) untuk mendesain, membangun, dan men-deploy sistem ML ke tahap produksi. Membahas pipeline ML, tracking eksperimen menggunakan MLflow, containerisasi, CI/CD, hingga monitoring model secara berkelanjutan agar reliabel di environment production.",
     skills: ["MLOps", "MLflow", "Machine Learning", "Production ML"],
   },
   {
