@@ -190,8 +190,16 @@ export function CertificationsSection() {
                 <X size={20} />
               </button>
               <div className="w-full h-full overflow-hidden rounded-xl bg-black/50 flex items-center justify-center">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={selectedImage} alt="Certificate Full Image" className="max-w-full max-h-[85vh] object-contain rounded-lg" />
+                {selectedImage.toLowerCase().endsWith('.pdf') ? (
+                  <iframe 
+                    src={selectedImage} 
+                    className="w-full h-[85vh] rounded-lg bg-white" 
+                    title="Certificate PDF"
+                  />
+                ) : (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img src={selectedImage} alt="Certificate Full" className="max-w-full max-h-[85vh] object-contain rounded-lg" />
+                )}
               </div>
             </motion.div>
           </motion.div>
