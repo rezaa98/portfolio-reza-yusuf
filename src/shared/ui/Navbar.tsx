@@ -47,8 +47,9 @@ export function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <Link href={isHome ? "#" : "/"} className="text-xl font-bold font-space-grotesk tracking-tight">
-          <span className="gradient-text">Reza</span> Y.M.
+        <Link href={isHome ? "#" : "/"} className="text-xl font-bold font-space-grotesk tracking-tight flex items-center">
+          <span className="text-white">&lt;RezaCode</span>
+          <span className="text-accent-cyan">.cloud/&gt;</span>
         </Link>
 
         {/* Desktop Nav */}

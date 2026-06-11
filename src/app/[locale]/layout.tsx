@@ -4,9 +4,9 @@ import { getMessages } from 'next-intl/server';
 import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "Reza Yusuf Maulana — QA Engineer & AI Testing Specialist",
+  title: "RezaCode.cloud | QA Engineer & AI Testing Specialist",
   description:
-    "Portfolio of Reza Yusuf Maulana — Quality Assurance Engineer with 4+ years of experience in Web, Mobile & API testing for fintech. Expert in Cypress, Playwright, AI-driven testing, and Google Cloud.",
+    "Portfolio of Reza Yusuf Maulana — Quality Assurance Engineer with 4+ years of experience. Expert in Cypress, Playwright, AI-driven testing, and Google Cloud.",
   keywords: [
     "QA Engineer",
     "Quality Assurance",
@@ -24,16 +24,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://rezayusufmaulana.vercel.app",
-    title: "Reza Yusuf Maulana — QA Engineer & AI Testing Specialist",
+    url: "https://rezacode.cloud",
+    title: "RezaCode.cloud | QA Engineer & AI Testing Specialist",
     description:
       "Portfolio of Reza Yusuf Maulana — QA Engineer with 4+ years at BFI Finance. 24+ certifications from Microsoft, Google Cloud, Cisco & Dicoding.",
-    siteName: "Reza Yusuf Maulana Portfolio",
+    siteName: "RezaCode.cloud",
+    images: [{ url: "https://rezacode.cloud/logo.png" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Reza Yusuf Maulana — QA Engineer",
+    title: "RezaCode.cloud | QA Engineer",
     description: "QA Engineer | AI Testing | 24+ Certifications",
+    images: ["https://rezacode.cloud/logo.png"],
   },
   robots: { index: true, follow: true },
 };
