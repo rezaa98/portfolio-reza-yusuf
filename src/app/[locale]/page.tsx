@@ -13,13 +13,16 @@ import { client } from "@/sanity/client";
 async function fetchSanityPosts() {
   if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return null;
   try {
-    const query = `*[_type == "post"] | order(publishedAt desc) {
+    const query = `*[_type == "post"] | order(coalesce(isPinned, false) desc, publishedAt desc) {
       _id,
       title,
       "slug": slug.current,
       publishedAt,
       excerpt,
-      "categories": categories[]->title
+      isPinned,
+      "categories": categories[]->title,
+      "mainImage": mainImage.asset->url,
+      "firstBodyImage": body[_type == "image"][0].asset->url
     }`;
     return await client.fetch(query);
   } catch (error) {

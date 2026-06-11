@@ -12,6 +12,12 @@ export const postType = defineType({
       type: 'string',
     }),
     defineField({
+      name: 'isPinned',
+      title: 'Pin this post to the top',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
       name: 'slug',
       type: 'slug',
       options: {

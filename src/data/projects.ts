@@ -30,12 +30,12 @@ export const projects = [
   {
     id: "proj-003",
     title: "Machine Learning & CI/CD Pipeline",
-    slug: "ml-cicd-dicoding",
-    shortDesc: "Proyek eksperimen implementasi model Machine Learning beserta pipeline otomatis Continuous Integration & Deployment (CI/CD) sebagai bagian dari sertifikasi Dicoding.",
-    longDesc: "Sebuah portofolio komprehensif yang dibuat sebagai syarat penyelesaian sertifikasi Dicoding. Proyek ini terbagi menjadi dua pilar utama: pertama, perancangan Sistem Machine Learning andal menggunakan Python dan teknik Data Science modern untuk model prediktif; kedua, penerapan Workflow CI/CD otomatis menggunakan GitHub Actions yang secara konsisten menguji, memvalidasi, dan men-deploy pembaruan sistem secara langsung. Hasilnya adalah siklus pengembangan yang efisien dan minim bug.",
+    slug: "ml-cicd-pipeline",
+    shortDesc: "Proyek eksperimen end-to-end implementasi Exploratory Data Analysis (EDA) untuk prediksi harga rumah California, dilengkapi pipeline otomatis CI/CD.",
+    longDesc: "Sebuah portofolio komprehensif yang menampilkan keahlian Data Science dan MLOps. Proyek ini terbagi menjadi dua pilar utama: pertama, perancangan Sistem Machine Learning (SML) berbasis Python untuk memproses dataset California Housing Prices; kedua, penerapan Workflow CI/CD otomatis menggunakan GitHub Actions yang secara konsisten menguji, memvalidasi, dan men-deploy pipeline data secara efisien dan minim bug.",
     category: "ai",
-    techStack: ["Machine Learning", "Python", "CI/CD", "GitHub Actions"],
-    thumbnailUrl: null,
+    techStack: ["Machine Learning", "Python", "EDA", "CI/CD", "GitHub Actions"],
+    thumbnailUrl: "/images/projects/machine-learning.png",
     demoUrl: null,
     githubUrl: null,
     githubUrls: [

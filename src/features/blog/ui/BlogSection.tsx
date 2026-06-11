@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRight, Clock, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Clock, Calendar, ChevronLeft, ChevronRight, Pin } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -41,6 +41,9 @@ export interface SanityPost {
   publishedAt: string;
   excerpt: string;
   categories: string[];
+  isPinned?: boolean;
+  mainImage?: string;
+  firstBodyImage?: string;
 }
 
 const POSTS_PER_PAGE = 3;
@@ -56,19 +59,35 @@ export function BlogSection({ sanityPosts }: { sanityPosts?: SanityPost[] | null
         readTime: "5 min read",
         category: post.categories?.[0] || "Blog",
         excerpt: post.excerpt || "",
-        slug: post.slug
+        slug: post.slug,
+        isPinned: post.isPinned,
+        thumbnail: post.mainImage || post.firstBodyImage
       }))
     : blogPosts;
 
   const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
   const paginatedPosts = allPosts.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE);
 
+  const scrollToTop = () => {
+    const element = document.getElementById("blog");
+    if (element) {
+      const y = element.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
   const handleNextPage = () => {
-    if (currentPage < totalPages) setCurrentPage(prev => prev + 1);
+    if (currentPage < totalPages) {
+      setCurrentPage(prev => prev + 1);
+      scrollToTop();
+    }
   };
 
   const handlePrevPage = () => {
-    if (currentPage > 1) setCurrentPage(prev => prev - 1);
+    if (currentPage > 1) {
+      setCurrentPage(prev => prev - 1);
+      scrollToTop();
+    }
   };
 
   return (
@@ -94,6 +113,24 @@ export function BlogSection({ sanityPosts }: { sanityPosts?: SanityPost[] | null
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="group glass p-6 rounded-2xl border border-white/5 hover:border-accent-purple/30 transition-all hover:-translate-y-2 flex flex-col"
             >
+              {post.thumbnail ? (
+                <div className="w-full h-40 mb-5 overflow-hidden rounded-xl border border-white/5 relative bg-bg-primary/50">
+                  {post.isPinned && (
+                    <div className="absolute top-2 left-2 bg-accent-blue text-white text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-lg z-10 backdrop-blur-md">
+                      <Pin size={10} className="fill-white" /> Pinned
+                    </div>
+                  )}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" />
+                </div>
+              ) : (
+                post.isPinned && (
+                  <div className="inline-flex items-center gap-1.5 text-xs font-bold text-accent-blue mb-3 w-max px-2 py-1 bg-accent-blue/10 rounded-full border border-accent-blue/20">
+                    <Pin size={12} className="fill-accent-blue" /> Pinned
+                  </div>
+                )
+              )}
+              
               <div className="flex items-center gap-4 text-xs text-text-muted font-mono mb-4">
                 <span className="flex items-center gap-1.5"><Calendar size={12} /> {post.date}</span>
                 <span className="flex items-center gap-1.5"><Clock size={12} /> {post.readTime}</span>

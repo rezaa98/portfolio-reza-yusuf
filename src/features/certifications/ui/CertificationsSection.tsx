@@ -45,7 +45,11 @@ export function CertificationsSection() {
 
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
-    document.getElementById("certifications")?.scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById("certifications");
+    if (element) {
+      const y = element.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   };
 
   return (
