@@ -104,61 +104,84 @@ export function BlogSection({ sanityPosts }: { sanityPosts?: SanityPost[] | null
         </div>
         <div className="glow-divider"></div>
         
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[400px]">
-          {paginatedPosts.map((post, index) => (
-            <motion.div
-              key={post.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="group glass p-6 rounded-2xl border border-white/5 hover:border-accent-purple/30 transition-all hover:-translate-y-2 flex flex-col"
-            >
-              {post.thumbnail ? (
-                <div className="w-full h-40 mb-5 overflow-hidden rounded-xl border border-white/5 relative bg-bg-primary/50">
-                  {post.isPinned && (
-                    <div className="absolute top-2 left-2 bg-accent-blue text-white text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-lg z-10 backdrop-blur-md">
-                      <Pin size={10} className="fill-white" /> Pinned
-                    </div>
-                  )}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" />
-                </div>
-              ) : (
-                post.isPinned && (
-                  <div className="inline-flex items-center gap-1.5 text-xs font-bold text-accent-blue mb-3 w-max px-2 py-1 bg-accent-blue/10 rounded-full border border-accent-blue/20">
-                    <Pin size={12} className="fill-accent-blue" /> Pinned
+        <div className="relative w-full">
+          {totalPages > 1 && (
+             <>
+               <button 
+                 onClick={handlePrevPage} 
+                 disabled={currentPage === 1}
+                 className="hidden lg:flex absolute top-1/2 -left-16 -translate-y-1/2 p-3 rounded-full glass border border-white/10 hover:bg-white/10 hover:scale-110 disabled:opacity-30 disabled:hover:scale-100 disabled:cursor-not-allowed transition-all shadow-xl z-10"
+                 aria-label="Previous Page"
+               >
+                 <ChevronLeft size={28} />
+               </button>
+               <button 
+                 onClick={handleNextPage} 
+                 disabled={currentPage === totalPages}
+                 className="hidden lg:flex absolute top-1/2 -right-16 -translate-y-1/2 p-3 rounded-full glass border border-white/10 hover:bg-white/10 hover:scale-110 disabled:opacity-30 disabled:hover:scale-100 disabled:cursor-not-allowed transition-all shadow-xl z-10"
+                 aria-label="Next Page"
+               >
+                 <ChevronRight size={28} />
+               </button>
+             </>
+           )}
+
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[400px]">
+            {paginatedPosts.map((post, index) => (
+              <motion.div
+                key={post.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="group glass p-6 rounded-2xl border border-white/5 hover:border-accent-purple/30 transition-all hover:-translate-y-2 flex flex-col"
+              >
+                {post.thumbnail ? (
+                  <div className="w-full h-40 mb-5 overflow-hidden rounded-xl border border-white/5 relative bg-bg-primary/50">
+                    {post.isPinned && (
+                      <div className="absolute top-2 left-2 bg-accent-blue text-white text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-lg z-10 backdrop-blur-md">
+                        <Pin size={10} className="fill-white" /> Pinned
+                      </div>
+                    )}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" />
                   </div>
-                )
-              )}
-              
-              <div className="flex items-center gap-4 text-xs text-text-muted font-mono mb-4">
-                <span className="flex items-center gap-1.5"><Calendar size={12} /> {post.date}</span>
-                <span className="flex items-center gap-1.5"><Clock size={12} /> {post.readTime}</span>
-              </div>
-              
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent-cyan transition-colors leading-snug">
-                {post.title}
-              </h3>
-              
-              <p className="text-text-secondary text-sm leading-relaxed mb-6 flex-1">
-                {post.excerpt}
-              </p>
-              
-              <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5 relative z-20">
-                <span className="text-xs font-medium text-accent-purple bg-accent-purple/10 px-2.5 py-1 rounded-md">
-                  {post.category}
-                </span>
-                <Link href={`/blog/${post.slug}`} className="text-white group-hover:text-accent-cyan transition-colors flex items-center gap-2">
-                  <span className="text-sm font-medium">Read</span>
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </motion.div>
-          ))}
+                ) : (
+                  post.isPinned && (
+                    <div className="inline-flex items-center gap-1.5 text-xs font-bold text-accent-blue mb-3 w-max px-2 py-1 bg-accent-blue/10 rounded-full border border-accent-blue/20">
+                      <Pin size={12} className="fill-accent-blue" /> Pinned
+                    </div>
+                  )
+                )}
+                
+                <div className="flex items-center gap-4 text-xs text-text-muted font-mono mb-4">
+                  <span className="flex items-center gap-1.5"><Calendar size={12} /> {post.date}</span>
+                  <span className="flex items-center gap-1.5"><Clock size={12} /> {post.readTime}</span>
+                </div>
+                
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent-cyan transition-colors leading-snug">
+                  {post.title}
+                </h3>
+                
+                <p className="text-text-secondary text-sm leading-relaxed mb-6 flex-1">
+                  {post.excerpt}
+                </p>
+                
+                <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5 relative z-20">
+                  <span className="text-xs font-medium text-accent-purple bg-accent-purple/10 px-2.5 py-1 rounded-md">
+                    {post.category}
+                  </span>
+                  <Link href={`/blog/${post.slug}`} className="text-white group-hover:text-accent-cyan transition-colors flex items-center gap-2">
+                    <span className="text-sm font-medium">Read</span>
+                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {totalPages > 1 && (
-          <div className="flex justify-center items-center gap-4 mt-12">
+          <div className="flex justify-center items-center gap-4 mt-12 lg:hidden">
             <button 
               onClick={handlePrevPage} 
               disabled={currentPage === 1}
