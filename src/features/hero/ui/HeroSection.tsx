@@ -51,7 +51,9 @@ export function HeroSection() {
           <Link href="#projects">{t("cta_projects")}</Link>
         </Button>
         <Button asChild size="lg" variant="outline">
-          <Link href="#contact">{t("cta_contact")}</Link>
+          <a href="/CV_Reza_Yusuf_Maulana.pdf" target="_blank" rel="noopener noreferrer">
+            {t("cta_contact")}
+          </a>
         </Button>
       </motion.div>
 
