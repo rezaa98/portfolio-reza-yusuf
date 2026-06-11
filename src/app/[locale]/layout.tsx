@@ -60,7 +60,9 @@ export default async function RootLayout({
       </head>
       <body suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <div className="relative flex flex-col min-h-screen overflow-x-hidden w-full max-w-[100vw]">
+            {children}
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>
