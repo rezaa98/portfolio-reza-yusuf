@@ -1,7 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRight, Clock, Calendar } from "lucide-react";
+import { ArrowRight, Clock, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 export const blogPosts = [
   {
@@ -42,8 +43,12 @@ export interface SanityPost {
   categories: string[];
 }
 
+const POSTS_PER_PAGE = 3;
+
 export function BlogSection({ sanityPosts }: { sanityPosts?: SanityPost[] | null }) {
-  const postsToRender = sanityPosts && sanityPosts.length > 0 
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const allPosts = sanityPosts && sanityPosts.length > 0 
     ? sanityPosts.map(post => ({
         id: post._id,
         title: post.title,
@@ -54,6 +59,17 @@ export function BlogSection({ sanityPosts }: { sanityPosts?: SanityPost[] | null
         slug: post.slug
       }))
     : blogPosts;
+
+  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+  const paginatedPosts = allPosts.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) setCurrentPage(prev => prev + 1);
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) setCurrentPage(prev => prev - 1);
+  };
 
   return (
     <section id="blog" className="section py-24 relative">
@@ -69,14 +85,13 @@ export function BlogSection({ sanityPosts }: { sanityPosts?: SanityPost[] | null
         </div>
         <div className="glow-divider"></div>
         
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {postsToRender.map((post, index) => (
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[400px]">
+          {paginatedPosts.map((post, index) => (
             <motion.div
               key={post.id}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
               className="group glass p-6 rounded-2xl border border-white/5 hover:border-accent-purple/30 transition-all hover:-translate-y-2 flex flex-col"
             >
               <div className="flex items-center gap-4 text-xs text-text-muted font-mono mb-4">
@@ -104,6 +119,30 @@ export function BlogSection({ sanityPosts }: { sanityPosts?: SanityPost[] | null
             </motion.div>
           ))}
         </div>
+
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-4 mt-12">
+            <button 
+              onClick={handlePrevPage} 
+              disabled={currentPage === 1}
+              className="p-2 rounded-full glass border border-white/10 hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+              aria-label="Previous Page"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <div className="text-text-secondary font-mono text-sm">
+              Page <span className="text-white font-bold">{currentPage}</span> of {totalPages}
+            </div>
+            <button 
+              onClick={handleNextPage} 
+              disabled={currentPage === totalPages}
+              className="p-2 rounded-full glass border border-white/10 hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+              aria-label="Next Page"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </div>
+        )}
       </motion.div>
     </section>
   );
