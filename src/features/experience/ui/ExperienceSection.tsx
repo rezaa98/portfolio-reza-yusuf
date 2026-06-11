@@ -1,8 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 import { experiences } from "@/data/experience";
+import { useTranslations } from "next-intl";
 
 export function ExperienceSection() {
+  const t = useTranslations("Experience");
   return (
     <section id="experience" className="section py-24 bg-bg-secondary/30 relative">
       <motion.div
@@ -13,7 +15,7 @@ export function ExperienceSection() {
       >
         <div className="flex items-center gap-4 mb-2">
           <span className="section-label">02 //</span>
-          <h2 className="section-title mb-0">Experience</h2>
+          <h2 className="section-title mb-0">{t("title")}</h2>
         </div>
         <div className="glow-divider"></div>
         

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { certifications } from "@/data/certifications";
 import { ExternalLink, Award, ChevronLeft, ChevronRight, X, Eye } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 function BadgeImage({ cert }: { cert: typeof certifications[number] }) {
   const [error, setError] = useState(false);
@@ -23,6 +24,7 @@ function BadgeImage({ cert }: { cert: typeof certifications[number] }) {
 }
 
 export function CertificationsSection() {
+  const t = useTranslations("Certifications");
   const [filter, setFilter] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
@@ -66,13 +68,11 @@ export function CertificationsSection() {
       >
         <div className="flex items-center gap-4 mb-2">
           <span className="section-label">05 //</span>
-          <h2 className="section-title mb-0">Certifications</h2>
+          <h2 className="section-title mb-0">{t("title")}</h2>
         </div>
         <div className="glow-divider"></div>
         
-        <p className="text-text-secondary max-w-2xl mb-10">
-          A collection of <strong className="text-white">24+ professional certifications</strong> focused on Artificial Intelligence, Cloud Computing, and Cybersecurity.
-        </p>
+        <p className="text-text-secondary max-w-2xl mb-10" dangerouslySetInnerHTML={{ __html: t.raw("description") }} />
 
         {/* Filter */}
         <div className="flex flex-wrap gap-2 mb-12">

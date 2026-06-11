@@ -24,5 +24,37 @@
     "stats_experience": "Tahun Peng.",
     "stats_certifications": "Sertifikasi",
     "stats_companies": "Perusahaan"
+  },
+  "Experience": {
+    "title": "Pengalaman"
+  },
+  "Projects": {
+    "title": "Proyek Unggulan",
+    "view_repo": "Lihat Repositori",
+    "jelajah-pintar": {
+      "shortDesc": "Aplikasi navigasi cerdas menggunakan AI & Google Maps Platform untuk menemukan spot kuliner/hidden gems yang searah rute perjalanan.",
+      "longDesc": "JelajahPintar adalah sebuah aplikasi inovatif yang menggabungkan kecerdasan buatan (AI) dengan Google Maps Platform untuk memberikan pengalaman navigasi yang efisien bagi traveler modern. Sistem secara otomatis memindai rute yang telah ditentukan pengguna, lalu menyarankan titik kuliner legendaris dan destinasi wisata (hidden gems) yang berada tepat di sepanjang rute tanpa mengharuskan pengguna melakukan putar balik (zero-detour)."
+    },
+    "lumina-aesthetic": {
+      "shortDesc": "Aplikasi web berbasis AI untuk analisis geometri wajah dan simulasi kacamata 3D (AR Try-On) menggunakan Face-API dan Gemini AI.",
+      "longDesc": "LuminaAesthetic adalah Optometric Design Suite cerdas yang menggabungkan Computer Vision (Face-API) dan Generative AI (Gemini Flash) untuk analisis anatomi wajah yang presisi. Fitur utamanya meliputi deteksi geometri wajah 68-titik, simulasi AR coba kacamata virtual dengan penyesuaian otomatis (auto-alignment), analisis tona kulit, serta ekstraksi laporan medis optik ke dalam format PDF yang mendukung bilingual (ID/EN)."
+    },
+    "ml-cicd-pipeline": {
+      "shortDesc": "Proyek eksperimen end-to-end implementasi Exploratory Data Analysis (EDA) untuk prediksi harga rumah California, dilengkapi pipeline otomatis CI/CD.",
+      "longDesc": "Sebuah portofolio komprehensif yang menampilkan keahlian Data Science dan MLOps. Proyek ini terbagi menjadi dua pilar utama: pertama, perancangan Sistem Machine Learning (SML) berbasis Python untuk memproses dataset California Housing Prices; kedua, penerapan Workflow CI/CD otomatis menggunakan GitHub Actions yang secara konsisten menguji, memvalidasi, dan men-deploy pipeline data secara efisien dan minim bug."
+    }
+  },
+  "Skills": {
+    "title": "Keahlian Utama"
+  },
+  "Certifications": {
+    "title": "Sertifikasi",
+    "description": "Koleksi <strong>24+ sertifikasi profesional</strong> yang berfokus pada Kecerdasan Buatan, Cloud Computing, dan Keamanan Siber."
+  },
+  "Blog": {
+    "title": "Tulisan & Wawasan"
+  },
+  "Contact": {
+    "title": "Hubungi Saya"
   }
 }

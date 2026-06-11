@@ -2,8 +2,10 @@
 import { motion } from "framer-motion";
 import { skills } from "@/data/skills";
 import { CheckCircle2, Sparkles } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function SkillsSection() {
+  const t = useTranslations("Skills");
   const categories = [
     { id: "automation", label: "Automation Testing", data: skills.automation, color: "text-accent-blue" },
     { id: "cloudAndAI", label: "Cloud & AI", data: skills.cloudAndAI, color: "text-accent-purple" },
@@ -21,7 +23,7 @@ export function SkillsSection() {
       >
         <div className="flex items-center gap-4 mb-2">
           <span className="section-label">04 //</span>
-          <h2 className="section-title mb-0">Core Skills</h2>
+          <h2 className="section-title mb-0">{t("title")}</h2>
         </div>
         <div className="glow-divider"></div>
         

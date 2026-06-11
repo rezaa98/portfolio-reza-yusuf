@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Clock, Calendar, ChevronLeft, ChevronRight, Pin } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export type PostItem = {
   id: string;
@@ -61,6 +62,7 @@ export interface SanityPost {
 const POSTS_PER_PAGE = 3;
 
 export function BlogSection({ sanityPosts }: { sanityPosts?: SanityPost[] | null }) {
+  const t = useTranslations("Blog");
   const [currentPage, setCurrentPage] = useState(1);
 
   const allPosts = sanityPosts && sanityPosts.length > 0 
@@ -116,7 +118,7 @@ export function BlogSection({ sanityPosts }: { sanityPosts?: SanityPost[] | null
       >
         <div className="flex items-center gap-4 mb-2">
           <span className="section-label">06 //</span>
-          <h2 className="section-title mb-0">Insights & Writing</h2>
+          <h2 className="section-title mb-0">{t("title")}</h2>
         </div>
         <div className="glow-divider"></div>
         

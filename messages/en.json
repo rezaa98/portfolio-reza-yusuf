@@ -24,5 +24,37 @@
     "stats_experience": "Years Exp.",
     "stats_certifications": "Certifications",
     "stats_companies": "Companies"
+  },
+  "Experience": {
+    "title": "Experience"
+  },
+  "Projects": {
+    "title": "Featured Projects",
+    "view_repo": "View Repository",
+    "jelajah-pintar": {
+      "shortDesc": "A smart navigation app using AI & Google Maps Platform to discover culinary spots and hidden gems along your travel route.",
+      "longDesc": "JelajahPintar is an innovative application that combines Artificial Intelligence (AI) with the Google Maps Platform to provide an efficient navigation experience for modern travelers. The system automatically scans the user's predetermined route, then suggests legendary culinary spots and tourist destinations (hidden gems) located right along the route without requiring the user to make U-turns (zero-detour)."
+    },
+    "lumina-aesthetic": {
+      "shortDesc": "An AI-powered web application for facial geometry analysis and 3D glasses simulation (AR Try-On) using Face-API and Gemini AI.",
+      "longDesc": "LuminaAesthetic is an intelligent Optometric Design Suite that combines Computer Vision (Face-API) and Generative AI (Gemini Flash) for precise facial anatomy analysis. Key features include 68-point facial geometry detection, AR virtual glasses try-on simulation with auto-alignment, skin tone analysis, and optical medical report extraction into bilingual PDF format (ID/EN)."
+    },
+    "ml-cicd-pipeline": {
+      "shortDesc": "An end-to-end experimental project implementing Exploratory Data Analysis (EDA) for California housing price prediction, complete with automated CI/CD pipeline.",
+      "longDesc": "A comprehensive portfolio showcasing Data Science and MLOps expertise. This project is divided into two main pillars: first, designing a Python-based Machine Learning System (SML) to process the California Housing Prices dataset; second, implementing automated CI/CD Workflows using GitHub Actions that consistently test, validate, and deploy data pipelines efficiently with minimal bugs."
+    }
+  },
+  "Skills": {
+    "title": "Core Skills"
+  },
+  "Certifications": {
+    "title": "Certifications",
+    "description": "A collection of <strong>24+ professional certifications</strong> focused on Artificial Intelligence, Cloud Computing, and Cybersecurity."
+  },
+  "Blog": {
+    "title": "Insights & Writing"
+  },
+  "Contact": {
+    "title": "Get In Touch"
   }
 }
