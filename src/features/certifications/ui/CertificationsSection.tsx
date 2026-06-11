@@ -4,6 +4,24 @@ import { motion, AnimatePresence } from "framer-motion";
 import { certifications } from "@/data/certifications";
 import { ExternalLink, Award, ChevronLeft, ChevronRight, X, Eye } from "lucide-react";
 
+function BadgeImage({ cert }: { cert: typeof certifications[number] }) {
+  const [error, setError] = useState(false);
+
+  if (!cert.badgeUrl || error) {
+    return <Award size={24} className={cert.featured ? "text-accent-cyan" : "text-text-muted"} />;
+  }
+
+  return (
+    /* eslint-disable-next-line @next/next/no-img-element */
+    <img 
+      src={cert.badgeUrl} 
+      alt={cert.name} 
+      className="w-full h-full object-contain" 
+      onError={() => setError(true)}
+    />
+  );
+}
+
 export function CertificationsSection() {
   const [filter, setFilter] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
@@ -77,12 +95,7 @@ export function CertificationsSection() {
               >
                 <div className="flex justify-between items-start mb-4">
                   <div className="p-2 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center w-14 h-14 overflow-hidden">
-                    {cert.badgeUrl ? (
-                      /* eslint-disable-next-line @next/next/no-img-element */
-                      <img src={cert.badgeUrl} alt={cert.name} className="w-full h-full object-contain" />
-                    ) : (
-                      <Award size={24} className={cert.featured ? "text-accent-cyan" : "text-text-muted"} />
-                    )}
+                    <BadgeImage cert={cert} />
                   </div>
                   <div className="text-xs font-mono font-medium text-text-muted bg-bg-primary px-2 py-1 rounded">
                     {cert.year}
