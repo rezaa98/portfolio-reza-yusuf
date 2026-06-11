@@ -180,9 +180,7 @@ export function ProjectsSection() {
               </p>
               
               <div className="flex flex-wrap gap-4 pt-6 border-t border-white/10">
-                {/* @ts-expect-error Typescript array inference */}
                 {selectedProject.githubUrls ? (
-                  /* @ts-expect-error Typescript array inference */
                   selectedProject.githubUrls.map((repo, idx) => (
                     <a 
                       key={idx}
