@@ -26,7 +26,7 @@ export const certifications: Certification[] = [
     certUrl: "https://learn.microsoft.com/api/credentials/share/id-id/RezaYusufMaulana-8135/FFC385597D50E2E5?sharingId",
     featured: true,
     skills: ["Azure AI Foundry", "Generative AI", "RAG", "Azure OpenAI", "Prompt Engineering"],
-    imageUrl: "https://placehold.co/800x600/1e1e2e/00d2ff?text=Azure+AI+Certificate+Full",
+    imageUrl: "/images/certifications/azure-ai-engineer-associate.pdf",
   },
   {
     id: "cert-002",
@@ -40,6 +40,7 @@ export const certifications: Certification[] = [
     certUrl: "http://www.dicoding.com/elevate/certificates/ONLTJWQH98",
     featured: true,
     skills: ["RAG", "Fine-Tuning", "Azure Copilot", "LLM"],
+    imageUrl: "/images/certifications/rag-finetuning-azure.pdf",
   },
   {
     id: "cert-003",
@@ -79,6 +80,7 @@ export const certifications: Certification[] = [
     certUrl: "https://www.credly.com/users/reza-yusuf-maulana/badges",
     featured: true,
     skills: ["Gemini", "Generative AI", "Python", "Vertex AI"],
+    imageUrl: "/images/certifications/explore-genai-vertex-gemini.png",
   },
   {
     id: "cert-006",
@@ -92,6 +94,7 @@ export const certifications: Certification[] = [
     certUrl: "https://www.credly.com/users/reza-yusuf-maulana/badges",
     featured: false,
     skills: ["Gemini", "Imagen", "NLP", "Vertex AI"],
+    imageUrl: "/images/certifications/realworld-ai-gemini-imagen.png",
   },
   {
     id: "cert-007",
