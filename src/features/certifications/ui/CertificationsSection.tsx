@@ -2,12 +2,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { certifications } from "@/data/certifications";
-import { ExternalLink, Award, ChevronLeft, ChevronRight } from "lucide-react";
+import { ExternalLink, Award, ChevronLeft, ChevronRight, X, Eye } from "lucide-react";
 
 export function CertificationsSection() {
   const [filter, setFilter] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   
   const issuers = ["All", "Microsoft", "Google Cloud", "Dicoding", "Cisco"];
   
@@ -75,8 +76,13 @@ export function CertificationsSection() {
                 }`}
               >
                 <div className="flex justify-between items-start mb-4">
-                  <div className="p-2 bg-white/5 rounded-lg border border-white/10">
-                    <Award size={24} className={cert.featured ? "text-accent-cyan" : "text-text-muted"} />
+                  <div className="p-2 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center w-14 h-14 overflow-hidden">
+                    {cert.badgeUrl ? (
+                      /* eslint-disable-next-line @next/next/no-img-element */
+                      <img src={cert.badgeUrl} alt={cert.name} className="w-full h-full object-contain" />
+                    ) : (
+                      <Award size={24} className={cert.featured ? "text-accent-cyan" : "text-text-muted"} />
+                    )}
                   </div>
                   <div className="text-xs font-mono font-medium text-text-muted bg-bg-primary px-2 py-1 rounded">
                     {cert.year}
@@ -104,15 +110,27 @@ export function CertificationsSection() {
                   )}
                 </div>
                 
-                <a 
-                  href={cert.certUrl} 
-                  target="_blank" 
-                  rel="noreferrer"
-                  className="inline-flex items-center text-sm font-medium text-text-secondary hover:text-accent-cyan transition-colors group mt-auto"
-                >
-                  View Credential
-                  <ExternalLink size={14} className="ml-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </a>
+                <div className="flex items-center gap-4 mt-auto">
+                  <a 
+                    href={cert.certUrl} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="inline-flex items-center text-sm font-medium text-text-secondary hover:text-accent-cyan transition-colors group"
+                  >
+                    View Credential
+                    <ExternalLink size={14} className="ml-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </a>
+                  
+                  {cert.imageUrl && (
+                    <button 
+                      onClick={() => setSelectedImage(cert.imageUrl!)}
+                      className="inline-flex items-center text-sm font-medium text-text-secondary hover:text-accent-purple transition-colors group"
+                    >
+                      View Image
+                      <Eye size={14} className="ml-1 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-transform" />
+                    </button>
+                  )}
+                </div>
               </motion.div>
             ))}
           </AnimatePresence>
@@ -145,6 +163,40 @@ export function CertificationsSection() {
           </div>
         )}
       </motion.div>
+
+      {/* Modal Lightbox */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-bg-primary/90 backdrop-blur-md"
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-5xl w-full max-h-[90vh] glass p-2 rounded-2xl flex flex-col shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button 
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-4 -right-4 p-2 bg-accent-purple text-white rounded-full hover:scale-110 transition-transform shadow-glow z-10"
+                aria-label="Close modal"
+              >
+                <X size={20} />
+              </button>
+              <div className="w-full h-full overflow-hidden rounded-xl bg-black/50 flex items-center justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={selectedImage} alt="Certificate Full Image" className="max-w-full max-h-[85vh] object-contain rounded-lg" />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

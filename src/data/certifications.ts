@@ -1,4 +1,19 @@
-export const certifications = [
+export interface Certification {
+  id: string;
+  name: string;
+  issuer: string;
+  platform: string;
+  year: number;
+  category: string;
+  level: string;
+  badgeUrl?: string;
+  imageUrl?: string;
+  certUrl: string;
+  featured: boolean;
+  skills: string[] | readonly string[];
+}
+
+export const certifications: Certification[] = [
   {
     id: "cert-001",
     name: "Azure AI Engineer Associate",
@@ -11,6 +26,7 @@ export const certifications = [
     certUrl: "https://learn.microsoft.com/api/credentials/share/id-id/RezaYusufMaulana-8135/FFC385597D50E2E5?sharingId",
     featured: true,
     skills: ["Azure AI Foundry", "Generative AI", "RAG", "Azure OpenAI", "Prompt Engineering"],
+    imageUrl: "https://placehold.co/800x600/1e1e2e/00d2ff?text=Azure+AI+Certificate+Full",
   },
   {
     id: "cert-002",
@@ -311,6 +327,4 @@ export const certifications = [
     featured: false,
     skills: ["PowerPoint", "Presentation", "Microsoft Office"],
   },
-] as const;
-
-export type Certification = (typeof certifications)[number];
+];
