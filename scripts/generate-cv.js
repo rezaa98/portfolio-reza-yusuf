@@ -258,7 +258,7 @@ const htmlContent = `
   <div class="section summary">
     <h2 class="section-title">Summary</h2>
     <p>
-      Quality Assurance Engineer with over 4 years of experience in end-to-end quality assurance across Web,
+      Quality Assurance Engineer with over 5 years of experience in end-to-end quality assurance across Web,
       Mobile, and API platforms. Proven track record in transitioning from manual to automated testing using
       modern frameworks like Cypress and Playwright. Skilled in AI-driven testing, Cloud technologies (Azure,
       Google Cloud), and Shift-Left testing strategies. Adept at maintaining software quality standards in fast-paced

@@ -35,7 +35,7 @@ export function AboutSection() {
 
             <div className="grid grid-cols-3 gap-4">
               <div className="glass p-4 rounded-xl text-center hover:bg-bg-card-hover transition-colors">
-                <div className="text-3xl md:text-4xl font-bold text-accent-blue mb-1 font-space-grotesk">4+</div>
+                <div className="text-3xl md:text-4xl font-bold text-accent-blue mb-1 font-space-grotesk">5+</div>
                 <div className="text-xs md:text-sm text-text-muted">{t("stats_experience")}</div>
               </div>
               <div className="glass p-4 rounded-xl text-center hover:bg-bg-card-hover transition-colors">
