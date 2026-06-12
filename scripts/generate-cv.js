@@ -286,7 +286,7 @@ const htmlContent = `
         <li>Led AI-Driven Quality Management (AQM) validation &mdash; Voice-to-Text transcription accuracy &amp; automated scoring algorithms</li>
         <li>Collaborated with product teams on FSD/BRD documents (Shift-Left Testing) to prevent defects early in development</li>
         <li>Managed vendor assessment &amp; quality control of 3rd party deliverables</li>
-        <li>Collaborated daily with expatriate professionals from Malaysia, Bangladesh, and India in a multicultural working environment</li>
+        <li>Collaborated daily with expatriate professionals from Malaysia and India in a multicultural working environment</li>
       </ul>
     </div>
 
