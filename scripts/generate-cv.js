@@ -126,6 +126,7 @@ const htmlContent = `
 
     .exp-block {
       margin-bottom: 7pt;
+      page-break-inside: avoid;
     }
 
     .exp-block:last-child {
@@ -145,6 +146,7 @@ const htmlContent = `
     /* ── Projects ── */
     .project-block {
       margin-bottom: 5pt;
+      page-break-inside: avoid;
     }
 
     .project-block:last-child {
