@@ -19,6 +19,7 @@ export const experiences = [
       "Led AI-Driven Quality Management (AQM) validation — Voice-to-Text transcription accuracy & automated scoring algorithms",
       "Collaborated with product teams on FSD/BRD documents (Shift-Left Testing) to prevent defects early in development",
       "Managed vendor assessment & quality control of 3rd party deliverables",
+      "Collaborated daily with expatriate professionals from Malaysia, Bangladesh, and India in a multicultural working environment",
     ],
     projects: [
       {
