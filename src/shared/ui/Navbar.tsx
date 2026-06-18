@@ -24,6 +24,7 @@ export function Navbar() {
     { name: t("skills"), href: getHref("#skills") },
     { name: t("certifications"), href: getHref("#certifications") },
     { name: t("blog"), href: getHref("#blog") },
+    { name: t("web_demo"), href: "/web-demo" },
   ];
 
   const toggleLanguage = () => {
