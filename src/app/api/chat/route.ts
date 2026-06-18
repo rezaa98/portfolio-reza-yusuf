@@ -1,4 +1,4 @@
-import { streamText } from 'ai';
+import { streamText, convertToModelMessages } from 'ai';
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
 
 // Allow streaming responses up to 30 seconds
@@ -12,10 +12,14 @@ export async function POST(req: Request) {
       return new Response(JSON.stringify({ error: "Invalid request format. 'messages' array is required." }), { status: 400, headers: { "Content-Type": "application/json" } });
     }
 
-    // Initialize custom Google provider to support either GOOGLE_GENERATIVE_AI_API_KEY or GEMINI_API_KEY
+    // Initialize custom Google provider
     const customGoogle = createGoogleGenerativeAI({
       apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY,
     });
+
+    // AI SDK v6: useChat sends UIMessages (with `parts` array).
+    // streamText expects ModelMessages, so we must convert.
+    const modelMessages = await convertToModelMessages(messages);
 
     const result = streamText({
       model: customGoogle('gemini-2.5-flash'),
@@ -23,7 +27,7 @@ export async function POST(req: Request) {
 Your sole purpose is to generate Playwright E2E test scripts in TypeScript for a web application. 
 If the user asks for anything else not related to Playwright testing (like weather, general coding, or unrelated tasks), politely decline and state your purpose. 
 Always output valid TypeScript code in a markdown block, and provide brief, concise explanations.`,
-      messages,
+      messages: modelMessages,
     });
 
     return result.toUIMessageStreamResponse();
@@ -33,4 +37,3 @@ Always output valid TypeScript code in a markdown block, and provide brief, conc
     return new Response(JSON.stringify({ error: errorMessage }), { status: 500 });
   }
 }
-
