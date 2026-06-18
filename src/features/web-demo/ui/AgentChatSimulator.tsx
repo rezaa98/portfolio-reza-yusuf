@@ -6,8 +6,9 @@ import { useEffect, useRef } from "react";
 import { cn } from "@/shared/lib/utils";
 
 export function AgentChatSimulator() {
-  const { messages, input, handleInputChange, handleSubmit, isLoading, append } = useChat();
+  const { messages, input, setInput, handleInputChange, handleSubmit, isLoading, append } = useChat();
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -56,7 +57,17 @@ export function AgentChatSimulator() {
               {suggestedPrompts.map((prompt, i) => (
                 <button
                   key={i}
-                  onClick={() => append({ role: "user", content: prompt })}
+                  onClick={() => {
+                    if (append && typeof append === 'function') {
+                      append({ role: "user", content: prompt });
+                    } else if (setInput) {
+                      setInput(prompt);
+                      // Form will be submitted manually if append is broken
+                      setTimeout(() => {
+                        formRef.current?.requestSubmit();
+                      }, 50);
+                    }
+                  }}
                   className="text-left text-sm text-gray-300 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-3 transition-colors flex items-center justify-between"
                 >
                   <span>{prompt}</span>
@@ -103,7 +114,7 @@ export function AgentChatSimulator() {
 
       {/* Input Area */}
       <div className="p-4 bg-black/20 border-t border-white/10">
-        <form onSubmit={handleSubmit} className="relative max-w-4xl mx-auto flex items-center">
+        <form ref={formRef} onSubmit={handleSubmit} className="relative max-w-4xl mx-auto flex items-center">
           <input
             className="w-full bg-white/5 border border-white/10 text-white placeholder:text-gray-500 rounded-full py-3 pl-5 pr-12 focus:outline-none focus:ring-2 focus:ring-accent-blue/50 transition-all text-sm"
             value={input || ""}
