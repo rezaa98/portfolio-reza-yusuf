@@ -183,6 +183,10 @@
 .custom-swagger-styles .swagger-ui .response-col_status,
 .custom-swagger-styles .swagger-ui .response-col_description__inner,
 .custom-swagger-styles .swagger-ui .response-col_description .markdown p,
+.custom-swagger-styles .swagger-ui .opblock-description-wrapper p,
+.custom-swagger-styles .swagger-ui .markdown p,
+.custom-swagger-styles .swagger-ui .markdown li,
+.custom-swagger-styles .swagger-ui .parameter__empty,
 .custom-swagger-styles .swagger-ui .parameter__name,
 .custom-swagger-styles .swagger-ui .parameter__type {
   color: var(--color-text-primary) !important;
