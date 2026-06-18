@@ -1,7 +1,7 @@
 import { PlaywrightSimulator } from "@/features/web-demo/ui/PlaywrightSimulator";
 import { PipelineVisualizer } from "@/features/web-demo/ui/PipelineVisualizer";
 import { TestReportDashboard } from "@/features/web-demo/ui/TestReportDashboard";
-import { ArrowRight, Github } from "lucide-react";
+import { ArrowRight, GitBranch } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
@@ -37,7 +37,7 @@ export default async function WebDemoPage() {
               Explore Demo <ArrowRight size={18} />
             </a>
             <a href="https://github.com/rezaa98" target="_blank" rel="noopener noreferrer" className="btn-secondary">
-              <Github size={18} /> View Real Projects
+              <GitBranch size={18} /> View Real Projects
             </a>
           </div>
         </section>
