@@ -45,7 +45,7 @@ export function TestReportDashboard() {
           <div className="glass px-4 py-2 rounded-lg text-center">
             <div className="text-2xl font-bold text-accent-cyan flex items-center justify-center gap-1">
               <Clock size={16} />
-              22.6s
+              15.3s
             </div>
             <div className="text-xs text-text-muted">Duration</div>
           </div>
