@@ -213,3 +213,25 @@
   background-color: var(--color-bg-primary) !important;
   color: var(--color-text-primary) !important;
 }
+.custom-swagger-styles .swagger-ui .opblock-tag,
+.custom-swagger-styles .swagger-ui .opblock-tag small,
+.custom-swagger-styles .swagger-ui .servers > label,
+.custom-swagger-styles .swagger-ui .opblock .opblock-summary-operation-id {
+  color: var(--color-text-primary) !important;
+}
+.custom-swagger-styles .swagger-ui .opblock-tag {
+  border-bottom-color: var(--color-border-subtle) !important;
+}
+.custom-swagger-styles .swagger-ui .opblock-summary *,
+.custom-swagger-styles .swagger-ui .opblock-summary-description {
+  color: var(--color-text-primary) !important;
+}
+.custom-swagger-styles .swagger-ui .opblock .opblock-summary-method {
+  color: #fff !important;
+}
+.custom-swagger-styles .swagger-ui svg {
+  fill: var(--color-text-primary) !important;
+}
+.custom-swagger-styles .swagger-ui .try-out__btn {
+  color: var(--color-accent-blue) !important;
+}
