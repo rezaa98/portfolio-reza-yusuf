@@ -53,9 +53,22 @@ export function PipelineVisualizer() {
         <div className="flex items-center gap-3">
           <GitBranch size={18} className="text-gray-400" />
           <span className="font-semibold text-sm">rezaa98/portfolio-reza-yusuf</span>
-          <span className="bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded text-xs">CI/CD Workflow</span>
+          <img 
+            src="https://github.com/rezaa98/portfolio-reza-yusuf/actions/workflows/e2e-tests.yml/badge.svg" 
+            alt="Playwright E2E Tests Status" 
+            className="h-5"
+          />
         </div>
-        <button
+        <div className="flex items-center gap-3">
+          <a
+            href="https://github.com/rezaa98/portfolio-reza-yusuf/actions/workflows/e2e-tests.yml"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-md text-sm font-medium transition-colors"
+          >
+            View Real Report
+          </a>
+          <button
           onClick={runPipeline}
           disabled={status === "running"}
           className="flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-3 py-1.5 rounded-md text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
@@ -63,6 +76,7 @@ export function PipelineVisualizer() {
           {status === "running" ? <Loader2 size={16} className="animate-spin" /> : <Play size={16} />}
           Run Workflow
         </button>
+        </div>
       </div>
 
       <div className="p-6 md:p-8 overflow-x-auto">

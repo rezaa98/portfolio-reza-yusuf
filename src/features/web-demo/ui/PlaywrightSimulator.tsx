@@ -6,29 +6,29 @@ import { cn } from "@/shared/lib/utils";
 
 const MOCK_CODE = `import { test, expect } from '@playwright/test';
 
-test.describe('Authentication Flow', () => {
-  test('User can login with valid credentials', async ({ page }) => {
-    // 1. Navigate to login page
-    await page.goto('/login');
+test.describe('Portfolio Verification Suite', () => {
+  test('Verify Web Demo Navigation', async ({ page }) => {
+    // 1. Start at homepage
+    await page.goto('/');
     
-    // 2. Enter credentials
-    await page.fill('[data-testid="email-input"]', 'user@rezacode.cloud');
-    await page.fill('[data-testid="password-input"]', 'SecurePass123!');
+    // 2. Click Web Demo link
+    const webDemoLink = page.getByRole('link', { name: /Web Demo/i }).first();
+    await webDemoLink.click();
     
-    // 3. Click login button
-    await page.click('[data-testid="login-button"]');
+    // 3. Verify URL changes
+    await page.waitForURL('**/web-demo');
     
-    // 4. Verify dashboard loads
-    await expect(page.locator('.dashboard-title')).toBeVisible();
-    await expect(page).toHaveURL(/.*dashboard/);
+    // 4. Verify correct heading
+    const heading = page.locator('h1', { hasText: 'Automation & CI/CD' });
+    await expect(heading).toBeVisible();
   });
 });`;
 
 const TEST_SCENARIO = [
-  { step: "Navigate to /login", time: 800, expected: "Login page renders", actual: "Login page rendered correctly", status: "pass" },
-  { step: "Fill email & password", time: 1200, expected: "Inputs accept values", actual: "Values typed successfully", status: "pass" },
-  { step: "Click Login Button", time: 400, expected: "Submit request triggered", actual: "Form submitted, awaiting response", status: "pass" },
-  { step: "Verify Dashboard Redirect", time: 1500, expected: "URL contains /dashboard", actual: "URL is /dashboard, title visible", status: "pass" },
+  { step: "Navigate to /", time: 800, expected: "Homepage renders", actual: "Homepage rendered correctly", status: "pass" },
+  { step: "Click Web Demo link", time: 600, expected: "Navigation triggered", actual: "Link clicked successfully", status: "pass" },
+  { step: "Wait for URL change", time: 400, expected: "URL contains /web-demo", actual: "URL is /web-demo", status: "pass" },
+  { step: "Verify Heading", time: 1000, expected: "Heading 'Automation & CI/CD' is visible", actual: "Heading verified on screen", status: "pass" },
 ];
 
 export function PlaywrightSimulator() {
@@ -41,7 +41,7 @@ export function PlaywrightSimulator() {
     if (isRunning) return;
     setIsRunning(true);
     setCurrentStep(-1);
-    setLogs(["> npx playwright test auth.spec.ts", "Running 1 test using 1 worker..."]);
+    setLogs(["> npx playwright test portfolio.spec.ts", "Running 1 test using 1 worker..."]);
     setIsFinished(false);
 
     let delay = 1000;
@@ -83,7 +83,7 @@ export function PlaywrightSimulator() {
       <div className="w-full md:w-1/2 border-b md:border-b-0 md:border-r border-white/10 flex flex-col">
         <div className="bg-black/40 px-4 py-2 flex items-center gap-2 border-b border-white/10 text-xs text-text-muted">
           <FileCode2 size={14} className="text-accent-blue" />
-          <span>tests/auth.spec.ts</span>
+          <span>tests/portfolio.spec.ts</span>
         </div>
         <div className="p-4 overflow-x-auto text-gray-300">
           <pre>
