@@ -2,7 +2,7 @@
 
 import { useChat } from "@ai-sdk/react";
 import { Send, Bot, User, Sparkles, TerminalSquare, Loader2 } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/shared/lib/utils";
 
 /**
@@ -18,8 +18,8 @@ function getMessageText(message: { parts?: Array<{ type: string; text?: string }
 }
 
 export function AgentChatSimulator() {
-  // AI SDK v6: useChat returns `sendMessage` (not `append`) and manages `input` internally.
-  const { messages, sendMessage, status, error, input, setInput, handleInputChange } = useChat();
+  const { messages, sendMessage, status, error } = useChat();
+  const [input, setInput] = useState("");
   const isLoading = status === "in_progress" || status === "streaming" || status === "submitted";
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -28,8 +28,8 @@ export function AgentChatSimulator() {
     e?.preventDefault();
     if (!input.trim() || isLoading) return;
 
-    // AI SDK v6: sendMessage accepts { text: string }
     sendMessage({ text: input });
+    setInput("");
   };
 
   const scrollToBottom = () => {
@@ -147,7 +147,7 @@ export function AgentChatSimulator() {
             className="w-full bg-white/5 border border-white/10 text-white placeholder:text-gray-500 rounded-full py-3 pl-5 pr-12 focus:outline-none focus:ring-2 focus:ring-accent-blue/50 transition-all text-sm"
             value={input}
             placeholder="Type your testing scenario prompt here..."
-            onChange={handleInputChange}
+            onChange={(e) => setInput(e.target.value)}
             disabled={isLoading}
           />
           <button
