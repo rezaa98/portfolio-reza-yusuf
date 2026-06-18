@@ -82,16 +82,17 @@ export default async function WebDemoPage() {
         </section>
 
         {/* Note about Phase 2 */}
-        <section className="mt-12 glass p-8 rounded-2xl border border-white/10 text-center max-w-2xl mx-auto">
-          <h3 className="text-xl font-bold text-white mb-3">Coming Soon: Playwright Agentic AI</h3>
-          <p className="text-text-secondary text-sm leading-relaxed mb-6">
-            This interactive demo showcases standard automation. In Phase 2, a complete repository integrating Playwright with MCP (Model Context Protocol) for Agentic AI-driven testing will be available on GitHub.
-          </p>
-          <a href="https://github.com/rezaa98" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-accent-cyan hover:text-white transition-colors">
-            Follow my GitHub for updates <ArrowRight size={16} />
-          </a>
+        <section className="mt-16 text-center">
+          <div className="inline-block rounded-xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm max-w-2xl">
+            <h3 className="text-xl font-bold text-white mb-4">Playwright Agentic AI Framework</h3>
+            <p className="text-gray-400 mb-6 text-sm leading-relaxed">
+              This interactive demo showcases standard automation. The complete Phase 2 repository integrating Playwright with Google Gemini 1.5 (Sense-Think-Act loop) for autonomous E2E testing is now live!
+            </p>
+            <a href="https://github.com/rezaa98/Playwright-mcp-web-portofolio" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 font-medium text-sm flex items-center justify-center gap-2 transition-colors">
+              <GitBranch size={16} /> View Source Code on GitHub
+            </a>
+          </div>
         </section>
-
       </div>
     </div>
   );
