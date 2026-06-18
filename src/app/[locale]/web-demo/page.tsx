@@ -28,7 +28,7 @@ export default async function WebDemoPage() {
         <div className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] bg-accent-cyan/10 blur-[120px] rounded-full" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-24">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-24 overflow-x-hidden">
         
         {/* Header Section */}
         <section className="text-center max-w-3xl mx-auto mt-12">

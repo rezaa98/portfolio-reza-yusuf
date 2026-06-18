@@ -79,7 +79,7 @@ export function PipelineVisualizer() {
         </div>
       </div>
 
-      <div className="p-6 md:p-8 overflow-x-auto">
+      <div className="p-6 md:p-8 overflow-x-auto w-full">
         <div className="flex items-center justify-between min-w-[600px] relative">
           {/* Connecting Line */}
           <div className="absolute left-6 right-6 top-6 h-1 bg-gray-700 rounded z-0" />
