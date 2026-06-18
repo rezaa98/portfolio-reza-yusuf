@@ -17,10 +17,18 @@ export async function POST(req: Request) {
       apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY,
     });
 
+    // Normalize messages to ensure they use 'parts' (required by convertToModelMessages in AI SDK)
+    const normalizedMessages = messages.map((msg: any) => {
+      if (!msg.parts && msg.content) {
+        return { ...msg, parts: [{ type: 'text', text: msg.content }] };
+      }
+      return msg;
+    });
+
     // Sanitize messages to merge consecutive messages with the same role.
     // This prevents API errors (like 400 Bad Request) when a request fails and the user sends another message.
     const sanitizedMessages: any[] = [];
-    for (const msg of messages) {
+    for (const msg of normalizedMessages) {
       if (sanitizedMessages.length > 0 && sanitizedMessages[sanitizedMessages.length - 1].role === msg.role) {
         const prev = sanitizedMessages[sanitizedMessages.length - 1];
         if (prev.parts && msg.parts) {
