@@ -2,27 +2,34 @@
 
 import { useChat } from "@ai-sdk/react";
 import { Send, Bot, User, Sparkles, TerminalSquare, Loader2 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { cn } from "@/shared/lib/utils";
 
-export function AgentChatSimulator() {
-  const { messages, append, status, error } = useChat();
-  const [input, setInput] = useState("");
-  const isLoading = status === "in_progress" || status === "streaming" || status === "submitted";
-  
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-  const formRef = useRef<HTMLFormElement>(null);
+/**
+ * Extract displayable text from a UIMessage's parts array.
+ * In AI SDK v6, messages use `parts` (array of { type, text, ... }) instead of `content`.
+ */
+function getMessageText(message: { parts?: Array<{ type: string; text?: string }> }): string {
+  if (!message.parts) return "";
+  return message.parts
+    .filter((p) => p.type === "text" && p.text)
+    .map((p) => p.text)
+    .join("");
+}
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value);
-  };
+export function AgentChatSimulator() {
+  // AI SDK v6: useChat returns `sendMessage` (not `append`) and manages `input` internally.
+  const { messages, sendMessage, status, error, input, setInput, handleInputChange } = useChat();
+  const isLoading = status === "in_progress" || status === "streaming" || status === "submitted";
+
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const handleSubmit = (e?: React.FormEvent<HTMLFormElement>) => {
     e?.preventDefault();
     if (!input.trim() || isLoading) return;
-    
-    append({ role: "user", content: input });
-    setInput("");
+
+    // AI SDK v6: sendMessage accepts { text: string }
+    sendMessage({ text: input });
   };
 
   const scrollToBottom = () => {
@@ -49,7 +56,7 @@ export function AgentChatSimulator() {
         </div>
         <div className="flex items-center gap-2 text-xs text-green-400 bg-green-400/10 px-2 py-1 rounded-full">
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-          Live Gemini 1.5
+          Live Gemini 2.5
         </div>
       </div>
 
@@ -63,7 +70,7 @@ export function AgentChatSimulator() {
               </div>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-white mb-2">Hello, I'm your QA Automation Agent!</h3>
+              <h3 className="text-xl font-bold text-white mb-2">Hello, I&apos;m your QA Automation Agent!</h3>
               <p className="text-text-secondary max-w-sm text-sm">
                 I am powered by Google Gemini and specialized in Playwright. Ask me to generate any E2E test scenario.
               </p>
@@ -73,9 +80,7 @@ export function AgentChatSimulator() {
                 <button
                   key={i}
                   onClick={() => {
-                    if (append) {
-                      append({ role: "user", content: prompt });
-                    }
+                    sendMessage({ text: prompt });
                   }}
                   className="text-left text-sm text-gray-300 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-3 transition-colors flex items-center justify-between"
                 >
@@ -86,25 +91,28 @@ export function AgentChatSimulator() {
             </div>
           </div>
         ) : (
-          messages.map((m) => (
-            <div key={m.id} className={cn("flex gap-4 max-w-4xl mx-auto", m.role === "user" ? "flex-row-reverse" : "flex-row")}>
-              <div className={cn(
-                "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0",
-                m.role === "user" ? "bg-accent-blue/20 text-accent-blue" : "bg-accent-purple/20 text-accent-purple"
-              )}>
-                {m.role === "user" ? <User size={16} /> : <Bot size={16} />}
-              </div>
-              <div className={cn(
-                "px-4 py-3 rounded-2xl max-w-[85%] text-sm leading-relaxed",
-                m.role === "user" ? "bg-accent-blue text-white rounded-tr-sm" : "bg-white/5 border border-white/10 text-gray-200 rounded-tl-sm"
-              )}>
-                {/* Render Markdown-like text simply for now (ideally use react-markdown) */}
-                <div className="whitespace-pre-wrap font-sans">
-                  {m.content}
+          messages.map((m) => {
+            const text = getMessageText(m as { parts?: Array<{ type: string; text?: string }> });
+            if (!text) return null;
+            return (
+              <div key={m.id} className={cn("flex gap-4 max-w-4xl mx-auto", m.role === "user" ? "flex-row-reverse" : "flex-row")}>
+                <div className={cn(
+                  "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0",
+                  m.role === "user" ? "bg-accent-blue/20 text-accent-blue" : "bg-accent-purple/20 text-accent-purple"
+                )}>
+                  {m.role === "user" ? <User size={16} /> : <Bot size={16} />}
+                </div>
+                <div className={cn(
+                  "px-4 py-3 rounded-2xl max-w-[85%] text-sm leading-relaxed",
+                  m.role === "user" ? "bg-accent-blue text-white rounded-tr-sm" : "bg-white/5 border border-white/10 text-gray-200 rounded-tl-sm"
+                )}>
+                  <div className="whitespace-pre-wrap font-sans">
+                    {text}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))
+            );
+          })
         )}
         {isLoading && (
           <div className="flex gap-4 max-w-4xl mx-auto">
@@ -134,10 +142,10 @@ export function AgentChatSimulator() {
 
       {/* Input Area */}
       <div className="p-4 bg-black/20 border-t border-white/10">
-        <form ref={formRef} onSubmit={handleSubmit} className="relative max-w-4xl mx-auto flex items-center">
+        <form onSubmit={handleSubmit} className="relative max-w-4xl mx-auto flex items-center">
           <input
             className="w-full bg-white/5 border border-white/10 text-white placeholder:text-gray-500 rounded-full py-3 pl-5 pr-12 focus:outline-none focus:ring-2 focus:ring-accent-blue/50 transition-all text-sm"
-            value={input || ""}
+            value={input}
             placeholder="Type your testing scenario prompt here..."
             onChange={handleInputChange}
             disabled={isLoading}
@@ -151,7 +159,7 @@ export function AgentChatSimulator() {
           </button>
         </form>
         <p className="text-center text-[10px] text-gray-500 mt-3">
-          Powered by Vercel AI SDK & Google Gemini 1.5. Output is strictly limited to Playwright code generation.
+          Powered by Vercel AI SDK &amp; Google Gemini 2.5. Output is strictly limited to Playwright code generation.
         </p>
       </div>
     </div>
