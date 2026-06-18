@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/shared/lib/utils";
 
 export function AgentChatSimulator() {
-  const { messages, sendMessage, status } = useChat({
+  const { messages, append, status, error } = useChat({
     streamProtocol: "text"
   });
   const [input, setInput] = useState("");
@@ -23,7 +23,7 @@ export function AgentChatSimulator() {
     e?.preventDefault();
     if (!input.trim() || isLoading) return;
     
-    sendMessage({ role: "user", content: input });
+    append({ role: "user", content: input });
     setInput("");
   };
 
@@ -75,8 +75,8 @@ export function AgentChatSimulator() {
                 <button
                   key={i}
                   onClick={() => {
-                    if (sendMessage) {
-                      sendMessage({ role: "user", content: prompt });
+                    if (append) {
+                      append({ role: "user", content: prompt });
                     }
                   }}
                   className="text-left text-sm text-gray-300 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-3 transition-colors flex items-center justify-between"
@@ -117,6 +117,17 @@ export function AgentChatSimulator() {
               <span className="w-1.5 h-1.5 rounded-full bg-accent-purple animate-bounce" style={{ animationDelay: '0ms' }} />
               <span className="w-1.5 h-1.5 rounded-full bg-accent-purple animate-bounce" style={{ animationDelay: '150ms' }} />
               <span className="w-1.5 h-1.5 rounded-full bg-accent-purple animate-bounce" style={{ animationDelay: '300ms' }} />
+            </div>
+          </div>
+        )}
+        {error && (
+          <div className="flex gap-4 max-w-4xl mx-auto mt-2">
+            <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 bg-red-500/20 text-red-500">
+              <Sparkles size={16} />
+            </div>
+            <div className="px-4 py-3 rounded-2xl bg-red-500/10 border border-red-500/20 text-red-200 text-sm leading-relaxed">
+              <strong className="block mb-1">Server Error:</strong>
+              {error.message}
             </div>
           </div>
         )}
