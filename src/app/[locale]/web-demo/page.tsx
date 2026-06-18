@@ -5,8 +5,11 @@ import { AgentChatSimulator } from "@/features/web-demo/ui/AgentChatSimulator";
 import { TestCaseRepository } from "@/features/web-demo/ui/TestCaseRepository";
 import { ArrowRight, GitBranch, Bot } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import { Navbar } from "@/shared/ui/Navbar";
+import { Footer } from "@/shared/ui/Footer";
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Navbar" });
   return {
     title: `${t("web_demo")} | Reza Yusuf Maulana`,
@@ -15,7 +18,8 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 
 export default async function WebDemoPage() {
   return (
-    <div className="min-h-screen bg-bg-primary pt-24 pb-16">
+    <div className="min-h-screen bg-bg-primary pt-24 pb-16 flex flex-col">
+      <Navbar />
       
       {/* Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
@@ -119,6 +123,8 @@ export default async function WebDemoPage() {
           </div>
         </section>
       </div>
+
+      <Footer />
     </div>
   );
 }
