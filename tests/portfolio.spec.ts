@@ -45,8 +45,8 @@ test.describe('Portfolio Verification Suite', () => {
       await page.waitForURL('**/id');
     }
 
-    // Verify text changes to Indonesian (e.g., "Tersedia untuk peluang baru" instead of "Available for new opportunities")
-    const badge = page.locator('.inline-flex.items-center.gap-2');
+    // Verify text changes to Indonesian
+    const badge = page.locator('text=Tersedia untuk peluang baru').first();
     await expect(badge).toBeVisible();
   });
 
