@@ -2,6 +2,7 @@ import { PlaywrightSimulator } from "@/features/web-demo/ui/PlaywrightSimulator"
 import { PipelineVisualizer } from "@/features/web-demo/ui/PipelineVisualizer";
 import { TestReportDashboard } from "@/features/web-demo/ui/TestReportDashboard";
 import { AgentChatSimulator } from "@/features/web-demo/ui/AgentChatSimulator";
+import { TestCaseRepository } from "@/features/web-demo/ui/TestCaseRepository";
 import { ArrowRight, GitBranch, Bot } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
@@ -43,11 +44,24 @@ export default async function WebDemoPage() {
           </div>
         </section>
 
-        {/* Playwright Simulator Section */}
+        {/* Test Scenario Repository Section */}
         <section id="simulator" className="space-y-6">
           <div className="flex flex-col gap-2">
             <h2 className="text-2xl md:text-3xl font-bold text-white font-space-grotesk flex items-center gap-3">
-              <span className="text-accent-blue">01.</span> Live Test Simulator
+              <span className="text-accent-blue">01.</span> Test Scenario Documentation
+            </h2>
+            <p className="text-text-secondary">
+              A repository of the end-to-end testing scenarios designed for this portfolio. Click on any test case to view its detailed documentation, steps, and expected results.
+            </p>
+          </div>
+          <TestCaseRepository />
+        </section>
+
+        {/* Playwright Simulator Section */}
+        <section className="space-y-6">
+          <div className="flex flex-col gap-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-white font-space-grotesk flex items-center gap-3">
+              <span className="text-accent-purple">02.</span> Live Test Execution
             </h2>
             <p className="text-text-secondary">
               Simulating a Playwright E2E test execution. Click &quot;Run Test&quot; to observe the automated scenario stepping through expected vs actual results in real-time.
@@ -60,7 +74,7 @@ export default async function WebDemoPage() {
         <section className="space-y-6">
           <div className="flex flex-col gap-2">
             <h2 className="text-2xl md:text-3xl font-bold text-white font-space-grotesk flex items-center gap-3">
-              <span className="text-accent-purple">02.</span> Pipeline Visualizer
+              <span className="text-accent-cyan">03.</span> Pipeline Visualizer
             </h2>
             <p className="text-text-secondary">
               A representation of a Continuous Integration workflow. Automation tests are triggered automatically on push, ensuring code quality before deployment.
@@ -73,7 +87,7 @@ export default async function WebDemoPage() {
         <section className="space-y-6">
           <div className="flex flex-col gap-2">
             <h2 className="text-2xl md:text-3xl font-bold text-white font-space-grotesk flex items-center gap-3">
-              <span className="text-accent-cyan">03.</span> Automation Report
+              <span className="text-accent-blue">04.</span> Automation Report
             </h2>
             <p className="text-text-secondary">
               Mock reporting dashboard tracking test suite health, execution time, and detailed failure logs to quickly identify and resolve regressions.
