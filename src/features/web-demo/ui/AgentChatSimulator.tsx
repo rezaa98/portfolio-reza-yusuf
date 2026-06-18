@@ -106,14 +106,14 @@ export function AgentChatSimulator() {
         <form onSubmit={handleSubmit} className="relative max-w-4xl mx-auto flex items-center">
           <input
             className="w-full bg-white/5 border border-white/10 text-white placeholder:text-gray-500 rounded-full py-3 pl-5 pr-12 focus:outline-none focus:ring-2 focus:ring-accent-blue/50 transition-all text-sm"
-            value={input}
+            value={input || ""}
             placeholder="Type your testing scenario prompt here..."
             onChange={handleInputChange}
             disabled={isLoading}
           />
           <button
             type="submit"
-            disabled={isLoading || !input.trim()}
+            disabled={isLoading || !input?.trim()}
             className="absolute right-2 p-2 rounded-full bg-accent-blue hover:bg-blue-600 text-white disabled:opacity-50 transition-colors"
           >
             <Send size={16} />
