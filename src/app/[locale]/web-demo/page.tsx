@@ -28,7 +28,7 @@ export default async function WebDemoPage() {
         <div className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] bg-accent-cyan/10 blur-[120px] rounded-full" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10 space-y-24">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-24">
         
         {/* Header Section */}
         <section className="text-center max-w-3xl mx-auto mt-12">
@@ -39,10 +39,10 @@ export default async function WebDemoPage() {
             An interactive demonstration of my QA Engineering workflow. This page simulates how automated tests are written using Playwright, executed through CI/CD pipelines, and monitored via reporting dashboards.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <a href="#simulator" className="btn-primary">
+            <a href="#simulator" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent-blue hover:bg-blue-600 text-white font-medium transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)]">
               Explore Demo <ArrowRight size={18} />
             </a>
-            <a href="https://github.com/rezaa98" target="_blank" rel="noopener noreferrer" className="btn-secondary">
+            <a href="https://github.com/rezaa98" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium transition-all">
               <GitBranch size={18} /> View Real Projects
             </a>
           </div>
