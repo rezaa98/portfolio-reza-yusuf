@@ -1,7 +1,8 @@
 import { PlaywrightSimulator } from "@/features/web-demo/ui/PlaywrightSimulator";
 import { PipelineVisualizer } from "@/features/web-demo/ui/PipelineVisualizer";
 import { TestReportDashboard } from "@/features/web-demo/ui/TestReportDashboard";
-import { ArrowRight, GitBranch } from "lucide-react";
+import { AgentChatSimulator } from "@/features/web-demo/ui/AgentChatSimulator";
+import { ArrowRight, GitBranch, Bot } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
@@ -81,15 +82,25 @@ export default async function WebDemoPage() {
           <TestReportDashboard />
         </section>
 
-        {/* Note about Phase 2 */}
-        <section className="mt-16 text-center">
-          <div className="inline-block rounded-xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm max-w-2xl">
-            <h3 className="text-xl font-bold text-white mb-4">Playwright Agentic AI Framework</h3>
-            <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-              This interactive demo showcases standard automation. The complete Phase 2 repository integrating Playwright with Google Gemini 1.5 (Sense-Think-Act loop) for autonomous E2E testing is now live!
+        {/* Live Agentic AI Section */}
+        <section className="space-y-6 pt-8 border-t border-white/10">
+          <div className="flex flex-col gap-2 text-center items-center">
+            <div className="inline-flex items-center justify-center p-3 bg-accent-purple/10 rounded-full mb-2">
+              <Bot size={32} className="text-accent-purple" />
+            </div>
+            <h2 className="text-2xl md:text-4xl font-bold text-white font-space-grotesk">
+              Agentic AI Test Generator
+            </h2>
+            <p className="text-text-secondary max-w-2xl mx-auto mb-8">
+              Experience the future of QA Automation. This live chatbot is powered by Google Gemini 1.5, strictly configured to generate Playwright TypeScript scripts. Try prompting it to write a test scenario!
             </p>
-            <a href="https://github.com/rezaa98/Playwright-mcp-web-portofolio" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 font-medium text-sm flex items-center justify-center gap-2 transition-colors">
-              <GitBranch size={16} /> View Source Code on GitHub
+          </div>
+          
+          <AgentChatSimulator />
+
+          <div className="text-center mt-6">
+            <a href="https://github.com/rezaa98/Playwright-mcp-web-portofolio" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-sm transition-colors bg-cyan-400/10 px-4 py-2 rounded-full">
+              <GitBranch size={16} /> View Full MCP Source Code
             </a>
           </div>
         </section>
