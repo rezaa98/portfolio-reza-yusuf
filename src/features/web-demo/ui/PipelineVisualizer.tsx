@@ -49,17 +49,17 @@ export function PipelineVisualizer() {
 
   return (
     <div className="w-full rounded-xl overflow-hidden border border-white/10 shadow-xl bg-[#0d1117] text-gray-300">
-      <div className="bg-[#161b22] px-4 py-3 flex items-center justify-between border-b border-white/10">
-        <div className="flex items-center gap-3">
+      <div className="bg-[#161b22] px-4 py-3 flex flex-col md:flex-row md:items-center justify-between border-b border-white/10 gap-4">
+        <div className="flex flex-wrap items-center gap-3">
           <GitBranch size={18} className="text-gray-400" />
-          <span className="font-semibold text-sm">rezaa98/portfolio-reza-yusuf</span>
+          <span className="font-semibold text-sm break-all">rezaa98/portfolio-reza-yusuf</span>
           <img 
             src="https://github.com/rezaa98/portfolio-reza-yusuf/actions/workflows/e2e-tests.yml/badge.svg" 
             alt="Playwright E2E Tests Status" 
-            className="h-5"
+            className="h-5 hidden sm:block"
           />
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <a
             href="https://github.com/rezaa98/portfolio-reza-yusuf/actions/workflows/e2e-tests.yml"
             target="_blank"

@@ -102,7 +102,7 @@ export function PlaywrightSimulator() {
 
       {/* Terminal Section */}
       <div className="w-full md:w-1/2 flex flex-col bg-black/60 relative">
-        <div className="bg-black/40 px-4 py-2 flex items-center justify-between border-b border-white/10 text-xs text-text-muted">
+        <div className="bg-black/40 px-4 py-2 flex flex-wrap items-center justify-between gap-2 border-b border-white/10 text-xs text-text-muted">
           <div className="flex items-center gap-2">
             <TerminalSquare size={14} className="text-accent-cyan" />
             <span>Terminal</span>

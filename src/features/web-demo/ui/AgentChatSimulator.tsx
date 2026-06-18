@@ -44,7 +44,7 @@ export function AgentChatSimulator() {
   return (
     <div className="w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#0f172a] font-sans flex flex-col h-[600px]">
       {/* Header */}
-      <div className="bg-black/40 px-4 py-3 flex items-center justify-between border-b border-white/10">
+      <div className="bg-black/40 px-4 py-3 flex flex-wrap items-center justify-between gap-2 border-b border-white/10">
         <div className="flex items-center gap-2">
           <Sparkles size={16} className="text-accent-purple" />
           <span className="font-bold text-white font-space-grotesk text-sm">Playwright Agentic AI</span>
