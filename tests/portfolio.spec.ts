@@ -7,10 +7,10 @@ test.describe('Portfolio Verification Suite', () => {
     await page.goto('/');
     
     // Verify greeting contains Reza Yusuf Maulana
-    await expect(page.locator('h1')).toContainText('Reza Yusuf Maulana');
+    await expect(page.locator('h1').first()).toContainText('Reza Yusuf Maulana');
     
     // Verify the subtitle contains QA Engineer
-    await expect(page.locator('text=QA Engineer')).toBeVisible();
+    await expect(page.locator('h2').first()).toContainText('QA Engineer');
   });
 
   test('Verify Web Demo Navigation', async ({ page }) => {
@@ -34,12 +34,12 @@ test.describe('Portfolio Verification Suite', () => {
     // Navigate to homepage in English by default (or via cookies)
     await page.goto('/en');
     
-    // Switch to Indonesian language using the Navbar button
-    const langBtn = page.getByRole('button', { name: /EN|ID/i });
+    // Switch to Indonesian language using the Navbar button (using title to avoid matching other buttons)
+    const langBtn = page.getByTitle('Switch Language').first();
     await langBtn.click();
     
     // Find the Indonesian language option and click it
-    const idOption = page.locator('text=Indonesia');
+    const idOption = page.locator('text=Indonesia').first();
     if (await idOption.isVisible()) {
       await idOption.click();
       await page.waitForURL('**/id');
