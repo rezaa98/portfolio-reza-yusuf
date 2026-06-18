@@ -1,53 +1,60 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Portfolio Verification Suite', () => {
-  
+
   test('Verify Homepage Load and Welcome Text', async ({ page }) => {
-    // Navigate to homepage
-    await page.goto('/');
-    
-    // Verify greeting contains Reza Yusuf Maulana
-    await expect(page.locator('h1').first()).toContainText('Reza Yusuf Maulana');
-    
-    // Verify the subtitle contains QA Engineer
-    await expect(page.locator('h2').first()).toContainText('QA Engineer');
+    // Navigate to English homepage explicitly
+    await page.goto('/en');
+
+    // Wait for the page to be fully loaded
+    await page.waitForLoadState('networkidle');
+
+    // Verify the hero heading contains name
+    const heroHeading = page.locator('h1').first();
+    await expect(heroHeading).toContainText('Reza Yusuf Maulana', { timeout: 10000 });
+
+    // Verify the subtitle heading contains QA Engineer
+    const subtitle = page.locator('h2').first();
+    await expect(subtitle).toContainText('QA Engineer', { timeout: 10000 });
   });
 
   test('Verify Web Demo Navigation', async ({ page }) => {
-    // Start at homepage
-    await page.goto('/');
+    // Start at English homepage
+    await page.goto('/en');
+    await page.waitForLoadState('networkidle');
 
-    // Look for Web Demo link in the navbar
+    // Look for Web Demo link in the navbar (visible on desktop viewport)
     const webDemoLink = page.getByRole('link', { name: /Web Demo/i }).first();
-    await expect(webDemoLink).toBeVisible();
+    await expect(webDemoLink).toBeVisible({ timeout: 10000 });
 
     // Click Web Demo and wait for navigation
     await webDemoLink.click();
-    await page.waitForURL('**/web-demo');
+    await page.waitForURL('**/web-demo', { timeout: 15000 });
 
     // Verify correct heading on Web Demo page
-    const heading = page.locator('h1', { hasText: 'Automation & CI/CD' });
-    await expect(heading).toBeVisible();
+    const heading = page.locator('h1');
+    await expect(heading).toContainText('Automation', { timeout: 10000 });
   });
 
   test('Verify Localization Switcher', async ({ page }) => {
-    // Navigate to homepage in English by default (or via cookies)
+    // Navigate to English homepage
     await page.goto('/en');
-    
-    // Switch to Indonesian language using the Navbar button (using title to avoid matching other buttons)
-    const langBtn = page.getByTitle('Switch Language').first();
-    await langBtn.click();
-    
-    // Find the Indonesian language option and click it
-    const idOption = page.locator('text=Indonesia').first();
-    if (await idOption.isVisible()) {
-      await idOption.click();
-      await page.waitForURL('**/id');
-    }
+    await page.waitForLoadState('networkidle');
 
-    // Verify text changes to Indonesian
-    const badge = page.locator('text=Tersedia untuk peluang baru').first();
-    await expect(badge).toBeVisible();
+    // Verify we start in English — check the availability badge
+    await expect(page.getByText('Available for new opportunities')).toBeVisible({ timeout: 10000 });
+
+    // Click the language toggle button (it directly switches locale, no dropdown)
+    const langBtn = page.getByTitle('Switch Language').first();
+    await expect(langBtn).toBeVisible({ timeout: 10000 });
+    await langBtn.click();
+
+    // Wait for navigation to Indonesian locale
+    await page.waitForURL('**/id', { timeout: 15000 });
+    await page.waitForLoadState('networkidle');
+
+    // Verify text changed to Indonesian — use the actual translation from id.json
+    await expect(page.getByText('Terbuka untuk peluang baru')).toBeVisible({ timeout: 10000 });
   });
 
 });

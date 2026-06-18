@@ -8,7 +8,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: process.env.BASE_URL || 'http://localhost:3000',
+    baseURL: 'http://localhost:3100',
     trace: 'on-first-retry',
   },
   projects: [
@@ -17,10 +17,11 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
-  /* Run your local dev server before starting the tests */
+  /* Run local server on port 3100 to avoid conflicts with other services (e.g. Grafana on 3000) */
   webServer: {
-    command: 'npm run start',
-    url: 'http://localhost:3000',
+    command: 'npx next start -p 3100',
+    url: 'http://localhost:3100',
     reuseExistingServer: !process.env.CI,
+    timeout: 30000,
   },
 });

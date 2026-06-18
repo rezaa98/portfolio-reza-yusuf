@@ -47,11 +47,14 @@ jobs:
     - name: Install Playwright Browsers
       if: steps.playwright-cache.outputs.cache-hit != 'true'
       run: npx playwright install --with-deps chromium
+
+    - name: Install Playwright System Dependencies (cached browsers)
+      if: steps.playwright-cache.outputs.cache-hit == 'true'
+      run: npx playwright install-deps chromium
       
     - name: Run Playwright tests
       run: npx playwright test
       env:
-        BASE_URL: http://localhost:3000
         NEXT_PUBLIC_SANITY_DATASET: "production"
         NEXT_PUBLIC_SANITY_PROJECT_ID: "qh9tfzfg"
         
