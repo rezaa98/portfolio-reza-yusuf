@@ -6,7 +6,9 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/shared/lib/utils";
 
 export function AgentChatSimulator() {
-  const { messages, sendMessage, status } = useChat();
+  const { messages, sendMessage, status } = useChat({
+    streamProtocol: "text"
+  });
   const [input, setInput] = useState("");
   const isLoading = status === "in_progress" || status === "streaming" || status === "submitted";
   
