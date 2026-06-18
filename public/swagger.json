@@ -1,0 +1,112 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Portfolio API Documentation",
+    "description": "API Collection for Reza Yusuf's Portfolio Website",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "Local/Production Server"
+    }
+  ],
+  "paths": {
+    "/api/posts": {
+      "get": {
+        "summary": "Retrieve Blog Posts",
+        "description": "Fetches a list of blog posts from the Sanity CMS backend, ordered by pinned status and publication date.",
+        "tags": ["Blog"],
+        "responses": {
+          "200": {
+            "description": "Successful response containing an array of posts",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "_id": { "type": "string" },
+                          "title": { "type": "string" },
+                          "slug": { "type": "string" },
+                          "publishedAt": { "type": "string", "format": "date-time" },
+                          "excerpt": { "type": "string" },
+                          "isPinned": { "type": "boolean" },
+                          "categories": { "type": "array", "items": { "type": "string" } },
+                          "mainImage": { "type": "string" },
+                          "firstBodyImage": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error (e.g. missing Sanity Project ID)"
+          }
+        }
+      }
+    },
+    "/api/chat": {
+      "post": {
+        "summary": "AI Chat Assistant for Playwright",
+        "description": "An endpoint that leverages Google Gemini AI to generate Playwright E2E test scripts based on user prompts. Returns a text stream response.",
+        "tags": ["AI Tools"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["messages"],
+                "properties": {
+                  "messages": {
+                    "type": "array",
+                    "description": "Array of conversation messages",
+                    "items": {
+                      "type": "object",
+                      "required": ["role", "content"],
+                      "properties": {
+                        "role": {
+                          "type": "string",
+                          "enum": ["user", "assistant", "system"]
+                        },
+                        "content": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful text stream response containing the AI output",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request (e.g. missing 'messages' array)"
+          },
+          "500": {
+            "description": "Internal Server Error (e.g. invalid API key or model failure)"
+          }
+        }
+      }
+    }
+  }
+}

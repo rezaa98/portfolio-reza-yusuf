@@ -8,6 +8,10 @@ export async function POST(req: Request) {
   try {
     const { messages } = await req.json();
 
+    if (!messages || !Array.isArray(messages)) {
+      return new Response(JSON.stringify({ error: "Invalid request format. 'messages' array is required." }), { status: 400, headers: { "Content-Type": "application/json" } });
+    }
+
     // Initialize custom Google provider to support either GOOGLE_GENERATIVE_AI_API_KEY or GEMINI_API_KEY
     const customGoogle = createGoogleGenerativeAI({
       apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY,
