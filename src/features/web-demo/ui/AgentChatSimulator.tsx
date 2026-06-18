@@ -2,13 +2,28 @@
 
 import { useChat } from "@ai-sdk/react";
 import { Send, Bot, User, Sparkles, TerminalSquare, Loader2 } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/shared/lib/utils";
 
 export function AgentChatSimulator() {
-  const { messages, input, setInput, handleInputChange, handleSubmit, isLoading, append } = useChat();
+  const { messages, sendMessage, status } = useChat();
+  const [input, setInput] = useState("");
+  const isLoading = status === "in_progress" || status === "streaming" || status === "submitted";
+  
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
+  };
+
+  const handleSubmit = (e?: React.FormEvent<HTMLFormElement>) => {
+    e?.preventDefault();
+    if (!input.trim() || isLoading) return;
+    
+    sendMessage({ role: "user", content: input });
+    setInput("");
+  };
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -58,14 +73,8 @@ export function AgentChatSimulator() {
                 <button
                   key={i}
                   onClick={() => {
-                    if (append && typeof append === 'function') {
-                      append({ role: "user", content: prompt });
-                    } else if (setInput) {
-                      setInput(prompt);
-                      // Form will be submitted manually if append is broken
-                      setTimeout(() => {
-                        formRef.current?.requestSubmit();
-                      }, 50);
+                    if (sendMessage) {
+                      sendMessage({ role: "user", content: prompt });
                     }
                   }}
                   className="text-left text-sm text-gray-300 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-3 transition-colors flex items-center justify-between"
