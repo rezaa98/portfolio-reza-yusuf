@@ -17,12 +17,28 @@ export async function POST(req: Request) {
       apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY,
     });
 
+    // Sanitize messages to merge consecutive messages with the same role.
+    // This prevents API errors (like 400 Bad Request) when a request fails and the user sends another message.
+    const sanitizedMessages: any[] = [];
+    for (const msg of messages) {
+      if (sanitizedMessages.length > 0 && sanitizedMessages[sanitizedMessages.length - 1].role === msg.role) {
+        const prev = sanitizedMessages[sanitizedMessages.length - 1];
+        if (prev.parts && msg.parts) {
+          prev.parts = [...prev.parts, ...msg.parts];
+        } else if (prev.content && msg.content) {
+          prev.content = prev.content + "\n" + msg.content;
+        }
+      } else {
+        sanitizedMessages.push({ ...msg });
+      }
+    }
+
     // AI SDK v6: useChat sends UIMessages (with `parts` array).
     // streamText expects ModelMessages, so we must convert.
-    const modelMessages = await convertToModelMessages(messages);
+    const modelMessages = await convertToModelMessages(sanitizedMessages);
 
     const result = streamText({
-      model: customGoogle('gemini-2.5-flash'),
+      model: customGoogle('gemini-2.0-flash'),
       system: `You are a Senior QA Automation Expert specialized in Playwright. 
 Your sole purpose is to generate Playwright E2E test scripts in TypeScript for a web application. 
 If the user asks for anything else not related to Playwright testing (like weather, general coding, or unrelated tasks), politely decline and state your purpose. 
