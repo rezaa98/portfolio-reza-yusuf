@@ -22,7 +22,7 @@ Always output valid TypeScript code in a markdown block, and provide brief, conc
       messages,
     });
 
-    return result.toDataStreamResponse();
+    return result.toUIMessageStreamResponse();
   } catch (error) {
     console.error("Chat API Error:", error);
     const errorMessage = error instanceof Error ? error.message : String(error);
