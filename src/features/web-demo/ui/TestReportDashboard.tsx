@@ -5,17 +5,11 @@ import { useState } from "react";
 import { cn } from "@/shared/lib/utils";
 
 const TEST_RESULTS = [
-  { id: 1, name: "Authentication - Login with valid credentials", status: "passed", time: "3.9s", error: null },
-  { id: 2, name: "Authentication - Login with invalid credentials", status: "passed", time: "1.2s", error: null },
-  { id: 3, name: "Dashboard - Verify user profile data loads", status: "passed", time: "2.1s", error: null },
-  { 
-    id: 4, 
-    name: "Checkout - User can complete purchase", 
-    status: "failed", 
-    time: "15.4s", 
-    error: "Error: expect(locator).toBeVisible()\n\nLocator: locator('.order-confirmation')\nExpected: visible\nReceived: hidden\nCall log:\n  - expect.toBeVisible with timeout 5000ms\n  - waiting for locator('.order-confirmation')" 
-  },
-  { id: 5, name: "Settings - User can update password", status: "skipped", time: "-", error: null },
+  { id: 1, name: "Verify Homepage Load and Welcome Text", status: "passed", time: "2.1s", error: null },
+  { id: 2, name: "Verify Web Demo Navigation", status: "passed", time: "6.1s", error: null },
+  { id: 3, name: "Verify Localization Switcher", status: "passed", time: "2.2s", error: null },
+  { id: 4, name: "Negative Test: Verify 404 on Invalid Route", status: "passed", time: "1.5s", error: null },
+  { id: 5, name: "Edge Test: Verify Mobile Navigation Menu", status: "passed", time: "3.4s", error: null },
 ];
 
 export function TestReportDashboard() {

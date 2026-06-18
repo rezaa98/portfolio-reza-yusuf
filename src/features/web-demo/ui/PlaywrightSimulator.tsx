@@ -7,28 +7,23 @@ import { cn } from "@/shared/lib/utils";
 const MOCK_CODE = `import { test, expect } from '@playwright/test';
 
 test.describe('Portfolio Verification Suite', () => {
-  test('Verify Web Demo Navigation', async ({ page }) => {
-    // 1. Start at homepage
-    await page.goto('/');
+  test('Negative Test: Verify 404 on Invalid Route', async ({ page }) => {
+    // Navigate to a non-existent URL
+    const response = await page.goto('/en/this-page-does-not-exist');
     
-    // 2. Click Web Demo link
-    const webDemoLink = page.getByRole('link', { name: /Web Demo/i }).first();
-    await webDemoLink.click();
+    // Verify HTTP status is 404
+    expect(response?.status()).toBe(404);
     
-    // 3. Verify URL changes
-    await page.waitForURL('**/web-demo');
-    
-    // 4. Verify correct heading
-    const heading = page.locator('h1', { hasText: 'Automation & CI/CD' });
-    await expect(heading).toBeVisible();
+    // Verify Next.js default 404 page content
+    const heading = page.locator('h2');
+    await expect(heading).toContainText('This page could not be found.', { timeout: 10000 });
   });
 });`;
 
 const TEST_SCENARIO = [
-  { step: "Navigate to /", time: 800, expected: "Homepage renders", actual: "Homepage rendered correctly", status: "pass" },
-  { step: "Click Web Demo link", time: 600, expected: "Navigation triggered", actual: "Link clicked successfully", status: "pass" },
-  { step: "Wait for URL change", time: 400, expected: "URL contains /web-demo", actual: "URL is /web-demo", status: "pass" },
-  { step: "Verify Heading", time: 1000, expected: "Heading 'Automation & CI/CD' is visible", actual: "Heading verified on screen", status: "pass" },
+  { step: "Navigate to /en/this-page-does-not-exist", time: 800, expected: "Route loads", actual: "Route attempted", status: "pass" },
+  { step: "Verify HTTP status is 404", time: 400, expected: "Status is 404", actual: "Status was 404", status: "pass" },
+  { step: "Verify Next.js default 404 page content", time: 600, expected: "Heading contains 'could not be found'", actual: "Text verified on screen", status: "pass" },
 ];
 
 export function PlaywrightSimulator() {

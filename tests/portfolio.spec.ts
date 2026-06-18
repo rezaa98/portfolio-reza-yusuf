@@ -57,4 +57,36 @@ test.describe('Portfolio Verification Suite', () => {
     await expect(page.getByText('Terbuka untuk peluang baru')).toBeVisible({ timeout: 10000 });
   });
 
+  test('Negative Test: Verify 404 on Invalid Route', async ({ page }) => {
+    // Navigate to a non-existent URL
+    const response = await page.goto('/en/this-page-does-not-exist');
+    
+    // Verify HTTP status is 404
+    expect(response?.status()).toBe(404);
+    
+    // Verify Next.js default 404 page content
+    const heading = page.locator('h2');
+    await expect(heading).toContainText('This page could not be found.', { timeout: 10000 });
+  });
+
+  test('Edge Test: Verify Mobile Navigation Menu', async ({ page }) => {
+    // Set viewport to mobile size (iPhone X)
+    await page.setViewportSize({ width: 375, height: 812 });
+    
+    // Navigate to English homepage
+    await page.goto('/en');
+    await page.waitForLoadState('networkidle');
+    
+    // Find the hamburger menu button
+    const navBtn = page.locator('header button.md\\:hidden');
+    await expect(navBtn).toBeVisible({ timeout: 10000 });
+    
+    // Click to open menu
+    await navBtn.click();
+    
+    // Verify that a menu link (e.g., "About") becomes visible
+    const aboutLink = page.getByRole('link', { name: /About/i }).last();
+    await expect(aboutLink).toBeVisible({ timeout: 10000 });
+  });
+
 });
