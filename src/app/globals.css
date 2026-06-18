@@ -151,3 +151,65 @@
   background: var(--color-accent-blue);
   color: white;
 }
+
+/* Custom Swagger Styles for Dark Mode */
+.custom-swagger-styles .swagger-ui {
+  color: var(--color-text-primary);
+}
+.custom-swagger-styles .swagger-ui .info .title,
+.custom-swagger-styles .swagger-ui .info p,
+.custom-swagger-styles .swagger-ui .info li,
+.custom-swagger-styles .swagger-ui .info h1,
+.custom-swagger-styles .swagger-ui .info h2,
+.custom-swagger-styles .swagger-ui .info h3,
+.custom-swagger-styles .swagger-ui .info h4,
+.custom-swagger-styles .swagger-ui .info h5 {
+  color: var(--color-text-primary) !important;
+}
+.custom-swagger-styles .swagger-ui .opblock .opblock-summary-description,
+.custom-swagger-styles .swagger-ui .opblock .opblock-summary-path,
+.custom-swagger-styles .swagger-ui .opblock .opblock-summary-path__deprecated {
+  color: var(--color-text-primary) !important;
+}
+.custom-swagger-styles .swagger-ui .opblock .opblock-section-header {
+  background-color: var(--color-bg-card) !important;
+  border-color: var(--color-border-subtle) !important;
+}
+.custom-swagger-styles .swagger-ui .opblock .opblock-section-header h4 {
+  color: var(--color-text-primary) !important;
+}
+.custom-swagger-styles .swagger-ui table thead tr th,
+.custom-swagger-styles .swagger-ui table tbody tr td,
+.custom-swagger-styles .swagger-ui .response-col_status,
+.custom-swagger-styles .swagger-ui .response-col_description__inner,
+.custom-swagger-styles .swagger-ui .response-col_description .markdown p,
+.custom-swagger-styles .swagger-ui .parameter__name,
+.custom-swagger-styles .swagger-ui .parameter__type {
+  color: var(--color-text-primary) !important;
+}
+.custom-swagger-styles .swagger-ui .scheme-container {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.custom-swagger-styles .swagger-ui select,
+.custom-swagger-styles .swagger-ui input,
+.custom-swagger-styles .swagger-ui textarea {
+  background-color: var(--color-bg-primary) !important;
+  color: var(--color-text-primary) !important;
+  border: 1px solid var(--color-border-subtle) !important;
+}
+.custom-swagger-styles .swagger-ui .btn {
+  color: var(--color-text-primary) !important;
+  border-color: var(--color-border-subtle) !important;
+}
+.custom-swagger-styles .swagger-ui .model-title,
+.custom-swagger-styles .swagger-ui .model,
+.custom-swagger-styles .swagger-ui .prop-type,
+.custom-swagger-styles .swagger-ui .prop-format {
+  color: var(--color-text-primary) !important;
+}
+.custom-swagger-styles .swagger-ui .opblock-body pre.microlight {
+  background-color: var(--color-bg-primary) !important;
+  color: var(--color-text-primary) !important;
+}
