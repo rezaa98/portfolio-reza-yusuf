@@ -20,7 +20,7 @@ function getMessageText(message: { parts?: Array<{ type: string; text?: string }
 export function AgentChatSimulator() {
   const { messages, sendMessage, status, error } = useChat();
   const [input, setInput] = useState("");
-  const isLoading = status === "in_progress" || status === "streaming" || status === "submitted";
+  const isLoading = status === "streaming" || status === "submitted";
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
