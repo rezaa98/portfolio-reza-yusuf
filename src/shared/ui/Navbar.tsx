@@ -25,6 +25,7 @@ export function Navbar() {
     { name: t("certifications"), href: getHref("#certifications") },
     { name: t("blog"), href: getHref("#blog") },
     { name: t("web_demo"), href: "/web-demo" },
+    { name: t("docs") || "Docs", href: "/docs" },
     { name: t("api_docs"), href: "/api-docs" },
   ];
 

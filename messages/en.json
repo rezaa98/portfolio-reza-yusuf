@@ -6,9 +6,10 @@
     "skills": "Skills",
     "certifications": "Certifications",
     "blog": "Blog",
-    "web_demo": "Web Demo",
+    "web_demo": "QA Demo",
     "api_docs": "API Docs",
-    "contact": "Contact"
+    "docs": "Docs",
+    "contact": "Contact Me"
   },
   "Hero": {
     "greeting": "Hi, I'm",
