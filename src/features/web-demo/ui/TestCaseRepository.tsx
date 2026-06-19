@@ -107,6 +107,23 @@ const TEST_CASES: TestCase[] = [
       "Verify that the 'About' link becomes visible in the expanded menu."
     ],
     expectedResult: "The mobile menu button is present on small screens, and clicking it successfully reveals the hidden navigation links."
+  },
+  {
+    id: "TC-006",
+    name: "Verify SEO and Meta Tags",
+    description: "Ensure that the page title, meta description, and OpenGraph tags are correctly rendered in the DOM for search engines.",
+    label: "Positive",
+    status: "Passed",
+    isAutomated: true,
+    testData: "{ target_locale: 'en' }",
+    steps: [
+      "Navigate to the English homepage.",
+      "Wait for the network state to be idle.",
+      "Verify the document <title> matches the expected string.",
+      "Verify the <meta name=\"description\"> content matches the expected string.",
+      "Verify the <meta property=\"og:title\"> content matches the expected string."
+    ],
+    expectedResult: "All critical SEO and OpenGraph metadata tags are present and contain the correct values."
   }
 ];
 

@@ -196,11 +196,12 @@
       "failed": "Gagal",
       "skipped": "Dilewati",
       "tests": {
-        "t1": "Verifikasi Pemuatan Beranda dan Teks Sambutan",
+        "t1": "Verifikasi Tampilan Awal dan Teks Sambutan",
         "t2": "Verifikasi Navigasi Demo Web",
-        "t3": "Verifikasi Pengalih Bahasa",
-        "t4": "Uji Negatif: Verifikasi 404 pada Rute Tidak Valid",
-        "t5": "Uji Edge: Verifikasi Menu Navigasi Seluler"
+        "t3": "Verifikasi Pengubah Bahasa",
+        "t4": "Tes Negatif: Verifikasi 404 pada Rute Tidak Valid",
+        "t5": "Tes Batas: Verifikasi Menu Navigasi Seluler",
+        "t6": "Verifikasi SEO dan Meta Tags"
       }
     },
     "AgentChatSimulator": {

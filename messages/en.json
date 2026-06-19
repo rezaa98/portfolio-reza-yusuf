@@ -200,7 +200,8 @@
         "t2": "Verify Web Demo Navigation",
         "t3": "Verify Localization Switcher",
         "t4": "Negative Test: Verify 404 on Invalid Route",
-        "t5": "Edge Test: Verify Mobile Navigation Menu"
+        "t5": "Edge Test: Verify Mobile Navigation Menu",
+        "t6": "Verify SEO and Meta Tags"
       }
     },
     "AgentChatSimulator": {

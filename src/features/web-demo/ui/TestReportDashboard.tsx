@@ -16,6 +16,7 @@ export function TestReportDashboard() {
     { id: 3, name: t("tests.t3"), status: "passed", time: "2.2s", error: null },
     { id: 4, name: t("tests.t4"), status: "passed", time: "1.5s", error: null },
     { id: 5, name: t("tests.t5"), status: "passed", time: "3.4s", error: null },
+    { id: 6, name: t("tests.t6"), status: "passed", time: "1.2s", error: null },
   ];
 
   const totalTests = TEST_RESULTS.length;
