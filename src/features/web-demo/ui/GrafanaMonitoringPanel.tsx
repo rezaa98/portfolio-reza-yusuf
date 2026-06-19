@@ -58,15 +58,29 @@ export default function GrafanaMonitoringPanel() {
         </div>
       </div>
 
-      <div className="relative w-full h-[600px] bg-slate-950/50">
+      <div className="relative w-full h-[400px] bg-slate-950/50">
         {grafanaUrl ? (
-          <iframe
-            key={isRefreshing ? 'refreshing' : 'loaded'}
-            src={`${grafanaUrl}&kiosk`}
-            className="w-full h-full border-none"
-            title="Grafana Telemetry Dashboard"
-            allow="fullscreen"
-          />
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-gradient-to-b from-transparent to-black/20">
+            <div className="relative w-24 h-24 mb-6">
+              <div className="absolute inset-0 rounded-full border-2 border-emerald-500/30 animate-[spin_3s_linear_infinite]" />
+              <div className="absolute inset-2 rounded-full border-2 border-emerald-400/40 animate-[spin_4s_linear_infinite_reverse]" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Activity className="w-10 h-10 text-emerald-400 animate-pulse" />
+              </div>
+            </div>
+            <h4 className="text-2xl font-bold text-white mb-2 font-space-grotesk">Telemetry Connected</h4>
+            <p className="text-slate-400 max-w-md mb-8">
+              Sistem Anda sedang mengirimkan data secara real-time ke Grafana Cloud. Karena alasan keamanan Grafana (Anti-Clickjacking), dasbor hanya dapat dilihat secara langsung.
+            </p>
+            <a 
+              href={grafanaUrl} 
+              target="_blank" 
+              rel="noreferrer"
+              className="flex items-center gap-2 px-6 py-3 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 rounded-xl transition-all hover:scale-105 active:scale-95 font-medium"
+            >
+              Buka Dasbor Grafana <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
         ) : (
           <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
             <div className="w-16 h-16 mb-4 rounded-2xl bg-orange-500/10 flex items-center justify-center border border-orange-500/20">
