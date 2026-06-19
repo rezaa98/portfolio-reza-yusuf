@@ -3,6 +3,7 @@ import { PipelineVisualizer } from "@/features/web-demo/ui/PipelineVisualizer";
 import { TestReportDashboard } from "@/features/web-demo/ui/TestReportDashboard";
 import { AgentChatSimulator } from "@/features/web-demo/ui/AgentChatSimulator";
 import { TestCaseRepository } from "@/features/web-demo/ui/TestCaseRepository";
+import GrafanaMonitoringPanel from "@/features/web-demo/ui/GrafanaMonitoringPanel";
 import { ArrowRight, GitBranch, Bot } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Navbar } from "@/shared/ui/Navbar";
@@ -101,6 +102,19 @@ export default async function WebDemoPage({ params }: { params: Promise<{ locale
             </p>
           </div>
           <TestReportDashboard />
+        </section>
+
+        {/* Live System Telemetry Section */}
+        <section className="space-y-6">
+          <div className="flex flex-col gap-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-white font-space-grotesk flex items-center gap-3">
+              <span className="text-orange-400">05.</span> Live System Telemetry
+            </h2>
+            <p className="text-text-secondary">
+              Real-time observability dashboard streaming traces, metrics, and logs using OpenTelemetry and Grafana Cloud.
+            </p>
+          </div>
+          <GrafanaMonitoringPanel />
         </section>
 
         {/* Live Agentic AI Section */}
