@@ -89,4 +89,21 @@ test.describe('Portfolio Verification Suite', () => {
     await expect(aboutLink).toBeVisible({ timeout: 10000 });
   });
 
+  test('Verify SEO and Meta Tags', async ({ page }) => {
+    // Navigate to English homepage
+    await page.goto('/en');
+    await page.waitForLoadState('networkidle');
+    
+    // Verify Page Title
+    await expect(page).toHaveTitle(/RezaCode\.cloud \| QA Engineer/i);
+    
+    // Verify Meta Description
+    const metaDescription = page.locator('meta[name="description"]');
+    await expect(metaDescription).toHaveAttribute('content', /Portfolio of Reza Yusuf Maulana/i);
+    
+    // Verify OpenGraph Title
+    const ogTitle = page.locator('meta[property="og:title"]');
+    await expect(ogTitle).toHaveAttribute('content', /RezaCode\.cloud \| QA Engineer/i);
+  });
+
 });
