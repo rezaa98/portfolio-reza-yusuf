@@ -58,5 +58,154 @@
   },
   "Contact": {
     "title": "Get In Touch"
+  },
+  "WebDemo": {
+    "Hero": {
+      "title1": "Automation & CI/CD",
+      "title2": "Showcase",
+      "description": "An interactive demonstration of my QA Engineering workflow. This page simulates how automated tests are written using Playwright, executed through CI/CD pipelines, and monitored via reporting dashboards.",
+      "btnExplore": "Explore Demo",
+      "btnViewProjects": "View Real Projects"
+    },
+    "Sections": {
+      "s1Title": "Test Scenario Documentation",
+      "s1Desc": "A repository of the end-to-end testing scenarios designed for this portfolio. Click on any test case to view its detailed documentation, steps, and expected results.",
+      "s2Title": "Live Test Execution",
+      "s2Desc": "Simulating a Playwright E2E test execution. Click \"Run Test\" to observe the automated scenario stepping through expected vs actual results in real-time.",
+      "s3Title": "Pipeline Visualizer",
+      "s3Desc": "A representation of a Continuous Integration workflow. Automation tests are triggered automatically on push, ensuring code quality before deployment.",
+      "s4Title": "Automation Report",
+      "s4Desc": "Mock reporting dashboard tracking test suite health, execution time, and detailed failure logs to quickly identify and resolve regressions.",
+      "s5Title": "Agentic AI Test Generator",
+      "s5Desc": "Experience the future of QA Automation. This live chatbot is powered by Google Gemini 1.5, strictly configured to generate Playwright TypeScript scripts. Try prompting it to write a test scenario!",
+      "s5Link": "View Full MCP Source Code"
+    },
+    "TestCaseRepository": {
+      "header": "Test Scenario Repository",
+      "description": "Description",
+      "testData": "Test Data",
+      "automationStatus": "Automation Status",
+      "testSteps": "Test Steps",
+      "expectedResult": "Expected Result",
+      "automated": "Automated (Playwright)",
+      "manual": "Manual",
+      "testCases": {
+        "TC-001": {
+          "name": "Verify Homepage Load and Welcome Text",
+          "description": "Ensure the homepage loads correctly and the main H1 welcome text is visible.",
+          "label": "Positive",
+          "status": "Passed",
+          "expectedResult": "The homepage renders successfully with the H1 heading clearly visible.",
+          "steps": [
+            "Navigate to the English homepage ('/en').",
+            "Wait for the network state to be idle.",
+            "Locate the H1 heading containing the user's name.",
+            "Assert that the heading is visible on the screen."
+          ]
+        },
+        "TC-002": {
+          "name": "Verify Web Demo Navigation",
+          "description": "Verify that users can navigate from the homepage to the Web Demo page using the main navigation link.",
+          "label": "Positive",
+          "status": "Passed",
+          "expectedResult": "User is successfully redirected to the Web Demo page and the correct heading is displayed.",
+          "steps": [
+            "Navigate to the English homepage ('/en').",
+            "Locate the 'Web Demo' link in the navigation menu.",
+            "Click the 'Web Demo' link.",
+            "Wait for the URL to change to include '/web-demo'.",
+            "Verify the H1 heading 'Automation & CI/CD Showcase' is visible."
+          ]
+        },
+        "TC-003": {
+          "name": "Verify Localization Switcher",
+          "description": "Ensure that changing the language from English to Indonesian correctly updates the text content on the page.",
+          "label": "Positive",
+          "status": "Passed",
+          "expectedResult": "The website successfully changes the locale and translates the target text to Indonesian.",
+          "steps": [
+            "Navigate to the English homepage ('/en').",
+            "Verify initial English text ('Available for new opportunities').",
+            "Locate and click the localization dropdown/button.",
+            "Select 'Indonesia (ID)' from the options.",
+            "Wait for navigation and network state to be idle.",
+            "Verify the URL contains '/id'.",
+            "Assert that the text has updated to Indonesian ('Terbuka untuk peluang baru')."
+          ]
+        },
+        "TC-004": {
+          "name": "Negative Test: Verify 404 on Invalid Route",
+          "description": "Ensure that navigating to a non-existent route correctly renders a 404 error page instead of crashing.",
+          "label": "Negative",
+          "status": "Passed",
+          "expectedResult": "The server returns a 404 HTTP status and the Next.js default 404 page is rendered to the user.",
+          "steps": [
+            "Attempt to navigate to the non-existent URL.",
+            "Capture the HTTP response status code.",
+            "Assert that the HTTP response status is exactly 404.",
+            "Locate the H2 heading on the page.",
+            "Assert the heading contains the text 'This page could not be found'."
+          ]
+        },
+        "TC-005": {
+          "name": "Edge Test: Verify Mobile Navigation Menu",
+          "description": "Verify that the responsive mobile hamburger menu appears and functions correctly on small screens.",
+          "label": "Edge",
+          "status": "Passed",
+          "expectedResult": "The mobile menu button is present on small screens, and clicking it successfully reveals the hidden navigation links.",
+          "steps": [
+            "Set the browser viewport size to mobile dimensions (375x812).",
+            "Navigate to the homepage.",
+            "Locate the hamburger menu button (visible only on mobile).",
+            "Assert that the hamburger menu button is visible.",
+            "Click the menu button to expand the navigation.",
+            "Verify that the 'About' link becomes visible in the expanded menu."
+          ]
+        }
+      }
+    },
+    "PlaywrightSimulator": {
+      "runTest": "Run Test",
+      "running": "Running...",
+      "terminal": "Terminal",
+      "clickToRun": "Click \"Run Test\" to execute Playwright scenario."
+    },
+    "PipelineVisualizer": {
+      "viewRealReport": "View Real Report",
+      "runWorkflow": "Run Workflow",
+      "running": "Running...",
+      "pending": "Pending",
+      "completedText": "Workflow completed successfully. Automation tests passed and deployed to staging.",
+      "stages": {
+        "checkout": "Checkout Code",
+        "install": "Install Dependencies",
+        "lint": "Run Linter",
+        "test": "Playwright E2E Tests",
+        "deploy": "Deploy to Staging"
+      }
+    },
+    "TestReportDashboard": {
+      "title": "Automation Test Report",
+      "subtitle": "Generated by Playwright Reporter",
+      "viewUiSummary": "View UI Summary",
+      "viewRawHtml": "View Raw HTML Report",
+      "totalTests": "Total Tests",
+      "passRate": "Pass Rate",
+      "duration": "Duration",
+      "passed": "Passed",
+      "failed": "Failed",
+      "skipped": "Skipped",
+      "tests": {
+        "t1": "Verify Homepage Load and Welcome Text",
+        "t2": "Verify Web Demo Navigation",
+        "t3": "Verify Localization Switcher",
+        "t4": "Negative Test: Verify 404 on Invalid Route",
+        "t5": "Edge Test: Verify Mobile Navigation Menu"
+      }
+    },
+    "AgentChatSimulator": {
+      "placeholder": "e.g., 'Write a test to verify the login form'",
+      "send": "Send"
+    }
   }
 }

@@ -5,6 +5,8 @@ import { ChevronDown, ChevronUp, CheckCircle2, FileText, Activity, Database, Wor
 import { cn } from "@/shared/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
+import { useTranslations } from "next-intl";
+
 type TestCase = {
   id: string;
   name: string;
@@ -17,6 +19,7 @@ type TestCase = {
   expectedResult: string;
 };
 
+// ... TEST_CASES remains unchanged ...
 const TEST_CASES: TestCase[] = [
   {
     id: "TC-001",
@@ -109,6 +112,7 @@ const TEST_CASES: TestCase[] = [
 
 export function TestCaseRepository() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const t = useTranslations("WebDemo.TestCaseRepository");
 
   const toggleExpand = (id: string) => {
     setExpandedId(expandedId === id ? null : id);
@@ -128,7 +132,7 @@ export function TestCaseRepository() {
       {/* Header */}
       <div className="bg-black/40 px-6 py-4 border-b border-white/10 flex items-center gap-3">
         <FileText className="text-accent-blue" size={20} />
-        <h3 className="font-bold text-white text-lg font-space-grotesk">Test Scenario Repository</h3>
+        <h3 className="font-bold text-white text-lg font-space-grotesk">{t("header")}</h3>
       </div>
 
       {/* Table List */}
@@ -175,14 +179,14 @@ export function TestCaseRepository() {
                     <div className="lg:col-span-1 space-y-4">
                       <div>
                         <h4 className="text-xs uppercase tracking-wider text-gray-500 font-bold mb-2 flex items-center gap-2">
-                          <Activity size={14} /> Description
+                          <Activity size={14} /> {t("description")}
                         </h4>
                         <p className="text-sm text-gray-300 leading-relaxed">{tc.description}</p>
                       </div>
                       
                       <div>
                         <h4 className="text-xs uppercase tracking-wider text-gray-500 font-bold mb-2 flex items-center gap-2">
-                          <Database size={14} /> Test Data
+                          <Database size={14} /> {t("testData")}
                         </h4>
                         <code className="text-xs text-accent-cyan bg-white/5 px-2 py-1.5 rounded border border-white/10 block font-mono break-all">
                           {tc.testData}
@@ -191,15 +195,15 @@ export function TestCaseRepository() {
 
                       <div>
                         <h4 className="text-xs uppercase tracking-wider text-gray-500 font-bold mb-2 flex items-center gap-2">
-                          <Settings size={14} /> Automation Status
+                          <Settings size={14} /> {t("automationStatus")}
                         </h4>
                         <div className="flex items-center gap-2 text-sm text-gray-300">
                           {tc.isAutomated ? (
                             <span className="flex items-center gap-2 bg-accent-purple/20 text-accent-purple px-2 py-1 rounded-md border border-accent-purple/20">
-                              Automated (Playwright)
+                              {t("automated")}
                             </span>
                           ) : (
-                            <span className="text-gray-500">Manual</span>
+                            <span className="text-gray-500">{t("manual")}</span>
                           )}
                         </div>
                       </div>
@@ -209,7 +213,7 @@ export function TestCaseRepository() {
                     <div className="lg:col-span-2 space-y-4">
                       <div>
                         <h4 className="text-xs uppercase tracking-wider text-gray-500 font-bold mb-2 flex items-center gap-2">
-                          <Workflow size={14} /> Test Steps
+                          <Workflow size={14} /> {t("testSteps")}
                         </h4>
                         <ol className="list-decimal list-inside space-y-1.5">
                           {tc.steps.map((step, idx) => (
@@ -222,7 +226,7 @@ export function TestCaseRepository() {
 
                       <div className="bg-accent-blue/10 border border-accent-blue/20 rounded-lg p-4 mt-4">
                         <h4 className="text-xs uppercase tracking-wider text-accent-blue font-bold mb-2 flex items-center gap-2">
-                          <CheckSquare size={14} /> Expected Result
+                          <CheckSquare size={14} /> {t("expectedResult")}
                         </h4>
                         <p className="text-sm text-gray-200">{tc.expectedResult}</p>
                       </div>

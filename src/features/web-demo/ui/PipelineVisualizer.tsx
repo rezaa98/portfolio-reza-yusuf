@@ -3,19 +3,21 @@
 import { useState } from "react";
 import { Play, Check, CircleDot, Loader2, GitBranch, Terminal } from "lucide-react";
 import { cn } from "@/shared/lib/utils";
-
-const PIPELINE_STAGES = [
-  { id: "checkout", name: "Checkout Code", time: "2s" },
-  { id: "install", name: "Install Dependencies", time: "15s" },
-  { id: "lint", name: "Run Linter", time: "5s" },
-  { id: "test", name: "Playwright E2E Tests", time: "45s" },
-  { id: "deploy", name: "Deploy to Staging", time: "12s" },
-];
+import { useTranslations } from "next-intl";
 
 export function PipelineVisualizer() {
   const [status, setStatus] = useState<"idle" | "running" | "success">("idle");
   const [activeStageIndex, setActiveStageIndex] = useState(-1);
   const [completedStages, setCompletedStages] = useState<string[]>([]);
+  const t = useTranslations("WebDemo.PipelineVisualizer");
+
+  const PIPELINE_STAGES = [
+    { id: "checkout", name: t("stages.checkout"), time: "2s" },
+    { id: "install", name: t("stages.install"), time: "15s" },
+    { id: "lint", name: t("stages.lint"), time: "5s" },
+    { id: "test", name: t("stages.test"), time: "45s" },
+    { id: "deploy", name: t("stages.deploy"), time: "12s" },
+  ];
 
   const runPipeline = () => {
     if (status === "running") return;
@@ -66,7 +68,7 @@ export function PipelineVisualizer() {
             rel="noopener noreferrer"
             className="hidden md:flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-md text-sm font-medium transition-colors"
           >
-            View Real Report
+            {t("viewRealReport")}
           </a>
           <button
           onClick={runPipeline}
@@ -74,7 +76,7 @@ export function PipelineVisualizer() {
           className="flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-3 py-1.5 rounded-md text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {status === "running" ? <Loader2 size={16} className="animate-spin" /> : <Play size={16} />}
-          Run Workflow
+          {status === "running" ? t("running") : t("runWorkflow")}
         </button>
         </div>
       </div>
@@ -118,7 +120,7 @@ export function PipelineVisualizer() {
                     {stage.name}
                   </div>
                   <div className="text-xs text-gray-500 mt-1">
-                    {isCompleted ? stage.time : isActive ? "Running..." : "Pending"}
+                    {isCompleted ? stage.time : isActive ? t("running") : t("pending")}
                   </div>
                 </div>
               </div>
@@ -130,7 +132,7 @@ export function PipelineVisualizer() {
       {status === "success" && (
         <div className="bg-[#161b22] px-4 py-3 border-t border-white/10 flex items-center gap-2 text-sm text-green-400">
           <Check size={16} />
-          Workflow completed successfully. Automation tests passed and deployed to staging.
+          {t("completedText")}
         </div>
       )}
     </div>

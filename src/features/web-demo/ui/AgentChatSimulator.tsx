@@ -16,11 +16,13 @@ function getMessageText(message: { parts?: Array<{ type: string; text?: string }
     .map((p) => p.text)
     .join("");
 }
+import { useTranslations } from "next-intl";
 
 export function AgentChatSimulator() {
   const { messages, sendMessage, status, error } = useChat();
   const [input, setInput] = useState("");
   const isLoading = status === "streaming" || status === "submitted";
+  const t = useTranslations("WebDemo.AgentChatSimulator");
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -146,7 +148,7 @@ export function AgentChatSimulator() {
           <input
             className="w-full bg-white/5 border border-white/10 text-white placeholder:text-gray-500 rounded-full py-3 pl-5 pr-12 focus:outline-none focus:ring-2 focus:ring-accent-blue/50 transition-all text-sm"
             value={input}
-            placeholder="Type your testing scenario prompt here..."
+            placeholder={t("placeholder")}
             onChange={(e) => setInput(e.target.value)}
             disabled={isLoading}
           />

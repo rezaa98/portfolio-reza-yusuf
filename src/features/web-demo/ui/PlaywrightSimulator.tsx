@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { Play, CheckCircle2, XCircle, TerminalSquare, FileCode2 } from "lucide-react";
 import { cn } from "@/shared/lib/utils";
 
+import { useTranslations } from "next-intl";
+
 const MOCK_CODE = `import { test, expect } from '@playwright/test';
 
 test.describe('Portfolio Verification Suite', () => {
@@ -31,6 +33,7 @@ export function PlaywrightSimulator() {
   const [currentStep, setCurrentStep] = useState(-1);
   const [logs, setLogs] = useState<string[]>([]);
   const [isFinished, setIsFinished] = useState(false);
+  const t = useTranslations("WebDemo.PlaywrightSimulator");
 
   const runTest = () => {
     if (isRunning) return;
@@ -105,7 +108,7 @@ export function PlaywrightSimulator() {
         <div className="bg-black/40 px-4 py-2 flex flex-wrap items-center justify-between gap-2 border-b border-white/10 text-xs text-text-muted">
           <div className="flex items-center gap-2">
             <TerminalSquare size={14} className="text-accent-cyan" />
-            <span>Terminal</span>
+            <span>{t("terminal")}</span>
           </div>
           <button 
             onClick={runTest}
@@ -113,7 +116,7 @@ export function PlaywrightSimulator() {
             className="flex items-center gap-1 bg-accent-blue/20 hover:bg-accent-blue/40 text-accent-blue px-2 py-1 rounded transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <Play size={12} />
-            {isRunning ? "Running..." : "Run Test"}
+            {isRunning ? t("running") : t("runTest")}
           </button>
         </div>
         <div className="p-4 flex-grow overflow-y-auto min-h-[300px] text-gray-300">
@@ -130,7 +133,7 @@ export function PlaywrightSimulator() {
             <div className="animate-pulse">_</div>
           )}
           {!isRunning && !isFinished && logs.length === 0 && (
-            <div className="text-gray-500 italic">Click &quot;Run Test&quot; to execute Playwright scenario.</div>
+            <div className="text-gray-500 italic">{t("clickToRun")}</div>
           )}
         </div>
       </div>

@@ -16,7 +16,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default async function WebDemoPage() {
+export default async function WebDemoPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const tWebDemo = await getTranslations({ locale, namespace: "WebDemo" });
+  
   return (
     <div className="min-h-screen bg-bg-primary pt-24 pb-16 flex flex-col">
       <Navbar />
@@ -33,17 +36,17 @@ export default async function WebDemoPage() {
         {/* Header Section */}
         <section className="text-center max-w-3xl mx-auto mt-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-space-grotesk text-white mb-6 tracking-tight">
-            Automation & CI/CD <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan via-accent-blue to-accent-purple">Showcase</span>
+            {tWebDemo("Hero.title1")} <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan via-accent-blue to-accent-purple">{tWebDemo("Hero.title2")}</span>
           </h1>
           <p className="text-lg text-text-secondary leading-relaxed mb-8">
-            An interactive demonstration of my QA Engineering workflow. This page simulates how automated tests are written using Playwright, executed through CI/CD pipelines, and monitored via reporting dashboards.
+            {tWebDemo("Hero.description")}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a href="#simulator" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent-blue hover:bg-blue-600 text-white font-medium transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)]">
-              Explore Demo <ArrowRight size={18} />
+              {tWebDemo("Hero.btnExplore")} <ArrowRight size={18} />
             </a>
             <a href="https://github.com/rezaa98" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium transition-all">
-              <GitBranch size={18} /> View Real Projects
+              <GitBranch size={18} /> {tWebDemo("Hero.btnViewProjects")}
             </a>
           </div>
         </section>
@@ -52,10 +55,10 @@ export default async function WebDemoPage() {
         <section id="simulator" className="space-y-6">
           <div className="flex flex-col gap-2">
             <h2 className="text-2xl md:text-3xl font-bold text-white font-space-grotesk flex items-center gap-3">
-              <span className="text-accent-blue">01.</span> Test Scenario Documentation
+              <span className="text-accent-blue">01.</span> {tWebDemo("Sections.s1Title")}
             </h2>
             <p className="text-text-secondary">
-              A repository of the end-to-end testing scenarios designed for this portfolio. Click on any test case to view its detailed documentation, steps, and expected results.
+              {tWebDemo("Sections.s1Desc")}
             </p>
           </div>
           <TestCaseRepository />
@@ -65,10 +68,10 @@ export default async function WebDemoPage() {
         <section className="space-y-6">
           <div className="flex flex-col gap-2">
             <h2 className="text-2xl md:text-3xl font-bold text-white font-space-grotesk flex items-center gap-3">
-              <span className="text-accent-purple">02.</span> Live Test Execution
+              <span className="text-accent-purple">02.</span> {tWebDemo("Sections.s2Title")}
             </h2>
             <p className="text-text-secondary">
-              Simulating a Playwright E2E test execution. Click &quot;Run Test&quot; to observe the automated scenario stepping through expected vs actual results in real-time.
+              {tWebDemo("Sections.s2Desc")}
             </p>
           </div>
           <PlaywrightSimulator />
@@ -78,10 +81,10 @@ export default async function WebDemoPage() {
         <section className="space-y-6">
           <div className="flex flex-col gap-2">
             <h2 className="text-2xl md:text-3xl font-bold text-white font-space-grotesk flex items-center gap-3">
-              <span className="text-accent-cyan">03.</span> Pipeline Visualizer
+              <span className="text-accent-cyan">03.</span> {tWebDemo("Sections.s3Title")}
             </h2>
             <p className="text-text-secondary">
-              A representation of a Continuous Integration workflow. Automation tests are triggered automatically on push, ensuring code quality before deployment.
+              {tWebDemo("Sections.s3Desc")}
             </p>
           </div>
           <PipelineVisualizer />
@@ -91,10 +94,10 @@ export default async function WebDemoPage() {
         <section className="space-y-6">
           <div className="flex flex-col gap-2">
             <h2 className="text-2xl md:text-3xl font-bold text-white font-space-grotesk flex items-center gap-3">
-              <span className="text-accent-blue">04.</span> Automation Report
+              <span className="text-accent-blue">04.</span> {tWebDemo("Sections.s4Title")}
             </h2>
             <p className="text-text-secondary">
-              Mock reporting dashboard tracking test suite health, execution time, and detailed failure logs to quickly identify and resolve regressions.
+              {tWebDemo("Sections.s4Desc")}
             </p>
           </div>
           <TestReportDashboard />
@@ -107,10 +110,10 @@ export default async function WebDemoPage() {
               <Bot size={32} className="text-accent-purple" />
             </div>
             <h2 className="text-2xl md:text-4xl font-bold text-white font-space-grotesk">
-              Agentic AI Test Generator
+              {tWebDemo("Sections.s5Title")}
             </h2>
             <p className="text-text-secondary max-w-2xl mx-auto mb-8">
-              Experience the future of QA Automation. This live chatbot is powered by Google Gemini 1.5, strictly configured to generate Playwright TypeScript scripts. Try prompting it to write a test scenario!
+              {tWebDemo("Sections.s5Desc")}
             </p>
           </div>
           
@@ -118,7 +121,7 @@ export default async function WebDemoPage() {
 
           <div className="text-center mt-6">
             <a href="https://github.com/rezaa98/Playwright-mcp-web-portofolio" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-sm transition-colors bg-cyan-400/10 px-4 py-2 rounded-full">
-              <GitBranch size={16} /> View Full MCP Source Code
+              <GitBranch size={16} /> {tWebDemo("Sections.s5Link")}
             </a>
           </div>
         </section>
