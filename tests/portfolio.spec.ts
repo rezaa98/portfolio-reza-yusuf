@@ -7,7 +7,7 @@ test.describe('Portfolio Verification Suite', () => {
     await page.goto('/en');
 
     // Wait for the page to be fully loaded
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     // Verify the hero heading contains name
     const heroHeading = page.locator('h1').first();
@@ -21,7 +21,7 @@ test.describe('Portfolio Verification Suite', () => {
   test('Verify Web Demo Navigation', async ({ page }) => {
     // Start at English homepage
     await page.goto('/en');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     // Look for Web Demo link in the navbar (visible on desktop viewport)
     const webDemoLink = page.getByRole('link', { name: /Web Demo/i }).first();
@@ -39,7 +39,7 @@ test.describe('Portfolio Verification Suite', () => {
   test('Verify Localization Switcher', async ({ page }) => {
     // Navigate to English homepage
     await page.goto('/en');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     // Verify we start in English — check the availability badge
     await expect(page.getByText('Available for new opportunities')).toBeVisible({ timeout: 10000 });
@@ -51,7 +51,7 @@ test.describe('Portfolio Verification Suite', () => {
 
     // Wait for navigation to Indonesian locale
     await page.waitForURL('**/id', { timeout: 15000 });
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
 
     // Verify text changed to Indonesian — use the actual translation from id.json
     await expect(page.getByText('Terbuka untuk peluang baru')).toBeVisible({ timeout: 10000 });
@@ -75,7 +75,7 @@ test.describe('Portfolio Verification Suite', () => {
     
     // Navigate to English homepage
     await page.goto('/en');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Find the hamburger menu button
     const navBtn = page.locator('header button.md\\:hidden');
@@ -92,7 +92,7 @@ test.describe('Portfolio Verification Suite', () => {
   test('Verify SEO and Meta Tags', async ({ page }) => {
     // Navigate to English homepage
     await page.goto('/en');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     
     // Verify Page Title
     await expect(page).toHaveTitle(/RezaCode\.cloud \| QA Engineer/i);
