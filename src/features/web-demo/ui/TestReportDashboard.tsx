@@ -69,7 +69,7 @@ export function TestReportDashboard() {
         {showHtmlReport ? (
           <div className="w-full h-[600px] rounded-lg overflow-hidden border border-white/10 bg-white">
             <iframe 
-              src="/playwright-report/index.html" 
+              src="https://rezaa98.github.io/portfolio-reza-yusuf/" 
               className="w-full h-full border-0"
               title="Playwright HTML Report"
             />
