@@ -7,7 +7,7 @@ import { Activity, Server, AlertCircle, RefreshCw, ExternalLink } from 'lucide-r
 export default function GrafanaMonitoringPanel() {
   const [isRefreshing, setIsRefreshing] = useState(false);
   
-  const grafanaUrl = process.env.NEXT_PUBLIC_GRAFANA_DASHBOARD_URL;
+  const grafanaUrl = process.env.NEXT_PUBLIC_GRAFANA_DASHBOARD_URL || "https://patienttoast1512.grafana.net/public-dashboards/0f154d26848b4f1f8eaf9d73976c73f3";
 
   const handleRefresh = () => {
     setIsRefreshing(true);
