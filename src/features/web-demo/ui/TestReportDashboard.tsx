@@ -20,13 +20,17 @@ export function TestReportDashboard() {
   const [error, setError] = useState<string | null>(null);
   const t = useTranslations("WebDemo.TestReportDashboard");
 
+  const [branch, setBranch] = useState("master");
+
   useEffect(() => {
+    const isPreview = window.location.hostname.includes('sit') || window.location.hostname.includes('vercel.app') || window.location.hostname === 'localhost';
+    const currentBranch = isPreview ? 'sit' : 'master';
+    setBranch(currentBranch);
+
     // If the user opts to see raw HTML, we don't strictly need to fetch JSON, but we do it anyway for the header stats.
     const fetchReport = async () => {
       try {
-        const isPreview = window.location.hostname.includes('sit') || window.location.hostname.includes('vercel.app') || window.location.hostname === 'localhost';
-        const branch = isPreview ? 'sit' : 'master';
-        const url = `https://rezaa98.github.io/portfolio-reza-yusuf/${branch}/test-results.json?t=${new Date().getTime()}`;
+        const url = `https://rezaa98.github.io/portfolio-reza-yusuf/${currentBranch}/test-results.json?t=${new Date().getTime()}`;
         
         const response = await fetch(url, { cache: 'no-store' });
         if (!response.ok) {
@@ -133,7 +137,7 @@ export function TestReportDashboard() {
         {showHtmlReport ? (
           <div className="w-full h-[600px] rounded-lg overflow-hidden border border-white/10 bg-white">
             <iframe 
-              src={`https://rezaa98.github.io/portfolio-reza-yusuf/${window.location.hostname.includes('sit') ? 'sit' : 'master'}/`} 
+              src={`https://rezaa98.github.io/portfolio-reza-yusuf/${branch}/`} 
               className="w-full h-full border-0"
               title="Playwright HTML Report"
             />

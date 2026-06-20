@@ -31,14 +31,19 @@ export function TestCaseRepository() {
   const [testCases, setTestCases] = useState<TestCase[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const [branch, setBranch] = useState("master");
+
   useEffect(() => {
+    const isPreview = window.location.hostname.includes('sit') || window.location.hostname.includes('vercel.app') || window.location.hostname === 'localhost';
+    const currentBranch = isPreview ? 'sit' : 'master';
+    setBranch(currentBranch);
+
     // Fetch actual Playwright spec files from GitHub dynamically
     const fetchSourceCode = async () => {
       try {
-        const branch = window.location.hostname.includes('sit') ? 'sit' : 'master';
-        const url1 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${branch}/tests/portfolio.spec.ts`;
-        const url2 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${branch}/tests/api/endpoints.spec.ts`;
-        const url3 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${branch}/tests/security.spec.ts`;
+        const url1 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${currentBranch}/tests/portfolio.spec.ts`;
+        const url2 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${currentBranch}/tests/api/endpoints.spec.ts`;
+        const url3 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${currentBranch}/tests/security.spec.ts`;
         
         const [res1, res2, res3] = await Promise.all([fetch(url1), fetch(url2), fetch(url3)]);
         const text1 = res1.ok ? await res1.text() : "";
@@ -55,9 +60,7 @@ export function TestCaseRepository() {
 
     const fetchTestResults = async () => {
       try {
-        const isPreview = window.location.hostname.includes('sit') || window.location.hostname.includes('vercel.app') || window.location.hostname === 'localhost';
-        const branch = isPreview ? 'sit' : 'master';
-        const url = `https://rezaa98.github.io/portfolio-reza-yusuf/${branch}/test-results.json?t=${new Date().getTime()}`;
+        const url = `https://rezaa98.github.io/portfolio-reza-yusuf/${currentBranch}/test-results.json?t=${new Date().getTime()}`;
         
         const response = await fetch(url, { cache: 'no-store' });
         if (!response.ok) {
