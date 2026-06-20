@@ -18,24 +18,24 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/45f4a0e102bba456453b122022763ad91e028c6a",
-        "commitHash": "45f4a0e102bba456453b122022763ad91e028c6a",
-        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27881390527"
+        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/2082fb8ff5d688a9c6572b9743810507f514fbd8",
+        "commitHash": "2082fb8ff5d688a9c6572b9743810507f514fbd8",
+        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27881521007"
       },
       "gitCommit": {
-        "shortHash": "45f4a0e",
-        "hash": "45f4a0e102bba456453b122022763ad91e028c6a",
-        "subject": "test: add advanced DevSecOps DAST scenarios (Path Traversal, CORS, Rate Limit, Cookie)",
-        "body": "test: add advanced DevSecOps DAST scenarios (Path Traversal, CORS, Rate Limit, Cookie)\n",
+        "shortHash": "2082fb8",
+        "hash": "2082fb8ff5d688a9c6572b9743810507f514fbd8",
+        "subject": "feat: add Security category filter to TestCaseRepository",
+        "body": "feat: add Security category filter to TestCaseRepository\n",
         "author": {
           "name": "rezaa98",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1781983383000
+          "time": 1781983715000
         },
         "committer": {
           "name": "rezaa98",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1781983383000
+          "time": 1781983715000
         },
         "branch": "master"
       },
@@ -49,24 +49,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/45f4a0e102bba456453b122022763ad91e028c6a",
-            "commitHash": "45f4a0e102bba456453b122022763ad91e028c6a",
-            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27881390527"
+            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/2082fb8ff5d688a9c6572b9743810507f514fbd8",
+            "commitHash": "2082fb8ff5d688a9c6572b9743810507f514fbd8",
+            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27881521007"
           },
           "gitCommit": {
-            "shortHash": "45f4a0e",
-            "hash": "45f4a0e102bba456453b122022763ad91e028c6a",
-            "subject": "test: add advanced DevSecOps DAST scenarios (Path Traversal, CORS, Rate Limit, Cookie)",
-            "body": "test: add advanced DevSecOps DAST scenarios (Path Traversal, CORS, Rate Limit, Cookie)\n",
+            "shortHash": "2082fb8",
+            "hash": "2082fb8ff5d688a9c6572b9743810507f514fbd8",
+            "subject": "feat: add Security category filter to TestCaseRepository",
+            "body": "feat: add Security category filter to TestCaseRepository\n",
             "author": {
               "name": "rezaa98",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1781983383000
+              "time": 1781983715000
             },
             "committer": {
               "name": "rezaa98",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1781983383000
+              "time": 1781983715000
             },
             "branch": "master"
           },
@@ -174,12 +174,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 73,
+                          "duration": 70,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T19:25:48.873Z",
+                          "startTime": "2026-06-20T19:31:21.891Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -266,12 +266,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 6464,
+                          "duration": 6478,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T19:25:48.981Z",
+                          "startTime": "2026-06-20T19:31:21.998Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -350,12 +350,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 12,
+                          "duration": 11,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T19:25:55.465Z",
+                          "startTime": "2026-06-20T19:31:28.494Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -434,12 +434,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 13,
+                          "duration": 12,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T19:25:55.488Z",
+                          "startTime": "2026-06-20T19:31:28.517Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -518,12 +518,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 6371,
+                          "duration": 6396,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T19:25:55.513Z",
+                          "startTime": "2026-06-20T19:31:28.540Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -621,12 +621,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1207,
+                      "duration": 1084,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:26:01.903Z",
+                      "startTime": "2026-06-20T19:31:34.957Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -716,12 +716,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1224,
+                      "duration": 1142,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:26:03.319Z",
+                      "startTime": "2026-06-20T19:31:36.258Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -811,12 +811,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1227,
+                      "duration": 1215,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:26:04.559Z",
+                      "startTime": "2026-06-20T19:31:37.418Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -906,12 +906,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 268,
+                      "duration": 277,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:26:05.805Z",
+                      "startTime": "2026-06-20T19:31:38.649Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1001,12 +1001,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 646,
+                      "duration": 700,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:26:06.087Z",
+                      "startTime": "2026-06-20T19:31:38.940Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1096,12 +1096,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 919,
+                      "duration": 1002,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:26:06.746Z",
+                      "startTime": "2026-06-20T19:31:39.654Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1208,12 +1208,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 182,
+                      "duration": 179,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:26:07.686Z",
+                      "startTime": "2026-06-20T19:31:40.675Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1303,12 +1303,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 926,
+                      "duration": 878,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:26:07.881Z",
+                      "startTime": "2026-06-20T19:31:40.866Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1398,12 +1398,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 17,
+                      "duration": 16,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:26:08.819Z",
+                      "startTime": "2026-06-20T19:31:41.755Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1482,12 +1482,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6427,
+                      "duration": 6375,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:26:08.848Z",
+                      "startTime": "2026-06-20T19:31:41.780Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1566,12 +1566,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6416,
+                      "duration": 6431,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:26:15.283Z",
+                      "startTime": "2026-06-20T19:31:48.164Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1650,12 +1650,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 912,
+                      "duration": 787,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:26:21.708Z",
+                      "startTime": "2026-06-20T19:31:54.605Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1711,8 +1711,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-20T19:25:46.584Z",
-    "duration": 36103.903,
+    "startTime": "2026-06-20T19:31:19.619Z",
+    "duration": 35842.063,
     "expected": 17,
     "skipped": 0,
     "unexpected": 0,
