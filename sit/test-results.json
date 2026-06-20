@@ -1,14 +1,14 @@
 {
   "config": {
     "argv": [
-      "/Users/mac-095093/.nvm/versions/node/v20.19.6/bin/node",
-      "/Users/mac-095093/Downloads/portfolio-reza-yusuf/node_modules/.bin/playwright",
+      "/opt/hostedtoolcache/node/22.22.3/x64/bin/node",
+      "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/node_modules/.bin/playwright",
       "test"
     ],
-    "configFile": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/playwright.config.ts",
-    "rootDir": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/tests",
+    "configFile": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/playwright.config.ts",
+    "rootDir": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/tests",
     "failOnFlakyTests": false,
-    "forbidOnly": false,
+    "forbidOnly": true,
     "fullyParallel": true,
     "globalSetup": null,
     "globalTeardown": null,
@@ -17,20 +17,64 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 4
+      "ci": {
+        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/df356b08305c197bbb552d797f9bea5f2dc1c94e",
+        "commitHash": "df356b08305c197bbb552d797f9bea5f2dc1c94e",
+        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27880475746"
+      },
+      "gitCommit": {
+        "shortHash": "df356b0",
+        "hash": "df356b08305c197bbb552d797f9bea5f2dc1c94e",
+        "subject": "fix: resolve typescript error preventing vercel deployment",
+        "body": "fix: resolve typescript error preventing vercel deployment\n",
+        "author": {
+          "name": "rezaa98",
+          "email": "reza.yusuf98@gmail.com",
+          "time": 1781981155000
+        },
+        "committer": {
+          "name": "rezaa98",
+          "email": "reza.yusuf98@gmail.com",
+          "time": 1781981155000
+        },
+        "branch": "sit"
+      },
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results",
+        "outputDir": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 2,
         "metadata": {
-          "actualWorkers": 4
+          "ci": {
+            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/df356b08305c197bbb552d797f9bea5f2dc1c94e",
+            "commitHash": "df356b08305c197bbb552d797f9bea5f2dc1c94e",
+            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27880475746"
+          },
+          "gitCommit": {
+            "shortHash": "df356b0",
+            "hash": "df356b08305c197bbb552d797f9bea5f2dc1c94e",
+            "subject": "fix: resolve typescript error preventing vercel deployment",
+            "body": "fix: resolve typescript error preventing vercel deployment\n",
+            "author": {
+              "name": "rezaa98",
+              "email": "reza.yusuf98@gmail.com",
+              "time": 1781981155000
+            },
+            "committer": {
+              "name": "rezaa98",
+              "email": "reza.yusuf98@gmail.com",
+              "time": 1781981155000
+            },
+            "branch": "sit"
+          },
+          "actualWorkers": 1
         },
         "id": "chromium",
         "name": "chromium",
-        "testDir": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/tests",
+        "testDir": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -60,11 +104,11 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.61.0",
-    "workers": 4,
+    "workers": 1,
     "webServer": {
       "command": "npx next start -p 3100",
       "url": "http://localhost:3100",
-      "reuseExistingServer": true,
+      "reuseExistingServer": false,
       "timeout": 30000
     }
   },
@@ -130,12 +174,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 82,
+                          "duration": 73,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T18:39:43.019Z",
+                          "startTime": "2026-06-20T18:48:52.908Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -219,15 +263,15 @@
                       "projectName": "chromium",
                       "results": [
                         {
-                          "workerIndex": 1,
-                          "parallelIndex": 1,
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 1398,
+                          "duration": 6494,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T18:39:42.994Z",
+                          "startTime": "2026-06-20T18:48:53.016Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -303,15 +347,15 @@
                       "projectName": "chromium",
                       "results": [
                         {
-                          "workerIndex": 2,
-                          "parallelIndex": 2,
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 54,
+                          "duration": 12,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T18:39:43.011Z",
+                          "startTime": "2026-06-20T18:48:59.531Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -387,15 +431,15 @@
                       "projectName": "chromium",
                       "results": [
                         {
-                          "workerIndex": 3,
-                          "parallelIndex": 3,
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 65,
+                          "duration": 13,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T18:39:42.993Z",
+                          "startTime": "2026-06-20T18:48:59.554Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -471,15 +515,15 @@
                       "projectName": "chromium",
                       "results": [
                         {
-                          "workerIndex": 3,
-                          "parallelIndex": 3,
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 7135,
+                          "duration": 6400,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T18:39:43.090Z",
+                          "startTime": "2026-06-20T18:48:59.581Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -574,15 +618,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2648,
+                      "duration": 1179,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:39:43.101Z",
+                      "startTime": "2026-06-20T18:49:06.007Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -613,12 +657,12 @@
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-6d620-epage-Load-and-Welcome-Text-chromium/test-finished-1.png"
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-6d620-epage-Load-and-Welcome-Text-chromium/test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-6d620-epage-Load-and-Welcome-Text-chromium/video.webm"
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-6d620-epage-Load-and-Welcome-Text-chromium/video.webm"
                         }
                       ]
                     }
@@ -672,12 +716,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2900,
+                      "duration": 1021,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:39:43.143Z",
+                      "startTime": "2026-06-20T18:49:08.482Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -708,12 +752,12 @@
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-fd74c--Verify-Web-Demo-Navigation-chromium/test-finished-1.png"
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-fd74c--Verify-Web-Demo-Navigation-chromium/test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-fd74c--Verify-Web-Demo-Navigation-chromium/video.webm"
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-fd74c--Verify-Web-Demo-Navigation-chromium/video.webm"
                         }
                       ]
                     }
@@ -764,15 +808,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2508,
+                      "duration": 1265,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:39:44.433Z",
+                      "startTime": "2026-06-20T18:49:09.530Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -803,12 +847,12 @@
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-0e4fc-erify-Localization-Switcher-chromium/test-finished-1.png"
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-0e4fc-erify-Localization-Switcher-chromium/test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-0e4fc-erify-Localization-Switcher-chromium/video.webm"
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-0e4fc-erify-Localization-Switcher-chromium/video.webm"
                         }
                       ]
                     }
@@ -859,15 +903,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 334,
+                      "duration": 277,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:39:47.128Z",
+                      "startTime": "2026-06-20T18:49:10.810Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -898,12 +942,12 @@
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-66132-Verify-404-on-Invalid-Route-chromium/test-finished-1.png"
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-66132-Verify-404-on-Invalid-Route-chromium/test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-66132-Verify-404-on-Invalid-Route-chromium/video.webm"
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-66132-Verify-404-on-Invalid-Route-chromium/video.webm"
                         }
                       ]
                     }
@@ -954,15 +998,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 737,
+                      "duration": 667,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:39:47.235Z",
+                      "startTime": "2026-06-20T18:49:11.099Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -993,12 +1037,12 @@
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-8d206-rify-Mobile-Navigation-Menu-chromium/test-finished-1.png"
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-8d206-rify-Mobile-Navigation-Menu-chromium/test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-8d206-rify-Mobile-Navigation-Menu-chromium/video.webm"
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-8d206-rify-Mobile-Navigation-Menu-chromium/video.webm"
                         }
                       ]
                     }
@@ -1052,12 +1096,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 839,
+                      "duration": 967,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:39:47.372Z",
+                      "startTime": "2026-06-20T18:49:11.776Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1088,12 +1132,12 @@
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-a07f6-te-Verify-SEO-and-Meta-Tags-chromium/test-finished-1.png"
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-a07f6-te-Verify-SEO-and-Meta-Tags-chromium/test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-a07f6-te-Verify-SEO-and-Meta-Tags-chromium/video.webm"
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-a07f6-te-Verify-SEO-and-Meta-Tags-chromium/video.webm"
                         }
                       ]
                     }
@@ -1161,15 +1205,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 413,
+                      "duration": 193,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:39:47.482Z",
+                      "startTime": "2026-06-20T18:49:12.762Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1200,12 +1244,12 @@
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-1cd2a-ecurity-Headers-are-present-chromium/test-finished-1.png"
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-1cd2a-ecurity-Headers-are-present-chromium/test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-1cd2a-ecurity-Headers-are-present-chromium/video.webm"
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-1cd2a-ecurity-Headers-are-present-chromium/video.webm"
                         }
                       ]
                     }
@@ -1256,15 +1300,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 643,
+                      "duration": 859,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:39:47.911Z",
+                      "startTime": "2026-06-20T18:49:12.969Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1295,12 +1339,12 @@
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-dbb19-ility-Check-on-Contact-Form-chromium/test-finished-1.png"
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-dbb19-ility-Check-on-Contact-Form-chromium/test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-dbb19-ility-Check-on-Contact-Form-chromium/video.webm"
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-dbb19-ility-Check-on-Contact-Form-chromium/video.webm"
                         }
                       ]
                     }
@@ -1320,8 +1364,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-20T18:39:40.828Z",
-    "duration": 9428.676,
+    "startTime": "2026-06-20T18:48:50.615Z",
+    "duration": 23291.027000000002,
     "expected": 13,
     "skipped": 0,
     "unexpected": 0,
