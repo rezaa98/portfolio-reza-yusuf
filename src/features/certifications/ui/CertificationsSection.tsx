@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { certifications } from "@/data/certifications";
 import { ExternalLink, Award, ChevronRight } from "lucide-react";

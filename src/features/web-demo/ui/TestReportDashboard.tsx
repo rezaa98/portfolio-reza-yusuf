@@ -9,7 +9,7 @@ import { useTranslations } from "next-intl";
 interface TestData {
   id: string;
   name: string;
-  status: "passed" | "failed" | "skipped" | "flaky";
+  status: "passed" | "failed" | "skipped" | "flaky" | "timedOut" | "unexpected" | string;
   time: string;
 }
 
