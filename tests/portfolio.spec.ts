@@ -135,7 +135,7 @@ test.describe('Portfolio Verification Suite', () => {
       { type: 'description', description: 'Ensure that the page title, meta description, and OpenGraph tags are correctly rendered in the DOM for search engines.' },
       { type: 'label', description: 'Positive' },
       { type: 'testData', description: "{ target_locale: 'en' }" },
-      { type: 'steps', description: JSON.stringify(["Navigate to the English homepage.", "Verify the document <title> matches.", "Verify the <meta name=\\"description\\"> content.", "Verify the <meta property=\\"og:title\\"> content."]) },
+      { type: 'steps', description: JSON.stringify(["Navigate to the English homepage.", "Verify the document <title> matches.", "Verify the <meta name='description'> content.", "Verify the <meta property='og:title'> content."]) },
       { type: 'expectedResult', description: 'All critical SEO and OpenGraph metadata tags are present and contain the correct values.' }
     );
     // Navigate to English homepage
