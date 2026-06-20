@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 type TestCase = {
   id: string;
   name: string;
+  category: "UI" | "API";
   description: string;
   label: "Positive" | "Negative" | "Edge";
   status: "Passed" | "Failed";
@@ -22,6 +23,7 @@ const TEST_CASES: TestCase[] = [
   {
     id: "TC-001",
     name: "Verify Homepage Load and Welcome Text",
+    category: "UI",
     description: "Ensure the homepage loads correctly and the main H1 welcome text is visible.",
     label: "Positive",
     status: "Passed",
@@ -38,6 +40,7 @@ const TEST_CASES: TestCase[] = [
   {
     id: "TC-002",
     name: "Verify Web Demo Navigation",
+    category: "UI",
     description: "Verify that users can navigate from the homepage to the Web Demo page using the main navigation link.",
     label: "Positive",
     status: "Passed",
@@ -55,6 +58,7 @@ const TEST_CASES: TestCase[] = [
   {
     id: "TC-003",
     name: "Verify Localization Switcher",
+    category: "UI",
     description: "Ensure that changing the language from English to Indonesian correctly updates the text content on the page.",
     label: "Positive",
     status: "Passed",
@@ -74,6 +78,7 @@ const TEST_CASES: TestCase[] = [
   {
     id: "TC-004",
     name: "Negative Test: Verify 404 on Invalid Route",
+    category: "UI",
     description: "Ensure that navigating to a non-existent route correctly renders a 404 error page instead of crashing.",
     label: "Negative",
     status: "Passed",
@@ -91,6 +96,7 @@ const TEST_CASES: TestCase[] = [
   {
     id: "TC-005",
     name: "Edge Test: Verify Mobile Navigation Menu",
+    category: "UI",
     description: "Verify that the responsive mobile hamburger menu appears and functions correctly on small screens.",
     label: "Edge",
     status: "Passed",
@@ -109,6 +115,7 @@ const TEST_CASES: TestCase[] = [
   {
     id: "TC-006",
     name: "Verify SEO and Meta Tags",
+    category: "UI",
     description: "Ensure that the page title, meta description, and OpenGraph tags are correctly rendered in the DOM for search engines.",
     label: "Positive",
     status: "Passed",
@@ -126,6 +133,7 @@ const TEST_CASES: TestCase[] = [
   {
     id: "TC-007",
     name: "Positive: should return 200 OK and an array of posts",
+    category: "API",
     description: "Verify that the Sanity CMS posts API endpoint successfully returns a valid JSON array of blog posts.",
     label: "Positive",
     status: "Passed",
@@ -143,6 +151,7 @@ const TEST_CASES: TestCase[] = [
   {
     id: "TC-008",
     name: "Positive: should return 200 OK and stream text for valid messages payload",
+    category: "API",
     description: "Ensure the Gemini AI Chat API processes a valid message payload and returns a text stream.",
     label: "Positive",
     status: "Passed",
@@ -159,6 +168,7 @@ const TEST_CASES: TestCase[] = [
   {
     id: "TC-009",
     name: "Negative: should return 400 Bad Request for missing messages array",
+    category: "API",
     description: "Verify that the Chat API validates the request body and rejects payloads without a 'messages' array.",
     label: "Negative",
     status: "Passed",
@@ -175,6 +185,7 @@ const TEST_CASES: TestCase[] = [
   {
     id: "TC-010",
     name: "Negative: should return 400 Bad Request for incorrectly typed messages",
+    category: "API",
     description: "Ensure the Chat API validates the type of the 'messages' field and rejects non-array inputs.",
     label: "Negative",
     status: "Passed",
@@ -189,6 +200,7 @@ const TEST_CASES: TestCase[] = [
   {
     id: "TC-011",
     name: "Edge Case: should handle exceptionally long text gracefully",
+    category: "API",
     description: "Test the robustness of the Chat API when flooded with an exceptionally long string payload.",
     label: "Edge",
     status: "Passed",
@@ -208,6 +220,7 @@ export function TestCaseRepository() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<Record<string, "manual" | "code">>({});
   const [sourceCode, setSourceCode] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<"All" | "UI" | "API">("All");
   const t = useTranslations("WebDemo.TestCaseRepository");
 
   useEffect(() => {
@@ -268,28 +281,46 @@ export function TestCaseRepository() {
     }
   };
 
+  const filteredCases = TEST_CASES.filter(tc => selectedCategory === "All" || tc.category === selectedCategory);
+
   return (
     <div className="w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#0f172a] font-sans">
       {/* Header */}
-      <div className="bg-black/40 px-6 py-4 border-b border-white/10 flex items-center justify-between gap-3">
+      <div className="bg-black/40 px-6 py-4 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <FileText className="text-accent-blue" size={20} />
           <h3 className="font-bold text-white text-lg font-space-grotesk">{t("header")}</h3>
         </div>
-        {sourceCode && (
-          <div className="hidden md:flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-xs text-green-400 font-medium">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-            </span>
-            Live Linked to GitHub
+        
+        <div className="flex items-center gap-4">
+          <div className="relative shrink-0">
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value as any)}
+              className="appearance-none bg-[#1e293b] border border-white/10 text-gray-300 text-sm rounded-lg pl-3 pr-8 py-1.5 focus:outline-none focus:ring-1 focus:ring-accent-blue transition-all cursor-pointer"
+            >
+              <option value="All">All Scenarios</option>
+              <option value="UI">UI Web Tests</option>
+              <option value="API">API Tests</option>
+            </select>
+            <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" size={14} />
           </div>
-        )}
+
+          {sourceCode && (
+            <div className="hidden lg:flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-xs text-green-400 font-medium whitespace-nowrap">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+              Live Linked
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Table List */}
       <div className="flex flex-col">
-        {TEST_CASES.map((tc) => {
+        {filteredCases.map((tc) => {
           const currentMode = viewMode[tc.id] || "manual";
           return (
             <div key={tc.id} className="border-b border-white/5 last:border-b-0">
@@ -365,7 +396,7 @@ export function TestCaseRepository() {
 
                       {/* Right Column: Steps & Result */}
                       <div className="lg:col-span-2 space-y-4">
-                        <div className="flex items-center justify-between mb-2">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-2">
                           <h4 className="text-xs uppercase tracking-wider text-gray-500 font-bold flex items-center gap-2">
                             <Workflow size={14} /> {t("testSteps")}
                           </h4>
@@ -374,7 +405,7 @@ export function TestCaseRepository() {
                             <button 
                               onClick={(e) => { e.stopPropagation(); toggleViewMode(tc.id, "manual"); }}
                               className={cn(
-                                "flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md transition-colors",
+                                "flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md transition-colors flex-1 sm:flex-none",
                                 currentMode === "manual" ? "bg-white/10 text-white" : "text-gray-500 hover:text-gray-300"
                               )}
                             >
@@ -383,7 +414,7 @@ export function TestCaseRepository() {
                             <button 
                               onClick={(e) => { e.stopPropagation(); toggleViewMode(tc.id, "code"); }}
                               className={cn(
-                                "flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md transition-colors",
+                                "flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md transition-colors flex-1 sm:flex-none",
                                 currentMode === "code" ? "bg-accent-blue/20 text-accent-blue" : "text-gray-500 hover:text-gray-300"
                               )}
                             >
@@ -406,7 +437,7 @@ export function TestCaseRepository() {
                               <span className="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
                               <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
                               <span className="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
-                              <span className="ml-2">portfolio.spec.ts / endpoints.spec.ts</span>
+                              <span className="ml-2 truncate">{tc.category === 'UI' ? 'portfolio.spec.ts' : 'endpoints.spec.ts'}</span>
                             </div>
                             <pre className="p-4 overflow-x-auto text-gray-300 leading-relaxed">
                               {extractTestCode(tc.name)}
@@ -431,6 +462,11 @@ export function TestCaseRepository() {
             </div>
           );
         })}
+        {filteredCases.length === 0 && (
+          <div className="px-6 py-12 text-center text-gray-500">
+            No test scenarios found for this category.
+          </div>
+        )}
       </div>
     </div>
   );
