@@ -35,7 +35,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' blob: data: https://cdn.sanity.io https://github.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://qh9tfzfg.api.sanity.io wss://ws-us3.pusher.com https://otlp-gateway-prod-ap-southeast-2.grafana.net https://vercel.live https://rezaa98.github.io; frame-src 'self' https://rezaa98.github.io;",
+            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' blob: data: https://cdn.sanity.io https://github.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://qh9tfzfg.api.sanity.io wss://ws-us3.pusher.com https://otlp-gateway-prod-ap-southeast-2.grafana.net https://vercel.live https://rezaa98.github.io https://raw.githubusercontent.com; frame-src 'self' https://rezaa98.github.io;",
           },
         ],
       },
