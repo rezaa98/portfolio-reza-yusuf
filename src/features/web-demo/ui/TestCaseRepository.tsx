@@ -296,7 +296,7 @@ export function TestCaseRepository() {
           <div className="relative shrink-0">
             <select
               value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value as any)}
+              onChange={(e) => setSelectedCategory(e.target.value as "All" | "UI" | "API")}
               className="appearance-none bg-[#1e293b] border border-white/10 text-gray-300 text-sm rounded-lg pl-3 pr-8 py-1.5 focus:outline-none focus:ring-1 focus:ring-accent-blue transition-all cursor-pointer"
             >
               <option value="All">All Scenarios</option>

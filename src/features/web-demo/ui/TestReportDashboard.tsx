@@ -36,11 +36,11 @@ export function TestReportDashboard() {
         // Flatten Playwright JSON report to extract tests
         const extractedTests: TestData[] = [];
         
-        const processSuites = (suites: any[]) => {
+        const processSuites = (suites: Array<{ specs?: Array<{ id?: string; title: string; tests?: Array<{ results?: Array<{ status: string; duration: number }> }> }>; suites?: any[] }>) => {
           if (!suites) return;
           suites.forEach(suite => {
             if (suite.specs) {
-              suite.specs.forEach((spec: any) => {
+              suite.specs.forEach(spec => {
                 const testRun = spec.tests?.[0]?.results?.[0];
                 if (testRun) {
                   extractedTests.push({
@@ -66,9 +66,9 @@ export function TestReportDashboard() {
 
         setTests(extractedTests);
         setLoading(false);
-      } catch (err: any) {
+      } catch (err) {
         console.error("Failed to fetch Playwright JSON report:", err);
-        setError(err.message || "Failed to load test report data");
+        setError(err instanceof Error ? err.message : "Failed to load test report data");
         setLoading(false);
       }
     };
