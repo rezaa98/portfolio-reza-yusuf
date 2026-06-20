@@ -18,24 +18,24 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/6c6ac31e086b9590cd990725d86e3a16e6fe55c2",
-        "commitHash": "6c6ac31e086b9590cd990725d86e3a16e6fe55c2",
-        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27877612587"
+        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/d518a531c9be2535f13c6b544751f3bee1dfc442",
+        "commitHash": "d518a531c9be2535f13c6b544751f3bee1dfc442",
+        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27877753791"
       },
       "gitCommit": {
-        "shortHash": "6c6ac31",
-        "hash": "6c6ac31e086b9590cd990725d86e3a16e6fe55c2",
-        "subject": "feat: integrate test cases with live playwright source code from github",
-        "body": "feat: integrate test cases with live playwright source code from github\n",
+        "shortHash": "d518a53",
+        "hash": "d518a531c9be2535f13c6b544751f3bee1dfc442",
+        "subject": "feat: add missing API test cases and update source fetcher",
+        "body": "feat: add missing API test cases and update source fetcher\n",
         "author": {
           "name": "rezaa98",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1781974123000
+          "time": 1781974455000
         },
         "committer": {
           "name": "rezaa98",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1781974123000
+          "time": 1781974455000
         },
         "branch": "sit"
       },
@@ -49,24 +49,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/6c6ac31e086b9590cd990725d86e3a16e6fe55c2",
-            "commitHash": "6c6ac31e086b9590cd990725d86e3a16e6fe55c2",
-            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27877612587"
+            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/d518a531c9be2535f13c6b544751f3bee1dfc442",
+            "commitHash": "d518a531c9be2535f13c6b544751f3bee1dfc442",
+            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27877753791"
           },
           "gitCommit": {
-            "shortHash": "6c6ac31",
-            "hash": "6c6ac31e086b9590cd990725d86e3a16e6fe55c2",
-            "subject": "feat: integrate test cases with live playwright source code from github",
-            "body": "feat: integrate test cases with live playwright source code from github\n",
+            "shortHash": "d518a53",
+            "hash": "d518a531c9be2535f13c6b544751f3bee1dfc442",
+            "subject": "feat: add missing API test cases and update source fetcher",
+            "body": "feat: add missing API test cases and update source fetcher\n",
             "author": {
               "name": "rezaa98",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1781974123000
+              "time": 1781974455000
             },
             "committer": {
               "name": "rezaa98",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1781974123000
+              "time": 1781974455000
             },
             "branch": "sit"
           },
@@ -149,12 +149,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 71,
+                          "duration": 68,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T16:51:26.282Z",
+                          "startTime": "2026-06-20T16:56:34.525Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -191,12 +191,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 891,
+                          "duration": 965,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T16:51:26.391Z",
+                          "startTime": "2026-06-20T16:56:34.628Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -230,7 +230,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T16:51:27.299Z",
+                          "startTime": "2026-06-20T16:56:35.609Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -259,12 +259,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 12,
+                          "duration": 13,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T16:51:27.323Z",
+                          "startTime": "2026-06-20T16:56:35.632Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -293,12 +293,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 1158,
+                          "duration": 962,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T16:51:27.347Z",
+                          "startTime": "2026-06-20T16:56:35.655Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -346,12 +346,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1018,
+                      "duration": 1036,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T16:51:28.523Z",
+                      "startTime": "2026-06-20T16:56:36.633Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -391,12 +391,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1142,
+                      "duration": 1038,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T16:51:29.751Z",
+                      "startTime": "2026-06-20T16:56:37.880Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -436,12 +436,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1278,
+                      "duration": 1260,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T16:51:30.921Z",
+                      "startTime": "2026-06-20T16:56:38.936Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -481,12 +481,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 286,
+                      "duration": 282,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T16:51:32.217Z",
+                      "startTime": "2026-06-20T16:56:40.210Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -526,12 +526,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 637,
+                      "duration": 669,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T16:51:32.520Z",
+                      "startTime": "2026-06-20T16:56:40.505Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -571,12 +571,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 969,
+                      "duration": 1024,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T16:51:33.168Z",
+                      "startTime": "2026-06-20T16:56:41.183Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -607,8 +607,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-20T16:51:23.968Z",
-    "duration": 10243.181999999999,
+    "startTime": "2026-06-20T16:56:32.142Z",
+    "duration": 10131.994,
     "expected": 11,
     "skipped": 0,
     "unexpected": 0,
