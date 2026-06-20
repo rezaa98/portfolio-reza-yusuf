@@ -18,24 +18,24 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/fced88a6a354f066f43b919413fa8d15ea3cfa00",
-        "commitHash": "fced88a6a354f066f43b919413fa8d15ea3cfa00",
-        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27880578254"
+        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/4be58d867d03ad4bce08d7fcb2b65e2029b90b70",
+        "commitHash": "4be58d867d03ad4bce08d7fcb2b65e2029b90b70",
+        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27880725149"
       },
       "gitCommit": {
-        "shortHash": "fced88a",
-        "hash": "fced88a6a354f066f43b919413fa8d15ea3cfa00",
-        "subject": "fix: resolve vercel preview URL branch detection for test reports",
-        "body": "fix: resolve vercel preview URL branch detection for test reports\n",
+        "shortHash": "4be58d8",
+        "hash": "4be58d867d03ad4bce08d7fcb2b65e2029b90b70",
+        "subject": "fix: resolve CSP connect-src blocking test-results.json and iframe branch src",
+        "body": "fix: resolve CSP connect-src blocking test-results.json and iframe branch src\n",
         "author": {
           "name": "rezaa98",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1781981413000
+          "time": 1781981775000
         },
         "committer": {
           "name": "rezaa98",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1781981413000
+          "time": 1781981775000
         },
         "branch": "sit"
       },
@@ -49,24 +49,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/fced88a6a354f066f43b919413fa8d15ea3cfa00",
-            "commitHash": "fced88a6a354f066f43b919413fa8d15ea3cfa00",
-            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27880578254"
+            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/4be58d867d03ad4bce08d7fcb2b65e2029b90b70",
+            "commitHash": "4be58d867d03ad4bce08d7fcb2b65e2029b90b70",
+            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27880725149"
           },
           "gitCommit": {
-            "shortHash": "fced88a",
-            "hash": "fced88a6a354f066f43b919413fa8d15ea3cfa00",
-            "subject": "fix: resolve vercel preview URL branch detection for test reports",
-            "body": "fix: resolve vercel preview URL branch detection for test reports\n",
+            "shortHash": "4be58d8",
+            "hash": "4be58d867d03ad4bce08d7fcb2b65e2029b90b70",
+            "subject": "fix: resolve CSP connect-src blocking test-results.json and iframe branch src",
+            "body": "fix: resolve CSP connect-src blocking test-results.json and iframe branch src\n",
             "author": {
               "name": "rezaa98",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1781981413000
+              "time": 1781981775000
             },
             "committer": {
               "name": "rezaa98",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1781981413000
+              "time": 1781981775000
             },
             "branch": "sit"
           },
@@ -174,12 +174,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 64,
+                          "duration": 66,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T18:52:56.240Z",
+                          "startTime": "2026-06-20T18:58:25.592Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -266,12 +266,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 6424,
+                          "duration": 6384,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T18:52:56.337Z",
+                          "startTime": "2026-06-20T18:58:25.689Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -350,12 +350,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 11,
+                          "duration": 10,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T18:53:02.779Z",
+                          "startTime": "2026-06-20T18:58:32.087Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -434,12 +434,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 13,
+                          "duration": 11,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T18:53:02.802Z",
+                          "startTime": "2026-06-20T18:58:32.106Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -518,12 +518,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 6332,
+                          "duration": 6276,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T18:53:02.826Z",
+                          "startTime": "2026-06-20T18:58:32.125Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -621,12 +621,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1015,
+                      "duration": 865,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:53:09.184Z",
+                      "startTime": "2026-06-20T18:58:38.419Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -716,12 +716,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1049,
+                      "duration": 922,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:53:10.431Z",
+                      "startTime": "2026-06-20T18:58:39.677Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -811,12 +811,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1286,
+                      "duration": 1010,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:53:11.502Z",
+                      "startTime": "2026-06-20T18:58:40.613Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -906,12 +906,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 289,
+                      "duration": 228,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:53:12.805Z",
+                      "startTime": "2026-06-20T18:58:41.636Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1001,12 +1001,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 656,
+                      "duration": 523,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:53:13.104Z",
+                      "startTime": "2026-06-20T18:58:41.875Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1096,12 +1096,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 954,
+                      "duration": 792,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:53:13.774Z",
+                      "startTime": "2026-06-20T18:58:42.408Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1208,12 +1208,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 186,
+                      "duration": 204,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:53:14.741Z",
+                      "startTime": "2026-06-20T18:58:43.214Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1303,12 +1303,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 909,
+                      "duration": 821,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:53:14.938Z",
+                      "startTime": "2026-06-20T18:58:43.430Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1364,8 +1364,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-20T18:52:54.000Z",
-    "duration": 21911.813000000002,
+    "startTime": "2026-06-20T18:58:23.646Z",
+    "duration": 20668.82,
     "expected": 13,
     "skipped": 0,
     "unexpected": 0,
