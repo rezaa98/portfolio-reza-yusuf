@@ -50,7 +50,7 @@ const ArchitectureDoc = ({ locale }: { locale: string }) => (
       <div className="bg-bg-secondary p-6 rounded-xl border border-border-subtle">
         <h3 className="text-xl font-semibold text-accent-cyan mb-3">AI Integration (Gemini)</h3>
         <p className="text-text-secondary text-sm">
-          Google&apos;s Gemini API is integrated directly via Next.js Route Handlers, powering the autonomous Chat Simulator feature, showcasing Agentic AI capabilities in a secure backend environment.
+          Google&apos;s Gemini API is integrated directly via Next.js Route Handlers. It leverages <strong>Lightweight RAG (Retrieval-Augmented Generation)</strong> to inject real DOM structure context, and <strong>Strict Guardrails</strong> to restrict interactions exclusively to Playwright testing domains, preventing token abuse.
         </p>
       </div>
       <div className="bg-bg-secondary p-6 rounded-xl border border-border-subtle">
@@ -193,7 +193,7 @@ const FsdDoc = ({ locale }: { locale: string }) => (
         <h3 className="text-2xl font-semibold text-white mb-3">3. QA & Web Demo Features</h3>
         <ul className="list-disc list-inside space-y-2 text-text-secondary">
           <li><strong>Test Report Dashboard:</strong> Dynamically loads the Playwright HTML report via an iframe, adjusting the URL based on the current Vercel environment (<code>sit</code> vs <code>master</code>).</li>
-          <li><strong>AI Chat Simulator:</strong> An interactive UI communicating with the Gemini API to demonstrate agentic AI behaviors.</li>
+          <li><strong>Agentic AI Chat (RAG + Guardrails):</strong> An interactive UI communicating with the Gemini API. The AI is restricted by Strict Guardrails to only answer QA-related queries and uses Lightweight RAG to know the real DOM structure of this portfolio for precise test generation.</li>
           <li><strong>Grafana Telemetry View:</strong> Embeds public Grafana dashboards to display live API performance and system traces.</li>
         </ul>
       </section>

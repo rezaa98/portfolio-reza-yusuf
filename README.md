@@ -6,9 +6,11 @@ A modern, highly-interactive, and bilingual professional portfolio website built
 
 - **Dynamic Bilingual Support (i18n):** Seamlessly switch between English (EN) and Indonesian (ID) using `next-intl` without page reloading.
 - **Glassmorphism UI:** Built with Tailwind CSS, leveraging a sleek dark mode and frosted glass aesthetic.
-- **Interactive Animations:** Powered by `framer-motion` for smooth scrolling, component reveals, and a detailed project modal popup.
+- **Interactive QA Chat Simulator:** Speak with an autonomous AI powered by Google Gemini 2.5 Flash.
+- **Lightweight RAG & AI Guardrails:** The Agentic AI is context-aware via in-memory RAG, knowing the exact DOM structure of this portfolio. Strict Guardrails prevent off-topic questions (e.g., rejecting non-QA queries) to ensure absolute security and professionalism.
 - **Responsive Design:** Fully optimized for mobile, tablet, and desktop viewing.
-- **Agentic AI Chat:** Integrated Gemini AI for conversational portfolio interactions.
+- **Headless CMS:** Sanity.io (Dynamic Blog, Next.js ISR)
+- **Agentic AI:** Google Gemini SDK, Lightweight RAG (Retrieval-Augmented Generation), Prompt Guardrails.
 - **Full-Stack Observability:** Embedded OpenTelemetry streaming real-time traces and metrics directly to Grafana Cloud.
 - **Automated E2E Testing:** Playwright test suite running continuously via GitHub Actions.
 
