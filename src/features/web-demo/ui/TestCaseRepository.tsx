@@ -122,6 +122,85 @@ const TEST_CASES: TestCase[] = [
       "Verify the <meta property=\"og:title\"> content matches the expected string."
     ],
     expectedResult: "All critical SEO and OpenGraph metadata tags are present and contain the correct values."
+  },
+  {
+    id: "TC-007",
+    name: "Positive: should return 200 OK and an array of posts",
+    description: "Verify that the Sanity CMS posts API endpoint successfully returns a valid JSON array of blog posts.",
+    label: "Positive",
+    status: "Passed",
+    isAutomated: true,
+    testData: "{ endpoint: '/api/posts', method: 'GET' }",
+    steps: [
+      "Send a GET request to '/api/posts'.",
+      "Assert that the HTTP status code is 200.",
+      "Parse the response body as JSON.",
+      "Verify the JSON contains a 'data' array.",
+      "Check that the first post has '_id', 'title', and 'slug'."
+    ],
+    expectedResult: "API responds with 200 OK and a correctly structured posts array."
+  },
+  {
+    id: "TC-008",
+    name: "Positive: should return 200 OK and stream text for valid messages payload",
+    description: "Ensure the Gemini AI Chat API processes a valid message payload and returns a text stream.",
+    label: "Positive",
+    status: "Passed",
+    isAutomated: true,
+    testData: "{ endpoint: '/api/chat', method: 'POST', body: { messages: [{ role: 'user', content: 'Say hello playwright' }] } }",
+    steps: [
+      "Send a POST request to '/api/chat' with a valid message payload.",
+      "Assert that the HTTP status code is 200.",
+      "Read the streaming text response.",
+      "Assert that the returned text length is greater than 0."
+    ],
+    expectedResult: "API accepts the payload and streams a non-empty text response."
+  },
+  {
+    id: "TC-009",
+    name: "Negative: should return 400 Bad Request for missing messages array",
+    description: "Verify that the Chat API validates the request body and rejects payloads without a 'messages' array.",
+    label: "Negative",
+    status: "Passed",
+    isAutomated: true,
+    testData: "{ endpoint: '/api/chat', method: 'POST', body: { query: 'hello' } }",
+    steps: [
+      "Send a POST request to '/api/chat' without a 'messages' array.",
+      "Assert that the HTTP status code is 400 (Bad Request).",
+      "Parse the response body as JSON.",
+      "Verify the JSON contains an error message mentioning 'messages array is required'."
+    ],
+    expectedResult: "API rejects the malformed request and returns a 400 status with an appropriate error message."
+  },
+  {
+    id: "TC-010",
+    name: "Negative: should return 400 Bad Request for incorrectly typed messages",
+    description: "Ensure the Chat API validates the type of the 'messages' field and rejects non-array inputs.",
+    label: "Negative",
+    status: "Passed",
+    isAutomated: true,
+    testData: "{ endpoint: '/api/chat', method: 'POST', body: { messages: 'hello' } }",
+    steps: [
+      "Send a POST request to '/api/chat' with 'messages' as a string instead of an array.",
+      "Assert that the HTTP status code is exactly 400."
+    ],
+    expectedResult: "API strictly enforces typing and rejects string inputs for the messages field."
+  },
+  {
+    id: "TC-011",
+    name: "Edge Case: should handle exceptionally long text gracefully",
+    description: "Test the robustness of the Chat API when flooded with an exceptionally long string payload.",
+    label: "Edge",
+    status: "Passed",
+    isAutomated: true,
+    testData: "{ endpoint: '/api/chat', method: 'POST', body: { messages: [{ role: 'user', content: 'a'.repeat(10000) }] } }",
+    steps: [
+      "Generate a string containing 10,000 characters.",
+      "Send a POST request to '/api/chat' incorporating the large string.",
+      "Verify that the server does not crash.",
+      "Assert the HTTP status code is either 200, 400, or 500 (handled gracefully)."
+    ],
+    expectedResult: "API processes or rejects the large payload without causing a fatal server crash."
   }
 ];
 
@@ -136,11 +215,15 @@ export function TestCaseRepository() {
     const fetchSourceCode = async () => {
       try {
         const branch = process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview' ? 'sit' : 'master';
-        const url = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${branch}/tests/portfolio.spec.ts`;
-        const res = await fetch(url);
-        if (res.ok) {
-          const text = await res.text();
-          setSourceCode(text);
+        const url1 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${branch}/tests/portfolio.spec.ts`;
+        const url2 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${branch}/tests/api/endpoints.spec.ts`;
+        
+        const [res1, res2] = await Promise.all([fetch(url1), fetch(url2)]);
+        const text1 = res1.ok ? await res1.text() : "";
+        const text2 = res2.ok ? await res2.text() : "";
+        
+        if (text1 || text2) {
+          setSourceCode(text1 + "\n\n" + text2);
         }
       } catch (err) {
         console.error("Failed to fetch Playwright source code", err);
@@ -323,7 +406,7 @@ export function TestCaseRepository() {
                               <span className="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
                               <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
                               <span className="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
-                              <span className="ml-2">portfolio.spec.ts</span>
+                              <span className="ml-2">portfolio.spec.ts / endpoints.spec.ts</span>
                             </div>
                             <pre className="p-4 overflow-x-auto text-gray-300 leading-relaxed">
                               {extractTestCode(tc.name)}
