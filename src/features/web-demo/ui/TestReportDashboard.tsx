@@ -24,7 +24,7 @@ export function TestReportDashboard() {
     // If the user opts to see raw HTML, we don't strictly need to fetch JSON, but we do it anyway for the header stats.
     const fetchReport = async () => {
       try {
-        const branch = process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview' ? 'sit' : 'master';
+        const branch = window.location.hostname.includes('sit') ? 'sit' : 'master';
         const url = `https://rezaa98.github.io/portfolio-reza-yusuf/${branch}/test-results.json`;
         
         const response = await fetch(url);
@@ -132,7 +132,7 @@ export function TestReportDashboard() {
         {showHtmlReport ? (
           <div className="w-full h-[600px] rounded-lg overflow-hidden border border-white/10 bg-white">
             <iframe 
-              src={`https://rezaa98.github.io/portfolio-reza-yusuf/${process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview' ? 'sit' : 'master'}/`} 
+              src={`https://rezaa98.github.io/portfolio-reza-yusuf/${window.location.hostname.includes('sit') ? 'sit' : 'master'}/`} 
               className="w-full h-full border-0"
               title="Playwright HTML Report"
             />

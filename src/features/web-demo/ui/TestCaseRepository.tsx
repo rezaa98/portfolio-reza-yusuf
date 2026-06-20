@@ -35,7 +35,7 @@ export function TestCaseRepository() {
     // Fetch actual Playwright spec files from GitHub dynamically
     const fetchSourceCode = async () => {
       try {
-        const branch = process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview' ? 'sit' : 'master';
+        const branch = window.location.hostname.includes('sit') ? 'sit' : 'master';
         const url1 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${branch}/tests/portfolio.spec.ts`;
         const url2 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${branch}/tests/api/endpoints.spec.ts`;
         const url3 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${branch}/tests/security.spec.ts`;
@@ -55,7 +55,7 @@ export function TestCaseRepository() {
 
     const fetchTestResults = async () => {
       try {
-        const branch = process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview' ? 'sit' : 'master';
+        const branch = window.location.hostname.includes('sit') ? 'sit' : 'master';
         const url = `https://rezaa98.github.io/portfolio-reza-yusuf/${branch}/test-results.json`;
         
         const response = await fetch(url);
