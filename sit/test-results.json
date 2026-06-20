@@ -18,24 +18,24 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/083ce7f8fef53275e318879778bac7cfd0078f17",
-        "commitHash": "083ce7f8fef53275e318879778bac7cfd0078f17",
-        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27880953169"
+        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/9c57603b37fb1fd437019c892275d88e1795e852",
+        "commitHash": "9c57603b37fb1fd437019c892275d88e1795e852",
+        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27882065938"
       },
       "gitCommit": {
-        "shortHash": "083ce7f",
-        "hash": "083ce7f8fef53275e318879778bac7cfd0078f17",
-        "subject": "fix: resolve CSP blocking fetch of github raw content in TestCaseRepository",
-        "body": "fix: resolve CSP blocking fetch of github raw content in TestCaseRepository\n",
+        "shortHash": "9c57603",
+        "hash": "9c57603b37fb1fd437019c892275d88e1795e852",
+        "subject": "feat: enhance PipelineVisualizer with real test logs and seamless terminal UI",
+        "body": "feat: enhance PipelineVisualizer with real test logs and seamless terminal UI\n",
         "author": {
           "name": "rezaa98",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1781982308000
+          "time": 1781985069000
         },
         "committer": {
           "name": "rezaa98",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1781982308000
+          "time": 1781985069000
         },
         "branch": "sit"
       },
@@ -49,24 +49,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/083ce7f8fef53275e318879778bac7cfd0078f17",
-            "commitHash": "083ce7f8fef53275e318879778bac7cfd0078f17",
-            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27880953169"
+            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/9c57603b37fb1fd437019c892275d88e1795e852",
+            "commitHash": "9c57603b37fb1fd437019c892275d88e1795e852",
+            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27882065938"
           },
           "gitCommit": {
-            "shortHash": "083ce7f",
-            "hash": "083ce7f8fef53275e318879778bac7cfd0078f17",
-            "subject": "fix: resolve CSP blocking fetch of github raw content in TestCaseRepository",
-            "body": "fix: resolve CSP blocking fetch of github raw content in TestCaseRepository\n",
+            "shortHash": "9c57603",
+            "hash": "9c57603b37fb1fd437019c892275d88e1795e852",
+            "subject": "feat: enhance PipelineVisualizer with real test logs and seamless terminal UI",
+            "body": "feat: enhance PipelineVisualizer with real test logs and seamless terminal UI\n",
             "author": {
               "name": "rezaa98",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1781982308000
+              "time": 1781985069000
             },
             "committer": {
               "name": "rezaa98",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1781982308000
+              "time": 1781985069000
             },
             "branch": "sit"
           },
@@ -174,12 +174,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 69,
+                          "duration": 76,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T19:07:55.891Z",
+                          "startTime": "2026-06-20T19:53:50.487Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -266,12 +266,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 6467,
+                          "duration": 6327,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T19:07:55.995Z",
+                          "startTime": "2026-06-20T19:53:50.596Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -355,7 +355,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T19:08:02.481Z",
+                          "startTime": "2026-06-20T19:53:56.943Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -434,12 +434,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 13,
+                          "duration": 12,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T19:08:02.505Z",
+                          "startTime": "2026-06-20T19:53:56.967Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -518,12 +518,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 1133,
+                          "duration": 6289,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T19:08:02.531Z",
+                          "startTime": "2026-06-20T19:53:56.992Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -621,12 +621,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1020,
+                      "duration": 1133,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:08:03.680Z",
+                      "startTime": "2026-06-20T19:54:03.302Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -716,12 +716,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1089,
+                      "duration": 1156,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:08:04.933Z",
+                      "startTime": "2026-06-20T19:54:05.185Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -811,12 +811,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1278,
+                      "duration": 1421,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:08:06.038Z",
+                      "startTime": "2026-06-20T19:54:06.360Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -906,12 +906,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 266,
+                      "duration": 539,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:08:07.341Z",
+                      "startTime": "2026-06-20T19:54:07.796Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1001,12 +1001,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 632,
+                      "duration": 826,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:08:07.621Z",
+                      "startTime": "2026-06-20T19:54:08.347Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1096,12 +1096,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 958,
+                      "duration": 1043,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:08:08.269Z",
+                      "startTime": "2026-06-20T19:54:09.187Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1208,12 +1208,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 223,
+                      "duration": 217,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:08:09.245Z",
+                      "startTime": "2026-06-20T19:54:10.251Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1303,12 +1303,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1026,
+                      "duration": 1052,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T19:08:09.482Z",
+                      "startTime": "2026-06-20T19:54:10.485Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1356,6 +1356,353 @@
               "file": "security.spec.ts",
               "line": 24,
               "column": 7
+            },
+            {
+              "title": "Path Traversal / LFI Vulnerability Check",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "category",
+                      "description": "Security"
+                    },
+                    {
+                      "type": "description",
+                      "description": "Attempt to access sensitive server files via Path Traversal."
+                    },
+                    {
+                      "type": "label",
+                      "description": "Negative"
+                    },
+                    {
+                      "type": "testData",
+                      "description": "{ path: '/blog/../../../../etc/passwd' }"
+                    },
+                    {
+                      "type": "steps",
+                      "description": "[\"Send GET request with path traversal payload.\",\"Verify server responds with 400 or 404.\",\"Verify response body does not contain sensitive system data.\"]"
+                    },
+                    {
+                      "type": "expectedResult",
+                      "description": "Application blocks path traversal and returns 404/400 safely."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 17,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T19:54:11.550Z",
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "Security"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Attempt to access sensitive server files via Path Traversal."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Negative"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "{ path: '/blog/../../../../etc/passwd' }"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Send GET request with path traversal payload.\",\"Verify server responds with 400 or 404.\",\"Verify response body does not contain sensitive system data.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "Application blocks path traversal and returns 404/400 safely."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a7e9410bcc1ef00e9656-56318626be9cc3e2c47b",
+              "file": "security.spec.ts",
+              "line": 64,
+              "column": 7
+            },
+            {
+              "title": "CORS Policy Validation on API",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "category",
+                      "description": "Security"
+                    },
+                    {
+                      "type": "description",
+                      "description": "Verify that the API rejects or restricts Cross-Origin Resource Sharing from untrusted domains."
+                    },
+                    {
+                      "type": "label",
+                      "description": "Edge"
+                    },
+                    {
+                      "type": "testData",
+                      "description": "{ endpoint: '/api/chat', origin: 'https://evil-hacker.com' }"
+                    },
+                    {
+                      "type": "steps",
+                      "description": "[\"Send OPTIONS/POST request to API with fake Origin.\",\"Check CORS response headers.\"]"
+                    },
+                    {
+                      "type": "expectedResult",
+                      "description": "API does not return Access-Control-Allow-Origin for the malicious domain."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6274,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T19:54:11.578Z",
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "Security"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Verify that the API rejects or restricts Cross-Origin Resource Sharing from untrusted domains."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Edge"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "{ endpoint: '/api/chat', origin: 'https://evil-hacker.com' }"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Send OPTIONS/POST request to API with fake Origin.\",\"Check CORS response headers.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "API does not return Access-Control-Allow-Origin for the malicious domain."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a7e9410bcc1ef00e9656-69b7ead6c5b5ecf0e991",
+              "file": "security.spec.ts",
+              "line": 79,
+              "column": 7
+            },
+            {
+              "title": "API Rate Limiting & DoS Handling Validation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "category",
+                      "description": "Security"
+                    },
+                    {
+                      "type": "description",
+                      "description": "Verify that the API handles burst requests gracefully (Rate Limiting/Quota)."
+                    },
+                    {
+                      "type": "label",
+                      "description": "Negative"
+                    },
+                    {
+                      "type": "testData",
+                      "description": "{ endpoint: '/api/chat', burstCount: 5 }"
+                    },
+                    {
+                      "type": "steps",
+                      "description": "[\"Send 5 rapid concurrent requests to the API.\",\"Verify responses are handled without server crashing (500).\",\"Check for 429 Too Many Requests status.\"]"
+                    },
+                    {
+                      "type": "expectedResult",
+                      "description": "Server handles burst load gracefully, potentially returning 429."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6350,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T19:54:17.861Z",
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "Security"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Verify that the API handles burst requests gracefully (Rate Limiting/Quota)."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Negative"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "{ endpoint: '/api/chat', burstCount: 5 }"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Send 5 rapid concurrent requests to the API.\",\"Verify responses are handled without server crashing (500).\",\"Check for 429 Too Many Requests status.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "Server handles burst load gracefully, potentially returning 429."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a7e9410bcc1ef00e9656-016aaeb2b644e326709e",
+              "file": "security.spec.ts",
+              "line": 100,
+              "column": 7
+            },
+            {
+              "title": "Cookie Security Validation (Secure & SameSite)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "category",
+                      "description": "Security"
+                    },
+                    {
+                      "type": "description",
+                      "description": "Verify that application cookies have secure flags set."
+                    },
+                    {
+                      "type": "label",
+                      "description": "Positive"
+                    },
+                    {
+                      "type": "testData",
+                      "description": "{}"
+                    },
+                    {
+                      "type": "steps",
+                      "description": "[\"Navigate to homepage to generate cookies.\",\"Extract cookies from browser context.\",\"Assert Secure and SameSite attributes.\"]"
+                    },
+                    {
+                      "type": "expectedResult",
+                      "description": "Cookies are secure and protected against CSRF."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 875,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T19:54:24.222Z",
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "Security"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Verify that application cookies have secure flags set."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Positive"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "{}"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Navigate to homepage to generate cookies.\",\"Extract cookies from browser context.\",\"Assert Secure and SameSite attributes.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "Cookies are secure and protected against CSRF."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-2f8d9-Validation-Secure-SameSite--chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-2f8d9-Validation-Secure-SameSite--chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a7e9410bcc1ef00e9656-d59c698159906512f5ee",
+              "file": "security.spec.ts",
+              "line": 124,
+              "column": 7
             }
           ]
         }
@@ -1364,9 +1711,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-20T19:07:53.582Z",
-    "duration": 17006.812,
-    "expected": 13,
+    "startTime": "2026-06-20T19:53:48.209Z",
+    "duration": 36954.734000000004,
+    "expected": 17,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
