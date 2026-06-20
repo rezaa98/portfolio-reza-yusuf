@@ -18,24 +18,24 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/8e1a37a7a8940889240347bb4a992712bd3520d0",
-        "commitHash": "8e1a37a7a8940889240347bb4a992712bd3520d0",
-        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27877384826"
+        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/6c6ac31e086b9590cd990725d86e3a16e6fe55c2",
+        "commitHash": "6c6ac31e086b9590cd990725d86e3a16e6fe55c2",
+        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27877612587"
       },
       "gitCommit": {
-        "shortHash": "8e1a37a",
-        "hash": "8e1a37a7a8940889240347bb4a992712bd3520d0",
-        "subject": "fix: syntax error escaped backticks in TestReportDashboard",
-        "body": "fix: syntax error escaped backticks in TestReportDashboard\n",
+        "shortHash": "6c6ac31",
+        "hash": "6c6ac31e086b9590cd990725d86e3a16e6fe55c2",
+        "subject": "feat: integrate test cases with live playwright source code from github",
+        "body": "feat: integrate test cases with live playwright source code from github\n",
         "author": {
           "name": "rezaa98",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1781973571000
+          "time": 1781974123000
         },
         "committer": {
           "name": "rezaa98",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1781973571000
+          "time": 1781974123000
         },
         "branch": "sit"
       },
@@ -49,24 +49,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/8e1a37a7a8940889240347bb4a992712bd3520d0",
-            "commitHash": "8e1a37a7a8940889240347bb4a992712bd3520d0",
-            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27877384826"
+            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/6c6ac31e086b9590cd990725d86e3a16e6fe55c2",
+            "commitHash": "6c6ac31e086b9590cd990725d86e3a16e6fe55c2",
+            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27877612587"
           },
           "gitCommit": {
-            "shortHash": "8e1a37a",
-            "hash": "8e1a37a7a8940889240347bb4a992712bd3520d0",
-            "subject": "fix: syntax error escaped backticks in TestReportDashboard",
-            "body": "fix: syntax error escaped backticks in TestReportDashboard\n",
+            "shortHash": "6c6ac31",
+            "hash": "6c6ac31e086b9590cd990725d86e3a16e6fe55c2",
+            "subject": "feat: integrate test cases with live playwright source code from github",
+            "body": "feat: integrate test cases with live playwright source code from github\n",
             "author": {
               "name": "rezaa98",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1781973571000
+              "time": 1781974123000
             },
             "committer": {
               "name": "rezaa98",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1781973571000
+              "time": 1781974123000
             },
             "branch": "sit"
           },
@@ -149,12 +149,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 70,
+                          "duration": 71,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T16:42:10.868Z",
+                          "startTime": "2026-06-20T16:51:26.282Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -191,12 +191,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 828,
+                          "duration": 891,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T16:42:10.976Z",
+                          "startTime": "2026-06-20T16:51:26.391Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -230,7 +230,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T16:42:11.820Z",
+                          "startTime": "2026-06-20T16:51:27.299Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -264,7 +264,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T16:42:11.844Z",
+                          "startTime": "2026-06-20T16:51:27.323Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -293,12 +293,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 1051,
+                          "duration": 1158,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-20T16:42:11.867Z",
+                          "startTime": "2026-06-20T16:51:27.347Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -346,12 +346,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1011,
+                      "duration": 1018,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T16:42:12.937Z",
+                      "startTime": "2026-06-20T16:51:28.523Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -391,12 +391,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1054,
+                      "duration": 1142,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T16:42:14.156Z",
+                      "startTime": "2026-06-20T16:51:29.751Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -436,12 +436,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1233,
+                      "duration": 1278,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T16:42:15.231Z",
+                      "startTime": "2026-06-20T16:51:30.921Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -481,12 +481,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 282,
+                      "duration": 286,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T16:42:16.478Z",
+                      "startTime": "2026-06-20T16:51:32.217Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -526,12 +526,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 680,
+                      "duration": 637,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T16:42:16.773Z",
+                      "startTime": "2026-06-20T16:51:32.520Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -571,12 +571,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 931,
+                      "duration": 969,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T16:42:17.468Z",
+                      "startTime": "2026-06-20T16:51:33.168Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -607,8 +607,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-20T16:42:08.383Z",
-    "duration": 10091.705,
+    "startTime": "2026-06-20T16:51:23.968Z",
+    "duration": 10243.181999999999,
     "expected": 11,
     "skipped": 0,
     "unexpected": 0,
