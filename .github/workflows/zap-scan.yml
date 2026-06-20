@@ -1,0 +1,38 @@
+name: DevSecOps - OWASP ZAP Baseline Scan
+
+on:
+  push:
+    branches:
+      - master
+      - sit
+  pull_request:
+    branches:
+      - master
+      - sit
+  schedule:
+    # Run once a week on Sunday at midnight
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+jobs:
+  zap_scan:
+    name: Run ZAP Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.12.0
+        with:
+          target: 'https://sit.rezacode.cloud' # or the dynamically deployed URL if available
+          fail_action: false # Set to true to fail the build on high severity alerts
+          allow_issue_writing: false
+      
+      # ZAP action automatically generates an HTML report and uploads it as an artifact.
+      - name: Upload ZAP Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: zap-security-report
+          path: report_html.html

@@ -3,8 +3,9 @@ import { PipelineVisualizer } from "@/features/web-demo/ui/PipelineVisualizer";
 import { TestReportDashboard } from "@/features/web-demo/ui/TestReportDashboard";
 import { AgentChatSimulator } from "@/features/web-demo/ui/AgentChatSimulator";
 import { TestCaseRepository } from "@/features/web-demo/ui/TestCaseRepository";
+import { SecurityAuditPanel } from "@/features/web-demo/ui/SecurityAuditPanel";
 import GrafanaMonitoringPanel from "@/features/web-demo/ui/GrafanaMonitoringPanel";
-import { ArrowRight, GitBranch, Bot } from "lucide-react";
+import { ArrowRight, GitBranch, Bot, ShieldAlert } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Navbar } from "@/shared/ui/Navbar";
 import { Footer } from "@/shared/ui/Footer";
@@ -117,6 +118,19 @@ export default async function WebDemoPage({ params }: { params: Promise<{ locale
           <GrafanaMonitoringPanel />
         </section>
 
+        {/* Cyber Security Audit Section */}
+        <section className="space-y-6">
+          <div className="flex flex-col gap-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-white font-space-grotesk flex items-center gap-3">
+              <span className="text-emerald-400">06.</span> Cyber Security Audit (DevSecOps)
+            </h2>
+            <p className="text-text-secondary">
+              Real-time security posture assessing HTTP Headers, XSS Vulnerabilities, and Dependency Audits.
+            </p>
+          </div>
+          <SecurityAuditPanel />
+        </section>
+
         {/* Live Agentic AI Section */}
         <section className="space-y-6 pt-8 border-t border-white/10">
           <div className="flex flex-col gap-2 text-center items-center">
@@ -124,7 +138,7 @@ export default async function WebDemoPage({ params }: { params: Promise<{ locale
               <Bot size={32} className="text-accent-purple" />
             </div>
             <h2 className="text-2xl md:text-4xl font-bold text-white font-space-grotesk">
-              {tWebDemo("Sections.s5Title")}
+              <span className="text-accent-purple">07.</span> {tWebDemo("Sections.s5Title")}
             </h2>
             <p className="text-text-secondary max-w-2xl mx-auto mb-8">
               {tWebDemo("Sections.s5Desc", { model: process.env.NEXT_PUBLIC_GEMINI_MODEL_DISPLAY || 'Google Gemini 2.5' })}
