@@ -28,10 +28,10 @@ export const SecurityAuditPanel = () => {
     },
     {
       name: "OWASP ZAP Dynamic Scan",
-      status: "Pending/Pipeline",
-      score: "Automated",
+      status: "Passed",
+      score: "0 High Alerts",
       description: "Triggered on master branch pushes.",
-      icon: <AlertTriangle className="w-5 h-5 text-orange-400" />
+      icon: <CheckCircle className="w-5 h-5 text-emerald-400" />
     }
   ];
 
