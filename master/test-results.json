@@ -1,0 +1,1374 @@
+{
+  "config": {
+    "argv": [
+      "/opt/hostedtoolcache/node/22.22.3/x64/bin/node",
+      "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/node_modules/.bin/playwright",
+      "test"
+    ],
+    "configFile": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/playwright.config.ts",
+    "rootDir": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/083ce7f8fef53275e318879778bac7cfd0078f17",
+        "commitHash": "083ce7f8fef53275e318879778bac7cfd0078f17",
+        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27881031784"
+      },
+      "gitCommit": {
+        "shortHash": "083ce7f",
+        "hash": "083ce7f8fef53275e318879778bac7cfd0078f17",
+        "subject": "fix: resolve CSP blocking fetch of github raw content in TestCaseRepository",
+        "body": "fix: resolve CSP blocking fetch of github raw content in TestCaseRepository\n",
+        "author": {
+          "name": "rezaa98",
+          "email": "reza.yusuf98@gmail.com",
+          "time": 1781982308000
+        },
+        "committer": {
+          "name": "rezaa98",
+          "email": "reza.yusuf98@gmail.com",
+          "time": 1781982308000
+        },
+        "branch": "master"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/083ce7f8fef53275e318879778bac7cfd0078f17",
+            "commitHash": "083ce7f8fef53275e318879778bac7cfd0078f17",
+            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27881031784"
+          },
+          "gitCommit": {
+            "shortHash": "083ce7f",
+            "hash": "083ce7f8fef53275e318879778bac7cfd0078f17",
+            "subject": "fix: resolve CSP blocking fetch of github raw content in TestCaseRepository",
+            "body": "fix: resolve CSP blocking fetch of github raw content in TestCaseRepository\n",
+            "author": {
+              "name": "rezaa98",
+              "email": "reza.yusuf98@gmail.com",
+              "time": 1781982308000
+            },
+            "committer": {
+              "name": "rezaa98",
+              "email": "reza.yusuf98@gmail.com",
+              "time": 1781982308000
+            },
+            "branch": "master"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "playwright-report/test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.61.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npx next start -p 3100",
+      "url": "http://localhost:3100",
+      "reuseExistingServer": false,
+      "timeout": 30000
+    }
+  },
+  "suites": [
+    {
+      "title": "api/endpoints.spec.ts",
+      "file": "api/endpoints.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "API Collection Endpoints",
+          "file": "api/endpoints.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [],
+          "suites": [
+            {
+              "title": "GET /api/posts",
+              "file": "api/endpoints.spec.ts",
+              "line": 4,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "Positive: should return 200 OK and an array of posts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "API"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Verify that the Sanity CMS posts API endpoint successfully returns a valid JSON array of blog posts."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Positive"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "{ endpoint: '/api/posts', method: 'GET' }"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Send a GET request to '/api/posts'.\",\"Assert HTTP status is 200.\",\"Parse JSON response.\",\"Verify JSON contains a 'data' array.\",\"Check that first post has _id, title, slug.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "API responds with 200 OK and a correctly structured posts array."
+                        }
+                      ],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 75,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-20T19:11:00.676Z",
+                          "annotations": [
+                            {
+                              "type": "category",
+                              "description": "API"
+                            },
+                            {
+                              "type": "description",
+                              "description": "Verify that the Sanity CMS posts API endpoint successfully returns a valid JSON array of blog posts."
+                            },
+                            {
+                              "type": "label",
+                              "description": "Positive"
+                            },
+                            {
+                              "type": "testData",
+                              "description": "{ endpoint: '/api/posts', method: 'GET' }"
+                            },
+                            {
+                              "type": "steps",
+                              "description": "[\"Send a GET request to '/api/posts'.\",\"Assert HTTP status is 200.\",\"Parse JSON response.\",\"Verify JSON contains a 'data' array.\",\"Check that first post has _id, title, slug.\"]"
+                            },
+                            {
+                              "type": "expectedResult",
+                              "description": "API responds with 200 OK and a correctly structured posts array."
+                            }
+                          ],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "72c35ab6251c8a3f93e5-da8003be02c4dc63b5e6",
+                  "file": "api/endpoints.spec.ts",
+                  "line": 5,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "POST /api/chat",
+              "file": "api/endpoints.spec.ts",
+              "line": 31,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "Positive: should return 200 OK and stream text for valid messages payload",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "API"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Ensure the Gemini AI Chat API processes a valid message payload and returns a text stream."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Positive"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "{ endpoint: '/api/chat', method: 'POST', body: { messages: [...] } }"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Send a POST request to '/api/chat'.\",\"Assert HTTP status is 200.\",\"Read streaming text response.\",\"Assert returned text length > 0.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "API accepts the payload and streams a non-empty text response."
+                        }
+                      ],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 6443,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-20T19:11:00.788Z",
+                          "annotations": [
+                            {
+                              "type": "category",
+                              "description": "API"
+                            },
+                            {
+                              "type": "description",
+                              "description": "Ensure the Gemini AI Chat API processes a valid message payload and returns a text stream."
+                            },
+                            {
+                              "type": "label",
+                              "description": "Positive"
+                            },
+                            {
+                              "type": "testData",
+                              "description": "{ endpoint: '/api/chat', method: 'POST', body: { messages: [...] } }"
+                            },
+                            {
+                              "type": "steps",
+                              "description": "[\"Send a POST request to '/api/chat'.\",\"Assert HTTP status is 200.\",\"Read streaming text response.\",\"Assert returned text length > 0.\"]"
+                            },
+                            {
+                              "type": "expectedResult",
+                              "description": "API accepts the payload and streams a non-empty text response."
+                            }
+                          ],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "72c35ab6251c8a3f93e5-b3cf0e0034dfda2432e4",
+                  "file": "api/endpoints.spec.ts",
+                  "line": 32,
+                  "column": 9
+                },
+                {
+                  "title": "Negative: should return 400 Bad Request for missing messages array",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "API"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Verify that the Chat API validates the request body and rejects payloads without a messages array."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Negative"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "{ endpoint: '/api/chat', method: 'POST', body: { query: 'hello' } }"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Send POST request without 'messages' array.\",\"Assert HTTP status is 400.\",\"Parse response body.\",\"Verify error message.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "API rejects malformed request and returns 400."
+                        }
+                      ],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 13,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-20T19:11:07.249Z",
+                          "annotations": [
+                            {
+                              "type": "category",
+                              "description": "API"
+                            },
+                            {
+                              "type": "description",
+                              "description": "Verify that the Chat API validates the request body and rejects payloads without a messages array."
+                            },
+                            {
+                              "type": "label",
+                              "description": "Negative"
+                            },
+                            {
+                              "type": "testData",
+                              "description": "{ endpoint: '/api/chat', method: 'POST', body: { query: 'hello' } }"
+                            },
+                            {
+                              "type": "steps",
+                              "description": "[\"Send POST request without 'messages' array.\",\"Assert HTTP status is 400.\",\"Parse response body.\",\"Verify error message.\"]"
+                            },
+                            {
+                              "type": "expectedResult",
+                              "description": "API rejects malformed request and returns 400."
+                            }
+                          ],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "72c35ab6251c8a3f93e5-e5fcf665c8f92dc945f7",
+                  "file": "api/endpoints.spec.ts",
+                  "line": 57,
+                  "column": 9
+                },
+                {
+                  "title": "Negative: should return 400 Bad Request for incorrectly typed messages",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "API"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Ensure the Chat API validates the type of the messages field."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Negative"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "{ endpoint: '/api/chat', method: 'POST', body: { messages: 'hello' } }"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Send POST request with 'messages' as a string.\",\"Assert HTTP status is 400.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "API strictly enforces typing and rejects string inputs."
+                        }
+                      ],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 13,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-20T19:11:07.274Z",
+                          "annotations": [
+                            {
+                              "type": "category",
+                              "description": "API"
+                            },
+                            {
+                              "type": "description",
+                              "description": "Ensure the Chat API validates the type of the messages field."
+                            },
+                            {
+                              "type": "label",
+                              "description": "Negative"
+                            },
+                            {
+                              "type": "testData",
+                              "description": "{ endpoint: '/api/chat', method: 'POST', body: { messages: 'hello' } }"
+                            },
+                            {
+                              "type": "steps",
+                              "description": "[\"Send POST request with 'messages' as a string.\",\"Assert HTTP status is 400.\"]"
+                            },
+                            {
+                              "type": "expectedResult",
+                              "description": "API strictly enforces typing and rejects string inputs."
+                            }
+                          ],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "72c35ab6251c8a3f93e5-74c69755086ad4689aed",
+                  "file": "api/endpoints.spec.ts",
+                  "line": 79,
+                  "column": 9
+                },
+                {
+                  "title": "Edge Case: should handle exceptionally long text gracefully",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "API"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Test the robustness of the Chat API when flooded with an exceptionally long string payload."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Edge"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "10,000 characters payload"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Generate 10,000 character string.\",\"Send POST request.\",\"Verify server does not crash.\",\"Assert HTTP status is 200, 400, or 500.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "API processes or rejects the large payload gracefully."
+                        }
+                      ],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1101,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-20T19:11:07.298Z",
+                          "annotations": [
+                            {
+                              "type": "category",
+                              "description": "API"
+                            },
+                            {
+                              "type": "description",
+                              "description": "Test the robustness of the Chat API when flooded with an exceptionally long string payload."
+                            },
+                            {
+                              "type": "label",
+                              "description": "Edge"
+                            },
+                            {
+                              "type": "testData",
+                              "description": "10,000 characters payload"
+                            },
+                            {
+                              "type": "steps",
+                              "description": "[\"Generate 10,000 character string.\",\"Send POST request.\",\"Verify server does not crash.\",\"Assert HTTP status is 200, 400, or 500.\"]"
+                            },
+                            {
+                              "type": "expectedResult",
+                              "description": "API processes or rejects the large payload gracefully."
+                            }
+                          ],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "72c35ab6251c8a3f93e5-077c7e30b1fe36084a0d",
+                  "file": "api/endpoints.spec.ts",
+                  "line": 98,
+                  "column": 9
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "portfolio.spec.ts",
+      "file": "portfolio.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Portfolio Verification Suite",
+          "file": "portfolio.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Verify Homepage Load and Welcome Text",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "category",
+                      "description": "UI"
+                    },
+                    {
+                      "type": "description",
+                      "description": "Ensure the homepage loads correctly and the main H1 welcome text is visible."
+                    },
+                    {
+                      "type": "label",
+                      "description": "Positive"
+                    },
+                    {
+                      "type": "testData",
+                      "description": "{ url: '/en', viewport: 'Desktop 1920x1080' }"
+                    },
+                    {
+                      "type": "steps",
+                      "description": "[\"Navigate to the English homepage ('/en').\",\"Wait for the network state to be idle.\",\"Locate the H1 heading containing the user's name.\",\"Assert that the heading is visible on the screen.\"]"
+                    },
+                    {
+                      "type": "expectedResult",
+                      "description": "The homepage renders successfully with the H1 heading clearly visible."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1131,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T19:11:08.413Z",
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "UI"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Ensure the homepage loads correctly and the main H1 welcome text is visible."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Positive"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "{ url: '/en', viewport: 'Desktop 1920x1080' }"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Navigate to the English homepage ('/en').\",\"Wait for the network state to be idle.\",\"Locate the H1 heading containing the user's name.\",\"Assert that the heading is visible on the screen.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "The homepage renders successfully with the H1 heading clearly visible."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-6d620-epage-Load-and-Welcome-Text-chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-6d620-epage-Load-and-Welcome-Text-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "34cb4603fa9a5b79d30c-9d3c62d6cfcae0138864",
+              "file": "portfolio.spec.ts",
+              "line": 5,
+              "column": 7
+            },
+            {
+              "title": "Verify Web Demo Navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "category",
+                      "description": "UI"
+                    },
+                    {
+                      "type": "description",
+                      "description": "Verify that users can navigate from the homepage to the Web Demo page using the main navigation link."
+                    },
+                    {
+                      "type": "label",
+                      "description": "Positive"
+                    },
+                    {
+                      "type": "testData",
+                      "description": "{ start_url: '/en', target_url: '/en/web-demo' }"
+                    },
+                    {
+                      "type": "steps",
+                      "description": "[\"Navigate to the English homepage ('/en').\",\"Locate the 'QA Demo' link in the navigation menu.\",\"Click the 'QA Demo' link.\",\"Wait for the URL to change to include '/web-demo'.\",\"Verify the H1 heading 'Automation & CI/CD Showcase' is visible.\"]"
+                    },
+                    {
+                      "type": "expectedResult",
+                      "description": "User is successfully redirected to the Web Demo page and the correct heading is displayed."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1063,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T19:11:09.763Z",
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "UI"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Verify that users can navigate from the homepage to the Web Demo page using the main navigation link."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Positive"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "{ start_url: '/en', target_url: '/en/web-demo' }"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Navigate to the English homepage ('/en').\",\"Locate the 'QA Demo' link in the navigation menu.\",\"Click the 'QA Demo' link.\",\"Wait for the URL to change to include '/web-demo'.\",\"Verify the H1 heading 'Automation & CI/CD Showcase' is visible.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "User is successfully redirected to the Web Demo page and the correct heading is displayed."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-fd74c--Verify-Web-Demo-Navigation-chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-fd74c--Verify-Web-Demo-Navigation-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "34cb4603fa9a5b79d30c-b86e5fc9b3ef429fb164",
+              "file": "portfolio.spec.ts",
+              "line": 29,
+              "column": 7
+            },
+            {
+              "title": "Verify Localization Switcher",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "category",
+                      "description": "UI"
+                    },
+                    {
+                      "type": "description",
+                      "description": "Ensure that changing the language from English to Indonesian correctly updates the text content on the page."
+                    },
+                    {
+                      "type": "label",
+                      "description": "Positive"
+                    },
+                    {
+                      "type": "testData",
+                      "description": "{ start_url: '/en', target_locale: 'ID' }"
+                    },
+                    {
+                      "type": "steps",
+                      "description": "[\"Navigate to the English homepage ('/en').\",\"Verify initial English text.\",\"Locate and click the localization dropdown/button.\",\"Wait for navigation to complete.\",\"Assert that the text has updated to Indonesian.\"]"
+                    },
+                    {
+                      "type": "expectedResult",
+                      "description": "The website successfully changes the locale and translates the target text to Indonesian."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1280,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T19:11:10.845Z",
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "UI"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Ensure that changing the language from English to Indonesian correctly updates the text content on the page."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Positive"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "{ start_url: '/en', target_locale: 'ID' }"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Navigate to the English homepage ('/en').\",\"Verify initial English text.\",\"Locate and click the localization dropdown/button.\",\"Wait for navigation to complete.\",\"Assert that the text has updated to Indonesian.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "The website successfully changes the locale and translates the target text to Indonesian."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-0e4fc-erify-Localization-Switcher-chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-0e4fc-erify-Localization-Switcher-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "34cb4603fa9a5b79d30c-78707035f7a79d79f18b",
+              "file": "portfolio.spec.ts",
+              "line": 55,
+              "column": 7
+            },
+            {
+              "title": "Negative Test: Verify 404 on Invalid Route",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "category",
+                      "description": "UI"
+                    },
+                    {
+                      "type": "description",
+                      "description": "Ensure that navigating to a non-existent route correctly renders a 404 error page instead of crashing."
+                    },
+                    {
+                      "type": "label",
+                      "description": "Negative"
+                    },
+                    {
+                      "type": "testData",
+                      "description": "{ invalid_url: '/en/this-page-does-not-exist' }"
+                    },
+                    {
+                      "type": "steps",
+                      "description": "[\"Attempt to navigate to the non-existent URL.\",\"Capture the HTTP response status code.\",\"Assert that the HTTP response status is exactly 404.\",\"Locate the H2 heading on the page.\"]"
+                    },
+                    {
+                      "type": "expectedResult",
+                      "description": "The server returns a 404 HTTP status and the Next.js default 404 page is rendered."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 277,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T19:11:12.139Z",
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "UI"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Ensure that navigating to a non-existent route correctly renders a 404 error page instead of crashing."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Negative"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "{ invalid_url: '/en/this-page-does-not-exist' }"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Attempt to navigate to the non-existent URL.\",\"Capture the HTTP response status code.\",\"Assert that the HTTP response status is exactly 404.\",\"Locate the H2 heading on the page.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "The server returns a 404 HTTP status and the Next.js default 404 page is rendered."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-66132-Verify-404-on-Invalid-Route-chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-66132-Verify-404-on-Invalid-Route-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "34cb4603fa9a5b79d30c-1699d7e8a17829dee113",
+              "file": "portfolio.spec.ts",
+              "line": 84,
+              "column": 7
+            },
+            {
+              "title": "Edge Test: Verify Mobile Navigation Menu",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "category",
+                      "description": "UI"
+                    },
+                    {
+                      "type": "description",
+                      "description": "Verify that the responsive mobile hamburger menu appears and functions correctly on small screens."
+                    },
+                    {
+                      "type": "label",
+                      "description": "Edge"
+                    },
+                    {
+                      "type": "testData",
+                      "description": "{ viewport: { width: 375, height: 812 } } // iPhone X"
+                    },
+                    {
+                      "type": "steps",
+                      "description": "[\"Set the browser viewport size to mobile dimensions (375x812).\",\"Navigate to the homepage.\",\"Locate the hamburger menu button.\",\"Click the menu button to expand the navigation.\",\"Verify that the 'About' link becomes visible.\"]"
+                    },
+                    {
+                      "type": "expectedResult",
+                      "description": "The mobile menu button is present on small screens, and clicking it successfully reveals the hidden links."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 639,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T19:11:12.428Z",
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "UI"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Verify that the responsive mobile hamburger menu appears and functions correctly on small screens."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Edge"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "{ viewport: { width: 375, height: 812 } } // iPhone X"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Set the browser viewport size to mobile dimensions (375x812).\",\"Navigate to the homepage.\",\"Locate the hamburger menu button.\",\"Click the menu button to expand the navigation.\",\"Verify that the 'About' link becomes visible.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "The mobile menu button is present on small screens, and clicking it successfully reveals the hidden links."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-8d206-rify-Mobile-Navigation-Menu-chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-8d206-rify-Mobile-Navigation-Menu-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "34cb4603fa9a5b79d30c-60763e0377ad7ff82874",
+              "file": "portfolio.spec.ts",
+              "line": 104,
+              "column": 7
+            },
+            {
+              "title": "Verify SEO and Meta Tags",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "category",
+                      "description": "UI"
+                    },
+                    {
+                      "type": "description",
+                      "description": "Ensure that the page title, meta description, and OpenGraph tags are correctly rendered in the DOM for search engines."
+                    },
+                    {
+                      "type": "label",
+                      "description": "Positive"
+                    },
+                    {
+                      "type": "testData",
+                      "description": "{ target_locale: 'en' }"
+                    },
+                    {
+                      "type": "steps",
+                      "description": "[\"Navigate to the English homepage.\",\"Verify the document <title> matches.\",\"Verify the <meta name='description'> content.\",\"Verify the <meta property='og:title'> content.\"]"
+                    },
+                    {
+                      "type": "expectedResult",
+                      "description": "All critical SEO and OpenGraph metadata tags are present and contain the correct values."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 864,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T19:11:13.077Z",
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "UI"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Ensure that the page title, meta description, and OpenGraph tags are correctly rendered in the DOM for search engines."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Positive"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "{ target_locale: 'en' }"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Navigate to the English homepage.\",\"Verify the document <title> matches.\",\"Verify the <meta name='description'> content.\",\"Verify the <meta property='og:title'> content.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "All critical SEO and OpenGraph metadata tags are present and contain the correct values."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-a07f6-te-Verify-SEO-and-Meta-Tags-chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-a07f6-te-Verify-SEO-and-Meta-Tags-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "34cb4603fa9a5b79d30c-a7e96d07aeda82c25cde",
+              "file": "portfolio.spec.ts",
+              "line": 132,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "security.spec.ts",
+      "file": "security.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "DevSecOps: Cyber Security Validation",
+          "file": "security.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Verify HTTP Security Headers are present",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "category",
+                      "description": "Security"
+                    },
+                    {
+                      "type": "description",
+                      "description": "Ensure that DevSecOps HTTP security headers are present in the response."
+                    },
+                    {
+                      "type": "label",
+                      "description": "Positive"
+                    },
+                    {
+                      "type": "testData",
+                      "description": "{ endpoint: '/', method: 'GET' }"
+                    },
+                    {
+                      "type": "steps",
+                      "description": "[\"Send GET request to root.\",\"Capture response headers.\",\"Assert x-frame-options is DENY.\",\"Assert x-content-type-options is nosniff.\",\"Assert referrer-policy.\",\"Assert strict-transport-security.\",\"Assert content-security-policy is defined.\"]"
+                    },
+                    {
+                      "type": "expectedResult",
+                      "description": "All security headers are strictly configured."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 177,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T19:11:13.961Z",
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "Security"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Ensure that DevSecOps HTTP security headers are present in the response."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Positive"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "{ endpoint: '/', method: 'GET' }"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Send GET request to root.\",\"Capture response headers.\",\"Assert x-frame-options is DENY.\",\"Assert x-content-type-options is nosniff.\",\"Assert referrer-policy.\",\"Assert strict-transport-security.\",\"Assert content-security-policy is defined.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "All security headers are strictly configured."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-1cd2a-ecurity-Headers-are-present-chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-1cd2a-ecurity-Headers-are-present-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a7e9410bcc1ef00e9656-0e6f3db73aba380d7758",
+              "file": "security.spec.ts",
+              "line": 5,
+              "column": 7
+            },
+            {
+              "title": "XSS Vulnerability Check on Contact Form",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "category",
+                      "description": "Security"
+                    },
+                    {
+                      "type": "description",
+                      "description": "Attempt to inject an XSS script payload into the contact form."
+                    },
+                    {
+                      "type": "label",
+                      "description": "Negative"
+                    },
+                    {
+                      "type": "testData",
+                      "description": "{ payload: '<script>alert(\"XSS_ATTACK\")</script>' }"
+                    },
+                    {
+                      "type": "steps",
+                      "description": "[\"Navigate to homepage.\",\"Locate contact form fields.\",\"Inject XSS payload into inputs.\",\"Submit form.\",\"Verify no alert dialog is triggered.\",\"Verify payload is escaped in DOM.\"]"
+                    },
+                    {
+                      "type": "expectedResult",
+                      "description": "Application sanitizes the input and prevents XSS execution."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 902,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T19:11:14.151Z",
+                      "annotations": [
+                        {
+                          "type": "category",
+                          "description": "Security"
+                        },
+                        {
+                          "type": "description",
+                          "description": "Attempt to inject an XSS script payload into the contact form."
+                        },
+                        {
+                          "type": "label",
+                          "description": "Negative"
+                        },
+                        {
+                          "type": "testData",
+                          "description": "{ payload: '<script>alert(\"XSS_ATTACK\")</script>' }"
+                        },
+                        {
+                          "type": "steps",
+                          "description": "[\"Navigate to homepage.\",\"Locate contact form fields.\",\"Inject XSS payload into inputs.\",\"Submit form.\",\"Verify no alert dialog is triggered.\",\"Verify payload is escaped in DOM.\"]"
+                        },
+                        {
+                          "type": "expectedResult",
+                          "description": "Application sanitizes the input and prevents XSS execution."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-dbb19-ility-Check-on-Contact-Form-chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-dbb19-ility-Check-on-Contact-Form-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a7e9410bcc1ef00e9656-a4d7f4e098275b00ee89",
+              "file": "security.spec.ts",
+              "line": 24,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-06-20T19:10:57.987Z",
+    "duration": 17134.141000000003,
+    "expected": 13,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
