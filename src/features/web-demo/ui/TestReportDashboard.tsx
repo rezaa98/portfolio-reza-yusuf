@@ -47,7 +47,7 @@ export function TestReportDashboard() {
                     id: spec.id || Math.random().toString(36).substring(7),
                     name: spec.title,
                     status: testRun.status, // "passed", "failed", "timedOut", "skipped"
-                    time: \`\${(testRun.duration / 1000).toFixed(1)}s\`
+                    time: `${(testRun.duration / 1000).toFixed(1)}s`
                   });
                 }
               });
@@ -112,14 +112,14 @@ export function TestReportDashboard() {
           </div>
           <div className="glass px-4 py-2 rounded-lg text-center hidden lg:block">
             <div className={cn("text-2xl font-bold", passRate === 100 ? "text-green-400" : passRate > 0 ? "text-yellow-400" : "text-white")}>
-              {loading ? "-" : \`\${passRate}%\`}
+              {loading ? "-" : `${passRate}%`}
             </div>
             <div className="text-xs text-text-muted">{t("passRate")}</div>
           </div>
           <div className="glass px-4 py-2 rounded-lg text-center hidden lg:block">
             <div className="text-2xl font-bold text-accent-cyan flex items-center justify-center gap-1">
               <Clock size={16} />
-              {loading ? "-" : \`\${totalDuration}s\`}
+              {loading ? "-" : `${totalDuration}s`}
             </div>
             <div className="text-xs text-text-muted">{t("duration")}</div>
           </div>
@@ -131,7 +131,7 @@ export function TestReportDashboard() {
         {showHtmlReport ? (
           <div className="w-full h-[600px] rounded-lg overflow-hidden border border-white/10 bg-white">
             <iframe 
-              src={\`https://rezaa98.github.io/portfolio-reza-yusuf/\${process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview' ? 'sit' : 'master'}/\`} 
+              src={`https://rezaa98.github.io/portfolio-reza-yusuf/${process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview' ? 'sit' : 'master'}/`} 
               className="w-full h-full border-0"
               title="Playwright HTML Report"
             />
