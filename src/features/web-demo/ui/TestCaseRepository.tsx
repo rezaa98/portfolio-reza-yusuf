@@ -9,7 +9,7 @@ import { useTranslations } from "next-intl";
 type TestCase = {
   id: string;
   name: string;
-  category: "UI" | "API";
+  category: string;
   description: string;
   label: "Positive" | "Negative" | "Edge";
   status: "Passed" | "Failed";
