@@ -24,7 +24,8 @@ async function fetchSanityPosts() {
       "mainImage": mainImage.asset->url,
       "firstBodyImage": body[_type == "image"][0].asset->url
     }`;
-    return await client.fetch(query);
+    // Gunakan revalidate 60 detik (ISR) agar tidak fetch langsung ke Sanity setiap saat
+    return await client.fetch(query, {}, { next: { revalidate: 60 } });
   } catch (error) {
     console.error("Failed to fetch sanity posts:", error);
     return null;
