@@ -1,7 +1,16 @@
-import { getCliClient } from 'sanity/cli'
+import { createClient } from '@sanity/client'
 import fs from 'fs'
+import dotenv from 'dotenv'
 
-const client = getCliClient()
+dotenv.config({ path: '.env.local' })
+
+const client = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'qh9tfzfg',
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  useCdn: false,
+  apiVersion: '2023-05-03',
+  token: process.env.SANITY_API_TOKEN,
+})
 
 const imagePath = "/Users/mac-095093/.gemini/antigravity-ide/brain/a5bbf645-f1ab-4268-a7bb-4619b45ff3b3/rag_guardrails_ai_1781977970621.png"
 const filename = "rag-guardrails.png"
