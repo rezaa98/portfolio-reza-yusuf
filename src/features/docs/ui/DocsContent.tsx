@@ -1,7 +1,7 @@
 import React from 'react';
-import { Server, Layers, CheckSquare, Settings } from 'lucide-react';
+import { Server, Layers, CheckSquare, Settings, ShieldCheck } from 'lucide-react';
 
-export type DocSection = 'architecture' | 'tech-stack' | 'fsd' | 'trd';
+export type DocSection = 'architecture' | 'tech-stack' | 'fsd' | 'trd' | 'security';
 
 interface DocsContentProps {
   activeSection: DocSection;
@@ -15,6 +15,7 @@ export const DocsContent: React.FC<DocsContentProps> = ({ activeSection, locale 
       {activeSection === 'tech-stack' && <TechStackDoc locale={locale} />}
       {activeSection === 'fsd' && <FsdDoc locale={locale} />}
       {activeSection === 'trd' && <TrdDoc locale={locale} />}
+      {activeSection === 'security' && <SecurityDoc locale={locale} />}
     </div>
   );
 };
@@ -248,5 +249,61 @@ const TechBadge = ({ name, desc }: { name: string, desc: string }) => (
   <div className="flex flex-col p-3 bg-bg-primary border border-border-subtle rounded-lg shadow-sm hover:border-accent-blue/50 transition-colors">
     <span className="font-semibold text-white text-sm">{name}</span>
     <span className="text-xs text-text-secondary mt-1">{desc}</span>
+  </div>
+);
+
+const SecurityDoc = ({ locale }: { locale: string }) => (
+  <div className="space-y-6">
+    <div className="flex items-center gap-3 border-b border-border-subtle pb-4">
+      <div className="p-3 bg-red-500/10 rounded-lg text-red-400">
+        <ShieldCheck className="w-6 h-6" />
+      </div>
+      <h2 className="text-3xl font-bold m-0 text-white">
+        {locale === 'id' ? 'DevSecOps & Keamanan Siber' : 'DevSecOps & Cyber Security'}
+      </h2>
+    </div>
+
+    <div className="space-y-8 mt-6">
+      <section>
+        <h3 className="text-2xl font-semibold text-white mb-3">1. HTTP Security Headers</h3>
+        <p className="text-text-secondary mb-3">
+          {locale === 'id' 
+            ? 'Aplikasi ini menggunakan lapisan perlindungan HTTP statis yang dikonfigurasi melalui next.config.ts untuk mencegah serangan berbasis browser.'
+            : 'This application utilizes static HTTP protection layers configured via next.config.ts to prevent browser-based attacks.'}
+        </p>
+        <ul className="list-disc list-inside space-y-2 text-text-secondary">
+          <li><strong>Content-Security-Policy (CSP):</strong> Sangat ketat, membatasi domain eksternal hanya untuk Sanity, GitHub, Vercel, Pusher, dan Grafana. Mencegah injeksi XSS yang tidak sah.</li>
+          <li><strong>X-Frame-Options:</strong> Diatur ke <code>DENY</code> dan <code>SAMEORIGIN</code> untuk mencegah serangan Clickjacking.</li>
+          <li><strong>Strict-Transport-Security (HSTS):</strong> Memaksa browser hanya menggunakan koneksi HTTPS yang aman (max-age=63072000).</li>
+          <li><strong>X-Content-Type-Options:</strong> Diatur ke <code>nosniff</code> untuk mencegah serangan MIME-sniffing.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 className="text-2xl font-semibold text-white mb-3">2. Automated Security Auditing (DAST)</h3>
+        <p className="text-text-secondary mb-3">
+          {locale === 'id' 
+            ? 'Keamanan aplikasi diuji secara otomatis pada pipeline CI/CD menggunakan Playwright (Dynamic Application Security Testing).'
+            : 'Application security is automatically tested in the CI/CD pipeline using Playwright (Dynamic Application Security Testing).'}
+        </p>
+        <ul className="list-disc list-inside space-y-2 text-text-secondary">
+          <li><strong>XSS Injection Testing:</strong> Memasukkan payload XSS (misal: <code>&lt;script&gt;alert(1)&lt;/script&gt;</code>) ke form input untuk memverifikasi bahwa aplikasi berhasil melakukan sanitasi atau memblokirnya.</li>
+          <li><strong>Header Verification:</strong> Skrip secara otomatis memeriksa ketersediaan dan kebenaran header CSP, HSTS, dan X-Frame-Options di lingkungan staging dan produksi.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 className="text-2xl font-semibold text-white mb-3">3. AI Guardrails (Gemini API)</h3>
+        <p className="text-text-secondary mb-3">
+          {locale === 'id'
+            ? 'Endpoint AI dilengkapi dengan pembatas (Guardrails) untuk mencegah penyalahgunaan prompt (Prompt Injection) dan mengamankan kuota token API.'
+            : 'The AI endpoint is equipped with Guardrails to prevent Prompt Injection abuse and secure API token quotas.'}
+        </p>
+        <ul className="list-disc list-inside space-y-2 text-text-secondary">
+          <li><strong>System Instructions:</strong> Secara eksplisit menolak topik di luar Quality Assurance, Software Testing, atau rekayasa perangkat lunak.</li>
+          <li><strong>Token Rate Limiting:</strong> Memanfaatkan batasan kuota Google Cloud untuk mencegah serangan DoS berbasis token.</li>
+        </ul>
+      </section>
+    </div>
   </div>
 );

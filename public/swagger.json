@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Portfolio API Documentation",
-    "description": "API Collection for Reza Yusuf's Portfolio Website",
+    "description": "API Collection for Reza Yusuf's Portfolio Website. \n\n**Security Notice:** This API and the entire application are protected by enterprise-grade DevSecOps practices. We enforce a strict Content-Security-Policy (CSP), X-Frame-Options, XSS Protection, and automated DAST scanning via Playwright.",
     "version": "1.0.0"
   },
   "servers": [

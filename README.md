@@ -66,6 +66,13 @@ To set up local monitoring:
    ```
 4. Start the app. Traces from API calls (e.g., the Chat Agent) will stream directly to your Grafana Dashboard.
 
+## 🛡️ DevSecOps & Security
+
+This project implements robust DevSecOps practices to ensure enterprise-grade security:
+- **HTTP Security Headers**: Strict `Content-Security-Policy` (CSP), `X-Frame-Options`, `Strict-Transport-Security` (HSTS), and XSS protections are statically enforced via `next.config.ts`.
+- **Automated Security Auditing (DAST)**: Uses Playwright to simulate malicious payloads (e.g. XSS attacks) and verify security header integrity during the CI/CD pipeline.
+- **AI Guardrails**: The Gemini API Route Handlers implement strict prompt guardrails to prevent token abuse and prompt injection.
+
 ## 🧪 E2E Testing
 
 Automated end-to-end tests ensure the reliability of navigation, localization, and meta tags.

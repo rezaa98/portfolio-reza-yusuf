@@ -16,6 +16,7 @@ export const DocsLayout = () => {
     { id: 'tech-stack', label: locale === 'id' ? 'Teknologi (Tech Stack)' : 'Tech Stack' },
     { id: 'fsd', label: locale === 'id' ? 'Spesifikasi Fungsional (FSD)' : 'Functional Spec (FSD)' },
     { id: 'trd', label: locale === 'id' ? 'Syarat Teknis (TRD)' : 'Technical Reqs (TRD)' },
+    { id: 'security', label: locale === 'id' ? 'Keamanan (DevSecOps)' : 'Security (DevSecOps)' },
   ];
 
   return (
