@@ -19,202 +19,7 @@ type TestCase = {
   expectedResult: string;
 };
 
-const TEST_CASES: TestCase[] = [
-  {
-    id: "TC-001",
-    name: "Verify Homepage Load and Welcome Text",
-    category: "UI",
-    description: "Ensure the homepage loads correctly and the main H1 welcome text is visible.",
-    label: "Positive",
-    status: "Passed",
-    isAutomated: true,
-    testData: "{ url: '/en', viewport: 'Desktop 1920x1080' }",
-    steps: [
-      "Navigate to the English homepage ('/en').",
-      "Wait for the network state to be idle.",
-      "Locate the H1 heading containing the user's name.",
-      "Assert that the heading is visible on the screen."
-    ],
-    expectedResult: "The homepage renders successfully with the H1 heading clearly visible."
-  },
-  {
-    id: "TC-002",
-    name: "Verify Web Demo Navigation",
-    category: "UI",
-    description: "Verify that users can navigate from the homepage to the Web Demo page using the main navigation link.",
-    label: "Positive",
-    status: "Passed",
-    isAutomated: true,
-    testData: "{ start_url: '/en', target_url: '/en/web-demo' }",
-    steps: [
-      "Navigate to the English homepage ('/en').",
-      "Locate the 'QA Demo' link in the navigation menu.",
-      "Click the 'QA Demo' link.",
-      "Wait for the URL to change to include '/web-demo'.",
-      "Verify the H1 heading 'Automation & CI/CD Showcase' is visible."
-    ],
-    expectedResult: "User is successfully redirected to the Web Demo page and the correct heading is displayed."
-  },
-  {
-    id: "TC-003",
-    name: "Verify Localization Switcher",
-    category: "UI",
-    description: "Ensure that changing the language from English to Indonesian correctly updates the text content on the page.",
-    label: "Positive",
-    status: "Passed",
-    isAutomated: true,
-    testData: "{ start_url: '/en', target_locale: 'ID' }",
-    steps: [
-      "Navigate to the English homepage ('/en').",
-      "Verify initial English text ('Available for new opportunities').",
-      "Locate and click the localization dropdown/button.",
-      "Select 'Indonesia (ID)' from the options.",
-      "Wait for navigation and network state to be idle.",
-      "Verify the URL contains '/id'.",
-      "Assert that the text has updated to Indonesian ('Terbuka untuk peluang baru')."
-    ],
-    expectedResult: "The website successfully changes the locale and translates the target text to Indonesian."
-  },
-  {
-    id: "TC-004",
-    name: "Negative Test: Verify 404 on Invalid Route",
-    category: "UI",
-    description: "Ensure that navigating to a non-existent route correctly renders a 404 error page instead of crashing.",
-    label: "Negative",
-    status: "Passed",
-    isAutomated: true,
-    testData: "{ invalid_url: '/en/this-page-does-not-exist' }",
-    steps: [
-      "Attempt to navigate to the non-existent URL.",
-      "Capture the HTTP response status code.",
-      "Assert that the HTTP response status is exactly 404.",
-      "Locate the H2 heading on the page.",
-      "Assert the heading contains the text 'This page could not be found'."
-    ],
-    expectedResult: "The server returns a 404 HTTP status and the Next.js default 404 page is rendered to the user."
-  },
-  {
-    id: "TC-005",
-    name: "Edge Test: Verify Mobile Navigation Menu",
-    category: "UI",
-    description: "Verify that the responsive mobile hamburger menu appears and functions correctly on small screens.",
-    label: "Edge",
-    status: "Passed",
-    isAutomated: true,
-    testData: "{ viewport: { width: 375, height: 812 } } // iPhone X",
-    steps: [
-      "Set the browser viewport size to mobile dimensions (375x812).",
-      "Navigate to the homepage.",
-      "Locate the hamburger menu button (visible only on mobile).",
-      "Assert that the hamburger menu button is visible.",
-      "Click the menu button to expand the navigation.",
-      "Verify that the 'About' link becomes visible in the expanded menu."
-    ],
-    expectedResult: "The mobile menu button is present on small screens, and clicking it successfully reveals the hidden navigation links."
-  },
-  {
-    id: "TC-006",
-    name: "Verify SEO and Meta Tags",
-    category: "UI",
-    description: "Ensure that the page title, meta description, and OpenGraph tags are correctly rendered in the DOM for search engines.",
-    label: "Positive",
-    status: "Passed",
-    isAutomated: true,
-    testData: "{ target_locale: 'en' }",
-    steps: [
-      "Navigate to the English homepage.",
-      "Wait for the network state to be idle.",
-      "Verify the document <title> matches the expected string.",
-      "Verify the <meta name=\"description\"> content matches the expected string.",
-      "Verify the <meta property=\"og:title\"> content matches the expected string."
-    ],
-    expectedResult: "All critical SEO and OpenGraph metadata tags are present and contain the correct values."
-  },
-  {
-    id: "TC-007",
-    name: "Positive: should return 200 OK and an array of posts",
-    category: "API",
-    description: "Verify that the Sanity CMS posts API endpoint successfully returns a valid JSON array of blog posts.",
-    label: "Positive",
-    status: "Passed",
-    isAutomated: true,
-    testData: "{ endpoint: '/api/posts', method: 'GET' }",
-    steps: [
-      "Send a GET request to '/api/posts'.",
-      "Assert that the HTTP status code is 200.",
-      "Parse the response body as JSON.",
-      "Verify the JSON contains a 'data' array.",
-      "Check that the first post has '_id', 'title', and 'slug'."
-    ],
-    expectedResult: "API responds with 200 OK and a correctly structured posts array."
-  },
-  {
-    id: "TC-008",
-    name: "Positive: should return 200 OK and stream text for valid messages payload",
-    category: "API",
-    description: "Ensure the Gemini AI Chat API processes a valid message payload and returns a text stream.",
-    label: "Positive",
-    status: "Passed",
-    isAutomated: true,
-    testData: "{ endpoint: '/api/chat', method: 'POST', body: { messages: [{ role: 'user', content: 'Say hello playwright' }] } }",
-    steps: [
-      "Send a POST request to '/api/chat' with a valid message payload.",
-      "Assert that the HTTP status code is 200.",
-      "Read the streaming text response.",
-      "Assert that the returned text length is greater than 0."
-    ],
-    expectedResult: "API accepts the payload and streams a non-empty text response."
-  },
-  {
-    id: "TC-009",
-    name: "Negative: should return 400 Bad Request for missing messages array",
-    category: "API",
-    description: "Verify that the Chat API validates the request body and rejects payloads without a 'messages' array.",
-    label: "Negative",
-    status: "Passed",
-    isAutomated: true,
-    testData: "{ endpoint: '/api/chat', method: 'POST', body: { query: 'hello' } }",
-    steps: [
-      "Send a POST request to '/api/chat' without a 'messages' array.",
-      "Assert that the HTTP status code is 400 (Bad Request).",
-      "Parse the response body as JSON.",
-      "Verify the JSON contains an error message mentioning 'messages array is required'."
-    ],
-    expectedResult: "API rejects the malformed request and returns a 400 status with an appropriate error message."
-  },
-  {
-    id: "TC-010",
-    name: "Negative: should return 400 Bad Request for incorrectly typed messages",
-    category: "API",
-    description: "Ensure the Chat API validates the type of the 'messages' field and rejects non-array inputs.",
-    label: "Negative",
-    status: "Passed",
-    isAutomated: true,
-    testData: "{ endpoint: '/api/chat', method: 'POST', body: { messages: 'hello' } }",
-    steps: [
-      "Send a POST request to '/api/chat' with 'messages' as a string instead of an array.",
-      "Assert that the HTTP status code is exactly 400."
-    ],
-    expectedResult: "API strictly enforces typing and rejects string inputs for the messages field."
-  },
-  {
-    id: "TC-011",
-    name: "Edge Case: should handle exceptionally long text gracefully",
-    category: "API",
-    description: "Test the robustness of the Chat API when flooded with an exceptionally long string payload.",
-    label: "Edge",
-    status: "Passed",
-    isAutomated: true,
-    testData: "{ endpoint: '/api/chat', method: 'POST', body: { messages: [{ role: 'user', content: 'a'.repeat(10000) }] } }",
-    steps: [
-      "Generate a string containing 10,000 characters.",
-      "Send a POST request to '/api/chat' incorporating the large string.",
-      "Verify that the server does not crash.",
-      "Assert the HTTP status code is either 200, 400, or 500 (handled gracefully)."
-    ],
-    expectedResult: "API processes or rejects the large payload without causing a fatal server crash."
-  }
-];
+// Hardcoded list removed. We now fetch dynamically.
 
 export function TestCaseRepository() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -223,26 +28,101 @@ export function TestCaseRepository() {
   const [selectedCategory, setSelectedCategory] = useState<"All" | "UI" | "API">("All");
   const t = useTranslations("WebDemo.TestCaseRepository");
 
+  const [testCases, setTestCases] = useState<TestCase[]>([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    // Fetch actual Playwright spec file from GitHub dynamically
+    // Fetch actual Playwright spec files from GitHub dynamically
     const fetchSourceCode = async () => {
       try {
         const branch = process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview' ? 'sit' : 'master';
         const url1 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${branch}/tests/portfolio.spec.ts`;
         const url2 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${branch}/tests/api/endpoints.spec.ts`;
+        const url3 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${branch}/tests/security.spec.ts`;
         
-        const [res1, res2] = await Promise.all([fetch(url1), fetch(url2)]);
+        const [res1, res2, res3] = await Promise.all([fetch(url1), fetch(url2), fetch(url3)]);
         const text1 = res1.ok ? await res1.text() : "";
         const text2 = res2.ok ? await res2.text() : "";
+        const text3 = res3.ok ? await res3.text() : "";
         
-        if (text1 || text2) {
-          setSourceCode(text1 + "\n\n" + text2);
+        if (text1 || text2 || text3) {
+          setSourceCode(text1 + "\n\n" + text2 + "\n\n" + text3);
         }
       } catch (err) {
         console.error("Failed to fetch Playwright source code", err);
       }
     };
+
+    const fetchTestResults = async () => {
+      try {
+        const branch = process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview' ? 'sit' : 'master';
+        const url = `https://rezaa98.github.io/portfolio-reza-yusuf/${branch}/test-results.json`;
+        
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Report not found");
+        }
+        
+        const data = await response.json();
+        const extractedTests: TestCase[] = [];
+        let idCounter = 1;
+
+        // Flatten Playwright JSON report to extract tests and annotations
+        const processSuites = (suites: any[]) => {
+          if (!suites) return;
+          suites.forEach(suite => {
+            if (suite.specs) {
+              suite.specs.forEach((spec: any) => {
+                const testRun = spec.tests?.[0]?.results?.[0];
+                const annotations = spec.tests?.[0]?.annotations || [];
+                
+                // Extract metadata from annotations
+                const getAnnotation = (type: string) => annotations.find((a: any) => a.type === type)?.description || "N/A";
+                
+                let stepsStr = getAnnotation('steps');
+                let stepsArr: string[] = [];
+                try {
+                  stepsArr = stepsStr !== "N/A" ? JSON.parse(stepsStr) : [];
+                } catch {
+                  stepsArr = [stepsStr];
+                }
+
+                if (testRun) {
+                  extractedTests.push({
+                    id: `TC-${String(idCounter++).padStart(3, '0')}`,
+                    name: spec.title,
+                    category: (getAnnotation('category') as any) || "UI",
+                    description: getAnnotation('description'),
+                    label: (getAnnotation('label') as any) || "Positive",
+                    status: testRun.status === 'passed' ? 'Passed' : 'Failed',
+                    isAutomated: true,
+                    testData: getAnnotation('testData'),
+                    steps: stepsArr.length > 0 ? stepsArr : ["(Steps missing in annotations)"],
+                    expectedResult: getAnnotation('expectedResult')
+                  });
+                }
+              });
+            }
+            if (suite.suites) {
+              processSuites(suite.suites);
+            }
+          });
+        };
+
+        processSuites(data.config?.suites || data.suites || []);
+        
+        if (extractedTests.length > 0) {
+          setTestCases(extractedTests);
+        }
+        setLoading(false);
+      } catch (err) {
+        console.error("Failed to fetch Playwright JSON report", err);
+        setLoading(false);
+      }
+    };
+
     fetchSourceCode();
+    fetchTestResults();
   }, []);
 
   const toggleExpand = (id: string) => {
@@ -281,7 +161,7 @@ export function TestCaseRepository() {
     }
   };
 
-  const filteredCases = TEST_CASES.filter(tc => selectedCategory === "All" || tc.category === selectedCategory);
+  const filteredCases = testCases.filter(tc => selectedCategory === "All" || tc.category === selectedCategory);
 
   return (
     <div className="w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#0f172a] font-sans">
@@ -319,7 +199,14 @@ export function TestCaseRepository() {
       </div>
 
       {/* Table List */}
-      <div className="flex flex-col">
+      <div className="flex flex-col relative min-h-[200px]">
+        {loading && testCases.length === 0 && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-accent-blue bg-black/50 z-10">
+            <div className="w-8 h-8 border-4 border-accent-blue border-t-transparent rounded-full animate-spin mb-4"></div>
+            <p className="text-sm font-medium animate-pulse">Syncing Tests-as-Documentation from CI/CD...</p>
+          </div>
+        )}
+        
         {filteredCases.map((tc) => {
           const currentMode = viewMode[tc.id] || "manual";
           return (
@@ -437,7 +324,7 @@ export function TestCaseRepository() {
                               <span className="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
                               <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
                               <span className="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
-                              <span className="ml-2 truncate">{tc.category === 'UI' ? 'portfolio.spec.ts' : 'endpoints.spec.ts'}</span>
+                              <span className="ml-2 truncate">{tc.category === 'UI' ? 'portfolio.spec.ts' : tc.category === 'Security' ? 'security.spec.ts' : 'endpoints.spec.ts'}</span>
                             </div>
                             <pre className="p-4 overflow-x-auto text-gray-300 leading-relaxed">
                               {extractTestCode(tc.name)}

@@ -3,6 +3,14 @@ import { test, expect } from '@playwright/test';
 test.describe('Portfolio Verification Suite', () => {
 
   test('Verify Homepage Load and Welcome Text', async ({ page }) => {
+    test.info().annotations.push(
+      { type: 'category', description: 'UI' },
+      { type: 'description', description: 'Ensure the homepage loads correctly and the main H1 welcome text is visible.' },
+      { type: 'label', description: 'Positive' },
+      { type: 'testData', description: "{ url: '/en', viewport: 'Desktop 1920x1080' }" },
+      { type: 'steps', description: JSON.stringify(["Navigate to the English homepage ('/en').", "Wait for the network state to be idle.", "Locate the H1 heading containing the user's name.", "Assert that the heading is visible on the screen."]) },
+      { type: 'expectedResult', description: 'The homepage renders successfully with the H1 heading clearly visible.' }
+    );
     // Navigate to English homepage explicitly
     await page.goto('/en');
 
@@ -19,6 +27,14 @@ test.describe('Portfolio Verification Suite', () => {
   });
 
   test('Verify Web Demo Navigation', async ({ page }) => {
+    test.info().annotations.push(
+      { type: 'category', description: 'UI' },
+      { type: 'description', description: 'Verify that users can navigate from the homepage to the Web Demo page using the main navigation link.' },
+      { type: 'label', description: 'Positive' },
+      { type: 'testData', description: "{ start_url: '/en', target_url: '/en/web-demo' }" },
+      { type: 'steps', description: JSON.stringify(["Navigate to the English homepage ('/en').", "Locate the 'QA Demo' link in the navigation menu.", "Click the 'QA Demo' link.", "Wait for the URL to change to include '/web-demo'.", "Verify the H1 heading 'Automation & CI/CD Showcase' is visible."]) },
+      { type: 'expectedResult', description: 'User is successfully redirected to the Web Demo page and the correct heading is displayed.' }
+    );
     // Start at English homepage
     await page.goto('/en');
     await page.waitForLoadState('domcontentloaded');
@@ -37,6 +53,14 @@ test.describe('Portfolio Verification Suite', () => {
   });
 
   test('Verify Localization Switcher', async ({ page }) => {
+    test.info().annotations.push(
+      { type: 'category', description: 'UI' },
+      { type: 'description', description: 'Ensure that changing the language from English to Indonesian correctly updates the text content on the page.' },
+      { type: 'label', description: 'Positive' },
+      { type: 'testData', description: "{ start_url: '/en', target_locale: 'ID' }" },
+      { type: 'steps', description: JSON.stringify(["Navigate to the English homepage ('/en').", "Verify initial English text.", "Locate and click the localization dropdown/button.", "Wait for navigation to complete.", "Assert that the text has updated to Indonesian."]) },
+      { type: 'expectedResult', description: 'The website successfully changes the locale and translates the target text to Indonesian.' }
+    );
     // Navigate to English homepage
     await page.goto('/en');
     await page.waitForLoadState('domcontentloaded');
@@ -58,6 +82,14 @@ test.describe('Portfolio Verification Suite', () => {
   });
 
   test('Negative Test: Verify 404 on Invalid Route', async ({ page }) => {
+    test.info().annotations.push(
+      { type: 'category', description: 'UI' },
+      { type: 'description', description: 'Ensure that navigating to a non-existent route correctly renders a 404 error page instead of crashing.' },
+      { type: 'label', description: 'Negative' },
+      { type: 'testData', description: "{ invalid_url: '/en/this-page-does-not-exist' }" },
+      { type: 'steps', description: JSON.stringify(["Attempt to navigate to the non-existent URL.", "Capture the HTTP response status code.", "Assert that the HTTP response status is exactly 404.", "Locate the H2 heading on the page."]) },
+      { type: 'expectedResult', description: 'The server returns a 404 HTTP status and the Next.js default 404 page is rendered.' }
+    );
     // Navigate to a non-existent URL
     const response = await page.goto('/en/this-page-does-not-exist');
     
@@ -70,6 +102,14 @@ test.describe('Portfolio Verification Suite', () => {
   });
 
   test('Edge Test: Verify Mobile Navigation Menu', async ({ page }) => {
+    test.info().annotations.push(
+      { type: 'category', description: 'UI' },
+      { type: 'description', description: 'Verify that the responsive mobile hamburger menu appears and functions correctly on small screens.' },
+      { type: 'label', description: 'Edge' },
+      { type: 'testData', description: "{ viewport: { width: 375, height: 812 } } // iPhone X" },
+      { type: 'steps', description: JSON.stringify(["Set the browser viewport size to mobile dimensions (375x812).", "Navigate to the homepage.", "Locate the hamburger menu button.", "Click the menu button to expand the navigation.", "Verify that the 'About' link becomes visible."]) },
+      { type: 'expectedResult', description: 'The mobile menu button is present on small screens, and clicking it successfully reveals the hidden links.' }
+    );
     // Set viewport to mobile size (iPhone X)
     await page.setViewportSize({ width: 375, height: 812 });
     
@@ -90,6 +130,14 @@ test.describe('Portfolio Verification Suite', () => {
   });
 
   test('Verify SEO and Meta Tags', async ({ page }) => {
+    test.info().annotations.push(
+      { type: 'category', description: 'UI' },
+      { type: 'description', description: 'Ensure that the page title, meta description, and OpenGraph tags are correctly rendered in the DOM for search engines.' },
+      { type: 'label', description: 'Positive' },
+      { type: 'testData', description: "{ target_locale: 'en' }" },
+      { type: 'steps', description: JSON.stringify(["Navigate to the English homepage.", "Verify the document <title> matches.", "Verify the <meta name=\\"description\\"> content.", "Verify the <meta property=\\"og:title\\"> content."]) },
+      { type: 'expectedResult', description: 'All critical SEO and OpenGraph metadata tags are present and contain the correct values.' }
+    );
     // Navigate to English homepage
     await page.goto('/en');
     await page.waitForLoadState('domcontentloaded');

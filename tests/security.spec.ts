@@ -3,6 +3,14 @@ import { test, expect } from '@playwright/test';
 test.describe('DevSecOps: Cyber Security Validation', () => {
 
   test('Verify HTTP Security Headers are present', async ({ page, request }) => {
+    test.info().annotations.push(
+      { type: 'category', description: 'Security' },
+      { type: 'description', description: 'Ensure that DevSecOps HTTP security headers are present in the response.' },
+      { type: 'label', description: 'Positive' },
+      { type: 'testData', description: "{ endpoint: '/', method: 'GET' }" },
+      { type: 'steps', description: JSON.stringify(["Send GET request to root.", "Capture response headers.", "Assert x-frame-options is DENY.", "Assert x-content-type-options is nosniff.", "Assert referrer-policy.", "Assert strict-transport-security.", "Assert content-security-policy is defined."]) },
+      { type: 'expectedResult', description: 'All security headers are strictly configured.' }
+    );
     const response = await request.get('/');
     const headers = response.headers();
 
@@ -14,6 +22,14 @@ test.describe('DevSecOps: Cyber Security Validation', () => {
   });
 
   test('XSS Vulnerability Check on Contact Form', async ({ page }) => {
+    test.info().annotations.push(
+      { type: 'category', description: 'Security' },
+      { type: 'description', description: 'Attempt to inject an XSS script payload into the contact form.' },
+      { type: 'label', description: 'Negative' },
+      { type: 'testData', description: "{ payload: '<script>alert(\"XSS_ATTACK\")</script>' }" },
+      { type: 'steps', description: JSON.stringify(["Navigate to homepage.", "Locate contact form fields.", "Inject XSS payload into inputs.", "Submit form.", "Verify no alert dialog is triggered.", "Verify payload is escaped in DOM."]) },
+      { type: 'expectedResult', description: 'Application sanitizes the input and prevents XSS execution.' }
+    );
     await page.goto('/en');
     
     // Attempt to inject a script payload into the contact form
