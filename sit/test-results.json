@@ -1,0 +1,617 @@
+{
+  "config": {
+    "argv": [
+      "/opt/hostedtoolcache/node/22.22.3/x64/bin/node",
+      "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/node_modules/.bin/playwright",
+      "test"
+    ],
+    "configFile": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/playwright.config.ts",
+    "rootDir": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/8e1a37a7a8940889240347bb4a992712bd3520d0",
+        "commitHash": "8e1a37a7a8940889240347bb4a992712bd3520d0",
+        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27877384826"
+      },
+      "gitCommit": {
+        "shortHash": "8e1a37a",
+        "hash": "8e1a37a7a8940889240347bb4a992712bd3520d0",
+        "subject": "fix: syntax error escaped backticks in TestReportDashboard",
+        "body": "fix: syntax error escaped backticks in TestReportDashboard\n",
+        "author": {
+          "name": "rezaa98",
+          "email": "reza.yusuf98@gmail.com",
+          "time": 1781973571000
+        },
+        "committer": {
+          "name": "rezaa98",
+          "email": "reza.yusuf98@gmail.com",
+          "time": 1781973571000
+        },
+        "branch": "sit"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/8e1a37a7a8940889240347bb4a992712bd3520d0",
+            "commitHash": "8e1a37a7a8940889240347bb4a992712bd3520d0",
+            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27877384826"
+          },
+          "gitCommit": {
+            "shortHash": "8e1a37a",
+            "hash": "8e1a37a7a8940889240347bb4a992712bd3520d0",
+            "subject": "fix: syntax error escaped backticks in TestReportDashboard",
+            "body": "fix: syntax error escaped backticks in TestReportDashboard\n",
+            "author": {
+              "name": "rezaa98",
+              "email": "reza.yusuf98@gmail.com",
+              "time": 1781973571000
+            },
+            "committer": {
+              "name": "rezaa98",
+              "email": "reza.yusuf98@gmail.com",
+              "time": 1781973571000
+            },
+            "branch": "sit"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "playwright-report/test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.61.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npx next start -p 3100",
+      "url": "http://localhost:3100",
+      "reuseExistingServer": false,
+      "timeout": 30000
+    }
+  },
+  "suites": [
+    {
+      "title": "api/endpoints.spec.ts",
+      "file": "api/endpoints.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "API Collection Endpoints",
+          "file": "api/endpoints.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [],
+          "suites": [
+            {
+              "title": "GET /api/posts",
+              "file": "api/endpoints.spec.ts",
+              "line": 4,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "Positive: should return 200 OK and an array of posts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 70,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-20T16:42:10.868Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "72c35ab6251c8a3f93e5-da8003be02c4dc63b5e6",
+                  "file": "api/endpoints.spec.ts",
+                  "line": 5,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "POST /api/chat",
+              "file": "api/endpoints.spec.ts",
+              "line": 23,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "Positive: should return 200 OK and stream text for valid messages payload",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 828,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-20T16:42:10.976Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "72c35ab6251c8a3f93e5-b3cf0e0034dfda2432e4",
+                  "file": "api/endpoints.spec.ts",
+                  "line": 24,
+                  "column": 9
+                },
+                {
+                  "title": "Negative: should return 400 Bad Request for missing messages array",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 12,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-20T16:42:11.820Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "72c35ab6251c8a3f93e5-e5fcf665c8f92dc945f7",
+                  "file": "api/endpoints.spec.ts",
+                  "line": 41,
+                  "column": 9
+                },
+                {
+                  "title": "Negative: should return 400 Bad Request for incorrectly typed messages",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 12,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-20T16:42:11.844Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "72c35ab6251c8a3f93e5-74c69755086ad4689aed",
+                  "file": "api/endpoints.spec.ts",
+                  "line": 55,
+                  "column": 9
+                },
+                {
+                  "title": "Edge Case: should handle exceptionally long text gracefully",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1051,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-20T16:42:11.867Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "72c35ab6251c8a3f93e5-077c7e30b1fe36084a0d",
+                  "file": "api/endpoints.spec.ts",
+                  "line": 66,
+                  "column": 9
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "portfolio.spec.ts",
+      "file": "portfolio.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Portfolio Verification Suite",
+          "file": "portfolio.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Verify Homepage Load and Welcome Text",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1011,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T16:42:12.937Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-6d620-epage-Load-and-Welcome-Text-chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-6d620-epage-Load-and-Welcome-Text-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "34cb4603fa9a5b79d30c-9d3c62d6cfcae0138864",
+              "file": "portfolio.spec.ts",
+              "line": 5,
+              "column": 7
+            },
+            {
+              "title": "Verify Web Demo Navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1054,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T16:42:14.156Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-fd74c--Verify-Web-Demo-Navigation-chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-fd74c--Verify-Web-Demo-Navigation-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "34cb4603fa9a5b79d30c-b86e5fc9b3ef429fb164",
+              "file": "portfolio.spec.ts",
+              "line": 21,
+              "column": 7
+            },
+            {
+              "title": "Verify Localization Switcher",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1233,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T16:42:15.231Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-0e4fc-erify-Localization-Switcher-chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-0e4fc-erify-Localization-Switcher-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "34cb4603fa9a5b79d30c-78707035f7a79d79f18b",
+              "file": "portfolio.spec.ts",
+              "line": 39,
+              "column": 7
+            },
+            {
+              "title": "Negative Test: Verify 404 on Invalid Route",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 282,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T16:42:16.478Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-66132-Verify-404-on-Invalid-Route-chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-66132-Verify-404-on-Invalid-Route-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "34cb4603fa9a5b79d30c-1699d7e8a17829dee113",
+              "file": "portfolio.spec.ts",
+              "line": 60,
+              "column": 7
+            },
+            {
+              "title": "Edge Test: Verify Mobile Navigation Menu",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 680,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T16:42:16.773Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-8d206-rify-Mobile-Navigation-Menu-chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-8d206-rify-Mobile-Navigation-Menu-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "34cb4603fa9a5b79d30c-60763e0377ad7ff82874",
+              "file": "portfolio.spec.ts",
+              "line": 72,
+              "column": 7
+            },
+            {
+              "title": "Verify SEO and Meta Tags",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 931,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-20T16:42:17.468Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-a07f6-te-Verify-SEO-and-Meta-Tags-chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-a07f6-te-Verify-SEO-and-Meta-Tags-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "34cb4603fa9a5b79d30c-a7e96d07aeda82c25cde",
+              "file": "portfolio.spec.ts",
+              "line": 92,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-06-20T16:42:08.383Z",
+    "duration": 10091.705,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
