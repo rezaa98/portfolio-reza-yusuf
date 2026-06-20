@@ -1,14 +1,15 @@
 {
   "config": {
     "argv": [
-      "/opt/hostedtoolcache/node/22.22.3/x64/bin/node",
-      "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/node_modules/.bin/playwright",
-      "test"
+      "/Users/mac-095093/.nvm/versions/node/v20.19.6/bin/node",
+      "/Users/mac-095093/Downloads/portfolio-reza-yusuf/node_modules/.bin/playwright",
+      "test",
+      "tests/security.spec.ts"
     ],
-    "configFile": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/playwright.config.ts",
-    "rootDir": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/tests",
+    "configFile": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/playwright.config.ts",
+    "rootDir": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/tests",
     "failOnFlakyTests": false,
-    "forbidOnly": true,
+    "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
     "globalTeardown": null,
@@ -17,64 +18,20 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "ci": {
-        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/b01d49fbb067b8e006bb6292fa6ef0682ac14e00",
-        "commitHash": "b01d49fbb067b8e006bb6292fa6ef0682ac14e00",
-        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27879763294"
-      },
-      "gitCommit": {
-        "shortHash": "b01d49f",
-        "hash": "b01d49fbb067b8e006bb6292fa6ef0682ac14e00",
-        "subject": "feat(security): implement DevSecOps with ZAP, Playwright security tests, CSP headers and Security UI",
-        "body": "feat(security): implement DevSecOps with ZAP, Playwright security tests, CSP headers and Security UI\n",
-        "author": {
-          "name": "rezaa98",
-          "email": "reza.yusuf98@gmail.com",
-          "time": 1781979413000
-        },
-        "committer": {
-          "name": "rezaa98",
-          "email": "reza.yusuf98@gmail.com",
-          "time": 1781979413000
-        },
-        "branch": "sit"
-      },
-      "actualWorkers": 1
+      "actualWorkers": 2
     },
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results",
+        "outputDir": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results",
         "repeatEach": 1,
-        "retries": 2,
+        "retries": 0,
         "metadata": {
-          "ci": {
-            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/b01d49fbb067b8e006bb6292fa6ef0682ac14e00",
-            "commitHash": "b01d49fbb067b8e006bb6292fa6ef0682ac14e00",
-            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27879763294"
-          },
-          "gitCommit": {
-            "shortHash": "b01d49f",
-            "hash": "b01d49fbb067b8e006bb6292fa6ef0682ac14e00",
-            "subject": "feat(security): implement DevSecOps with ZAP, Playwright security tests, CSP headers and Security UI",
-            "body": "feat(security): implement DevSecOps with ZAP, Playwright security tests, CSP headers and Security UI\n",
-            "author": {
-              "name": "rezaa98",
-              "email": "reza.yusuf98@gmail.com",
-              "time": 1781979413000
-            },
-            "committer": {
-              "name": "rezaa98",
-              "email": "reza.yusuf98@gmail.com",
-              "time": 1781979413000
-            },
-            "branch": "sit"
-          },
-          "actualWorkers": 1
+          "actualWorkers": 2
         },
         "id": "chromium",
         "name": "chromium",
-        "testDir": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/tests",
+        "testDir": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -104,506 +61,15 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.61.0",
-    "workers": 1,
+    "workers": 4,
     "webServer": {
       "command": "npx next start -p 3100",
       "url": "http://localhost:3100",
-      "reuseExistingServer": false,
+      "reuseExistingServer": true,
       "timeout": 30000
     }
   },
   "suites": [
-    {
-      "title": "api/endpoints.spec.ts",
-      "file": "api/endpoints.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "API Collection Endpoints",
-          "file": "api/endpoints.spec.ts",
-          "line": 3,
-          "column": 6,
-          "specs": [],
-          "suites": [
-            {
-              "title": "GET /api/posts",
-              "file": "api/endpoints.spec.ts",
-              "line": 4,
-              "column": 8,
-              "specs": [
-                {
-                  "title": "Positive: should return 200 OK and an array of posts",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [
-                        {
-                          "workerIndex": 0,
-                          "parallelIndex": 0,
-                          "status": "passed",
-                          "duration": 62,
-                          "errors": [],
-                          "stdout": [],
-                          "stderr": [],
-                          "retry": 0,
-                          "startTime": "2026-06-20T18:19:33.321Z",
-                          "annotations": [],
-                          "attachments": []
-                        }
-                      ],
-                      "status": "expected"
-                    }
-                  ],
-                  "id": "72c35ab6251c8a3f93e5-da8003be02c4dc63b5e6",
-                  "file": "api/endpoints.spec.ts",
-                  "line": 5,
-                  "column": 9
-                }
-              ]
-            },
-            {
-              "title": "POST /api/chat",
-              "file": "api/endpoints.spec.ts",
-              "line": 23,
-              "column": 8,
-              "specs": [
-                {
-                  "title": "Positive: should return 200 OK and stream text for valid messages payload",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [
-                        {
-                          "workerIndex": 0,
-                          "parallelIndex": 0,
-                          "status": "passed",
-                          "duration": 6388,
-                          "errors": [],
-                          "stdout": [],
-                          "stderr": [],
-                          "retry": 0,
-                          "startTime": "2026-06-20T18:19:33.417Z",
-                          "annotations": [],
-                          "attachments": []
-                        }
-                      ],
-                      "status": "expected"
-                    }
-                  ],
-                  "id": "72c35ab6251c8a3f93e5-b3cf0e0034dfda2432e4",
-                  "file": "api/endpoints.spec.ts",
-                  "line": 24,
-                  "column": 9
-                },
-                {
-                  "title": "Negative: should return 400 Bad Request for missing messages array",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [
-                        {
-                          "workerIndex": 0,
-                          "parallelIndex": 0,
-                          "status": "passed",
-                          "duration": 12,
-                          "errors": [],
-                          "stdout": [],
-                          "stderr": [],
-                          "retry": 0,
-                          "startTime": "2026-06-20T18:19:39.824Z",
-                          "annotations": [],
-                          "attachments": []
-                        }
-                      ],
-                      "status": "expected"
-                    }
-                  ],
-                  "id": "72c35ab6251c8a3f93e5-e5fcf665c8f92dc945f7",
-                  "file": "api/endpoints.spec.ts",
-                  "line": 41,
-                  "column": 9
-                },
-                {
-                  "title": "Negative: should return 400 Bad Request for incorrectly typed messages",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [
-                        {
-                          "workerIndex": 0,
-                          "parallelIndex": 0,
-                          "status": "passed",
-                          "duration": 13,
-                          "errors": [],
-                          "stdout": [],
-                          "stderr": [],
-                          "retry": 0,
-                          "startTime": "2026-06-20T18:19:39.846Z",
-                          "annotations": [],
-                          "attachments": []
-                        }
-                      ],
-                      "status": "expected"
-                    }
-                  ],
-                  "id": "72c35ab6251c8a3f93e5-74c69755086ad4689aed",
-                  "file": "api/endpoints.spec.ts",
-                  "line": 55,
-                  "column": 9
-                },
-                {
-                  "title": "Edge Case: should handle exceptionally long text gracefully",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [
-                        {
-                          "workerIndex": 0,
-                          "parallelIndex": 0,
-                          "status": "passed",
-                          "duration": 6324,
-                          "errors": [],
-                          "stdout": [],
-                          "stderr": [],
-                          "retry": 0,
-                          "startTime": "2026-06-20T18:19:39.871Z",
-                          "annotations": [],
-                          "attachments": []
-                        }
-                      ],
-                      "status": "expected"
-                    }
-                  ],
-                  "id": "72c35ab6251c8a3f93e5-077c7e30b1fe36084a0d",
-                  "file": "api/endpoints.spec.ts",
-                  "line": 66,
-                  "column": 9
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "portfolio.spec.ts",
-      "file": "portfolio.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Portfolio Verification Suite",
-          "file": "portfolio.spec.ts",
-          "line": 3,
-          "column": 6,
-          "specs": [
-            {
-              "title": "Verify Homepage Load and Welcome Text",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1185,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-20T18:19:46.216Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-6d620-epage-Load-and-Welcome-Text-chromium/test-finished-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-6d620-epage-Load-and-Welcome-Text-chromium/video.webm"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "34cb4603fa9a5b79d30c-9d3c62d6cfcae0138864",
-              "file": "portfolio.spec.ts",
-              "line": 5,
-              "column": 7
-            },
-            {
-              "title": "Verify Web Demo Navigation",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1320,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-20T18:19:47.624Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-fd74c--Verify-Web-Demo-Navigation-chromium/test-finished-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-fd74c--Verify-Web-Demo-Navigation-chromium/video.webm"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "34cb4603fa9a5b79d30c-b86e5fc9b3ef429fb164",
-              "file": "portfolio.spec.ts",
-              "line": 21,
-              "column": 7
-            },
-            {
-              "title": "Verify Localization Switcher",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1480,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-20T18:19:48.962Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-0e4fc-erify-Localization-Switcher-chromium/test-finished-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-0e4fc-erify-Localization-Switcher-chromium/video.webm"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "34cb4603fa9a5b79d30c-78707035f7a79d79f18b",
-              "file": "portfolio.spec.ts",
-              "line": 39,
-              "column": 7
-            },
-            {
-              "title": "Negative Test: Verify 404 on Invalid Route",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 312,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-20T18:19:50.470Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-66132-Verify-404-on-Invalid-Route-chromium/test-finished-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-66132-Verify-404-on-Invalid-Route-chromium/video.webm"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "34cb4603fa9a5b79d30c-1699d7e8a17829dee113",
-              "file": "portfolio.spec.ts",
-              "line": 60,
-              "column": 7
-            },
-            {
-              "title": "Edge Test: Verify Mobile Navigation Menu",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 730,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-20T18:19:50.795Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-8d206-rify-Mobile-Navigation-Menu-chromium/test-finished-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-8d206-rify-Mobile-Navigation-Menu-chromium/video.webm"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "34cb4603fa9a5b79d30c-60763e0377ad7ff82874",
-              "file": "portfolio.spec.ts",
-              "line": 72,
-              "column": 7
-            },
-            {
-              "title": "Verify SEO and Meta Tags",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1249,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-20T18:19:51.538Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-a07f6-te-Verify-SEO-and-Meta-Tags-chromium/test-finished-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-a07f6-te-Verify-SEO-and-Meta-Tags-chromium/video.webm"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "34cb4603fa9a5b79d30c-a7e96d07aeda82c25cde",
-              "file": "portfolio.spec.ts",
-              "line": 92,
-              "column": 7
-            }
-          ]
-        }
-      ]
-    },
     {
       "title": "security.spec.ts",
       "file": "security.spec.ts",
@@ -633,23 +99,23 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 223,
+                      "duration": 540,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:19:52.800Z",
+                      "startTime": "2026-06-20T18:22:07.663Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-1cd2a-ecurity-Headers-are-present-chromium/test-finished-1.png"
+                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-1cd2a-ecurity-Headers-are-present-chromium/test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-1cd2a-ecurity-Headers-are-present-chromium/video.webm"
+                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-1cd2a-ecurity-Headers-are-present-chromium/video.webm"
                         }
                       ]
                     }
@@ -675,26 +141,26 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 1017,
+                      "duration": 1111,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-20T18:19:53.035Z",
+                      "startTime": "2026-06-20T18:22:07.654Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-dbb19-ility-Check-on-Contact-Form-chromium/test-finished-1.png"
+                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-dbb19-ility-Check-on-Contact-Form-chromium/test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-dbb19-ility-Check-on-Contact-Form-chromium/video.webm"
+                          "path": "/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-dbb19-ility-Check-on-Contact-Form-chromium/video.webm"
                         }
                       ]
                     }
@@ -714,9 +180,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-20T18:19:31.080Z",
-    "duration": 23051.994,
-    "expected": 13,
+    "startTime": "2026-06-20T18:22:05.807Z",
+    "duration": 3963.267,
+    "expected": 2,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
