@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { PortableText } from '@portabletext/react'
 import { client } from '@/sanity/client'
 import { Navbar } from '@/shared/ui/Navbar'
@@ -67,7 +68,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       blockquote: ({ children }: any) => (
         <blockquote className="border-l-4 border-accent-purple bg-accent-purple/10 p-6 md:p-8 rounded-r-2xl my-10 text-white/90 text-xl font-medium shadow-[inset_0_0_30px_rgba(157,78,221,0.05)] relative overflow-hidden backdrop-blur-sm">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-accent-purple/20 to-transparent pointer-events-none" />
-          <span className="relative z-10 italic leading-relaxed">"{children}"</span>
+          <span className="relative z-10 italic leading-relaxed">&quot;{children}&quot;</span>
         </blockquote>
       ),
     },
@@ -96,7 +97,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <Navbar />
         <main className="flex-1 flex flex-col items-center justify-center text-center pt-32">
           <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
-          <p className="text-text-secondary mb-8">The article you are looking for does not exist or hasn't been fetched yet.</p>
+          <p className="text-text-secondary mb-8">The article you are looking for does not exist or hasn&apos;t been fetched yet.</p>
           <Link href={`/${locale}#blog`} className="text-accent-cyan hover:underline flex items-center gap-2">
             <ArrowLeft size={16} /> Back to Home
           </Link>
@@ -116,7 +117,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         
         <header className="mb-12">
           <div className="flex items-center gap-4 text-sm text-accent-cyan font-mono mb-6">
-            <span>{new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+            <span>{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : 'Recent'}</span>
             {post.categories && post.categories.length > 0 && (
               <>
                 <span className="w-1 h-1 rounded-full bg-accent-cyan/50"></span>

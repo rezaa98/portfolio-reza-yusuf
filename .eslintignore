@@ -1,0 +1,8 @@
+# Ignore one-off scripts and testing files
+test-*.ts
+test-*.tsx
+test-*.js
+update-*.js
+upload_*.ts
+scripts/
+list-*.ts

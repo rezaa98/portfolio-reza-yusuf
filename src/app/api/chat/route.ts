@@ -18,6 +18,7 @@ export async function POST(req: Request) {
     });
 
     // Normalize messages to ensure they use 'parts' (required by convertToModelMessages in AI SDK)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const normalizedMessages = messages.map((msg: any) => {
       if (!msg.parts && msg.content) {
         return { ...msg, parts: [{ type: 'text', text: msg.content }] };
@@ -27,6 +28,7 @@ export async function POST(req: Request) {
 
     // Sanitize messages to merge consecutive messages with the same role.
     // This prevents API errors (like 400 Bad Request) when a request fails and the user sends another message.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const sanitizedMessages: any[] = [];
     for (const msg of normalizedMessages) {
       if (sanitizedMessages.length > 0 && sanitizedMessages[sanitizedMessages.length - 1].role === msg.role) {
@@ -55,9 +57,9 @@ Always output valid TypeScript code in a markdown block, and provide brief, conc
     });
 
     return result.toUIMessageStreamResponse();
-  } catch (error) {
-    console.error("Chat API Error:", error);
-    const errorMessage = error instanceof Error ? error.message : String(error);
+  } catch (err) {
+    console.error("Chat API Error:", err);
+    const errorMessage = err instanceof Error ? err.message : String(err);
     return new Response(JSON.stringify({ error: errorMessage }), { status: 500 });
   }
 }

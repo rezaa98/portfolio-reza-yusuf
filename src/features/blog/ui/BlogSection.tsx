@@ -69,7 +69,7 @@ export function BlogSection({ sanityPosts }: { sanityPosts?: SanityPost[] | null
     ? sanityPosts.map(post => ({
         id: post._id,
         title: post.title,
-        date: new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        date: post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : "Recent",
         readTime: "5 min read",
         category: post.categories?.[0] || "Blog",
         excerpt: post.excerpt || "",

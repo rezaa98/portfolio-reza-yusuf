@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { certifications, Certification } from "@/data/certifications";
-import { ExternalLink, Award, X, ArrowLeft, Eye } from "lucide-react";
+import { ExternalLink, Award, X, ArrowLeft } from "lucide-react";
 import { Link } from "@/i18n/routing";
 
 function BadgeImage({ cert }: { cert: Certification }) {

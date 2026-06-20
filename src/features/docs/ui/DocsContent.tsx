@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
-import { ExternalLink, Server, Layers, CheckSquare, Settings } from 'lucide-react';
+import { Server, Layers, CheckSquare, Settings } from 'lucide-react';
 
 export type DocSection = 'architecture' | 'tech-stack' | 'fsd' | 'trd';
 
@@ -39,7 +38,7 @@ const ArchitectureDoc = ({ locale }: { locale: string }) => (
       <div className="bg-bg-secondary p-6 rounded-xl border border-border-subtle">
         <h3 className="text-xl font-semibold text-accent-cyan mb-3">Frontend (Next.js & Vercel)</h3>
         <p className="text-text-secondary text-sm">
-          The core application runs on Next.js 15 utilizing App Router. It is deployed on Vercel's Edge Network for global low-latency delivery. We employ Server-Side Rendering (SSR) and Static Site Generation (SSG) for optimal SEO and performance.
+          The core application runs on Next.js 15 utilizing App Router. It is deployed on Vercel&apos;s Edge Network for global low-latency delivery. We employ Server-Side Rendering (SSR) and Static Site Generation (SSG) for optimal SEO and performance.
         </p>
       </div>
       <div className="bg-bg-secondary p-6 rounded-xl border border-border-subtle">
@@ -51,7 +50,7 @@ const ArchitectureDoc = ({ locale }: { locale: string }) => (
       <div className="bg-bg-secondary p-6 rounded-xl border border-border-subtle">
         <h3 className="text-xl font-semibold text-accent-cyan mb-3">AI Integration (Gemini)</h3>
         <p className="text-text-secondary text-sm">
-          Google's Gemini API is integrated directly via Next.js Route Handlers, powering the autonomous Chat Simulator feature, showcasing Agentic AI capabilities in a secure backend environment.
+          Google&apos;s Gemini API is integrated directly via Next.js Route Handlers, powering the autonomous Chat Simulator feature, showcasing Agentic AI capabilities in a secure backend environment.
         </p>
       </div>
       <div className="bg-bg-secondary p-6 rounded-xl border border-border-subtle">

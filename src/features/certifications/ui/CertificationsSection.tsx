@@ -1,9 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { certifications } from "@/data/certifications";
 import { ExternalLink, Award, ChevronRight } from "lucide-react";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 
 function BadgeImage({ cert }: { cert: typeof certifications[number] }) {
@@ -26,7 +25,6 @@ function BadgeImage({ cert }: { cert: typeof certifications[number] }) {
 
 export function CertificationsSection() {
   const t = useTranslations("Certifications");
-  const locale = useLocale();
 
   const targetCerts = [
     "Azure AI Engineer Associate",

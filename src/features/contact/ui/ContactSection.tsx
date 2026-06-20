@@ -37,10 +37,10 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
           <div>
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 font-space-grotesk">
-              Let's build something together
+              Let&apos;s build something together
             </h3>
             <p className="text-text-secondary mb-10 leading-relaxed max-w-md">
-              Whether you have a question about automation, a project opportunity, or just want to say hi, I'll try my best to get back to you!
+              Whether you have a question about automation, a project opportunity, or just want to say hi, I&apos;ll try my best to get back to you!
             </p>
             
             <div className="space-y-6">

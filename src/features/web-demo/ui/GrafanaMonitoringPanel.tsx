@@ -93,11 +93,11 @@ export default function GrafanaMonitoringPanel() {
             <div className="bg-black/40 border border-white/10 p-4 rounded-xl text-left max-w-lg w-full">
               <p className="text-sm text-slate-300 font-mono mb-2">
                 1. Buka Grafana Cloud Anda &gt; Dashboards<br/>
-                2. Buat "Public Dashboard"<br/>
+                2. Buat &quot;Public Dashboard&quot;<br/>
                 3. Tambahkan URL-nya ke file .env.local:
               </p>
               <code className="text-xs text-emerald-400 bg-black/50 p-2 rounded block break-all">
-                NEXT_PUBLIC_GRAFANA_DASHBOARD_URL="https://grafana.net/public-dashboards/..."
+                NEXT_PUBLIC_GRAFANA_DASHBOARD_URL=&quot;https://grafana.net/public-dashboards/...&quot;
               </code>
             </div>
           </div>

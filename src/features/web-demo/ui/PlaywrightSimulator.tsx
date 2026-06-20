@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Play, CheckCircle2, XCircle, TerminalSquare, FileCode2 } from "lucide-react";
+import { useState } from "react";
+import { Play, TerminalSquare, FileCode2 } from "lucide-react";
 import { cn } from "@/shared/lib/utils";
 
 import { useTranslations } from "next-intl";

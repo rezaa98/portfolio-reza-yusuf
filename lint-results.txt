@@ -1,0 +1,146 @@
+
+> portfolio-reza-yusuf@0.1.0 lint
+> eslint
+
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/list-gemini-models.ts
+  5:7  warning  'genAI' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/list-gemini.ts
+  8:37  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/scripts/add-alt-text.ts
+  18:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/scripts/generate-cv.js
+  1:19  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/scripts/seed.ts
+  32:9  warning  'catQa' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  40:9  warning  'catAi' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  48:9  warning  'catProcess' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/app/[locale]/blog/[slug]/page.tsx
+   30:26   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+   51:26   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+   57:26   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+   62:30   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+   67:34   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+   70:66   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react/no-unescaped-entities
+   70:77   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react/no-unescaped-entities
+   75:30   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+   78:26   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+   81:35   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+   99:105  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react/no-unescaped-entities
+  119:49   error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/app/[locale]/blog/[slug]/page.tsx:119:49
+  117 |         <header className="mb-12">
+  118 |           <div className="flex items-center gap-4 text-sm text-accent-cyan font-mono mb-6">
+> 119 |             <span>{new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+      |                                                 ^^^^^^^^^^ Cannot call impure function
+  120 |             {post.categories && post.categories.length > 0 && (
+  121 |               <>
+  122 |                 <span className="w-1 h-1 rounded-full bg-accent-cyan/50"></span>  react-hooks/purity
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/app/[locale]/layout.tsx
+  59:9  warning  Custom fonts not added in `pages/_document.js` will only load for a single page. This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font  @next/next/no-page-custom-font
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/app/api/chat/route.ts
+  21:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  30:30  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/features/blog/ui/BlogSection.tsx
+  72:44  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/features/blog/ui/BlogSection.tsx:72:44
+  70 |         id: post._id,
+  71 |         title: post.title,
+> 72 |         date: new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+     |                                            ^^^^^^^^^^ Cannot call impure function
+  73 |         readTime: "5 min read",
+  74 |         category: post.categories?.[0] || "Blog",
+  75 |         excerpt: post.excerpt || "",  react-hooks/purity
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/features/certifications/ui/CertificationsPageClient.tsx
+  5:45  warning  'Eye' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/features/certifications/ui/CertificationsSection.tsx
+   2:20  warning  'useEffect' is defined but never used        @typescript-eslint/no-unused-vars
+   3:18  warning  'AnimatePresence' is defined but never used  @typescript-eslint/no-unused-vars
+  29:9   warning  'locale' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/features/contact/ui/ContactSection.tsx
+  40:18   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  43:109  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/features/docs/ui/DocsContent.tsx
+   2:8   warning  'Link' is defined but never used                                 @typescript-eslint/no-unused-vars
+   3:10  warning  'ExternalLink' is defined but never used                         @typescript-eslint/no-unused-vars
+  42:97  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  54:17  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/features/web-demo/ui/GrafanaMonitoringPanel.tsx
+   96:25  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   96:42  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  100:51  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  100:93  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/features/web-demo/ui/PipelineVisualizer.tsx
+    4:54  warning  'Terminal' is defined but never used                                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+   58:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  101:19  warning  'isPending' is assigned a value but never used                                                                                                                                                                                                                                           @typescript-eslint/no-unused-vars
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/features/web-demo/ui/PlaywrightSimulator.tsx
+  3:20  warning  'useEffect' is defined but never used     @typescript-eslint/no-unused-vars
+  4:16  warning  'CheckCircle2' is defined but never used  @typescript-eslint/no-unused-vars
+  4:30  warning  'XCircle' is defined but never used       @typescript-eslint/no-unused-vars
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/features/web-demo/ui/TestReportDashboard.tsx
+   3:27   warning  'ListChecks' is defined but never used    @typescript-eslint/no-unused-vars
+  39:178  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/i18n/request.ts
+  7:54  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/sanity/image.ts
+  9:37  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/src/shared/ui/Navbar.tsx
+   62:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   69:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   99:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  107:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-convert.js
+  1:36  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-gemini-2.ts
+  23:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-stream-output.ts
+  20:20  warning  'done' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-stream-output2.ts
+  20:20  warning  'done' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/test-use-chat.tsx
+  2:25  error  React Hook "useChat" cannot be called at the top level. React Hooks must be called in a React function component or a custom React Hook function  react-hooks/rules-of-hooks
+  2:39  error  Unexpected any. Specify a different type                                                                                                          @typescript-eslint/no-explicit-any
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/update-docs-locale.js
+  1:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/update-messages.js
+  1:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+/Users/mac-095093/Downloads/portfolio-reza-yusuf/upload_images.ts
+  45:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 61 problems (41 errors, 20 warnings)
+

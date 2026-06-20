@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { PieChart, Clock, ListChecks, CheckCircle2, XCircle, AlertCircle, FileCode2, Loader2 } from "lucide-react";
+import { PieChart, Clock, CheckCircle2, XCircle, AlertCircle, FileCode2, Loader2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/shared/lib/utils";
 import { useTranslations } from "next-intl";

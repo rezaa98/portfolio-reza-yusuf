@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Play, Check, CircleDot, Loader2, GitBranch, Terminal } from "lucide-react";
+import { Play, Check, CircleDot, Loader2, GitBranch } from "lucide-react";
 import { cn } from "@/shared/lib/utils";
 import { useTranslations } from "next-intl";
 
@@ -55,6 +55,7 @@ export function PipelineVisualizer() {
         <div className="flex flex-wrap items-center gap-3">
           <GitBranch size={18} className="text-gray-400" />
           <span className="font-semibold text-sm break-all">rezaa98/portfolio-reza-yusuf</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
             src="https://github.com/rezaa98/portfolio-reza-yusuf/actions/workflows/e2e-tests.yml/badge.svg" 
             alt="Playwright E2E Tests Status" 
@@ -98,7 +99,6 @@ export function PipelineVisualizer() {
           {PIPELINE_STAGES.map((stage, index) => {
             const isCompleted = completedStages.includes(stage.id);
             const isActive = index === activeStageIndex;
-            const isPending = !isCompleted && !isActive;
 
             return (
               <div key={stage.id} className="relative z-10 flex flex-col items-center gap-3 w-32">
