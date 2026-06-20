@@ -66,7 +66,7 @@ export function AgentChatSimulator() {
         </div>
         <div className="flex items-center gap-2 text-xs text-green-400 bg-green-400/10 px-2 py-1 rounded-full">
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-          Live Gemini 2.5
+          Live {process.env.NEXT_PUBLIC_GEMINI_MODEL_DISPLAY?.replace("Google ", "") || "Gemini 2.5"}
         </div>
       </div>
 
@@ -82,7 +82,7 @@ export function AgentChatSimulator() {
             <div>
               <h3 className="text-xl font-bold text-white mb-2">Hello, I&apos;m your QA Automation Agent!</h3>
               <p className="text-text-secondary max-w-sm text-sm">
-                I am powered by Google Gemini and specialized in Playwright. Ask me to generate any E2E test scenario.
+                I am powered by {process.env.NEXT_PUBLIC_GEMINI_MODEL_DISPLAY || "Google Gemini"} and specialized in Playwright. Ask me to generate any E2E test scenario.
               </p>
             </div>
             <div className="flex flex-col gap-2 w-full max-w-md">
@@ -169,7 +169,7 @@ export function AgentChatSimulator() {
           </button>
         </form>
         <p className="text-center text-[10px] text-gray-500 mt-3">
-          Powered by Vercel AI SDK &amp; Google Gemini 2.5. Output is strictly limited to Playwright code generation.
+          Powered by Vercel AI SDK &amp; {process.env.NEXT_PUBLIC_GEMINI_MODEL_DISPLAY || "Google Gemini 2.5"}. Output is strictly limited to Playwright code generation.
         </p>
       </div>
     </div>

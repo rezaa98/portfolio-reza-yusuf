@@ -46,7 +46,7 @@ export async function POST(req: Request) {
     const modelMessages = await convertToModelMessages(sanitizedMessages);
 
     const result = streamText({
-      model: customGoogle('gemini-2.5-flash'),
+      model: customGoogle(process.env.GEMINI_MODEL || 'gemini-2.5-flash'),
       system: `You are a Senior QA Automation Expert specialized in Playwright. 
 Your sole purpose is to generate Playwright E2E test scripts in TypeScript for a web application. 
 If the user asks for anything else not related to Playwright testing (like weather, general coding, or unrelated tasks), politely decline and state your purpose. 

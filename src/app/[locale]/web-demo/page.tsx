@@ -127,7 +127,7 @@ export default async function WebDemoPage({ params }: { params: Promise<{ locale
               {tWebDemo("Sections.s5Title")}
             </h2>
             <p className="text-text-secondary max-w-2xl mx-auto mb-8">
-              {tWebDemo("Sections.s5Desc")}
+              {tWebDemo("Sections.s5Desc", { model: process.env.NEXT_PUBLIC_GEMINI_MODEL_DISPLAY || 'Google Gemini 2.5' })}
             </p>
           </div>
           

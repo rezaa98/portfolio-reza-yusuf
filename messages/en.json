@@ -78,8 +78,8 @@
       "s4Title": "Automation Report",
       "s4Desc": "Mock reporting dashboard tracking test suite health, execution time, and detailed failure logs to quickly identify and resolve regressions.",
       "s5Title": "Agentic AI Test Generator",
-      "s5Desc": "Experience the future of QA Automation. This live chatbot is powered by Google Gemini 1.5, strictly configured to generate Playwright TypeScript scripts. Try prompting it to write a test scenario!",
-      "s5Link": "View Full MCP Source Code"
+      "s5Desc": "Experience the future of QA Automation. This live chatbot is powered by {model}, strictly configured to generate Playwright TypeScript scripts. Try prompting it to write a test scenario!",
+      "s5Link": "Explore E2E Repository Source Code"
     },
     "TestCaseRepository": {
       "header": "Test Scenario Repository",

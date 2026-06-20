@@ -78,8 +78,8 @@
       "s4Title": "Laporan Otomatisasi",
       "s4Desc": "Dasbor pelaporan simulasi yang melacak kesehatan rangkaian pengujian, waktu eksekusi, dan log kegagalan terperinci untuk mengidentifikasi dan menyelesaikan regresi dengan cepat.",
       "s5Title": "Generator Uji AI Agentic",
-      "s5Desc": "Rasakan masa depan QA Automation. Chatbot live ini didukung oleh Google Gemini 1.5, dikonfigurasi secara ketat untuk menghasilkan skrip TypeScript Playwright. Coba berikan instruksi untuk menulis skenario pengujian!",
-      "s5Link": "Lihat Kode Sumber Lengkap MCP"
+      "s5Desc": "Rasakan masa depan QA Automation. Chatbot live ini didukung oleh {model}, dikonfigurasi secara ketat untuk menghasilkan skrip TypeScript Playwright. Coba berikan instruksi untuk menulis skenario pengujian!",
+      "s5Link": "Jelajahi Source Code Repositori E2E Lengkap MCP"
     },
     "TestCaseRepository": {
       "header": "Repositori Skenario Pengujian",
