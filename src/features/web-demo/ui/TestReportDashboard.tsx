@@ -25,9 +25,9 @@ export function TestReportDashboard() {
     const fetchReport = async () => {
       try {
         const branch = window.location.hostname.includes('sit') ? 'sit' : 'master';
-        const url = `https://rezaa98.github.io/portfolio-reza-yusuf/${branch}/test-results.json`;
+        const url = `https://rezaa98.github.io/portfolio-reza-yusuf/${branch}/test-results.json?t=${new Date().getTime()}`;
         
-        const response = await fetch(url);
+        const response = await fetch(url, { cache: 'no-store' });
         if (!response.ok) {
           throw new Error("Report not found or not generated yet");
         }
