@@ -24,7 +24,8 @@ export function TestReportDashboard() {
     // If the user opts to see raw HTML, we don't strictly need to fetch JSON, but we do it anyway for the header stats.
     const fetchReport = async () => {
       try {
-        const branch = window.location.hostname.includes('sit') ? 'sit' : 'master';
+        const isPreview = window.location.hostname.includes('sit') || window.location.hostname.includes('vercel.app') || window.location.hostname === 'localhost';
+        const branch = isPreview ? 'sit' : 'master';
         const url = `https://rezaa98.github.io/portfolio-reza-yusuf/${branch}/test-results.json?t=${new Date().getTime()}`;
         
         const response = await fetch(url, { cache: 'no-store' });
