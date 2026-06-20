@@ -25,7 +25,7 @@ export function TestCaseRepository() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<Record<string, "manual" | "code">>({});
   const [sourceCode, setSourceCode] = useState<string | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<"All" | "UI" | "API">("All");
+  const [selectedCategory, setSelectedCategory] = useState<"All" | "UI" | "API" | "Security">("All");
   const t = useTranslations("WebDemo.TestCaseRepository");
 
   const [testCases, setTestCases] = useState<TestCase[]>([]);
@@ -180,12 +180,13 @@ export function TestCaseRepository() {
           <div className="relative shrink-0">
             <select
               value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value as "All" | "UI" | "API")}
+              onChange={(e) => setSelectedCategory(e.target.value as "All" | "UI" | "API" | "Security")}
               className="appearance-none bg-[#1e293b] border border-white/10 text-gray-300 text-sm rounded-lg pl-3 pr-8 py-1.5 focus:outline-none focus:ring-1 focus:ring-accent-blue transition-all cursor-pointer"
             >
               <option value="All">All Scenarios</option>
               <option value="UI">UI Web Tests</option>
               <option value="API">API Tests</option>
+              <option value="Security">Security Tests</option>
             </select>
             <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" size={14} />
           </div>
