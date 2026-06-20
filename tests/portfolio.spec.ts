@@ -23,11 +23,11 @@ test.describe('Portfolio Verification Suite', () => {
     await page.goto('/en');
     await page.waitForLoadState('domcontentloaded');
 
-    // Look for Web Demo link in the navbar (visible on desktop viewport)
-    const webDemoLink = page.getByRole('link', { name: /Web Demo/i }).first();
+    // Look for QA Demo link in the navbar (visible on desktop viewport)
+    const webDemoLink = page.getByRole('link', { name: /QA Demo/i }).first();
     await expect(webDemoLink).toBeVisible({ timeout: 10000 });
 
-    // Click Web Demo and wait for navigation
+    // Click QA Demo and wait for navigation
     await webDemoLink.click();
     await page.waitForURL('**/web-demo', { timeout: 15000 });
 
