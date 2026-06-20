@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 
 export function TestReportDashboard() {
   const [expandedTest, setExpandedTest] = useState<number | null>(4); // Default expand the failed one
-  const [showHtmlReport, setShowHtmlReport] = useState(false);
+  const [showHtmlReport, setShowHtmlReport] = useState(true); // Default show HTML report
   const t = useTranslations("WebDemo.TestReportDashboard");
 
   const TEST_RESULTS = [
