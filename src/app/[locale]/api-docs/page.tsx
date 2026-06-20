@@ -4,11 +4,19 @@ import dynamic from "next/dynamic";
 import "swagger-ui-react/swagger-ui.css";
 import { Navbar } from "@/shared/ui/Navbar";
 import { Footer } from "@/shared/ui/Footer";
+import { useLocale } from "next-intl";
 
 // Dynamically import SwaggerUI to prevent SSR issues and reduce main bundle size
 const SwaggerUI = dynamic(() => import("swagger-ui-react"), { ssr: false });
 
 export default function ApiDocsPage() {
+  const locale = useLocale();
+  const title1 = locale === 'id' ? 'Dokumentasi' : 'API';
+  const title2 = locale === 'id' ? 'API' : 'Documentation';
+  const desc = locale === 'id' 
+    ? 'Jelajahi RESTful API yang tersedia untuk proyek portofolio ini. Anda dapat menguji endpoint secara langsung menggunakan fitur "Try it out".'
+    : 'Explore the available RESTful APIs for this portfolio project. You can test the endpoints directly using the "Try it out" feature.';
+
   return (
     <div className="min-h-screen bg-bg-primary text-text-primary flex flex-col font-sans selection:bg-accent-primary/30">
       <Navbar />
@@ -16,10 +24,10 @@ export default function ApiDocsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto mb-12 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-white">
-              API <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-blue">Documentation</span>
+              {title1} <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-blue">{title2}</span>
             </h1>
             <p className="text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto">
-              Explore the available RESTful APIs for this portfolio project. You can test the endpoints directly using the "Try it out" feature.
+              {desc}
             </p>
           </div>
           

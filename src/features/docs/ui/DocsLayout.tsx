@@ -4,23 +4,25 @@ import React, { useState } from 'react';
 import { DocsContent, DocSection } from './DocsContent';
 import { Link } from '@/i18n/routing';
 import { ExternalLink, Menu as MenuIcon, X } from 'lucide-react';
-
-const navItems: { id: DocSection; label: string }[] = [
-  { id: 'architecture', label: 'System Architecture' },
-  { id: 'tech-stack', label: 'Tech Stack' },
-  { id: 'fsd', label: 'Functional Spec (FSD)' },
-  { id: 'trd', label: 'Technical Reqs (TRD)' },
-];
+import { useLocale } from 'next-intl';
 
 export const DocsLayout = () => {
+  const locale = useLocale();
   const [activeSection, setActiveSection] = useState<DocSection>('architecture');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navItems: { id: DocSection; label: string }[] = [
+    { id: 'architecture', label: locale === 'id' ? 'Arsitektur Sistem' : 'System Architecture' },
+    { id: 'tech-stack', label: locale === 'id' ? 'Teknologi (Tech Stack)' : 'Tech Stack' },
+    { id: 'fsd', label: locale === 'id' ? 'Spesifikasi Fungsional (FSD)' : 'Functional Spec (FSD)' },
+    { id: 'trd', label: locale === 'id' ? 'Syarat Teknis (TRD)' : 'Technical Reqs (TRD)' },
+  ];
 
   return (
     <div className="flex flex-col md:flex-row gap-8 min-h-[calc(100vh-12rem)]">
       {/* Mobile Menu Toggle */}
       <div className="md:hidden flex justify-between items-center mb-4 border-b border-border-subtle pb-4">
-        <h2 className="text-xl font-bold text-white">Documentation Menu</h2>
+        <h2 className="text-xl font-bold text-white">{locale === 'id' ? 'Menu Dokumentasi' : 'Documentation Menu'}</h2>
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="p-2 text-text-secondary hover:text-white"
@@ -33,7 +35,7 @@ export const DocsLayout = () => {
       <aside className={`md:w-64 flex-shrink-0 ${isMobileMenuOpen ? 'block' : 'hidden md:block'}`}>
         <div className="sticky top-32 flex flex-col gap-2">
           <h3 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-2 px-3">
-            System Docs
+            {locale === 'id' ? 'Dokumen Sistem' : 'System Docs'}
           </h3>
           {navItems.map((item) => (
             <button
@@ -55,7 +57,7 @@ export const DocsLayout = () => {
           <div className="my-4 border-t border-border-subtle"></div>
           
           <h3 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-2 px-3">
-            API References
+            {locale === 'id' ? 'Referensi API' : 'API References'}
           </h3>
           <Link 
             href="/api-docs" 
@@ -72,7 +74,7 @@ export const DocsLayout = () => {
         {/* Subtle background glow */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-blue/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
         <div className="relative z-10">
-          <DocsContent activeSection={activeSection} />
+          <DocsContent activeSection={activeSection} locale={locale} />
         </div>
       </main>
     </div>

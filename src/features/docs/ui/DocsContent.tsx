@@ -6,26 +6,29 @@ export type DocSection = 'architecture' | 'tech-stack' | 'fsd' | 'trd';
 
 interface DocsContentProps {
   activeSection: DocSection;
+  locale?: string;
 }
 
-export const DocsContent: React.FC<DocsContentProps> = ({ activeSection }) => {
+export const DocsContent: React.FC<DocsContentProps> = ({ activeSection, locale = 'en' }) => {
   return (
     <div className="prose prose-invert max-w-none">
-      {activeSection === 'architecture' && <ArchitectureDoc />}
-      {activeSection === 'tech-stack' && <TechStackDoc />}
-      {activeSection === 'fsd' && <FsdDoc />}
-      {activeSection === 'trd' && <TrdDoc />}
+      {activeSection === 'architecture' && <ArchitectureDoc locale={locale} />}
+      {activeSection === 'tech-stack' && <TechStackDoc locale={locale} />}
+      {activeSection === 'fsd' && <FsdDoc locale={locale} />}
+      {activeSection === 'trd' && <TrdDoc locale={locale} />}
     </div>
   );
 };
 
-const ArchitectureDoc = () => (
+const ArchitectureDoc = ({ locale }: { locale: string }) => (
   <div className="space-y-8">
     <div className="flex items-center gap-3 border-b border-border-subtle pb-4">
       <div className="p-3 bg-accent-blue/10 rounded-lg text-accent-blue">
         <Server className="w-6 h-6" />
       </div>
-      <h2 className="text-3xl font-bold m-0 text-white">System Architecture & Data Model</h2>
+      <h2 className="text-3xl font-bold m-0 text-white">
+        {locale === 'id' ? 'Arsitektur Sistem & Model Data' : 'System Architecture & Data Model'}
+      </h2>
     </div>
     
     <p className="text-text-secondary leading-relaxed text-lg">
@@ -108,13 +111,15 @@ const ArchitectureDoc = () => (
   </div>
 );
 
-const TechStackDoc = () => (
+const TechStackDoc = ({ locale }: { locale: string }) => (
   <div className="space-y-6">
     <div className="flex items-center gap-3 border-b border-border-subtle pb-4">
       <div className="p-3 bg-accent-cyan/10 rounded-lg text-accent-cyan">
         <Layers className="w-6 h-6" />
       </div>
-      <h2 className="text-3xl font-bold m-0 text-white">Technology Stack</h2>
+      <h2 className="text-3xl font-bold m-0 text-white">
+        {locale === 'id' ? 'Teknologi (Tech Stack)' : 'Technology Stack'}
+      </h2>
     </div>
 
     <p className="text-text-secondary leading-relaxed text-lg mb-8">
@@ -155,13 +160,15 @@ const TechStackDoc = () => (
   </div>
 );
 
-const FsdDoc = () => (
+const FsdDoc = ({ locale }: { locale: string }) => (
   <div className="space-y-6">
     <div className="flex items-center gap-3 border-b border-border-subtle pb-4">
       <div className="p-3 bg-purple-500/10 rounded-lg text-purple-400">
         <CheckSquare className="w-6 h-6" />
       </div>
-      <h2 className="text-3xl font-bold m-0 text-white">Functional Specification (FSD)</h2>
+      <h2 className="text-3xl font-bold m-0 text-white">
+        {locale === 'id' ? 'Spesifikasi Fungsional (FSD)' : 'Functional Specification (FSD)'}
+      </h2>
     </div>
 
     <div className="space-y-8 mt-6">
@@ -195,13 +202,15 @@ const FsdDoc = () => (
   </div>
 );
 
-const TrdDoc = () => (
+const TrdDoc = ({ locale }: { locale: string }) => (
   <div className="space-y-6">
     <div className="flex items-center gap-3 border-b border-border-subtle pb-4">
       <div className="p-3 bg-emerald-500/10 rounded-lg text-emerald-400">
         <Settings className="w-6 h-6" />
       </div>
-      <h2 className="text-3xl font-bold m-0 text-white">Technical Requirements (TRD)</h2>
+      <h2 className="text-3xl font-bold m-0 text-white">
+        {locale === 'id' ? 'Persyaratan Teknis (TRD)' : 'Technical Requirements (TRD)'}
+      </h2>
     </div>
 
     <div className="space-y-6 mt-6">
