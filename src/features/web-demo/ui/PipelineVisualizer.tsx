@@ -232,83 +232,48 @@ export function PipelineVisualizer() {
       </div>
 
       {/* Pipeline Visuals */}
-      <div className="p-8 md:p-12 overflow-x-auto w-full shrink-0 border-b border-white/10">
-        <div className="flex items-center justify-between min-w-[700px] h-48 relative mx-auto max-w-4xl">
-          {/* Main Horizontal Line */}
-          <div className="absolute left-8 right-8 top-1/2 -translate-y-1/2 h-2 bg-gray-700 rounded-full z-0" />
+      <div className="p-8 md:p-10 overflow-x-auto w-full shrink-0 border-b border-white/10 flex items-center justify-center">
+        <div className="flex items-center justify-between min-w-[700px] w-full max-w-5xl relative px-4">
+          {/* Background Track Line */}
+          <div className="absolute left-10 right-10 top-1/2 -translate-y-1/2 h-[2px] bg-white/10 z-0" />
           
-          {/* Progress Line */}
+          {/* Progress Track Line */}
           <div 
-            className="absolute left-8 top-1/2 -translate-y-1/2 h-2 bg-green-500 rounded-full z-0 transition-all duration-500 ease-in-out" 
+            className="absolute left-10 top-1/2 -translate-y-1/2 h-[2px] bg-green-500 z-0 transition-all duration-700 ease-in-out shadow-[0_0_10px_rgba(34,197,94,0.5)]" 
             style={{ 
               width: status === "idle" ? "0%" : 
                      status === "success" ? "100%" : 
-                     `${Math.max(0, (activeStageIndex / (PIPELINE_STAGES.length - 1)) * 100 - 5)}%`
+                     `calc(${Math.max(0, (activeStageIndex / (PIPELINE_STAGES.length - 1)) * 100)}% - 2.5rem)`
             }} 
           />
 
           {PIPELINE_STAGES.map((stage, index) => {
             const isCompleted = completedStages.includes(stage.id);
             const isActive = index === activeStageIndex;
-            const isEven = index % 2 === 0;
-
-            const colorClass = isCompleted 
-                ? "text-green-400 bg-green-500/20 border-green-500" 
-                : isActive 
-                    ? "text-blue-400 bg-blue-500/20 border-blue-500" 
-                    : "text-gray-500 bg-gray-800 border-gray-600";
-                    
-            const lineClass = isCompleted ? "bg-green-500" : isActive ? "bg-blue-500" : "bg-gray-700";
-            const dotClass = isCompleted ? "bg-green-500 border-green-200" : isActive ? "bg-blue-500 border-blue-200" : "bg-gray-700 border-gray-500";
 
             return (
-              <div key={stage.id} className="relative z-10 flex flex-col items-center w-32 h-full justify-center">
-                
-                {/* Central Dot */}
-                <div className={cn("absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 transition-all duration-300 z-20 bg-[#0d1117]", dotClass)} />
-
-                {isEven ? (
-                  <div className="absolute bottom-1/2 flex flex-col items-center pb-1">
-                    <div className="relative flex items-center justify-center">
-                      <div className={cn("w-14 h-14 rounded-full flex items-center justify-center border-4 transition-all duration-300 bg-[#0d1117] z-10", colorClass, isActive ? "shadow-[0_0_15px_rgba(59,130,246,0.5)]" : "")}>
-                        {isCompleted ? <Check size={24} /> : isActive ? <Loader2 size={24} className="animate-spin" /> : <CircleDot size={24} />}
-                      </div>
-                      
-                      {/* Text container positioned to the right */}
-                      <div className="absolute left-full ml-4 text-left">
-                        <div className={cn("text-sm font-bold uppercase tracking-wider whitespace-nowrap", isCompleted || isActive ? "text-gray-200" : "text-gray-500")}>
-                          {stage.name}
-                        </div>
-                        <div className="text-xs text-gray-500 mt-1 font-mono whitespace-nowrap">
-                          {isCompleted ? stage.time : isActive ? t("running") : t("pending")}
-                        </div>
-                      </div>
-                    </div>
-                    {/* Vertical connector line */}
-                    <div className={cn("w-1 h-8 -mt-1 transition-colors duration-300", lineClass)} />
+              <div key={stage.id} className="relative z-10 bg-[#0d1117] p-2 rounded-full shrink-0">
+                <div className={cn(
+                  "flex items-center gap-3 px-4 py-2.5 rounded-full border transition-all duration-300 min-w-[130px]",
+                  isActive ? "border-blue-500/50 bg-blue-500/10 text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.3)] ring-1 ring-blue-500/50" :
+                  isCompleted ? "border-green-500/30 bg-green-500/10 text-green-400" :
+                  "border-white/5 bg-[#161b22] text-gray-500"
+                )}>
+                  <div className="shrink-0">
+                    {isCompleted ? <Check size={18} /> : isActive ? <Loader2 size={18} className="animate-spin" /> : <CircleDot size={18} />}
                   </div>
-                ) : (
-                  <div className="absolute top-1/2 flex flex-col items-center pt-1">
-                    {/* Vertical connector line */}
-                    <div className={cn("w-1 h-8 -mb-1 transition-colors duration-300", lineClass)} />
-                    
-                    <div className="relative flex items-center justify-center">
-                      <div className={cn("w-14 h-14 rounded-full flex items-center justify-center border-4 transition-all duration-300 bg-[#0d1117] z-10", colorClass, isActive ? "shadow-[0_0_15px_rgba(59,130,246,0.5)]" : "")}>
-                        {isCompleted ? <Check size={24} /> : isActive ? <Loader2 size={24} className="animate-spin" /> : <CircleDot size={24} />}
-                      </div>
-                      
-                      {/* Text container positioned to the right */}
-                      <div className="absolute left-full ml-4 text-left">
-                        <div className={cn("text-sm font-bold uppercase tracking-wider whitespace-nowrap", isCompleted || isActive ? "text-gray-200" : "text-gray-500")}>
-                          {stage.name}
-                        </div>
-                        <div className="text-xs text-gray-500 mt-1 font-mono whitespace-nowrap">
-                          {isCompleted ? stage.time : isActive ? t("running") : t("pending")}
-                        </div>
-                      </div>
-                    </div>
+                  <div className="flex flex-col text-left">
+                    <span className={cn(
+                      "text-sm font-bold uppercase tracking-wide leading-none",
+                      isCompleted || isActive ? "text-gray-200" : "text-gray-500"
+                    )}>
+                      {stage.name}
+                    </span>
+                    <span className="text-[10px] font-mono mt-1.5 opacity-70 leading-none">
+                      {isCompleted ? stage.time : isActive ? t("running") : t("pending")}
+                    </span>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}
