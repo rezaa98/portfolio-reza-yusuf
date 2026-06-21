@@ -18,24 +18,24 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/9fcd37b2df9155a70fc39fb68cda0ad5d3078e2f",
-        "commitHash": "9fcd37b2df9155a70fc39fb68cda0ad5d3078e2f",
-        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27909430803"
+        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/b53342bf69b46869f5bda0e2d067c1069f1dc30f",
+        "commitHash": "b53342bf69b46869f5bda0e2d067c1069f1dc30f",
+        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27909911321"
       },
       "gitCommit": {
-        "shortHash": "9fcd37b",
-        "hash": "9fcd37b2df9155a70fc39fb68cda0ad5d3078e2f",
-        "subject": "fix: resolve React invalid DOM property 'asChild' error on Button component by adding Radix UI react-slot",
-        "body": "fix: resolve React invalid DOM property 'asChild' error on Button component by adding Radix UI react-slot\n",
+        "shortHash": "b53342b",
+        "hash": "b53342bf69b46869f5bda0e2d067c1069f1dc30f",
+        "subject": "chore: explicitly add next/swc linux binaries to optionalDependencies to prevent Vercel build crash",
+        "body": "chore: explicitly add next/swc linux binaries to optionalDependencies to prevent Vercel build crash\n",
         "author": {
           "name": "rezaa98",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1782056837000
+          "time": 1782057943000
         },
         "committer": {
           "name": "rezaa98",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1782056837000
+          "time": 1782057943000
         },
         "branch": "master"
       },
@@ -49,24 +49,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/9fcd37b2df9155a70fc39fb68cda0ad5d3078e2f",
-            "commitHash": "9fcd37b2df9155a70fc39fb68cda0ad5d3078e2f",
-            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27909430803"
+            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/b53342bf69b46869f5bda0e2d067c1069f1dc30f",
+            "commitHash": "b53342bf69b46869f5bda0e2d067c1069f1dc30f",
+            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27909911321"
           },
           "gitCommit": {
-            "shortHash": "9fcd37b",
-            "hash": "9fcd37b2df9155a70fc39fb68cda0ad5d3078e2f",
-            "subject": "fix: resolve React invalid DOM property 'asChild' error on Button component by adding Radix UI react-slot",
-            "body": "fix: resolve React invalid DOM property 'asChild' error on Button component by adding Radix UI react-slot\n",
+            "shortHash": "b53342b",
+            "hash": "b53342bf69b46869f5bda0e2d067c1069f1dc30f",
+            "subject": "chore: explicitly add next/swc linux binaries to optionalDependencies to prevent Vercel build crash",
+            "body": "chore: explicitly add next/swc linux binaries to optionalDependencies to prevent Vercel build crash\n",
             "author": {
               "name": "rezaa98",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1782056837000
+              "time": 1782057943000
             },
             "committer": {
               "name": "rezaa98",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1782056837000
+              "time": 1782057943000
             },
             "branch": "master"
           },
@@ -174,12 +174,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 70,
+                          "duration": 75,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T15:50:03.831Z",
+                          "startTime": "2026-06-21T16:08:25.790Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -266,12 +266,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 6448,
+                          "duration": 6363,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T15:50:03.935Z",
+                          "startTime": "2026-06-21T16:08:25.900Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -355,7 +355,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T15:50:10.403Z",
+                          "startTime": "2026-06-21T16:08:32.283Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -434,12 +434,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 20,
+                          "duration": 14,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T15:50:10.430Z",
+                          "startTime": "2026-06-21T16:08:32.308Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -518,12 +518,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 6410,
+                          "duration": 6276,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T15:50:10.473Z",
+                          "startTime": "2026-06-21T16:08:32.333Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -621,12 +621,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1288,
+                      "duration": 1321,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:16.906Z",
+                      "startTime": "2026-06-21T16:08:38.631Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -716,12 +716,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1080,
+                      "duration": 1066,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:19.159Z",
+                      "startTime": "2026-06-21T16:08:40.161Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -811,12 +811,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1203,
+                      "duration": 1285,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:20.258Z",
+                      "startTime": "2026-06-21T16:08:41.244Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -906,12 +906,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 291,
+                      "duration": 265,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:21.480Z",
+                      "startTime": "2026-06-21T16:08:42.543Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1001,12 +1001,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 619,
+                      "duration": 643,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:21.787Z",
+                      "startTime": "2026-06-21T16:08:42.820Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1096,12 +1096,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 956,
+                      "duration": 917,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:22.422Z",
+                      "startTime": "2026-06-21T16:08:43.475Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1208,12 +1208,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 186,
+                      "duration": 190,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:23.398Z",
+                      "startTime": "2026-06-21T16:08:44.410Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1303,12 +1303,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 839,
+                      "duration": 988,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:23.596Z",
+                      "startTime": "2026-06-21T16:08:44.612Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1398,12 +1398,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 17,
+                      "duration": 15,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:24.445Z",
+                      "startTime": "2026-06-21T16:08:45.611Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1482,12 +1482,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6356,
+                      "duration": 6294,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:24.474Z",
+                      "startTime": "2026-06-21T16:08:45.636Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1566,12 +1566,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8413,
+                      "duration": 6305,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:30.840Z",
+                      "startTime": "2026-06-21T16:08:51.937Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1650,12 +1650,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 816,
+                      "duration": 894,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:39.262Z",
+                      "startTime": "2026-06-21T16:08:58.253Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1711,8 +1711,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-21T15:50:01.225Z",
-    "duration": 38925.498999999996,
+    "startTime": "2026-06-21T16:08:23.236Z",
+    "duration": 35987.682,
     "expected": 17,
     "skipped": 0,
     "unexpected": 0,
