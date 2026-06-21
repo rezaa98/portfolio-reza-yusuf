@@ -232,8 +232,10 @@ export function PipelineVisualizer() {
       </div>
 
       {/* Pipeline Visuals */}
-      <div className="p-8 md:p-10 overflow-x-auto w-full shrink-0 border-b border-white/10 flex items-center justify-center">
-        <div className="grid grid-cols-5 items-center min-w-[800px] w-full max-w-6xl relative">
+      <div className="p-4 md:p-10 overflow-x-auto w-full shrink-0 border-b border-white/10 flex justify-center">
+        
+        {/* Desktop Layout (Hidden on Mobile) */}
+        <div className="hidden md:grid grid-cols-5 items-center min-w-[800px] w-full max-w-6xl relative">
           {/* Background Track Line */}
           <div className="absolute left-[10%] right-[10%] top-1/2 -translate-y-1/2 h-[2px] bg-white/10 z-0" />
           
@@ -277,6 +279,58 @@ export function PipelineVisualizer() {
                   </div>
                 </div>
               </div>
+            );
+          })}
+        </div>
+
+        {/* Mobile Layout (Hidden on Desktop) */}
+        <div className="flex md:hidden flex-col w-full relative px-4 py-4 max-w-sm mx-auto">
+          {/* Track Wrapper */}
+          <div className="absolute left-[35px] top-[44px] bottom-[44px] w-[2px] z-0">
+             {/* Background Line */}
+             <div className="absolute inset-0 bg-white/10" />
+             {/* Progress Line */}
+             <div 
+               className="absolute top-0 left-0 w-full bg-green-500 transition-all duration-700 ease-in-out shadow-[0_0_10px_rgba(34,197,94,0.5)]" 
+               style={{ 
+                 height: status === "idle" ? "0%" : 
+                        status === "success" ? "100%" : 
+                        `${activeStageIndex * 25}%`
+               }} 
+             />
+          </div>
+
+          {PIPELINE_STAGES.map((stage, index) => {
+            const isCompleted = completedStages.includes(stage.id);
+            const isActive = index === activeStageIndex;
+
+            return (
+               <div key={stage.id} className="relative z-10 flex items-center mb-5 last:mb-0">
+                 {/* Icon container */}
+                 <div className="bg-[#0d1117] py-2 pr-4 rounded-full shrink-0">
+                   <div className={cn(
+                     "flex items-center justify-center w-10 h-10 rounded-full border transition-all duration-300",
+                     isActive ? "border-blue-500/50 bg-blue-500/10 text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.3)] ring-1 ring-blue-500/50" :
+                     isCompleted ? "border-green-500/30 bg-green-500/10 text-green-400" :
+                     "border-white/5 bg-[#161b22] text-gray-500"
+                   )}>
+                     {isCompleted ? <Check size={16} /> : isActive ? <Loader2 size={16} className="animate-spin" /> : <CircleDot size={16} />}
+                   </div>
+                 </div>
+
+                 {/* Text block */}
+                 <div className="flex flex-col text-left flex-1 pt-0.5">
+                    <span className={cn(
+                      "text-[13px] font-bold uppercase tracking-wider leading-tight",
+                      isCompleted || isActive ? "text-gray-200" : "text-gray-500"
+                    )}>
+                      {stage.name}
+                    </span>
+                    <span className="text-[11px] font-mono mt-1 opacity-70 leading-tight">
+                      {isCompleted ? stage.time : isActive ? t("running") : t("pending")}
+                    </span>
+                 </div>
+               </div>
             );
           })}
         </div>
