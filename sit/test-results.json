@@ -18,24 +18,24 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/d4291775f708372dea7ca95d65d74a371a80dea5",
-        "commitHash": "d4291775f708372dea7ca95d65d74a371a80dea5",
-        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27907103150"
+        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/9f333e9ee4776c96481612d15a8737bc29eb4c37",
+        "commitHash": "9f333e9ee4776c96481612d15a8737bc29eb4c37",
+        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27907167180"
       },
       "gitCommit": {
-        "shortHash": "d429177",
-        "hash": "d4291775f708372dea7ca95d65d74a371a80dea5",
-        "subject": "style: implement zig-zag alternating timeline for PipelineVisualizer",
-        "body": "style: implement zig-zag alternating timeline for PipelineVisualizer\n",
+        "shortHash": "9f333e9",
+        "hash": "9f333e9ee4776c96481612d15a8737bc29eb4c37",
+        "subject": "style: move text to right side of pipeline nodes to optimize vertical space",
+        "body": "style: move text to right side of pipeline nodes to optimize vertical space\n",
         "author": {
           "name": "rezaa98",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1782051383000
+          "time": 1782051535000
         },
         "committer": {
           "name": "rezaa98",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1782051383000
+          "time": 1782051535000
         },
         "branch": "sit"
       },
@@ -49,24 +49,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/d4291775f708372dea7ca95d65d74a371a80dea5",
-            "commitHash": "d4291775f708372dea7ca95d65d74a371a80dea5",
-            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27907103150"
+            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/9f333e9ee4776c96481612d15a8737bc29eb4c37",
+            "commitHash": "9f333e9ee4776c96481612d15a8737bc29eb4c37",
+            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27907167180"
           },
           "gitCommit": {
-            "shortHash": "d429177",
-            "hash": "d4291775f708372dea7ca95d65d74a371a80dea5",
-            "subject": "style: implement zig-zag alternating timeline for PipelineVisualizer",
-            "body": "style: implement zig-zag alternating timeline for PipelineVisualizer\n",
+            "shortHash": "9f333e9",
+            "hash": "9f333e9ee4776c96481612d15a8737bc29eb4c37",
+            "subject": "style: move text to right side of pipeline nodes to optimize vertical space",
+            "body": "style: move text to right side of pipeline nodes to optimize vertical space\n",
             "author": {
               "name": "rezaa98",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1782051383000
+              "time": 1782051535000
             },
             "committer": {
               "name": "rezaa98",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1782051383000
+              "time": 1782051535000
             },
             "branch": "sit"
           },
@@ -174,12 +174,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 63,
+                          "duration": 67,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T14:18:50.761Z",
+                          "startTime": "2026-06-21T14:21:20.713Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -266,12 +266,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 751,
+                          "duration": 873,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T14:18:50.864Z",
+                          "startTime": "2026-06-21T14:21:20.817Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -350,12 +350,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 13,
+                          "duration": 11,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T14:18:51.630Z",
+                          "startTime": "2026-06-21T14:21:21.705Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -434,12 +434,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 14,
+                          "duration": 12,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T14:18:51.654Z",
+                          "startTime": "2026-06-21T14:21:21.727Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -518,12 +518,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 999,
+                          "duration": 1030,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T14:18:51.680Z",
+                          "startTime": "2026-06-21T14:21:21.750Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -621,12 +621,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1201,
+                      "duration": 1007,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T14:18:52.694Z",
+                      "startTime": "2026-06-21T14:21:22.795Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -716,12 +716,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1070,
+                      "duration": 998,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T14:18:55.177Z",
+                      "startTime": "2026-06-21T14:21:24.008Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -811,12 +811,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1280,
+                      "duration": 1226,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T14:18:56.268Z",
+                      "startTime": "2026-06-21T14:21:25.026Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -906,12 +906,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 295,
+                      "duration": 255,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T14:18:57.564Z",
+                      "startTime": "2026-06-21T14:21:26.267Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1001,12 +1001,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 720,
+                      "duration": 625,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T14:18:57.875Z",
+                      "startTime": "2026-06-21T14:21:26.534Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1096,12 +1096,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 993,
+                      "duration": 949,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T14:18:58.609Z",
+                      "startTime": "2026-06-21T14:21:27.170Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1208,12 +1208,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 210,
+                      "duration": 182,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T14:18:59.620Z",
+                      "startTime": "2026-06-21T14:21:28.133Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1303,12 +1303,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1067,
+                      "duration": 899,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T14:18:59.844Z",
+                      "startTime": "2026-06-21T14:21:28.327Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1398,12 +1398,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 18,
+                      "duration": 16,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T14:19:00.921Z",
+                      "startTime": "2026-06-21T14:21:29.239Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1482,12 +1482,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 533,
+                      "duration": 520,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T14:19:00.949Z",
+                      "startTime": "2026-06-21T14:21:29.264Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1566,12 +1566,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2230,
+                      "duration": 6337,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T14:19:01.490Z",
+                      "startTime": "2026-06-21T14:21:29.791Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1650,12 +1650,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1048,
+                      "duration": 907,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T14:19:03.729Z",
+                      "startTime": "2026-06-21T14:21:36.135Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1711,8 +1711,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-21T14:18:48.514Z",
-    "duration": 16346.789999999999,
+    "startTime": "2026-06-21T14:21:18.490Z",
+    "duration": 18626.112,
     "expected": 17,
     "skipped": 0,
     "unexpected": 0,
