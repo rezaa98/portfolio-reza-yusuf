@@ -18,24 +18,24 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/9fcd37b2df9155a70fc39fb68cda0ad5d3078e2f",
-        "commitHash": "9fcd37b2df9155a70fc39fb68cda0ad5d3078e2f",
-        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27909431923"
+        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/ea5aa4b08c99be5fa6ac773b9169fed6ce29f37c",
+        "commitHash": "ea5aa4b08c99be5fa6ac773b9169fed6ce29f37c",
+        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27910349018"
       },
       "gitCommit": {
-        "shortHash": "9fcd37b",
-        "hash": "9fcd37b2df9155a70fc39fb68cda0ad5d3078e2f",
-        "subject": "fix: resolve React invalid DOM property 'asChild' error on Button component by adding Radix UI react-slot",
-        "body": "fix: resolve React invalid DOM property 'asChild' error on Button component by adding Radix UI react-slot\n",
+        "shortHash": "ea5aa4b",
+        "hash": "ea5aa4b08c99be5fa6ac773b9169fed6ce29f37c",
+        "subject": "revert: remove SWC linux optional dependencies to fix EBADPLATFORM on GitHub Actions",
+        "body": "revert: remove SWC linux optional dependencies to fix EBADPLATFORM on GitHub Actions\n",
         "author": {
           "name": "rezaa98",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1782056837000
+          "time": 1782058968000
         },
         "committer": {
           "name": "rezaa98",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1782056837000
+          "time": 1782058968000
         },
         "branch": "sit"
       },
@@ -49,24 +49,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/9fcd37b2df9155a70fc39fb68cda0ad5d3078e2f",
-            "commitHash": "9fcd37b2df9155a70fc39fb68cda0ad5d3078e2f",
-            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27909431923"
+            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/ea5aa4b08c99be5fa6ac773b9169fed6ce29f37c",
+            "commitHash": "ea5aa4b08c99be5fa6ac773b9169fed6ce29f37c",
+            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27910349018"
           },
           "gitCommit": {
-            "shortHash": "9fcd37b",
-            "hash": "9fcd37b2df9155a70fc39fb68cda0ad5d3078e2f",
-            "subject": "fix: resolve React invalid DOM property 'asChild' error on Button component by adding Radix UI react-slot",
-            "body": "fix: resolve React invalid DOM property 'asChild' error on Button component by adding Radix UI react-slot\n",
+            "shortHash": "ea5aa4b",
+            "hash": "ea5aa4b08c99be5fa6ac773b9169fed6ce29f37c",
+            "subject": "revert: remove SWC linux optional dependencies to fix EBADPLATFORM on GitHub Actions",
+            "body": "revert: remove SWC linux optional dependencies to fix EBADPLATFORM on GitHub Actions\n",
             "author": {
               "name": "rezaa98",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1782056837000
+              "time": 1782058968000
             },
             "committer": {
               "name": "rezaa98",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1782056837000
+              "time": 1782058968000
             },
             "branch": "sit"
           },
@@ -174,12 +174,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 69,
+                          "duration": 71,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T15:50:13.288Z",
+                          "startTime": "2026-06-21T16:25:49.861Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -266,12 +266,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 6405,
+                          "duration": 6426,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T15:50:13.394Z",
+                          "startTime": "2026-06-21T16:25:49.969Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -350,12 +350,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 11,
+                          "duration": 13,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T15:50:19.817Z",
+                          "startTime": "2026-06-21T16:25:56.414Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -439,7 +439,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T15:50:19.840Z",
+                          "startTime": "2026-06-21T16:25:56.439Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -518,12 +518,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 6362,
+                          "duration": 6392,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T15:50:19.864Z",
+                          "startTime": "2026-06-21T16:25:56.464Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -621,12 +621,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1316,
+                      "duration": 1035,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:26.248Z",
+                      "startTime": "2026-06-21T16:26:02.875Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -716,12 +716,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1086,
+                      "duration": 1223,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:28.707Z",
+                      "startTime": "2026-06-21T16:26:04.115Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -811,12 +811,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1236,
+                      "duration": 1223,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:29.811Z",
+                      "startTime": "2026-06-21T16:26:05.355Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -906,12 +906,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 288,
+                      "duration": 271,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:31.064Z",
+                      "startTime": "2026-06-21T16:26:06.598Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1001,12 +1001,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 736,
+                      "duration": 632,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:31.365Z",
+                      "startTime": "2026-06-21T16:26:06.883Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1096,12 +1096,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 936,
+                      "duration": 906,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:32.114Z",
+                      "startTime": "2026-06-21T16:26:07.526Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1208,12 +1208,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 187,
+                      "duration": 192,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:33.066Z",
+                      "startTime": "2026-06-21T16:26:08.451Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1303,12 +1303,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 882,
+                      "duration": 909,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:33.265Z",
+                      "startTime": "2026-06-21T16:26:08.654Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1398,12 +1398,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 29,
+                      "duration": 17,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:34.159Z",
+                      "startTime": "2026-06-21T16:26:09.576Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1482,12 +1482,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6411,
+                      "duration": 6350,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:34.204Z",
+                      "startTime": "2026-06-21T16:26:09.604Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1566,12 +1566,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6406,
+                      "duration": 6402,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:40.625Z",
+                      "startTime": "2026-06-21T16:26:15.963Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1650,12 +1650,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 832,
+                      "duration": 829,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T15:50:47.038Z",
+                      "startTime": "2026-06-21T16:26:22.374Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1711,8 +1711,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-21T15:50:10.919Z",
-    "duration": 37025.051,
+    "startTime": "2026-06-21T16:25:47.586Z",
+    "duration": 35687.954,
     "expected": 17,
     "skipped": 0,
     "unexpected": 0,
