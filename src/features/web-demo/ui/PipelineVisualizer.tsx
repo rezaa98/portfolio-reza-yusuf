@@ -233,17 +233,17 @@ export function PipelineVisualizer() {
 
       {/* Pipeline Visuals */}
       <div className="p-8 md:p-10 overflow-x-auto w-full shrink-0 border-b border-white/10 flex items-center justify-center">
-        <div className="flex items-center justify-between min-w-[700px] w-full max-w-5xl relative px-4">
+        <div className="grid grid-cols-5 items-center min-w-[800px] w-full max-w-6xl relative">
           {/* Background Track Line */}
-          <div className="absolute left-10 right-10 top-1/2 -translate-y-1/2 h-[2px] bg-white/10 z-0" />
+          <div className="absolute left-[10%] right-[10%] top-1/2 -translate-y-1/2 h-[2px] bg-white/10 z-0" />
           
           {/* Progress Track Line */}
           <div 
-            className="absolute left-10 top-1/2 -translate-y-1/2 h-[2px] bg-green-500 z-0 transition-all duration-700 ease-in-out shadow-[0_0_10px_rgba(34,197,94,0.5)]" 
+            className="absolute left-[10%] top-1/2 -translate-y-1/2 h-[2px] bg-green-500 z-0 transition-all duration-700 ease-in-out shadow-[0_0_10px_rgba(34,197,94,0.5)]" 
             style={{ 
               width: status === "idle" ? "0%" : 
-                     status === "success" ? "100%" : 
-                     `calc(${Math.max(0, (activeStageIndex / (PIPELINE_STAGES.length - 1)) * 100)}% - 2.5rem)`
+                     status === "success" ? "80%" : 
+                     `${Math.max(0, activeStageIndex * 20)}%`
             }} 
           />
 
@@ -252,26 +252,28 @@ export function PipelineVisualizer() {
             const isActive = index === activeStageIndex;
 
             return (
-              <div key={stage.id} className="relative z-10 bg-[#0d1117] p-2 rounded-full shrink-0">
-                <div className={cn(
-                  "flex items-center gap-3 px-4 py-2.5 rounded-full border transition-all duration-300 min-w-[130px]",
-                  isActive ? "border-blue-500/50 bg-blue-500/10 text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.3)] ring-1 ring-blue-500/50" :
-                  isCompleted ? "border-green-500/30 bg-green-500/10 text-green-400" :
-                  "border-white/5 bg-[#161b22] text-gray-500"
-                )}>
-                  <div className="shrink-0">
-                    {isCompleted ? <Check size={18} /> : isActive ? <Loader2 size={18} className="animate-spin" /> : <CircleDot size={18} />}
-                  </div>
-                  <div className="flex flex-col text-left">
-                    <span className={cn(
-                      "text-sm font-bold uppercase tracking-wide leading-none",
-                      isCompleted || isActive ? "text-gray-200" : "text-gray-500"
-                    )}>
-                      {stage.name}
-                    </span>
-                    <span className="text-[10px] font-mono mt-1.5 opacity-70 leading-none">
-                      {isCompleted ? stage.time : isActive ? t("running") : t("pending")}
-                    </span>
+              <div key={stage.id} className="relative z-10 flex justify-center w-full">
+                <div className="bg-[#0d1117] p-1.5 md:p-2 rounded-full shrink-0">
+                  <div className={cn(
+                    "flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-2.5 rounded-full border transition-all duration-300",
+                    isActive ? "border-blue-500/50 bg-blue-500/10 text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.3)] ring-1 ring-blue-500/50" :
+                    isCompleted ? "border-green-500/30 bg-green-500/10 text-green-400" :
+                    "border-white/5 bg-[#161b22] text-gray-500"
+                  )}>
+                    <div className="shrink-0">
+                      {isCompleted ? <Check size={18} /> : isActive ? <Loader2 size={18} className="animate-spin" /> : <CircleDot size={18} />}
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className={cn(
+                        "text-[11px] md:text-xs font-bold uppercase tracking-wider leading-tight",
+                        isCompleted || isActive ? "text-gray-200" : "text-gray-500"
+                      )}>
+                        {stage.name}
+                      </span>
+                      <span className="text-[9px] md:text-[10px] font-mono mt-1 opacity-70 leading-tight">
+                        {isCompleted ? stage.time : isActive ? t("running") : t("pending")}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
