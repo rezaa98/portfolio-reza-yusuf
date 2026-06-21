@@ -233,7 +233,7 @@ export function PipelineVisualizer() {
 
       {/* Pipeline Visuals */}
       <div className="p-8 md:p-12 overflow-x-auto w-full shrink-0 border-b border-white/10">
-        <div className="flex items-center justify-between min-w-[700px] h-72 relative mx-auto max-w-4xl">
+        <div className="flex items-center justify-between min-w-[700px] h-48 relative mx-auto max-w-4xl">
           {/* Main Horizontal Line */}
           <div className="absolute left-8 right-8 top-1/2 -translate-y-1/2 h-2 bg-gray-700 rounded-full z-0" />
           
@@ -268,34 +268,43 @@ export function PipelineVisualizer() {
                 <div className={cn("absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 transition-all duration-300 z-20 bg-[#0d1117]", dotClass)} />
 
                 {isEven ? (
-                  <div className="absolute bottom-1/2 flex flex-col items-center pb-2">
-                    <div className="text-center mb-3">
-                      <div className={cn("text-sm font-bold uppercase tracking-wider", isCompleted || isActive ? "text-gray-200" : "text-gray-500")}>
-                        {stage.name}
+                  <div className="absolute bottom-1/2 flex flex-col items-center pb-1">
+                    <div className="relative flex items-center justify-center">
+                      <div className={cn("w-14 h-14 rounded-full flex items-center justify-center border-4 transition-all duration-300 bg-[#0d1117] z-10", colorClass, isActive ? "shadow-[0_0_15px_rgba(59,130,246,0.5)]" : "")}>
+                        {isCompleted ? <Check size={24} /> : isActive ? <Loader2 size={24} className="animate-spin" /> : <CircleDot size={24} />}
                       </div>
-                      <div className="text-xs text-gray-500 mt-1 font-mono">
-                        {isCompleted ? stage.time : isActive ? t("running") : t("pending")}
+                      
+                      {/* Text container positioned to the right */}
+                      <div className="absolute left-full ml-4 text-left">
+                        <div className={cn("text-sm font-bold uppercase tracking-wider whitespace-nowrap", isCompleted || isActive ? "text-gray-200" : "text-gray-500")}>
+                          {stage.name}
+                        </div>
+                        <div className="text-xs text-gray-500 mt-1 font-mono whitespace-nowrap">
+                          {isCompleted ? stage.time : isActive ? t("running") : t("pending")}
+                        </div>
                       </div>
-                    </div>
-                    <div className={cn("w-14 h-14 rounded-full flex items-center justify-center border-4 transition-all duration-300 bg-[#0d1117] z-10", colorClass, isActive ? "shadow-[0_0_15px_rgba(59,130,246,0.5)]" : "")}>
-                      {isCompleted ? <Check size={24} /> : isActive ? <Loader2 size={24} className="animate-spin" /> : <CircleDot size={24} />}
                     </div>
                     {/* Vertical connector line */}
-                    <div className={cn("w-1 h-10 -mt-1 transition-colors duration-300", lineClass)} />
+                    <div className={cn("w-1 h-8 -mt-1 transition-colors duration-300", lineClass)} />
                   </div>
                 ) : (
-                  <div className="absolute top-1/2 flex flex-col items-center pt-2">
+                  <div className="absolute top-1/2 flex flex-col items-center pt-1">
                     {/* Vertical connector line */}
-                    <div className={cn("w-1 h-10 -mb-1 transition-colors duration-300", lineClass)} />
-                    <div className={cn("w-14 h-14 rounded-full flex items-center justify-center border-4 transition-all duration-300 bg-[#0d1117] z-10", colorClass, isActive ? "shadow-[0_0_15px_rgba(59,130,246,0.5)]" : "")}>
-                      {isCompleted ? <Check size={24} /> : isActive ? <Loader2 size={24} className="animate-spin" /> : <CircleDot size={24} />}
-                    </div>
-                    <div className="text-center mt-3">
-                      <div className={cn("text-sm font-bold uppercase tracking-wider", isCompleted || isActive ? "text-gray-200" : "text-gray-500")}>
-                        {stage.name}
+                    <div className={cn("w-1 h-8 -mb-1 transition-colors duration-300", lineClass)} />
+                    
+                    <div className="relative flex items-center justify-center">
+                      <div className={cn("w-14 h-14 rounded-full flex items-center justify-center border-4 transition-all duration-300 bg-[#0d1117] z-10", colorClass, isActive ? "shadow-[0_0_15px_rgba(59,130,246,0.5)]" : "")}>
+                        {isCompleted ? <Check size={24} /> : isActive ? <Loader2 size={24} className="animate-spin" /> : <CircleDot size={24} />}
                       </div>
-                      <div className="text-xs text-gray-500 mt-1 font-mono">
-                        {isCompleted ? stage.time : isActive ? t("running") : t("pending")}
+                      
+                      {/* Text container positioned to the right */}
+                      <div className="absolute left-full ml-4 text-left">
+                        <div className={cn("text-sm font-bold uppercase tracking-wider whitespace-nowrap", isCompleted || isActive ? "text-gray-200" : "text-gray-500")}>
+                          {stage.name}
+                        </div>
+                        <div className="text-xs text-gray-500 mt-1 font-mono whitespace-nowrap">
+                          {isCompleted ? stage.time : isActive ? t("running") : t("pending")}
+                        </div>
                       </div>
                     </div>
                   </div>
