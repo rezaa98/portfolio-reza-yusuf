@@ -158,14 +158,28 @@ async function generateCV() {
   <div class="section-header">PROJECTS</div>
   <div class="divider-thin"></div>
   
-  ${projects.map(proj => `
+  ${experiences.find(e => e.companyShort === 'BFI Finance')?.projects.map(proj => `
+  <div class="project-item">
+    <div>
+      <span class="bold">${proj.name}</span> 
+      <span class="gray italic">&mdash; BFI Finance</span>
+    </div>
+    <ul>
+      ${proj.description.split('. ').filter(d => d.trim().length > 0).map(d => `<li>${d.trim() + (d.endsWith('.') ? '' : '.')}</li>`).join('')}
+    </ul>
+    <div style="font-size: 9pt;"><span class="bold">Tools:</span> ${proj.tags.join(', ')}</div>
+  </div>
+  `).join('')}
+  
+  ${projects.filter(p => p.slug === 'ml-cicd-pipeline').map(proj => `
   <div class="project-item">
     <div>
       <span class="bold">${proj.title}</span> 
-      <span class="gray italic">&mdash; ${proj.category === 'ai' ? 'Personal Project / AI' : 'Personal Project'}</span>
+      <span class="gray italic">&mdash; Personal Project</span>
     </div>
     <ul>
-      <li>${proj.shortDesc}</li>
+      <li>Designed end-to-end Machine Learning System (SML) using Python for California Housing Prices prediction with Exploratory Data Analysis (EDA).</li>
+      <li>Implemented automated CI/CD Workflows using GitHub Actions for consistent testing, validation, and deployment of data pipelines.</li>
     </ul>
     <div style="font-size: 9pt;"><span class="bold">Tools:</span> ${proj.techStack.join(', ')}</div>
   </div>
