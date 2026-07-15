@@ -1,7 +1,7 @@
 {
   "config": {
     "argv": [
-      "/opt/hostedtoolcache/node/22.22.3/x64/bin/node",
+      "/opt/hostedtoolcache/node/22.23.1/x64/bin/node",
       "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/node_modules/.bin/playwright",
       "test"
     ],
@@ -18,24 +18,24 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/ea5aa4b08c99be5fa6ac773b9169fed6ce29f37c",
-        "commitHash": "ea5aa4b08c99be5fa6ac773b9169fed6ce29f37c",
-        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27910345420"
+        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/ef931b37b584d13a82eefbaa6dc4edc6fb9b5eba",
+        "commitHash": "ef931b37b584d13a82eefbaa6dc4edc6fb9b5eba",
+        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/29453519085"
       },
       "gitCommit": {
-        "shortHash": "ea5aa4b",
-        "hash": "ea5aa4b08c99be5fa6ac773b9169fed6ce29f37c",
-        "subject": "revert: remove SWC linux optional dependencies to fix EBADPLATFORM on GitHub Actions",
-        "body": "revert: remove SWC linux optional dependencies to fix EBADPLATFORM on GitHub Actions\n",
+        "shortHash": "ef931b3",
+        "hash": "ef931b37b584d13a82eefbaa6dc4edc6fb9b5eba",
+        "subject": "Update BFI Finance work experience data",
+        "body": "Update BFI Finance work experience data\n",
         "author": {
-          "name": "rezaa98",
+          "name": "Reza Yusuf Maulana",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1782058968000
+          "time": 1784152405000
         },
         "committer": {
-          "name": "rezaa98",
+          "name": "Reza Yusuf Maulana",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1782058968000
+          "time": 1784152405000
         },
         "branch": "master"
       },
@@ -49,24 +49,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/ea5aa4b08c99be5fa6ac773b9169fed6ce29f37c",
-            "commitHash": "ea5aa4b08c99be5fa6ac773b9169fed6ce29f37c",
-            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/27910345420"
+            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/ef931b37b584d13a82eefbaa6dc4edc6fb9b5eba",
+            "commitHash": "ef931b37b584d13a82eefbaa6dc4edc6fb9b5eba",
+            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/29453519085"
           },
           "gitCommit": {
-            "shortHash": "ea5aa4b",
-            "hash": "ea5aa4b08c99be5fa6ac773b9169fed6ce29f37c",
-            "subject": "revert: remove SWC linux optional dependencies to fix EBADPLATFORM on GitHub Actions",
-            "body": "revert: remove SWC linux optional dependencies to fix EBADPLATFORM on GitHub Actions\n",
+            "shortHash": "ef931b3",
+            "hash": "ef931b37b584d13a82eefbaa6dc4edc6fb9b5eba",
+            "subject": "Update BFI Finance work experience data",
+            "body": "Update BFI Finance work experience data\n",
             "author": {
-              "name": "rezaa98",
+              "name": "Reza Yusuf Maulana",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1782058968000
+              "time": 1784152405000
             },
             "committer": {
-              "name": "rezaa98",
+              "name": "Reza Yusuf Maulana",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1782058968000
+              "time": 1784152405000
             },
             "branch": "master"
           },
@@ -174,12 +174,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 71,
+                          "duration": 63,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T16:25:34.825Z",
+                          "startTime": "2026-07-15T21:55:53.357Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -266,12 +266,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 6354,
+                          "duration": 951,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T16:25:34.931Z",
+                          "startTime": "2026-07-15T21:55:53.455Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -350,12 +350,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 12,
+                          "duration": 10,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T16:25:41.306Z",
+                          "startTime": "2026-07-15T21:55:54.420Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -434,12 +434,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 12,
+                          "duration": 10,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T16:25:41.329Z",
+                          "startTime": "2026-07-15T21:55:54.438Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -518,12 +518,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 6281,
+                          "duration": 2809,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-21T16:25:41.353Z",
+                          "startTime": "2026-07-15T21:55:54.457Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -621,12 +621,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1058,
+                      "duration": 1192,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T16:25:47.654Z",
+                      "startTime": "2026-07-15T21:55:57.278Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -716,12 +716,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1151,
+                      "duration": 906,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T16:25:48.927Z",
+                      "startTime": "2026-07-15T21:55:58.668Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -811,12 +811,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1340,
+                      "duration": 1083,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T16:25:50.097Z",
+                      "startTime": "2026-07-15T21:55:59.589Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -906,12 +906,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 269,
+                      "duration": 266,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T16:25:51.456Z",
+                      "startTime": "2026-07-15T21:56:00.685Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1001,12 +1001,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 637,
+                      "duration": 512,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T16:25:51.738Z",
+                      "startTime": "2026-07-15T21:56:00.961Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1096,12 +1096,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1020,
+                      "duration": 789,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T16:25:52.389Z",
+                      "startTime": "2026-07-15T21:56:01.484Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1208,12 +1208,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 244,
+                      "duration": 157,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T16:25:53.431Z",
+                      "startTime": "2026-07-15T21:56:02.289Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1303,12 +1303,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1025,
+                      "duration": 834,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T16:25:53.691Z",
+                      "startTime": "2026-07-15T21:56:02.456Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1398,12 +1398,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 20,
+                      "duration": 13,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T16:25:54.729Z",
+                      "startTime": "2026-07-15T21:56:03.303Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1482,12 +1482,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6294,
+                      "duration": 648,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T16:25:54.762Z",
+                      "startTime": "2026-07-15T21:56:03.323Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1566,12 +1566,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6317,
+                      "duration": 5320,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T16:26:01.072Z",
+                      "startTime": "2026-07-15T21:56:03.976Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1650,12 +1650,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 852,
+                      "duration": 774,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T16:26:07.400Z",
+                      "startTime": "2026-07-15T21:56:09.303Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1711,8 +1711,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-21T16:25:32.557Z",
-    "duration": 35766.193,
+    "startTime": "2026-07-15T21:55:51.104Z",
+    "duration": 19023.355,
     "expected": 17,
     "skipped": 0,
     "unexpected": 0,
