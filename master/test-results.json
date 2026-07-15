@@ -18,24 +18,24 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/2807b653ee778310d9bfe8ded6278132a4207edd",
-        "commitHash": "2807b653ee778310d9bfe8ded6278132a4207edd",
-        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/29454228582"
+        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/614078f79584daa370ffca5caa2fca01c921ac2f",
+        "commitHash": "614078f79584daa370ffca5caa2fca01c921ac2f",
+        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/29454306658"
       },
       "gitCommit": {
-        "shortHash": "2807b65",
-        "hash": "2807b653ee778310d9bfe8ded6278132a4207edd",
-        "subject": "style: fix skills layout in CV generator to exactly match original",
-        "body": "style: fix skills layout in CV generator to exactly match original\n",
+        "shortHash": "614078f",
+        "hash": "614078f79584daa370ffca5caa2fca01c921ac2f",
+        "subject": "feat: restore original projects section in CV generator",
+        "body": "feat: restore original projects section in CV generator\n",
         "author": {
           "name": "Reza Yusuf Maulana",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1784153142000
+          "time": 1784153221000
         },
         "committer": {
           "name": "Reza Yusuf Maulana",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1784153142000
+          "time": 1784153221000
         },
         "branch": "master"
       },
@@ -49,24 +49,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/2807b653ee778310d9bfe8ded6278132a4207edd",
-            "commitHash": "2807b653ee778310d9bfe8ded6278132a4207edd",
-            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/29454228582"
+            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/614078f79584daa370ffca5caa2fca01c921ac2f",
+            "commitHash": "614078f79584daa370ffca5caa2fca01c921ac2f",
+            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/29454306658"
           },
           "gitCommit": {
-            "shortHash": "2807b65",
-            "hash": "2807b653ee778310d9bfe8ded6278132a4207edd",
-            "subject": "style: fix skills layout in CV generator to exactly match original",
-            "body": "style: fix skills layout in CV generator to exactly match original\n",
+            "shortHash": "614078f",
+            "hash": "614078f79584daa370ffca5caa2fca01c921ac2f",
+            "subject": "feat: restore original projects section in CV generator",
+            "body": "feat: restore original projects section in CV generator\n",
             "author": {
               "name": "Reza Yusuf Maulana",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1784153142000
+              "time": 1784153221000
             },
             "committer": {
               "name": "Reza Yusuf Maulana",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1784153142000
+              "time": 1784153221000
             },
             "branch": "master"
           },
@@ -174,12 +174,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 71,
+                          "duration": 72,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-07-15T22:08:21.119Z",
+                          "startTime": "2026-07-15T22:09:56.709Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -266,12 +266,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 7554,
+                          "duration": 1425,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-07-15T22:08:21.232Z",
+                          "startTime": "2026-07-15T22:09:56.820Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -355,7 +355,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-07-15T22:08:28.803Z",
+                          "startTime": "2026-07-15T22:09:58.262Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -434,12 +434,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 14,
+                          "duration": 15,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-07-15T22:08:28.827Z",
+                          "startTime": "2026-07-15T22:09:58.287Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -518,12 +518,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 6388,
+                          "duration": 1559,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-07-15T22:08:28.854Z",
+                          "startTime": "2026-07-15T22:09:58.316Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -621,12 +621,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1334,
+                      "duration": 1009,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-15T22:08:35.267Z",
+                      "startTime": "2026-07-15T22:09:59.890Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -716,12 +716,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1074,
+                      "duration": 1062,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-15T22:08:39.150Z",
+                      "startTime": "2026-07-15T22:10:01.128Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -811,12 +811,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1254,
+                      "duration": 1308,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-15T22:08:40.245Z",
+                      "startTime": "2026-07-15T22:10:02.211Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -906,12 +906,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 285,
+                      "duration": 294,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-15T22:08:41.516Z",
+                      "startTime": "2026-07-15T22:10:03.537Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1001,12 +1001,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 643,
+                      "duration": 720,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-15T22:08:41.816Z",
+                      "startTime": "2026-07-15T22:10:03.845Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1096,12 +1096,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 960,
+                      "duration": 982,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-15T22:08:42.469Z",
+                      "startTime": "2026-07-15T22:10:04.575Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1208,12 +1208,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 205,
+                      "duration": 201,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-15T22:08:43.454Z",
+                      "startTime": "2026-07-15T22:10:05.575Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1303,12 +1303,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 861,
+                      "duration": 917,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-15T22:08:43.673Z",
+                      "startTime": "2026-07-15T22:10:05.788Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1398,12 +1398,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 16,
+                      "duration": 17,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-15T22:08:44.546Z",
+                      "startTime": "2026-07-15T22:10:06.715Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1482,12 +1482,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6340,
+                      "duration": 669,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-15T22:08:44.571Z",
+                      "startTime": "2026-07-15T22:10:06.741Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1566,12 +1566,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7896,
+                      "duration": 6341,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-15T22:08:50.920Z",
+                      "startTime": "2026-07-15T22:10:07.419Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1650,12 +1650,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 902,
+                      "duration": 939,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-15T22:08:58.823Z",
+                      "startTime": "2026-07-15T22:10:13.771Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1711,8 +1711,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-07-15T22:08:18.747Z",
-    "duration": 41047.428,
+    "startTime": "2026-07-15T22:09:54.285Z",
+    "duration": 20501.703999999998,
     "expected": 17,
     "skipped": 0,
     "unexpected": 0,
