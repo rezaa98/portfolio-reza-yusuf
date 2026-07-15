@@ -107,11 +107,16 @@ async function generateCV() {
     
     .project-item { margin-bottom: 10px; }
     
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5px;
+    .skills-container {
+      display: flex;
+      justify-content: space-between;
       margin-bottom: 10px;
+    }
+    .skills-col {
+      width: 48%;
+    }
+    .skill-item {
+      margin-bottom: 6px;
     }
   </style>
 </head>
@@ -168,13 +173,19 @@ async function generateCV() {
 
   <div class="section-header">SKILLS</div>
   <div class="divider-thin"></div>
-  <div class="skills-grid">
-    <div><span class="bold">Automation Testing:</span> ${formatSkills(skills.automation)}</div>
-    <div><span class="bold">API Testing:</span> ${formatSkills(skills.tools.filter(t => t.name.includes('Postman') || t.name.includes('API')))}</div>
-    <div><span class="bold">Performance Testing:</span> ${formatSkills(skills.tools.filter(t => t.name.includes('JMeter')))}</div>
-    <div><span class="bold">CI/CD & Cloud:</span> ${formatSkills(skills.cloudAndAI)}</div>
-    <div><span class="bold">Languages:</span> ${formatSkills(skills.languages)}</div>
-    <div><span class="bold">Project Management:</span> JIRA, ClickUp, Confluence, Zephyr</div>
+  <div class="skills-container">
+    <div class="skills-col">
+      <div class="skill-item"><span class="bold">Automation Testing:</span> Cypress, Playwright, Katalon, Selenium</div>
+      <div class="skill-item"><span class="bold">Performance Testing:</span> JMeter</div>
+      <div class="skill-item"><span class="bold">AI Testing:</span> Playwright MCP, Voice-to-Text Validation</div>
+      <div class="skill-item"><span class="bold">Project Management:</span> JIRA, ClickUp, Confluence, Zephyr</div>
+    </div>
+    <div class="skills-col">
+      <div class="skill-item"><span class="bold">API Testing:</span> Postman, REST API</div>
+      <div class="skill-item"><span class="bold">CI/CD:</span> GitHub Actions</div>
+      <div class="skill-item"><span class="bold">Cloud:</span> Azure AI, Google Cloud</div>
+      <div class="skill-item"><span class="bold">Languages:</span> JavaScript, TypeScript, Gherkin, PHP</div>
+    </div>
   </div>
 
   <div class="section-header">CERTIFICATIONS</div>
