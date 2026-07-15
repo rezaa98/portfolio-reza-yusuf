@@ -14,12 +14,13 @@ export const experiences = [
     description:
       "Responsible for end-to-end quality assurance of the company's core financial recovery ecosystems. Leading testing strategies across Web, Mobile, and API platforms.",
     highlights: [
-      "Developed and maintained automated test scripts using Cypress and Playwright, significantly reducing regression testing time",
+      "Architected and built a scalable test automation framework from scratch by migrating legacy suites from Cypress to Playwright, accelerating regression testing and CI/CD pipeline execution by 60% across Web and API platforms",
+      "Pioneered the integration of Playwright MCP (Model Context Protocol) into QA workflows to auto-generate automated test scaffolding, significantly speeding up script creation and enabling the team to focus deeper on complex edge cases",
+      "Spearheaded quality validation for an AI-Driven Quality Management (AQM) tele-collection monitoring system, verifying Voice-to-Text transcription and automated scoring algorithms against manual ground-truth data to achieve a proven 87% output accuracy rate",
+      "Guaranteed high system stability and minimal defect leakage for the Smart Mobile Collection app, enabling 2,000+ field collectors to execute daily financial recovery and offline operations seamlessly",
+      "Championed Shift-Left Testing by auditing FSD/BRD documents during early requirement phases, successfully identifying logical flaws before development and reducing post-release production bug leakages by 25%",
       "Implemented Katalon Studio for legacy system integrations, ensuring stability across 3 major platforms (Web, Mobile, API)",
-      "Led AI-Driven Quality Management (AQM) validation — Voice-to-Text transcription accuracy & automated scoring algorithms",
-      "Collaborated with product teams on FSD/BRD documents (Shift-Left Testing) to prevent defects early in development",
-      "Managed vendor assessment & quality control of 3rd party deliverables",
-      "Collaborated daily with expatriate professionals from Malaysia and India in a multicultural working environment",
+      "Collaborated daily with expatriate professionals from Malaysia and India in a fast-paced, multicultural agile environment",
     ],
     projects: [
       {
