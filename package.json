@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate:cv": "npx tsx scripts/generate-cv.ts"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.83",
