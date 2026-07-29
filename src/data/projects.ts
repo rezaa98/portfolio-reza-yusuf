@@ -45,6 +45,20 @@ export const projects = [
     year: 2026,
     isFeatured: true,
   },
+  {
+    id: "proj-004",
+    title: "Mahaga Widya Cita",
+    slug: "mahagawi-dyacita",
+    shortDesc: "Platform web profesional untuk PT Mahaga Widya Cita — perusahaan consulting dan edukasi terdepan untuk ASN & instansi pemerintah Indonesia.",
+    longDesc: "Mahaga Widya Cita adalah platform digital terintegrasi yang saya kembangkan untuk PT Mahaga Widya Cita, sebuah perusahaan konsultasi yang berfokus pada transformasi tata kelola pemerintahan dan pengembangan SDM profesional Indonesia. Platform ini menyediakan tujuh layanan inti: Solusi Tenaga Kerja, Technology & Digital Solutions, Pengembangan Modal Manusia, Penelitian & Studi Strategis, Konsultasi Pajak & Keuangan, Business & Investment Advisory, serta Konsultasi Pemerintahan. Website ini dibangun dengan arsitektur modern menggunakan Next.js 15 sebagai frontend dan Payload CMS sebagai headless CMS backend, serta mendukung multilingual (ID/EN). Platform berhasil menghubungkan 500+ pengguna aktif dengan 50++ mitra institusi strategis termasuk Kemenpan RB, BKN, BPKP, LAN RI, DPR RI, Bappenas, Kemendagri, Kemenkeu, dan Ombudsman RI.",
+    category: "web",
+    techStack: ["Next.js", "Payload CMS", "TypeScript", "PostgreSQL", "Multilingual"],
+    thumbnailUrl: "/images/projects/mahagawi-dyacita.png",
+    demoUrl: "https://www.mahagawidyacita.com/id",
+    githubUrl: null,
+    year: 2026,
+    isFeatured: true,
+  },
 ] as const;
 
 export type Project = Omit<(typeof projects)[number], "githubUrls"> & {

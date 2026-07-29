@@ -45,6 +45,10 @@
     "ml-cicd-pipeline": {
       "shortDesc": "Proyek eksperimen end-to-end implementasi Exploratory Data Analysis (EDA) untuk prediksi harga rumah California, dilengkapi pipeline otomatis CI/CD.",
       "longDesc": "Sebuah portofolio komprehensif yang menampilkan keahlian Data Science dan MLOps. Proyek ini terbagi menjadi dua pilar utama: pertama, perancangan Sistem Machine Learning (SML) berbasis Python untuk memproses dataset California Housing Prices; kedua, penerapan Workflow CI/CD otomatis menggunakan GitHub Actions yang secara konsisten menguji, memvalidasi, dan men-deploy pipeline data secara efisien dan minim bug."
+    },
+    "mahagawi-dyacita": {
+      "shortDesc": "Platform web profesional untuk PT Mahaga Widya Cita — perusahaan consulting dan edukasi terdepan untuk ASN & instansi pemerintah Indonesia.",
+      "longDesc": "Mahaga Widya Cita adalah platform digital terintegrasi yang saya kembangkan untuk PT Mahaga Widya Cita, sebuah perusahaan konsultasi yang berfokus pada transformasi tata kelola pemerintahan dan pengembangan SDM profesional Indonesia. Platform ini menyediakan tujuh layanan inti: Solusi Tenaga Kerja, Technology & Digital Solutions, Pengembangan Modal Manusia, Penelitian & Studi Strategis, Konsultasi Pajak & Keuangan, Business & Investment Advisory, serta Konsultasi Pemerintahan. Website dibangun dengan Next.js 15 dan Payload CMS sebagai headless CMS backend, serta mendukung multilingual (ID/EN). Platform berhasil menghubungkan 500+ pengguna aktif dengan 50++ mitra institusi strategis termasuk Kemenpan RB, BKN, BPKP, LAN RI, DPR RI, Bappenas, Kemendagri, Kemenkeu, dan Ombudsman RI."
     }
   },
   "Skills": {
