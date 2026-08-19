@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('DevSecOps: Cyber Security Validation', () => {
 
-  test('Verify HTTP Security Headers are present', async ({ page, request }) => {
+  test('Verify HTTP Security Headers are present', async ({ request }) => {
     test.info().annotations.push(
       { type: 'category', description: 'Security' },
       { type: 'description', description: 'Ensure that DevSecOps HTTP security headers are present in the response.' },
@@ -41,25 +41,24 @@ test.describe('DevSecOps: Cyber Security Validation', () => {
     const messageInput = page.locator('textarea[name="message"]');
     const submitBtn = page.getByRole('button', { name: /send|kirim/i });
 
-    // Fill the form with payload if form is present
-    if (await nameInput.isVisible()) {
-      await nameInput.fill(xssPayload);
-      await emailInput.fill('hacker@example.com');
-      await messageInput.fill(xssPayload);
-      
-      await submitBtn.click();
-      
-      // Verification: Check that no alert box was opened.
-      page.on('dialog', dialog => {
-        expect(dialog.message()).not.toContain('XSS_ATTACK');
-        dialog.dismiss();
-      });
-      
-      // Also verify that the raw script tags are NOT rendered as HTML but rather escaped
-      const bodyText = await page.content();
-      // Ensure the exact executable script is not in the DOM unprotected
-      expect(bodyText).not.toContain('<script>alert(\\\'XSS_ATTACK\\\')</script>');
-    }
+    await expect(nameInput).toBeVisible();
+    let maliciousDialogOpened = false;
+    page.on('dialog', async dialog => {
+      if (dialog.message().includes('XSS_ATTACK')) maliciousDialogOpened = true;
+      await dialog.dismiss();
+    });
+
+    await nameInput.fill(xssPayload);
+    await emailInput.fill('hacker@example.com');
+    await messageInput.fill(xssPayload);
+    await submitBtn.click();
+    await expect(page.getByRole('status')).toContainText(/unavailable|tidak dapat|delivered|berhasil/i);
+
+    expect(maliciousDialogOpened).toBe(false);
+    const executablePayloads = await page.locator('script').evaluateAll(
+      scripts => scripts.filter(script => script.textContent?.includes('XSS_ATTACK')).length,
+    );
+    expect(executablePayloads).toBe(0);
   });
   test('Path Traversal / LFI Vulnerability Check', async ({ request }) => {
     test.info().annotations.push(
@@ -91,6 +90,7 @@ test.describe('DevSecOps: Cyber Security Validation', () => {
       },
       data: { messages: [{ role: 'user', content: 'hello' }] }
     });
+    expect(response.status()).toBe(403);
     
     // Check that the Access-Control-Allow-Origin is not the evil domain
     const headers = response.headers();
@@ -107,18 +107,17 @@ test.describe('DevSecOps: Cyber Security Validation', () => {
       { type: 'expectedResult', description: 'Server handles burst load gracefully, potentially returning 429.' }
     );
     
-    const requests = Array(5).fill(0).map(() => 
-      request.post('/api/chat', { data: { messages: [{ role: 'user', content: 'test rate limit' }] } })
+    const requests = Array(13).fill(0).map(() =>
+      request.post('/api/chat', {
+        headers: { 'x-forwarded-for': '203.0.113.99' },
+        data: { messages: [{ role: 'user', content: '' }] },
+      })
     );
     
     const responses = await Promise.all(requests);
     
-    // Server should not crash (no 500s ideally, or at least it should survive)
-    for (const res of responses) {
-      expect(res.status()).not.toBe(500);
-      // It's acceptable to get 200 (if rate limit is high) or 429 (if rate limit triggered)
-      expect([200, 429]).toContain(res.status());
-    }
+    expect(responses.some(response => response.status() === 429)).toBe(true);
+    expect(responses.every(response => [400, 429].includes(response.status()))).toBe(true);
   });
 
   test('Cookie Security Validation (Secure & SameSite)', async ({ page, context }) => {
@@ -133,13 +132,15 @@ test.describe('DevSecOps: Cyber Security Validation', () => {
     
     await page.goto('/en');
     const cookies = await context.cookies();
-    
-    for (const cookie of cookies) {
+    const localeCookies = cookies.filter(cookie => cookie.name === 'NEXT_LOCALE');
+
+    for (const cookie of localeCookies) {
       if (cookie.name === 'NEXT_LOCALE') {
         // Next.js locale cookie should ideally have SameSite=Lax or Strict
         expect(['Lax', 'Strict']).toContain(cookie.sameSite);
       }
     }
+    expect(localeCookies.length).toBeLessThanOrEqual(1);
   });
 
 });

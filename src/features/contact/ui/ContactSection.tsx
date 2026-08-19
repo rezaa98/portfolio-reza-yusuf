@@ -12,12 +12,34 @@ const LinkedinIcon = () => (
 export function ContactSection() {
   const t = useTranslations("Contact");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
-    // Simulate API call since Resend API route isn't fully integrated yet
-    setTimeout(() => setStatus("success"), 1500);
+    setErrorMessage("");
+
+    const form = new FormData(e.currentTarget);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.get("name"),
+          email: form.get("email"),
+          message: form.get("message"),
+          website: form.get("website"),
+        }),
+      });
+      const payload = await response.json() as { error?: { message?: string } };
+      if (!response.ok) throw new Error(payload.error?.message || t("error"));
+
+      e.currentTarget.reset();
+      setStatus("success");
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : t("error"));
+      setStatus("error");
+    }
   };
 
   return (
@@ -37,10 +59,10 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
           <div>
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 font-space-grotesk">
-              Let&apos;s build something together
+              {t("heading")}
             </h3>
             <p className="text-text-secondary mb-10 leading-relaxed max-w-md">
-              Whether you have a question about automation, a project opportunity, or just want to say hi, I&apos;ll try my best to get back to you!
+              {t("description")}
             </p>
             
             <div className="space-y-6">
@@ -79,36 +101,56 @@ export function ContactSection() {
           <form onSubmit={handleSubmit} className="glass p-8 md:p-10 rounded-2xl border border-white/5 space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium text-text-secondary">Name</label>
+                <label htmlFor="name" className="text-sm font-medium text-text-secondary">{t("name")}</label>
                 <input 
                   type="text" 
                   id="name" 
+                  name="name"
+                  autoComplete="name"
+                  minLength={2}
+                  maxLength={100}
                   required
                   className="w-full bg-bg-primary/50 border border-white/10 rounded-lg px-4 py-3.5 text-white focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all"
-                  placeholder="John Doe"
+                  placeholder={t("namePlaceholder")}
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-text-secondary">Email</label>
+                <label htmlFor="email" className="text-sm font-medium text-text-secondary">{t("email")}</label>
                 <input 
                   type="email" 
                   id="email" 
+                  name="email"
+                  autoComplete="email"
+                  maxLength={254}
                   required
                   className="w-full bg-bg-primary/50 border border-white/10 rounded-lg px-4 py-3.5 text-white focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all"
-                  placeholder="john@example.com"
+                  placeholder={t("emailPlaceholder")}
                 />
               </div>
             </div>
             
             <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium text-text-secondary">Message</label>
+              <label htmlFor="message" className="text-sm font-medium text-text-secondary">{t("message")}</label>
               <textarea 
                 id="message" 
+                name="message"
+                minLength={10}
+                maxLength={5000}
                 rows={5}
                 required
                 className="w-full bg-bg-primary/50 border border-white/10 rounded-lg px-4 py-3.5 text-white focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-all resize-none"
-                placeholder="How can I help you?"
+                placeholder={t("messagePlaceholder")}
               />
+            </div>
+
+            <div className="absolute -left-[10000px]" aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+            </div>
+
+            <div aria-live="polite" role="status" className="min-h-6 text-sm">
+              {status === "error" && <p className="text-red-300">{errorMessage}</p>}
+              {status === "success" && <p className="text-green-300">{t("success")}</p>}
             </div>
             
             <Button 
@@ -118,8 +160,8 @@ export function ContactSection() {
               className="w-full mt-4"
               disabled={status === "loading" || status === "success"}
             >
-              {status === "loading" ? "Sending..." : status === "success" ? "Message Sent Successfully!" : (
-                <>Send Message <Send size={18} className="ml-2" /></>
+              {status === "loading" ? t("sending") : status === "success" ? t("sent") : (
+                <>{t("send")} <Send size={18} className="ml-2" aria-hidden="true" /></>
               )}
             </Button>
           </form>

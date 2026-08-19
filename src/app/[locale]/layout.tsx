@@ -1,13 +1,34 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
+import { hasLocale } from 'next-intl';
+import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import "../globals.css";
 
-export const metadata: Metadata = {
-  title: "RezaCode.cloud | QA Engineer & AI Testing Specialist",
-  description:
-    "Portfolio of Reza Yusuf Maulana — Quality Assurance Engineer with 4+ years of experience. Expert in Cypress, Playwright, AI-driven testing, and Google Cloud.",
+const siteUrl = new URL("https://rezacode.cloud");
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isIndonesian = locale === "id";
+  const title = "RezaCode.cloud | QA Engineer & AI Testing Specialist";
+  const description = isIndonesian
+    ? "Portofolio Reza Yusuf Maulana, Quality Assurance Engineer dengan keahlian Playwright, Cypress, API testing, dan pengujian berbasis AI."
+    : "Portfolio of Reza Yusuf Maulana, a Quality Assurance Engineer specializing in Playwright, Cypress, API testing, and AI-driven testing.";
+
+  return {
+  metadataBase: siteUrl,
+  title,
+  description,
   keywords: [
     "QA Engineer",
     "Quality Assurance",
@@ -24,22 +45,27 @@ export const metadata: Metadata = {
   creator: "Reza Yusuf Maulana",
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "https://rezacode.cloud",
-    title: "RezaCode.cloud | QA Engineer & AI Testing Specialist",
-    description:
-      "Portfolio of Reza Yusuf Maulana — QA Engineer with 4+ years at BFI Finance. 24+ certifications from Microsoft, Google Cloud, Cisco & Dicoding.",
+    locale: isIndonesian ? "id_ID" : "en_US",
+    alternateLocale: isIndonesian ? ["en_US"] : ["id_ID"],
+    url: `/${locale}`,
+    title,
+    description,
     siteName: "RezaCode.cloud",
     images: [{ url: "https://rezacode.cloud/logo.png" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "RezaCode.cloud | QA Engineer",
-    description: "QA Engineer | AI Testing | 24+ Certifications",
+    description,
     images: ["https://rezacode.cloud/logo.png"],
   },
   robots: { index: true, follow: true },
-};
+  alternates: {
+    canonical: `/${locale}`,
+    languages: { en: "/en", id: "/id" },
+  },
+  };
+}
 
 export default async function RootLayout({
   children,
@@ -49,6 +75,8 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) notFound();
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
@@ -63,6 +91,7 @@ export default async function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <NextIntlClientProvider messages={messages}>
           <div className="relative flex flex-col min-h-screen overflow-x-hidden w-full max-w-[100vw]">
             {children}

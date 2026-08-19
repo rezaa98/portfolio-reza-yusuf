@@ -71,7 +71,7 @@ export function AgentChatSimulator() {
       </div>
 
       {/* Chat Area */}
-      <div className="flex-grow overflow-y-auto p-6 space-y-6">
+      <div className="flex-grow overflow-y-auto p-6 space-y-6" aria-live="polite" aria-label="AI QA Agent conversation">
         {messages.length === 0 ? (
           <div className="h-full flex flex-col items-center justify-center text-center space-y-6">
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-accent-purple to-accent-blue p-0.5">
@@ -159,11 +159,14 @@ export function AgentChatSimulator() {
             placeholder={t("placeholder")}
             onChange={(e) => setInput(e.target.value)}
             disabled={isLoading}
+            aria-label={t("placeholder")}
+            maxLength={4000}
           />
           <button
             type="submit"
             disabled={isLoading || !input?.trim()}
             className="absolute right-2 p-2 rounded-full bg-accent-blue hover:bg-blue-600 text-white disabled:opacity-50 transition-colors"
+            aria-label={t("send")}
           >
             <Send size={16} />
           </button>

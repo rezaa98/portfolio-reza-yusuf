@@ -27,6 +27,8 @@ export const DocsLayout = () => {
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="p-2 text-text-secondary hover:text-white"
+          aria-label={isMobileMenuOpen ? 'Close documentation menu' : 'Open documentation menu'}
+          aria-expanded={isMobileMenuOpen}
         >
           {isMobileMenuOpen ? <X size={24} /> : <MenuIcon size={24} />}
         </button>
@@ -71,13 +73,13 @@ export const DocsLayout = () => {
       </aside>
 
       {/* Main Content Area */}
-      <main className="flex-1 bg-bg-primary border border-border-subtle rounded-2xl p-6 md:p-10 shadow-lg relative overflow-hidden">
+      <section aria-label={locale === 'id' ? 'Isi dokumentasi' : 'Documentation content'} className="flex-1 bg-bg-primary border border-border-subtle rounded-2xl p-6 md:p-10 shadow-lg relative overflow-hidden">
         {/* Subtle background glow */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-blue/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
         <div className="relative z-10">
           <DocsContent activeSection={activeSection} locale={locale} />
         </div>
-      </main>
+      </section>
     </div>
   );
 };

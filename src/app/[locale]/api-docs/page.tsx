@@ -20,7 +20,7 @@ export default function ApiDocsPage() {
   return (
     <div className="min-h-screen bg-bg-primary text-text-primary flex flex-col font-sans selection:bg-accent-primary/30">
       <Navbar />
-      <main className="flex-grow pt-32 pb-20">
+      <main id="main-content" className="flex-grow pt-32 pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto mb-12 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-white">

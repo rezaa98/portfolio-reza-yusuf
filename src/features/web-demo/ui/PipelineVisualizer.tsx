@@ -191,7 +191,7 @@ export function PipelineVisualizer() {
       setStatus("success");
       addLog("Pipeline completed successfully.", "system");
 
-    } catch (e) {
+    } catch {
       addLog("Pipeline failed unexpectedly.", "error");
       setStatus("idle");
     }
@@ -349,7 +349,7 @@ export function PipelineVisualizer() {
           className="p-4 font-mono text-xs md:text-sm overflow-y-auto space-y-1.5 flex-1"
         >
           {logs.length === 0 && status === "idle" && (
-            <div className="text-gray-600 italic">Press "Run Workflow" to start pipeline simulation...</div>
+            <div className="text-gray-600 italic">Press &quot;Run Workflow&quot; to start pipeline simulation...</div>
           )}
           
           {logs.map(log => (

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { PieChart, Clock, CheckCircle2, XCircle, AlertCircle, FileCode2, Loader2 } from "lucide-react";
@@ -13,6 +12,20 @@ interface TestData {
   time: string;
 }
 
+interface ReportSuite {
+  specs?: Array<{
+    id?: string;
+    title: string;
+    tests?: Array<{ results?: Array<{ status: string; duration: number }> }>;
+  }>;
+  suites?: ReportSuite[];
+}
+
+interface PlaywrightReport {
+  config?: { suites?: ReportSuite[] };
+  suites?: ReportSuite[];
+}
+
 export function TestReportDashboard() {
   const [showHtmlReport, setShowHtmlReport] = useState(false); // Default to our beautiful native UI
   const [loading, setLoading] = useState(true);
@@ -20,29 +33,25 @@ export function TestReportDashboard() {
   const [error, setError] = useState<string | null>(null);
   const t = useTranslations("WebDemo.TestReportDashboard");
 
-  const [branch, setBranch] = useState("master");
+  const branch = process.env.NEXT_PUBLIC_VERCEL_ENV === "preview" ? "sit" : "master";
 
   useEffect(() => {
-    const isPreview = window.location.hostname.includes('sit') || window.location.hostname.includes('vercel.app') || window.location.hostname === 'localhost';
-    const currentBranch = isPreview ? 'sit' : 'master';
-    setBranch(currentBranch);
-
     // If the user opts to see raw HTML, we don't strictly need to fetch JSON, but we do it anyway for the header stats.
     const fetchReport = async () => {
       try {
-        const url = `https://rezaa98.github.io/portfolio-reza-yusuf/${currentBranch}/test-results.json?t=${new Date().getTime()}`;
+        const url = `https://rezaa98.github.io/portfolio-reza-yusuf/${branch}/test-results.json`;
         
         const response = await fetch(url, { cache: 'no-store' });
         if (!response.ok) {
           throw new Error("Report not found or not generated yet");
         }
         
-        const data = await response.json();
+        const data = await response.json() as PlaywrightReport;
         
         // Flatten Playwright JSON report to extract tests
         const extractedTests: TestData[] = [];
         
-        const processSuites = (suites: Array<{ specs?: Array<{ id?: string; title: string; tests?: Array<{ results?: Array<{ status: string; duration: number }> }> }>; suites?: any[] }>) => {
+        const processSuites = (suites: ReportSuite[]) => {
           if (!suites) return;
           suites.forEach(suite => {
             if (suite.specs) {
@@ -80,7 +89,7 @@ export function TestReportDashboard() {
     };
 
     fetchReport();
-  }, []);
+  }, [branch]);
 
   const totalTests = tests.length;
   const passed = tests.filter(t => t.status === "passed").length;

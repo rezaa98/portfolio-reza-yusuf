@@ -1,36 +1,35 @@
 import React from 'react';
-import { ShieldCheck, Lock, CheckCircle, AlertTriangle } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { ShieldCheck, Lock, CheckCircle } from 'lucide-react';
 
 export const SecurityAuditPanel = () => {
 
   const metrics = [
     {
       name: "HTTP Security Headers",
-      status: "Passed",
-      score: "100%",
-      description: "CSP, HSTS, X-Frame-Options configured.",
+      status: "Configured",
+      score: "6 headers",
+      description: "CSP, HSTS, frame, content type, referrer, and permissions policies.",
       icon: <Lock className="w-5 h-5 text-emerald-400" />
     },
     {
       name: "XSS Protection",
-      status: "Passed",
-      score: "100%",
-      description: "Input sanitization and strict CSP.",
+      status: "Tested",
+      score: "E2E",
+      description: "React escaping, validated inputs, CSP, and executable-payload checks.",
       icon: <ShieldCheck className="w-5 h-5 text-emerald-400" />
     },
     {
       name: "Dependency Vulnerabilities",
-      status: "Passed",
-      score: "0 Known",
-      description: "Continuous audit via GitHub Dependabot.",
+      status: "Automated",
+      score: "CI",
+      description: "Dependency audits run in the quality workflow.",
       icon: <CheckCircle className="w-5 h-5 text-emerald-400" />
     },
     {
       name: "OWASP ZAP Dynamic Scan",
-      status: "Passed",
-      score: "0 High Alerts",
-      description: "Triggered on master branch pushes.",
+      status: "Automated",
+      score: "Weekly",
+      description: "Baseline scan runs on changes and on a weekly schedule.",
       icon: <CheckCircle className="w-5 h-5 text-emerald-400" />
     }
   ];
@@ -49,7 +48,7 @@ export const SecurityAuditPanel = () => {
         </div>
         <div className="bg-bg-primary py-2 px-6 rounded-full border border-border-subtle flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span className="text-sm text-text-secondary">Grade: <strong className="text-emerald-400 text-lg">A+</strong></span>
+          <span className="text-sm text-text-secondary">Status: <strong className="text-emerald-400 text-lg">Hardening active</strong></span>
         </div>
       </div>
 
@@ -63,7 +62,7 @@ export const SecurityAuditPanel = () => {
                 </div>
                 <h4 className="font-semibold text-white">{metric.name}</h4>
               </div>
-              <span className={`text-xs font-bold px-2 py-1 rounded-full ${metric.status.includes('Passed') ? 'bg-emerald-500/20 text-emerald-400' : 'bg-orange-500/20 text-orange-400'}`}>
+              <span className="text-xs font-bold px-2 py-1 rounded-full bg-emerald-500/20 text-emerald-400">
                 {metric.status}
               </span>
             </div>

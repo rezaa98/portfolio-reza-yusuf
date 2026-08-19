@@ -19,6 +19,21 @@ type TestCase = {
   expectedResult: string;
 };
 
+type ReportAnnotation = { type: string; description?: string };
+type ReportResult = { status: string; duration?: number };
+type ReportSpec = {
+  title: string;
+  tests?: Array<{ results?: ReportResult[]; annotations?: ReportAnnotation[] }>;
+};
+type ReportSuite = { specs?: ReportSpec[]; suites?: ReportSuite[] };
+type PlaywrightReport = { config?: { suites?: ReportSuite[] }; suites?: ReportSuite[] };
+
+const isCategory = (value: string): value is "UI" | "API" | "Security" =>
+  ["UI", "API", "Security"].includes(value);
+
+const isLabel = (value: string): value is TestCase["label"] =>
+  ["Positive", "Negative", "Edge"].includes(value);
+
 // Hardcoded list removed. We now fetch dynamically.
 
 export function TestCaseRepository() {
@@ -31,19 +46,15 @@ export function TestCaseRepository() {
   const [testCases, setTestCases] = useState<TestCase[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const [branch, setBranch] = useState("master");
+  const branch = process.env.NEXT_PUBLIC_VERCEL_ENV === "preview" ? "sit" : "master";
 
   useEffect(() => {
-    const isPreview = window.location.hostname.includes('sit') || window.location.hostname.includes('vercel.app') || window.location.hostname === 'localhost';
-    const currentBranch = isPreview ? 'sit' : 'master';
-    setBranch(currentBranch);
-
     // Fetch actual Playwright spec files from GitHub dynamically
     const fetchSourceCode = async () => {
       try {
-        const url1 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${currentBranch}/tests/portfolio.spec.ts`;
-        const url2 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${currentBranch}/tests/api/endpoints.spec.ts`;
-        const url3 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${currentBranch}/tests/security.spec.ts`;
+        const url1 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${branch}/tests/portfolio.spec.ts`;
+        const url2 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${branch}/tests/api/endpoints.spec.ts`;
+        const url3 = `https://raw.githubusercontent.com/rezaa98/portfolio-reza-yusuf/${branch}/tests/security.spec.ts`;
         
         const [res1, res2, res3] = await Promise.all([fetch(url1), fetch(url2), fetch(url3)]);
         const text1 = res1.ok ? await res1.text() : "";
@@ -60,30 +71,30 @@ export function TestCaseRepository() {
 
     const fetchTestResults = async () => {
       try {
-        const url = `https://rezaa98.github.io/portfolio-reza-yusuf/${currentBranch}/test-results.json?t=${new Date().getTime()}`;
+        const url = `https://rezaa98.github.io/portfolio-reza-yusuf/${branch}/test-results.json`;
         
         const response = await fetch(url, { cache: 'no-store' });
         if (!response.ok) {
           throw new Error("Report not found");
         }
         
-        const data = await response.json();
+        const data = await response.json() as PlaywrightReport;
         const extractedTests: TestCase[] = [];
         let idCounter = 1;
 
         // Flatten Playwright JSON report to extract tests and annotations
-        const processSuites = (suites: any[]) => {
+        const processSuites = (suites: ReportSuite[]) => {
           if (!suites) return;
           suites.forEach(suite => {
             if (suite.specs) {
-              suite.specs.forEach((spec: any) => {
+              suite.specs.forEach((spec) => {
                 const testRun = spec.tests?.[0]?.results?.[0];
                 const annotations = spec.tests?.[0]?.annotations || [];
                 
                 // Extract metadata from annotations
-                const getAnnotation = (type: string) => annotations.find((a: any) => a.type === type)?.description || "N/A";
+                const getAnnotation = (type: string) => annotations.find((annotation) => annotation.type === type)?.description || "N/A";
                 
-                let stepsStr = getAnnotation('steps');
+                const stepsStr = getAnnotation('steps');
                 let stepsArr: string[] = [];
                 try {
                   stepsArr = stepsStr !== "N/A" ? JSON.parse(stepsStr) : [];
@@ -92,12 +103,14 @@ export function TestCaseRepository() {
                 }
 
                 if (testRun) {
+                  const category = getAnnotation('category');
+                  const label = getAnnotation('label');
                   extractedTests.push({
                     id: `TC-${String(idCounter++).padStart(3, '0')}`,
                     name: spec.title,
-                    category: (getAnnotation('category') as any) || "UI",
+                    category: isCategory(category) ? category : "UI",
                     description: getAnnotation('description'),
-                    label: (getAnnotation('label') as any) || "Positive",
+                    label: isLabel(label) ? label : "Positive",
                     status: testRun.status === 'passed' ? 'Passed' : 'Failed',
                     isAutomated: true,
                     testData: getAnnotation('testData'),
@@ -127,7 +140,7 @@ export function TestCaseRepository() {
 
     fetchSourceCode();
     fetchTestResults();
-  }, []);
+  }, [branch]);
 
   const toggleExpand = (id: string) => {
     setExpandedId(expandedId === id ? null : id);

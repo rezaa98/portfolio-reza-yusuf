@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
@@ -11,22 +11,40 @@ interface ModalProps {
 }
 
 export function Modal({ isOpen, onClose, children }: ModalProps) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const previouslyFocusedRef = useRef<HTMLElement | null>(null);
+
   useEffect(() => {
     if (isOpen) {
+      previouslyFocusedRef.current = document.activeElement as HTMLElement | null;
       document.body.style.overflow = "hidden";
+      dialogRef.current?.focus();
     } else {
       document.body.style.overflow = "unset";
     }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    if (isOpen) document.addEventListener("keydown", handleKeyDown);
+
     return () => {
       document.body.style.overflow = "unset";
+      document.removeEventListener("keydown", handleKeyDown);
+      previouslyFocusedRef.current?.focus();
     };
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   return (
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
           <motion.div
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Details"
+            tabIndex={-1}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -44,6 +62,7 @@ export function Modal({ isOpen, onClose, children }: ModalProps) {
             <button
               onClick={onClose}
               className="absolute top-4 right-4 p-2 rounded-full bg-black/40 hover:bg-black/60 text-white transition-colors z-20 backdrop-blur-md"
+              aria-label="Close dialog"
             >
               <X size={20} />
             </button>

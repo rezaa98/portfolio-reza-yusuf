@@ -39,7 +39,7 @@ const ArchitectureDoc = ({ locale }: { locale: string }) => (
       <div className="bg-bg-secondary p-6 rounded-xl border border-border-subtle">
         <h3 className="text-xl font-semibold text-accent-cyan mb-3">Frontend (Next.js & Vercel)</h3>
         <p className="text-text-secondary text-sm">
-          The core application runs on Next.js 15 utilizing App Router. It is deployed on Vercel&apos;s Edge Network for global low-latency delivery. We employ Server-Side Rendering (SSR) and Static Site Generation (SSG) for optimal SEO and performance.
+          The core application runs on Next.js 16 using the App Router. It is deployed on Vercel&apos;s network and combines Server-Side Rendering (SSR) with Static Site Generation (SSG) for SEO and performance.
         </p>
       </div>
       <div className="bg-bg-secondary p-6 rounded-xl border border-border-subtle">
@@ -51,7 +51,7 @@ const ArchitectureDoc = ({ locale }: { locale: string }) => (
       <div className="bg-bg-secondary p-6 rounded-xl border border-border-subtle">
         <h3 className="text-xl font-semibold text-accent-cyan mb-3">AI Integration (Gemini)</h3>
         <p className="text-text-secondary text-sm">
-          Google&apos;s Gemini API is integrated directly via Next.js Route Handlers. It leverages <strong>Lightweight RAG (Retrieval-Augmented Generation)</strong> to inject real DOM structure context, and <strong>Strict Guardrails</strong> to restrict interactions exclusively to Playwright testing domains, preventing token abuse.
+          Google&apos;s Gemini API is integrated through a Next.js Route Handler. Lightweight RAG supplies portfolio context, while schema validation, bounded requests, rate limiting, and scope instructions reduce abuse. Prompt instructions are guidance rather than an absolute security boundary.
         </p>
       </div>
       <div className="bg-bg-secondary p-6 rounded-xl border border-border-subtle">
@@ -130,7 +130,7 @@ const TechStackDoc = ({ locale }: { locale: string }) => (
       <div>
         <h3 className="text-2xl font-semibold text-white mb-4">Core Framework</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <TechBadge name="Next.js 15" desc="React Framework" />
+          <TechBadge name="Next.js 16" desc="React Framework" />
           <TechBadge name="React 19" desc="UI Library" />
           <TechBadge name="TypeScript" desc="Type Safety" />
           <TechBadge name="Tailwind CSS" desc="Styling" />
@@ -176,7 +176,7 @@ const FsdDoc = ({ locale }: { locale: string }) => (
         <h3 className="text-2xl font-semibold text-white mb-3">1. Landing Page & Localization</h3>
         <ul className="list-disc list-inside space-y-2 text-text-secondary">
           <li><strong>Hero Section:</strong> Displays introduction with a dynamic typing effect.</li>
-          <li><strong>Localization:</strong> Supports English (<code>/en</code>) and Indonesian (<code>/id</code>) with automatic redirection based on browser preferences.</li>
+          <li><strong>Localization:</strong> Supports English (<code>/en</code>) and Indonesian (<code>/id</code>), defaulting predictably to English when no locale is provided.</li>
           <li><strong>Responsive Navbar:</strong> Collapsible mobile menu with a Glassmorphism aesthetic.</li>
         </ul>
       </section>
@@ -194,7 +194,7 @@ const FsdDoc = ({ locale }: { locale: string }) => (
         <h3 className="text-2xl font-semibold text-white mb-3">3. QA & Web Demo Features</h3>
         <ul className="list-disc list-inside space-y-2 text-text-secondary">
           <li><strong>Test Report Dashboard:</strong> Dynamically loads the Playwright HTML report via an iframe, adjusting the URL based on the current Vercel environment (<code>sit</code> vs <code>master</code>).</li>
-          <li><strong>Agentic AI Chat (RAG + Guardrails):</strong> An interactive UI communicating with the Gemini API. The AI is restricted by Strict Guardrails to only answer QA-related queries and uses Lightweight RAG to know the real DOM structure of this portfolio for precise test generation.</li>
+          <li><strong>Agentic AI Chat (RAG + Guardrails):</strong> An interactive Gemini integration with portfolio-aware context, validated and bounded requests, rate limiting, safe errors, and QA-focused scope instructions.</li>
           <li><strong>Grafana Telemetry View:</strong> Embeds public Grafana dashboards to display live API performance and system traces.</li>
         </ul>
       </section>

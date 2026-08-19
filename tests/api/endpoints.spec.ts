@@ -46,12 +46,13 @@ test.describe('API Collection Endpoints', () => {
         }
       });
       
-      expect(response.ok()).toBeTruthy();
-      expect(response.status()).toBe(200);
-      
-      // Since it's a stream, we read the text and ensure it's not empty
-      const text = await response.text();
-      expect(text.length).toBeGreaterThan(0);
+      if (process.env.GEMINI_API_KEY || process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+        expect(response.status()).toBe(200);
+        expect((await response.text()).length).toBeGreaterThan(0);
+      } else {
+        expect(response.status()).toBe(503);
+        expect(await response.json()).toMatchObject({ error: { code: 'CHAT_NOT_CONFIGURED' } });
+      }
     });
 
     test('Negative: should return 400 Bad Request for missing messages array', async ({ request }) => {
@@ -72,8 +73,7 @@ test.describe('API Collection Endpoints', () => {
       
       expect(response.status()).toBe(400);
       const json = await response.json();
-      expect(json).toHaveProperty('error');
-      expect(json.error).toContain("'messages' array is required");
+      expect(json).toMatchObject({ error: { code: 'INVALID_INPUT' } });
     });
 
     test('Negative: should return 400 Bad Request for incorrectly typed messages', async ({ request }) => {
@@ -113,9 +113,27 @@ test.describe('API Collection Endpoints', () => {
         }
       });
       
-      // We expect it to either succeed or return a controlled error (e.g., 500 from AI model payload limits),
-      // but it shouldn't completely crash the Next.js server connection.
-      expect([200, 400, 500]).toContain(response.status());
+      expect(response.status()).toBe(400);
+      expect(await response.json()).toMatchObject({ error: { code: 'INVALID_INPUT' } });
+    });
+  });
+
+  test.describe('POST /api/contact', () => {
+    test('Negative: rejects malformed contact data', async ({ request }) => {
+      const response = await request.post('/api/contact', {
+        data: { name: 'A', email: 'invalid', message: 'short' },
+      });
+      expect(response.status()).toBe(400);
+      expect(await response.json()).toMatchObject({ error: { code: 'INVALID_INPUT' } });
+    });
+
+    test('Negative: never reports false success when delivery is not configured', async ({ request }) => {
+      test.skip(Boolean(process.env.RESEND_API_KEY && process.env.CONTACT_EMAIL_TO), 'Delivery is configured in this environment');
+      const response = await request.post('/api/contact', {
+        data: { name: 'Portfolio Visitor', email: 'visitor@example.com', message: 'A valid portfolio contact message.' },
+      });
+      expect(response.status()).toBe(503);
+      expect(await response.json()).toMatchObject({ error: { code: 'CONTACT_NOT_CONFIGURED' } });
     });
   });
 });

@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server';
-import { client } from "@/sanity/lib/client";
+import { client } from "@/sanity/client";
+import { isSanityConfigured } from "@/sanity/env";
 
 export async function GET() {
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
-    return NextResponse.json({ error: "Sanity project ID is missing." }, { status: 500 });
+  if (!isSanityConfigured) {
+    return NextResponse.json({ data: [], configured: false });
   }
 
   try {
@@ -23,7 +24,6 @@ export async function GET() {
     return NextResponse.json({ data: posts });
   } catch (error) {
     console.error("Failed to fetch sanity posts:", error);
-    const errorMessage = error instanceof Error ? error.message : String(error);
-    return NextResponse.json({ error: "Failed to fetch posts from Sanity.", details: errorMessage }, { status: 500 });
+    return NextResponse.json({ error: "Failed to fetch posts from Sanity." }, { status: 502 });
   }
 }

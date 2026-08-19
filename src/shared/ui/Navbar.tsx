@@ -76,6 +76,7 @@ export function Navbar() {
             onClick={toggleLanguage}
             className="p-2 rounded-full glass hover:bg-white/10 transition-colors flex items-center gap-2"
             title="Switch Language"
+            aria-label={locale === "en" ? "Switch language to Indonesian" : "Ganti bahasa ke Inggris"}
           >
             <Globe size={18} />
             <span className="text-sm font-medium uppercase">{locale}</span>
@@ -86,6 +87,9 @@ export function Navbar() {
         <button
           className="md:hidden text-text-primary"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-navigation"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -93,7 +97,7 @@ export function Navbar() {
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass absolute top-full left-0 right-0 py-4 px-6 flex flex-col space-y-4 border-t border-white/10">
+        <div id="mobile-navigation" className="md:hidden glass absolute top-full left-0 right-0 py-4 px-6 flex flex-col space-y-4 border-t border-white/10">
           {navLinks.map((link) => (
             <Link
               key={link.name}

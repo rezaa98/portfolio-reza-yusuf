@@ -7,24 +7,53 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
 import { urlForImage } from '@/sanity/image'
+import { isSanityConfigured } from '@/sanity/env'
+import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
+import { cache } from 'react'
 
-async function getPost(slug: string) {
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return null;
+const getPost = cache(async (slug: string) => {
+  if (!isSanityConfigured) return null;
   const query = `*[_type == "post" && slug.current == $slug][0] {
     title,
     "imageUrl": mainImage.asset->url,
     "mainImageAlt": mainImage.alt,
     body,
     publishedAt,
+    excerpt,
     "authorName": author->name,
     "categories": categories[]->title
   }`
   return client.fetch(query, { slug })
+})
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
+  const { slug, locale } = await params;
+  const post = await getPost(slug);
+  if (!post) return { title: locale === 'id' ? 'Artikel tidak ditemukan' : 'Post not found' };
+
+  const description = post.excerpt || `${post.title} — RezaCode.cloud`;
+  return {
+    title: `${post.title} | RezaCode.cloud`,
+    description,
+    alternates: {
+      canonical: `/${locale}/blog/${slug}`,
+      languages: { en: `/en/blog/${slug}`, id: `/id/blog/${slug}` },
+    },
+    openGraph: {
+      type: 'article',
+      title: post.title,
+      description,
+      publishedTime: post.publishedAt,
+      images: post.imageUrl ? [{ url: post.imageUrl, alt: post.mainImageAlt || post.title }] : undefined,
+    },
+  };
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string, locale: string }> }) {
   const { slug, locale } = await params;
   const post = await getPost(slug);
+  if (!post) notFound();
 
   const myPortableTextComponents = {
     types: {
@@ -91,33 +120,30 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     },
   }
 
-  if (!post) {
-    return (
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1 flex flex-col items-center justify-center text-center pt-32">
-          <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
-          <p className="text-text-secondary mb-8">The article you are looking for does not exist or hasn&apos;t been fetched yet.</p>
-          <Link href={`/${locale}#blog`} className="text-accent-cyan hover:underline flex items-center gap-2">
-            <ArrowLeft size={16} /> Back to Home
-          </Link>
-        </main>
-        <Footer />
-      </div>
-    )
-  }
+  const description = post.excerpt || `${post.title} — RezaCode.cloud`;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description,
+    datePublished: post.publishedAt,
+    image: post.imageUrl,
+    author: { '@type': 'Person', name: post.authorName || 'Reza Yusuf Maulana' },
+    mainEntityOfPage: `https://rezacode.cloud/${locale}/blog/${slug}`,
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-1 max-w-4xl mx-auto px-6 pt-32 pb-24 w-full">
+      <main id="main-content" className="flex-1 max-w-4xl mx-auto px-6 pt-32 pb-24 w-full">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
         <Link href={`/${locale}#blog`} className="inline-flex items-center gap-2 text-text-muted hover:text-white transition-colors mb-8">
           <ArrowLeft size={16} /> Back to Blog
         </Link>
         
         <header className="mb-12">
           <div className="flex items-center gap-4 text-sm text-accent-cyan font-mono mb-6">
-            <span>{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : 'Recent'}</span>
+            <span>{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString(locale === 'id' ? 'id-ID' : 'en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : 'Recent'}</span>
             {post.categories && post.categories.length > 0 && (
               <>
                 <span className="w-1 h-1 rounded-full bg-accent-cyan/50"></span>

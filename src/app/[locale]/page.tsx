@@ -9,9 +9,10 @@ import { CertificationsSection } from "@/features/certifications/ui/Certificatio
 import { BlogSection } from "@/features/blog/ui/BlogSection";
 import { ContactSection } from "@/features/contact/ui/ContactSection";
 import { client } from "@/sanity/client";
+import { isSanityConfigured } from "@/sanity/env";
 
 async function fetchSanityPosts() {
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return null;
+  if (!isSanityConfigured) return null;
   try {
     const query = `*[_type == "post"] | order(coalesce(isPinned, false) desc, publishedAt desc) {
       _id,
@@ -34,12 +35,24 @@ async function fetchSanityPosts() {
 
 export default async function Home() {
   const sanityPosts = await fetchSanityPosts();
+  const profileJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Reza Yusuf Maulana",
+    url: "https://rezacode.cloud",
+    jobTitle: "QA Engineer & AI Testing Specialist",
+    sameAs: [
+      "https://github.com/rezaa98",
+      "https://linkedin.com/in/rezayusufmaulana",
+    ],
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd).replace(/</g, "\\u003c") }} />
       <Navbar />
       
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <HeroSection />
         <AboutSection />
         <ExperienceSection />

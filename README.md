@@ -6,8 +6,8 @@ A modern, highly-interactive, and bilingual professional portfolio website built
 
 - **Dynamic Bilingual Support (i18n):** Seamlessly switch between English (EN) and Indonesian (ID) using `next-intl` without page reloading.
 - **Glassmorphism UI:** Built with Tailwind CSS, leveraging a sleek dark mode and frosted glass aesthetic.
-- **Interactive QA Chat Simulator:** Speak with an autonomous AI powered by Google Gemini 2.5 Flash.
-- **Lightweight RAG & AI Guardrails:** The Agentic AI is context-aware via in-memory RAG, knowing the exact DOM structure of this portfolio. Strict Guardrails prevent off-topic questions (e.g., rejecting non-QA queries) to ensure absolute security and professionalism.
+- **Interactive QA Chat Simulator:** Generate Playwright scenarios with Google Gemini when the optional API credential is configured.
+- **Lightweight RAG & AI Guardrails:** The agent uses an in-memory portfolio context, request validation, bounded input/output, origin checks, and rate limiting. Prompt instructions guide scope but are not treated as a standalone security boundary.
 - **Responsive Design:** Fully optimized for mobile, tablet, and desktop viewing.
 - **Headless CMS:** Sanity.io (Dynamic Blog, Next.js ISR)
 - **Agentic AI:** Google Gemini SDK, Lightweight RAG (Retrieval-Augmented Generation), Prompt Guardrails.
@@ -36,10 +36,11 @@ A modern, highly-interactive, and bilingual professional portfolio website built
 
 ## 🛠️ Getting Started
 
-First, install the dependencies:
+Install dependencies and copy the documented environment template:
 
 ```bash
 npm install
+cp .env.example .env.local
 ```
 
 Then, run the development server:
@@ -51,6 +52,17 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+The portfolio and production build work without external credentials. Optional integrations degrade gracefully:
+
+- Sanity credentials enable the live blog and Studio content.
+- A Gemini API key enables the AI QA Agent.
+- Resend and contact recipient values enable contact email delivery. Without them, the form shows a real configuration error and directs visitors to the email link—it never reports a false success.
+- Grafana/OpenTelemetry values enable external observability.
+
+## Environment variables
+
+See [`.env.example`](./.env.example) for the complete list. Never commit `.env.local` or provider secrets. Public variables use the `NEXT_PUBLIC_` prefix; Gemini and Resend credentials remain server-only.
 
 ## 📊 Observability (OpenTelemetry & Grafana)
 
@@ -68,21 +80,29 @@ To set up local monitoring:
 
 ## 🛡️ DevSecOps & Security
 
-This project implements robust DevSecOps practices to ensure enterprise-grade security:
-- **HTTP Security Headers**: Strict `Content-Security-Policy` (CSP), `X-Frame-Options`, `Strict-Transport-Security` (HSTS), and XSS protections are statically enforced via `next.config.ts`.
+This project applies layered security controls appropriate for a public portfolio:
+- **HTTP Security Headers**: `Content-Security-Policy`, `X-Frame-Options`, HSTS, referrer policy, content type protection, and a restrictive permissions policy are configured in `next.config.ts`.
 - **Automated Security Auditing (DAST)**: Uses Playwright to simulate malicious payloads (e.g. XSS attacks) and verify security header integrity during the CI/CD pipeline.
-- **AI Guardrails**: The Gemini API Route Handlers implement strict prompt guardrails to prevent token abuse and prompt injection.
+- **API Controls**: Contact and chat routes validate input, limit payloads, check browser origins, sanitize errors, and apply in-process rate limits. Production systems with multiple server instances should replace the in-memory limiter with a shared Redis/KV-backed limiter.
+- **AI Guardrails**: Scope instructions reduce off-topic output, while deterministic API controls limit abuse and cost. No prompt-only guardrail is described as absolute protection against prompt injection.
 
 ## 🧪 E2E Testing
 
-Automated end-to-end tests ensure the reliability of navigation, localization, and meta tags.
+Quality gates cover linting, TypeScript, production builds, API behavior, navigation, localization, metadata, and security controls.
 ```bash
-# Run tests locally
-npx playwright test
+# Static quality gates
+npm run lint
+npm run typecheck
+npm run build
+
+# E2E requires a production build because Playwright starts `next start`
+npm run build && npm run test:e2e
 
 # View test report
 npx playwright show-report
 ```
+
+CI uses `npm ci`, then runs lint, typecheck, build, Playwright, and the scheduled OWASP ZAP baseline workflow. Generated reports are uploaded as workflow artifacts and are ignored by Git.
 
 ## 📬 Contact
 

@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer';
+import { chromium } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -226,12 +226,13 @@ async function generateCV() {
   const outputPath = path.join(__dirname, '../public/CV_Reza_Yusuf_Maulana.pdf');
 
   console.log('Launching browser to generate PDF...');
-  const browser = await puppeteer.launch({
+  const browser = await chromium.launch({
     headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
   
-  const page = await browser.newPage();
+  const context = await browser.newContext();
+  const page = await context.newPage();
   
   // Set content
   await page.setContent(html, { waitUntil: 'domcontentloaded' });

@@ -40,7 +40,7 @@ export function CertificationsPageClient() {
   });
 
   return (
-    <div className="min-h-screen pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+    <main id="main-content" className="min-h-screen pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="mb-12">
         <Link 
           href="/" 
@@ -217,6 +217,6 @@ export function CertificationsPageClient() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </main>
   );
 }

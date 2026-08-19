@@ -62,7 +62,29 @@
     "title": "Tulisan & Wawasan"
   },
   "Contact": {
-    "title": "Hubungi Saya"
+    "title": "Hubungi Saya",
+    "heading": "Mari membangun sesuatu bersama",
+    "description": "Jika Anda memiliki pertanyaan tentang otomatisasi, peluang proyek, atau sekadar ingin menyapa, saya akan berusaha membalas secepatnya.",
+    "name": "Nama",
+    "email": "Email",
+    "message": "Pesan",
+    "namePlaceholder": "Nama Anda",
+    "emailPlaceholder": "nama@contoh.com",
+    "messagePlaceholder": "Apa yang dapat saya bantu?",
+    "send": "Kirim Pesan",
+    "sending": "Mengirim...",
+    "sent": "Pesan Terkirim",
+    "success": "Pesan Anda berhasil dikirim.",
+    "error": "Pesan tidak dapat dikirim. Silakan coba lagi atau gunakan tautan email."
+  },
+  "Footer": {
+    "description": "QA Engineer & Spesialis Testing AI yang berbasis di Tangerang Selatan, Indonesia.",
+    "quickLinks": "Tautan Cepat",
+    "about": "Tentang",
+    "experience": "Pengalaman",
+    "projects": "Proyek",
+    "certifications": "Sertifikasi",
+    "connect": "Terhubung"
   },
   "WebDemo": {
     "Hero": {
