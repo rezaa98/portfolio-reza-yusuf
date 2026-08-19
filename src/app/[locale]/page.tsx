@@ -39,7 +39,7 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Reza Yusuf Maulana",
-    url: "https://rezacode.cloud",
+    url: "https://rezacode.id",
     jobTitle: "QA Engineer & AI Testing Specialist",
     sameAs: [
       "https://github.com/rezaa98",

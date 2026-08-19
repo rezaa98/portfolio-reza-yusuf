@@ -143,7 +143,7 @@ test.describe('Portfolio Verification Suite', () => {
     await page.waitForLoadState('domcontentloaded');
     
     // Verify Page Title
-    await expect(page).toHaveTitle(/RezaCode\.cloud \| QA Engineer/i);
+    await expect(page).toHaveTitle(/RezaCode\.id \| QA Engineer/i);
     
     // Verify Meta Description
     const metaDescription = page.locator('meta[name="description"]');
@@ -151,7 +151,7 @@ test.describe('Portfolio Verification Suite', () => {
     
     // Verify OpenGraph Title
     const ogTitle = page.locator('meta[property="og:title"]');
-    await expect(ogTitle).toHaveAttribute('content', /RezaCode\.cloud \| QA Engineer/i);
+    await expect(ogTitle).toHaveAttribute('content', /RezaCode\.id \| QA Engineer/i);
   });
 
 });

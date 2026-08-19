@@ -32,9 +32,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = await getPost(slug);
   if (!post) return { title: locale === 'id' ? 'Artikel tidak ditemukan' : 'Post not found' };
 
-  const description = post.excerpt || `${post.title} — RezaCode.cloud`;
+  const description = post.excerpt || `${post.title} — RezaCode.id`;
   return {
-    title: `${post.title} | RezaCode.cloud`,
+    title: `${post.title} | RezaCode.id`,
     description,
     alternates: {
       canonical: `/${locale}/blog/${slug}`,
@@ -120,7 +120,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     },
   }
 
-  const description = post.excerpt || `${post.title} — RezaCode.cloud`;
+  const description = post.excerpt || `${post.title} — RezaCode.id`;
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -129,7 +129,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     datePublished: post.publishedAt,
     image: post.imageUrl,
     author: { '@type': 'Person', name: post.authorName || 'Reza Yusuf Maulana' },
-    mainEntityOfPage: `https://rezacode.cloud/${locale}/blog/${slug}`,
+    mainEntityOfPage: `https://rezacode.id/${locale}/blog/${slug}`,
   };
 
   return (

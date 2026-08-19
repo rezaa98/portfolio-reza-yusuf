@@ -7,7 +7,7 @@ import { routing } from '@/i18n/routing';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import "../globals.css";
 
-const siteUrl = new URL("https://rezacode.cloud");
+const siteUrl = new URL("https://rezacode.id");
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -20,7 +20,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const isIndonesian = locale === "id";
-  const title = "RezaCode.cloud | QA Engineer & AI Testing Specialist";
+  const title = "RezaCode.id | QA Engineer & AI Testing Specialist";
   const description = isIndonesian
     ? "Portofolio Reza Yusuf Maulana, Quality Assurance Engineer dengan keahlian Playwright, Cypress, API testing, dan pengujian berbasis AI."
     : "Portfolio of Reza Yusuf Maulana, a Quality Assurance Engineer specializing in Playwright, Cypress, API testing, and AI-driven testing.";
@@ -50,14 +50,14 @@ export async function generateMetadata({
     url: `/${locale}`,
     title,
     description,
-    siteName: "RezaCode.cloud",
-    images: [{ url: "https://rezacode.cloud/logo.png" }],
+    siteName: "RezaCode.id",
+    images: [{ url: "https://rezacode.id/logo.png" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "RezaCode.cloud | QA Engineer",
+    title: "RezaCode.id | QA Engineer",
     description,
-    images: ["https://rezacode.cloud/logo.png"],
+    images: ["https://rezacode.id/logo.png"],
   },
   robots: { index: true, follow: true },
   alternates: {

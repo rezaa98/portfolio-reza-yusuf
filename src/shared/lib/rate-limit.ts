@@ -19,7 +19,7 @@ export function hasTrustedOrigin(request: Request): boolean {
   try {
     const requestHost = request.headers.get("x-forwarded-host") || request.headers.get("host");
     const originHost = new URL(origin).host;
-    return originHost === requestHost || originHost === "rezacode.cloud" || originHost.endsWith(".rezacode.cloud");
+    return originHost === requestHost || originHost === "rezacode.id" || originHost.endsWith(".rezacode.id");
   } catch {
     return false;
   }

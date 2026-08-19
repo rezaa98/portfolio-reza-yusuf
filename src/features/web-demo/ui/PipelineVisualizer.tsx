@@ -182,7 +182,7 @@ export function PipelineVisualizer() {
       await delay(1200);
       addLog("Building optimized output...", "info");
       await delay(1000);
-      addLog("✅ Deployment successful. URL: https://rezacode.cloud", "success");
+      addLog("✅ Deployment successful. URL: https://rezacode.id", "success");
       
       setCompletedStages(prev => [...prev, "deploy"]);
       

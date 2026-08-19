@@ -130,7 +130,7 @@ async function generateCV() {
     <a href="mailto:reza.yusuf98@gmail.com">reza.yusuf98@gmail.com</a> &nbsp;|&nbsp; 
     <a href="https://linkedin.com/in/rezayusufmaulana">linkedin.com/in/rezayusufmaulana</a> &nbsp;|&nbsp; 
     <a href="https://github.com/rezaa98">github.com/rezaa98</a> &nbsp;|&nbsp; 
-    <a href="https://rezacode.cloud">rezacode.cloud</a>
+    <a href="https://rezacode.id">rezacode.id</a>
   </div>
 
   <div class="divider-thick"></div>

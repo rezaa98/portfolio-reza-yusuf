@@ -103,8 +103,8 @@ const ArchitectureDoc = ({ locale }: { locale: string }) => (
         The repository employs a professional DevOps pipeline:
       </p>
       <ul className="list-disc list-inside space-y-2 text-text-secondary">
-        <li><strong>SIT Environment:</strong> The <code>sit</code> branch deploys to <code>sit.rezacode.cloud</code>, connected to a dedicated <code>sit</code> Sanity Dataset for safe testing.</li>
-        <li><strong>PROD Environment:</strong> The <code>master</code> branch deploys to <code>rezacode.cloud</code>, connected to the <code>production</code> Sanity Dataset.</li>
+        <li><strong>SIT Environment:</strong> The <code>sit</code> branch deploys to <code>sit.rezacode.id</code>, connected to a dedicated <code>sit</code> Sanity Dataset for safe testing.</li>
+        <li><strong>PROD Environment:</strong> The <code>master</code> branch deploys to <code>rezacode.id</code>, connected to the <code>production</code> Sanity Dataset.</li>
         <li><strong>Automated Testing:</strong> GitHub Actions triggers Playwright E2E tests on every push. Reports are automatically deployed to GitHub Pages, isolated by branch.</li>
       </ul>
     </div>

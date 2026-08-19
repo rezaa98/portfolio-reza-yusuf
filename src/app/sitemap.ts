@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://rezacode.cloud";
+const baseUrl = "https://rezacode.id";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/web-demo", "/docs", "/api-docs", "/certifications"];

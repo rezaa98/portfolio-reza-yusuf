@@ -3,7 +3,7 @@ import { CertificationsPageClient } from '@/features/certifications/ui/Certifica
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'All Certifications | RezaCode.cloud',
+  title: 'All Certifications | RezaCode.id',
   description: 'View the complete list of 24+ professional certifications earned by Reza Yusuf Maulana from Microsoft, Google Cloud, Cisco, and Dicoding.',
 };
 
