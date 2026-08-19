@@ -1,7 +1,7 @@
 {
   "config": {
     "argv": [
-      "/opt/hostedtoolcache/node/22.23.1/x64/bin/node",
+      "/opt/hostedtoolcache/node/22.23.2/x64/bin/node",
       "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/node_modules/.bin/playwright",
       "test"
     ],
@@ -18,24 +18,24 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/bca63ac58d0cce15b88e3ffe476c4599b987f44d",
-        "commitHash": "bca63ac58d0cce15b88e3ffe476c4599b987f44d",
-        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/30484378180"
+        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/2d225f76a27e8b21dd69c946fe4c8bf314a52013",
+        "commitHash": "2d225f76a27e8b21dd69c946fe4c8bf314a52013",
+        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/32221736209"
       },
       "gitCommit": {
-        "shortHash": "bca63ac",
-        "hash": "bca63ac58d0cce15b88e3ffe476c4599b987f44d",
-        "subject": "feat: add Mahaga Widya Cita project to portfolio",
-        "body": "feat: add Mahaga Widya Cita project to portfolio\n\n- Added new project entry (proj-004) for PT Mahaga Widya Cita\n- Platform consulting & edukasi profesional untuk ASN Indonesia\n- Tech stack: Next.js, Payload CMS, TypeScript, PostgreSQL, Multilingual\n- Added AI-generated thumbnail image\n- Added bilingual descriptions (ID/EN) in messages files\n- Live demo: https://www.mahagawidyacita.com/id\n",
+        "shortHash": "2d225f7",
+        "hash": "2d225f76a27e8b21dd69c946fe4c8bf314a52013",
+        "subject": "feat: harden portfolio for production",
+        "body": "feat: harden portfolio for production\n",
         "author": {
           "name": "Reza Yusuf Maulana",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1785353151000
+          "time": 1787119320000
         },
         "committer": {
           "name": "Reza Yusuf Maulana",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1785353151000
+          "time": 1787119320000
         },
         "branch": "master"
       },
@@ -49,24 +49,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/bca63ac58d0cce15b88e3ffe476c4599b987f44d",
-            "commitHash": "bca63ac58d0cce15b88e3ffe476c4599b987f44d",
-            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/30484378180"
+            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/2d225f76a27e8b21dd69c946fe4c8bf314a52013",
+            "commitHash": "2d225f76a27e8b21dd69c946fe4c8bf314a52013",
+            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/32221736209"
           },
           "gitCommit": {
-            "shortHash": "bca63ac",
-            "hash": "bca63ac58d0cce15b88e3ffe476c4599b987f44d",
-            "subject": "feat: add Mahaga Widya Cita project to portfolio",
-            "body": "feat: add Mahaga Widya Cita project to portfolio\n\n- Added new project entry (proj-004) for PT Mahaga Widya Cita\n- Platform consulting & edukasi profesional untuk ASN Indonesia\n- Tech stack: Next.js, Payload CMS, TypeScript, PostgreSQL, Multilingual\n- Added AI-generated thumbnail image\n- Added bilingual descriptions (ID/EN) in messages files\n- Live demo: https://www.mahagawidyacita.com/id\n",
+            "shortHash": "2d225f7",
+            "hash": "2d225f76a27e8b21dd69c946fe4c8bf314a52013",
+            "subject": "feat: harden portfolio for production",
+            "body": "feat: harden portfolio for production\n",
             "author": {
               "name": "Reza Yusuf Maulana",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1785353151000
+              "time": 1787119320000
             },
             "committer": {
               "name": "Reza Yusuf Maulana",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1785353151000
+              "time": 1787119320000
             },
             "branch": "master"
           },
@@ -174,12 +174,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 76,
+                          "duration": 166,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-07-29T19:28:51.303Z",
+                          "startTime": "2026-08-19T06:05:11.947Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -266,12 +266,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 1289,
+                          "duration": 61,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-07-29T19:28:51.419Z",
+                          "startTime": "2026-08-19T06:05:12.158Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -350,12 +350,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 12,
+                          "duration": 13,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-07-29T19:28:52.724Z",
+                          "startTime": "2026-08-19T06:05:12.235Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -390,7 +390,7 @@
                   ],
                   "id": "72c35ab6251c8a3f93e5-e5fcf665c8f92dc945f7",
                   "file": "api/endpoints.spec.ts",
-                  "line": 57,
+                  "line": 58,
                   "column": 9
                 },
                 {
@@ -434,12 +434,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 13,
+                          "duration": 14,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-07-29T19:28:52.748Z",
+                          "startTime": "2026-08-19T06:05:12.259Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -518,12 +518,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 1151,
+                          "duration": 14,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-07-29T19:28:52.773Z",
+                          "startTime": "2026-08-19T06:05:12.285Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -559,6 +559,82 @@
                   "id": "72c35ab6251c8a3f93e5-077c7e30b1fe36084a0d",
                   "file": "api/endpoints.spec.ts",
                   "line": 98,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "POST /api/contact",
+              "file": "api/endpoints.spec.ts",
+              "line": 121,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "Negative: rejects malformed contact data",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 17,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-19T06:05:12.309Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "72c35ab6251c8a3f93e5-79e269a58b759a9b32bb",
+                  "file": "api/endpoints.spec.ts",
+                  "line": 122,
+                  "column": 9
+                },
+                {
+                  "title": "Negative: never reports false success when delivery is not configured",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 11,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-08-19T06:05:12.337Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "72c35ab6251c8a3f93e5-e5a20b77cf16c88986ca",
+                  "file": "api/endpoints.spec.ts",
+                  "line": 130,
                   "column": 9
                 }
               ]
@@ -621,12 +697,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1334,
+                      "duration": 1260,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-29T19:28:53.942Z",
+                      "startTime": "2026-08-19T06:05:12.360Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -716,12 +792,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1120,
+                      "duration": 1016,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-29T19:28:56.655Z",
+                      "startTime": "2026-08-19T06:05:13.864Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -811,12 +887,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1215,
+                      "duration": 1308,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-29T19:28:57.794Z",
+                      "startTime": "2026-08-19T06:05:14.894Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -906,12 +982,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 302,
+                      "duration": 288,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-29T19:28:59.031Z",
+                      "startTime": "2026-08-19T06:05:16.215Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1001,12 +1077,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 648,
+                      "duration": 603,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-29T19:28:59.348Z",
+                      "startTime": "2026-08-19T06:05:16.513Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1096,12 +1172,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 929,
+                      "duration": 1042,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-29T19:29:00.008Z",
+                      "startTime": "2026-08-19T06:05:17.128Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1208,12 +1284,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 215,
+                      "duration": 23,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-29T19:29:00.955Z",
+                      "startTime": "2026-08-19T06:05:18.187Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1240,18 +1316,7 @@
                           "description": "All security headers are strictly configured."
                         }
                       ],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-1cd2a-ecurity-Headers-are-present-chromium/test-finished-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/security-DevSecOps-Cyber-S-1cd2a-ecurity-Headers-are-present-chromium/video.webm"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -1303,12 +1368,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 883,
+                      "duration": 3156,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-29T19:29:01.182Z",
+                      "startTime": "2026-08-19T06:05:18.219Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1398,12 +1463,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 17,
+                      "duration": 21,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-29T19:29:02.077Z",
+                      "startTime": "2026-08-19T06:05:21.385Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1438,7 +1503,7 @@
               ],
               "id": "a7e9410bcc1ef00e9656-56318626be9cc3e2c47b",
               "file": "security.spec.ts",
-              "line": 64,
+              "line": 63,
               "column": 7
             },
             {
@@ -1482,12 +1547,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 683,
+                      "duration": 9,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-29T19:29:02.104Z",
+                      "startTime": "2026-08-19T06:05:21.418Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1522,7 +1587,7 @@
               ],
               "id": "a7e9410bcc1ef00e9656-69b7ead6c5b5ecf0e991",
               "file": "security.spec.ts",
-              "line": 79,
+              "line": 78,
               "column": 7
             },
             {
@@ -1566,12 +1631,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4920,
+                      "duration": 43,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-29T19:29:02.797Z",
+                      "startTime": "2026-08-19T06:05:21.434Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1650,12 +1715,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 842,
+                      "duration": 924,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-29T19:29:07.724Z",
+                      "startTime": "2026-08-19T06:05:21.484Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1701,7 +1766,7 @@
               ],
               "id": "a7e9410bcc1ef00e9656-d59c698159906512f5ee",
               "file": "security.spec.ts",
-              "line": 124,
+              "line": 123,
               "column": 7
             }
           ]
@@ -1711,9 +1776,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-07-29T19:28:48.821Z",
-    "duration": 19822.332000000002,
-    "expected": 17,
+    "startTime": "2026-08-19T06:05:09.859Z",
+    "duration": 12630.591999999999,
+    "expected": 19,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
