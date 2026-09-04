@@ -54,6 +54,25 @@
   "Skills": {
     "title": "Keahlian Utama"
   },
+  "CommunicationSkills": {
+    "title": "Kemampuan Komunikasi",
+    "description": "Bahasa yang saya gunakan untuk berkomunikasi, berkolaborasi, dan terus belajar dalam lingkungan profesional serta multikultural.",
+    "indonesian": {
+      "name": "Bahasa Indonesia",
+      "proficiency": "Penutur Asli",
+      "description": "Fasih untuk komunikasi profesional, dokumentasi, presentasi, dan kolaborasi sehari-hari."
+    },
+    "english": {
+      "name": "Bahasa Inggris",
+      "proficiency": "Kemampuan Kerja Profesional",
+      "description": "Mampu memahami dokumentasi teknis, mengikuti rapat, berkomunikasi tertulis, dan berkolaborasi lintas fungsi."
+    },
+    "japanese": {
+      "name": "日本語 (Bahasa Jepang)",
+      "proficiency": "Tingkat Dasar",
+      "description": "Menguasai ungkapan sehari-hari dan percakapan sederhana, serta terus belajar secara mandiri."
+    }
+  },
   "Certifications": {
     "title": "Sertifikasi",
     "description": "Koleksi <strong>24+ sertifikasi profesional</strong> yang berfokus pada Kecerdasan Buatan, Cloud Computing, dan Keamanan Siber."

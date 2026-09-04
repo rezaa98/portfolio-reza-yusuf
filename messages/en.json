@@ -54,6 +54,25 @@
   "Skills": {
     "title": "Core Skills"
   },
+  "CommunicationSkills": {
+    "title": "Communication Skills",
+    "description": "Languages I use to communicate, collaborate, and keep learning across professional and multicultural environments.",
+    "indonesian": {
+      "name": "Bahasa Indonesia",
+      "proficiency": "Native Proficiency",
+      "description": "Native fluency for professional communication, documentation, presentations, and daily collaboration."
+    },
+    "english": {
+      "name": "English",
+      "proficiency": "Professional Working Proficiency",
+      "description": "Comfortable with technical documentation, meetings, written communication, and cross-functional collaboration."
+    },
+    "japanese": {
+      "name": "日本語 (Japanese)",
+      "proficiency": "Elementary Proficiency",
+      "description": "Basic everyday expressions and simple conversations, with ongoing independent study."
+    }
+  },
   "Certifications": {
     "title": "Certifications",
     "description": "A collection of <strong>24+ professional certifications</strong> focused on Artificial Intelligence, Cloud Computing, and Cybersecurity."

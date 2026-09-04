@@ -13,6 +13,7 @@ You are analyzing the "Reza Yusuf Maulana" Portfolio Website. When generating Pl
 - **Experience Section (\`#experience\`)**: Contains a timeline of work experiences.
 - **Projects Section (\`#projects\`)**: Contains project cards with titles, descriptions, and links to GitHub.
 - **Skills Section (\`#skills\`)**: Lists technical skills like Playwright, Cypress, Selenium, Postman, Appium, Next.js.
+- **Communication Skills Section (\`#communication-skills\`)**: Lists Indonesian (Native), English (Professional Working Proficiency), and Japanese (Elementary Proficiency).
 - **Certifications Section (\`#certifications\`)**: Lists 24+ certifications. Features a "View All 24+ Certifications" button.
 - **Blog Section (\`#blog\`)**: Renders recent blog posts fetched from Sanity CMS. Contains elements with title, excerpt, and "Read" links.
 - **Contact Section (\`#contact\`)**: Contains a contact form with fields: Name (\`input[name="name"]\`), Email (\`input[name="email"]\`), Subject (\`input[name="subject"]\`), Message (\`textarea[name="message"]\`), and a "Send Message" submit button.

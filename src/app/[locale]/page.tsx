@@ -5,6 +5,7 @@ import { AboutSection } from "@/features/about/ui/AboutSection";
 import { ExperienceSection } from "@/features/experience/ui/ExperienceSection";
 import { ProjectsSection } from "@/features/projects/ui/ProjectsSection";
 import { SkillsSection } from "@/features/skills/ui/SkillsSection";
+import { CommunicationSkillsSection } from "@/features/communication/ui/CommunicationSkillsSection";
 import { CertificationsSection } from "@/features/certifications/ui/CertificationsSection";
 import { BlogSection } from "@/features/blog/ui/BlogSection";
 import { ContactSection } from "@/features/contact/ui/ContactSection";
@@ -58,6 +59,7 @@ export default async function Home() {
         <ExperienceSection />
         <ProjectsSection />
         <SkillsSection />
+        <CommunicationSkillsSection />
         <CertificationsSection />
         <BlogSection sanityPosts={sanityPosts} />
         <ContactSection />

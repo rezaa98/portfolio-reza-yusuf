@@ -117,7 +117,7 @@ export function BlogSection({ sanityPosts }: { sanityPosts?: SanityPost[] | null
         transition={{ duration: 0.5 }}
       >
         <div className="flex items-center gap-4 mb-2">
-          <span className="section-label">06 //</span>
+          <span className="section-label">07 //</span>
           <h2 className="section-title mb-0">{t("title")}</h2>
         </div>
         <div className="glow-divider"></div>

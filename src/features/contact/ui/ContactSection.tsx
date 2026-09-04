@@ -51,7 +51,7 @@ export function ContactSection() {
         transition={{ duration: 0.5 }}
       >
         <div className="flex items-center gap-4 mb-2">
-          <span className="section-label">07 //</span>
+          <span className="section-label">08 //</span>
           <h2 className="section-title mb-0">{t("title")}</h2>
         </div>
         <div className="glow-divider"></div>

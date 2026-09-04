@@ -154,4 +154,15 @@ test.describe('Portfolio Verification Suite', () => {
     await expect(ogTitle).toHaveAttribute('content', /RezaCode\.id \| QA Engineer/i);
   });
 
+  test('Verify Communication Skills section and language proficiencies', async ({ page }) => {
+    await page.goto('/en');
+
+    const section = page.locator('#communication-skills');
+    await expect(section.getByRole('heading', { name: 'Communication Skills' })).toBeVisible();
+    await expect(section.getByText('Bahasa Indonesia', { exact: true })).toBeVisible();
+    await expect(section.getByText('English', { exact: true })).toBeVisible();
+    await expect(section.getByText('日本語 (Japanese)', { exact: true })).toBeVisible();
+    await expect(section.getByRole('progressbar')).toHaveCount(3);
+  });
+
 });
