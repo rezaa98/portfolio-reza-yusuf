@@ -18,24 +18,24 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/165150bd1df2cd1ff2d998afb1b269e921f0ef9f",
-        "commitHash": "165150bd1df2cd1ff2d998afb1b269e921f0ef9f",
-        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/32222085489"
+        "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/a3100d03a3948c855947eb24df067d00a2a5283f",
+        "commitHash": "a3100d03a3948c855947eb24df067d00a2a5283f",
+        "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/33824329055"
       },
       "gitCommit": {
-        "shortHash": "165150b",
-        "hash": "165150bd1df2cd1ff2d998afb1b269e921f0ef9f",
-        "subject": "ci: fail ZAP only on confirmed findings",
-        "body": "ci: fail ZAP only on confirmed findings\n",
+        "shortHash": "a3100d0",
+        "hash": "a3100d03a3948c855947eb24df067d00a2a5283f",
+        "subject": "feat: add communication language skills",
+        "body": "feat: add communication language skills\n",
         "author": {
           "name": "Reza Yusuf Maulana",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1787119636000
+          "time": 1788483857000
         },
         "committer": {
           "name": "Reza Yusuf Maulana",
           "email": "reza.yusuf98@gmail.com",
-          "time": 1787119636000
+          "time": 1788483857000
         },
         "branch": "master"
       },
@@ -49,24 +49,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/165150bd1df2cd1ff2d998afb1b269e921f0ef9f",
-            "commitHash": "165150bd1df2cd1ff2d998afb1b269e921f0ef9f",
-            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/32222085489"
+            "commitHref": "https://github.com/rezaa98/portfolio-reza-yusuf/commit/a3100d03a3948c855947eb24df067d00a2a5283f",
+            "commitHash": "a3100d03a3948c855947eb24df067d00a2a5283f",
+            "buildHref": "https://github.com/rezaa98/portfolio-reza-yusuf/actions/runs/33824329055"
           },
           "gitCommit": {
-            "shortHash": "165150b",
-            "hash": "165150bd1df2cd1ff2d998afb1b269e921f0ef9f",
-            "subject": "ci: fail ZAP only on confirmed findings",
-            "body": "ci: fail ZAP only on confirmed findings\n",
+            "shortHash": "a3100d0",
+            "hash": "a3100d03a3948c855947eb24df067d00a2a5283f",
+            "subject": "feat: add communication language skills",
+            "body": "feat: add communication language skills\n",
             "author": {
               "name": "Reza Yusuf Maulana",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1787119636000
+              "time": 1788483857000
             },
             "committer": {
               "name": "Reza Yusuf Maulana",
               "email": "reza.yusuf98@gmail.com",
-              "time": 1787119636000
+              "time": 1788483857000
             },
             "branch": "master"
           },
@@ -174,12 +174,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 196,
+                          "duration": 172,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-08-19T06:09:31.417Z",
+                          "startTime": "2026-09-04T01:07:44.512Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -271,7 +271,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-08-19T06:09:31.655Z",
+                          "startTime": "2026-09-04T01:07:44.728Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -355,7 +355,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-08-19T06:09:31.733Z",
+                          "startTime": "2026-09-04T01:07:44.805Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -434,12 +434,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 14,
+                          "duration": 16,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-08-19T06:09:31.758Z",
+                          "startTime": "2026-09-04T01:07:44.828Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -518,12 +518,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 14,
+                          "duration": 15,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-08-19T06:09:31.784Z",
+                          "startTime": "2026-09-04T01:07:44.856Z",
                           "annotations": [
                             {
                               "type": "category",
@@ -590,7 +590,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-08-19T06:09:31.809Z",
+                          "startTime": "2026-09-04T01:07:44.880Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -624,7 +624,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-08-19T06:09:31.839Z",
+                          "startTime": "2026-09-04T01:07:44.910Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -697,12 +697,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1019,
+                      "duration": 1324,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-19T06:09:31.863Z",
+                      "startTime": "2026-09-04T01:07:44.933Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -792,12 +792,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1013,
+                      "duration": 1031,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-19T06:09:33.951Z",
+                      "startTime": "2026-09-04T01:07:47.276Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -887,12 +887,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1276,
+                      "duration": 1265,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-19T06:09:34.979Z",
+                      "startTime": "2026-09-04T01:07:48.321Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -982,12 +982,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 278,
+                      "duration": 289,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-19T06:09:36.268Z",
+                      "startTime": "2026-09-04T01:07:49.600Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1077,12 +1077,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 626,
+                      "duration": 644,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-19T06:09:36.558Z",
+                      "startTime": "2026-09-04T01:07:49.901Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1172,12 +1172,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 876,
+                      "duration": 952,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-19T06:09:37.198Z",
+                      "startTime": "2026-09-04T01:07:50.554Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1224,6 +1224,51 @@
               "id": "34cb4603fa9a5b79d30c-a7e96d07aeda82c25cde",
               "file": "portfolio.spec.ts",
               "line": 132,
+              "column": 7
+            },
+            {
+              "title": "Verify Communication Skills section and language proficiencies",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1001,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-04T01:07:51.520Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-2f1ec--and-language-proficiencies-chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/portfolio-reza-yusuf/portfolio-reza-yusuf/test-results/portfolio-Portfolio-Verifi-2f1ec--and-language-proficiencies-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "34cb4603fa9a5b79d30c-c96d68558c19c8a66248",
+              "file": "portfolio.spec.ts",
+              "line": 157,
               "column": 7
             }
           ]
@@ -1284,12 +1329,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 21,
+                      "duration": 22,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-19T06:09:38.092Z",
+                      "startTime": "2026-09-04T01:07:52.542Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1368,12 +1413,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1329,
+                      "duration": 1370,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-19T06:09:38.124Z",
+                      "startTime": "2026-09-04T01:07:52.574Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1463,12 +1508,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 16,
+                      "duration": 17,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-19T06:09:39.467Z",
+                      "startTime": "2026-09-04T01:07:53.955Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1547,12 +1592,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10,
+                      "duration": 8,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-19T06:09:39.492Z",
+                      "startTime": "2026-09-04T01:07:53.982Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1636,7 +1681,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-19T06:09:39.510Z",
+                      "startTime": "2026-09-04T01:07:53.997Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1715,12 +1760,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 845,
+                      "duration": 908,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-08-19T06:09:39.560Z",
+                      "startTime": "2026-09-04T01:07:54.045Z",
                       "annotations": [
                         {
                           "type": "category",
@@ -1776,9 +1821,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-08-19T06:09:29.334Z",
-    "duration": 11138.175000000001,
-    "expected": 19,
+    "startTime": "2026-09-04T01:07:42.469Z",
+    "duration": 12561.823,
+    "expected": 20,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
