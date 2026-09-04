@@ -118,6 +118,16 @@ async function generateCV() {
     .skill-item {
       margin-bottom: 6px;
     }
+    .languages-container {
+      display: grid;
+      grid-template-columns: 1fr 1.45fr 1.15fr;
+      column-gap: 14px;
+      margin-bottom: 10px;
+    }
+    .language-item {
+      font-size: 9.5pt;
+      line-height: 1.35;
+    }
   </style>
 </head>
 <body>
@@ -200,6 +210,14 @@ async function generateCV() {
       <div class="skill-item"><span class="bold">Cloud:</span> Azure AI, Google Cloud</div>
       <div class="skill-item"><span class="bold">Languages:</span> JavaScript, TypeScript, Gherkin, PHP</div>
     </div>
+  </div>
+
+  <div class="section-header">LANGUAGES</div>
+  <div class="divider-thin"></div>
+  <div class="languages-container">
+    <div class="language-item"><span class="bold">Indonesian:</span> Native Proficiency</div>
+    <div class="language-item"><span class="bold">English:</span> Professional Working Proficiency</div>
+    <div class="language-item"><span class="bold">Japanese:</span> Elementary Proficiency</div>
   </div>
 
   <div class="section-header">CERTIFICATIONS</div>
